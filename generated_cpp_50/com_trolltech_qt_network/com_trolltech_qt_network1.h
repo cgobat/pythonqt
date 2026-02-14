@@ -33,7 +33,7 @@ QSslKey* new_QSslKey(QIODevice*  device, QSsl::KeyAlgorithm  algorithm, QSsl::En
 QSslKey* new_QSslKey(Qt::HANDLE  handle, QSsl::KeyType  type = QSsl::PrivateKey);
 QSslKey* new_QSslKey(const QByteArray&  encoded, QSsl::KeyAlgorithm  algorithm, QSsl::EncodingFormat  format = QSsl::Pem, QSsl::KeyType  type = QSsl::PrivateKey, const QByteArray&  passPhrase = QByteArray());
 QSslKey* new_QSslKey(const QSslKey&  other);
-void delete_QSslKey(QSslKey* obj) { delete obj; } 
+void delete_QSslKey(QSslKey* obj) { delete obj; }
    QSsl::KeyAlgorithm  algorithm(QSslKey* theWrappedObject) const;
    void clear(QSslKey* theWrappedObject);
    Qt::HANDLE  handle(QSslKey* theWrappedObject) const;
@@ -94,7 +94,7 @@ virtual bool  waitForDisconnected(int  msecs = 30000);
 virtual bool  waitForReadyRead(int  msecs = 30000);
 virtual qint64  writeData(const char*  data, qint64  len);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QSslSocket : public QSslSocket
@@ -128,7 +128,7 @@ enum SslMode{
   UnencryptedMode = QSslSocket::UnencryptedMode,   SslClientMode = QSslSocket::SslClientMode,   SslServerMode = QSslSocket::SslServerMode};
 public slots:
 QSslSocket* new_QSslSocket(QObject*  parent = 0);
-void delete_QSslSocket(QSslSocket* obj) { delete obj; } 
+void delete_QSslSocket(QSslSocket* obj) { delete obj; }
    void abort(QSslSocket* theWrappedObject);
    void addCaCertificate(QSslSocket* theWrappedObject, const QSslCertificate&  certificate);
    void addCaCertificates(QSslSocket* theWrappedObject, const QList<QSslCertificate >&  certificates);
@@ -219,7 +219,7 @@ virtual bool  hasPendingConnections() const;
 virtual QTcpSocket*  nextPendingConnection();
 virtual void timerEvent(QTimerEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QTcpServer : public QTcpServer
@@ -234,7 +234,7 @@ class PythonQtWrapper_QTcpServer : public QObject
 public:
 public slots:
 QTcpServer* new_QTcpServer(QObject*  parent = 0);
-void delete_QTcpServer(QTcpServer* obj) { delete obj; } 
+void delete_QTcpServer(QTcpServer* obj) { delete obj; }
    void addPendingConnection(QTcpServer* theWrappedObject, QTcpSocket*  socket);
    void close(QTcpServer* theWrappedObject);
    QString  errorString(QTcpServer* theWrappedObject) const;
@@ -296,7 +296,7 @@ virtual bool  waitForDisconnected(int  msecs = 30000);
 virtual bool  waitForReadyRead(int  msecs = 30000);
 virtual qint64  writeData(const char*  data, qint64  len);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtWrapper_QTcpSocket : public QObject
@@ -304,7 +304,7 @@ class PythonQtWrapper_QTcpSocket : public QObject
 public:
 public slots:
 QTcpSocket* new_QTcpSocket(QObject*  parent = 0);
-void delete_QTcpSocket(QTcpSocket* obj) { delete obj; } 
+void delete_QTcpSocket(QTcpSocket* obj) { delete obj; }
 };
 
 
@@ -349,7 +349,7 @@ virtual bool  waitForDisconnected(int  msecs = 30000);
 virtual bool  waitForReadyRead(int  msecs = 30000);
 virtual qint64  writeData(const char*  data, qint64  len);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtWrapper_QUdpSocket : public QObject
@@ -357,7 +357,7 @@ class PythonQtWrapper_QUdpSocket : public QObject
 public:
 public slots:
 QUdpSocket* new_QUdpSocket(QObject*  parent = 0);
-void delete_QUdpSocket(QUdpSocket* obj) { delete obj; } 
+void delete_QUdpSocket(QUdpSocket* obj) { delete obj; }
    bool  hasPendingDatagrams(QUdpSocket* theWrappedObject) const;
    bool  joinMulticastGroup(QUdpSocket* theWrappedObject, const QHostAddress&  groupAddress);
    bool  joinMulticastGroup(QUdpSocket* theWrappedObject, const QHostAddress&  groupAddress, const QNetworkInterface&  iface);

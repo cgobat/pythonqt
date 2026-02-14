@@ -93,7 +93,7 @@ virtual void timerEvent(QTimerEvent*  arg__1);
 virtual bool  validatePage();
 virtual void wheelEvent(QWheelEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QWizardPage : public QWizardPage
@@ -114,7 +114,7 @@ class PythonQtWrapper_QWizardPage : public QObject
 public:
 public slots:
 QWizardPage* new_QWizardPage(QWidget*  parent = 0);
-void delete_QWizardPage(QWizardPage* obj) { delete obj; } 
+void delete_QWizardPage(QWizardPage* obj) { delete obj; }
    QString  buttonText(QWizardPage* theWrappedObject, QWizard::WizardButton  which) const;
    void cleanupPage(QWizardPage* theWrappedObject);
    QVariant  field(QWizardPage* theWrappedObject, const QString&  name) const;

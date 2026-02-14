@@ -162,7 +162,7 @@ virtual void tabletEvent(QTabletEvent*  arg__1);
 virtual void timerEvent(QTimerEvent*  e);
 virtual void wheelEvent(QWheelEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QAbstractButton : public QAbstractButton
@@ -188,7 +188,7 @@ class PythonQtWrapper_QAbstractButton : public QObject
 public:
 public slots:
 QAbstractButton* new_QAbstractButton(QWidget*  parent = 0);
-void delete_QAbstractButton(QAbstractButton* obj) { delete obj; } 
+void delete_QAbstractButton(QAbstractButton* obj) { delete obj; }
    bool  autoExclusive(QAbstractButton* theWrappedObject) const;
    bool  autoRepeat(QAbstractButton* theWrappedObject) const;
    int  autoRepeatDelay(QAbstractButton* theWrappedObject) const;
@@ -273,7 +273,7 @@ virtual bool  supportsExtension(QGraphicsItem::Extension  extension) const;
 virtual int  type() const;
 virtual void wheelEvent(QGraphicsSceneWheelEvent*  event);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QAbstractGraphicsShapeItem : public QAbstractGraphicsShapeItem
@@ -287,7 +287,7 @@ class PythonQtWrapper_QAbstractGraphicsShapeItem : public QObject
 public:
 public slots:
 QAbstractGraphicsShapeItem* new_QAbstractGraphicsShapeItem(QGraphicsItem*  parent = 0);
-void delete_QAbstractGraphicsShapeItem(QAbstractGraphicsShapeItem* obj) { delete obj; } 
+void delete_QAbstractGraphicsShapeItem(QAbstractGraphicsShapeItem* obj) { delete obj; }
    QBrush  brush(QAbstractGraphicsShapeItem* theWrappedObject) const;
    bool  isObscuredBy(QAbstractGraphicsShapeItem* theWrappedObject, const QGraphicsItem*  item) const;
    QPainterPath  opaqueArea(QAbstractGraphicsShapeItem* theWrappedObject) const;
@@ -323,7 +323,7 @@ virtual QSize  sizeHint(const QStyleOptionViewItem&  option, const QModelIndex& 
 virtual void timerEvent(QTimerEvent*  arg__1);
 virtual void updateEditorGeometry(QWidget*  editor, const QStyleOptionViewItem&  option, const QModelIndex&  index) const;
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QAbstractItemDelegate : public QAbstractItemDelegate
@@ -348,7 +348,7 @@ enum EndEditHint{
   NoHint = QAbstractItemDelegate::NoHint,   EditNextItem = QAbstractItemDelegate::EditNextItem,   EditPreviousItem = QAbstractItemDelegate::EditPreviousItem,   SubmitModelCache = QAbstractItemDelegate::SubmitModelCache,   RevertModelCache = QAbstractItemDelegate::RevertModelCache};
 public slots:
 QAbstractItemDelegate* new_QAbstractItemDelegate(QObject*  parent = 0);
-void delete_QAbstractItemDelegate(QAbstractItemDelegate* obj) { delete obj; } 
+void delete_QAbstractItemDelegate(QAbstractItemDelegate* obj) { delete obj; }
    QWidget*  createEditor(QAbstractItemDelegate* theWrappedObject, QWidget*  parent, const QStyleOptionViewItem&  option, const QModelIndex&  index) const;
    void destroyEditor(QAbstractItemDelegate* theWrappedObject, QWidget*  editor, const QModelIndex&  index) const;
    bool  editorEvent(QAbstractItemDelegate* theWrappedObject, QEvent*  event, QAbstractItemModel*  model, const QStyleOptionViewItem&  option, const QModelIndex&  index);
@@ -457,7 +457,7 @@ virtual QRect  visualRect(const QModelIndex&  index) const;
 virtual QRegion  visualRegionForSelection(const QItemSelection&  selection) const;
 virtual void wheelEvent(QWheelEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QAbstractItemView : public QAbstractItemView
@@ -553,7 +553,7 @@ enum State{
 Q_DECLARE_FLAGS(EditTriggers, EditTrigger)
 public slots:
 QAbstractItemView* new_QAbstractItemView(QWidget*  parent = 0);
-void delete_QAbstractItemView(QAbstractItemView* obj) { delete obj; } 
+void delete_QAbstractItemView(QAbstractItemView* obj) { delete obj; }
    bool  alternatingRowColors(QAbstractItemView* theWrappedObject) const;
    int  autoScrollMargin(QAbstractItemView* theWrappedObject) const;
    void closeEditor(QAbstractItemView* theWrappedObject, QWidget*  editor, QAbstractItemDelegate::EndEditHint  hint);
@@ -727,7 +727,7 @@ virtual Qt::DropActions  supportedDragActions() const;
 virtual Qt::DropActions  supportedDropActions() const;
 virtual void timerEvent(QTimerEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QAbstractProxyModel : public QAbstractProxyModel
@@ -767,7 +767,7 @@ class PythonQtWrapper_QAbstractProxyModel : public QObject
 public:
 public slots:
 QAbstractProxyModel* new_QAbstractProxyModel(QObject*  parent = 0);
-void delete_QAbstractProxyModel(QAbstractProxyModel* obj) { delete obj; } 
+void delete_QAbstractProxyModel(QAbstractProxyModel* obj) { delete obj; }
    QModelIndex  buddy(QAbstractProxyModel* theWrappedObject, const QModelIndex&  index) const;
    bool  canDropMimeData(QAbstractProxyModel* theWrappedObject, const QMimeData*  data, Qt::DropAction  action, int  row, int  column, const QModelIndex&  parent) const;
    bool  canFetchMore(QAbstractProxyModel* theWrappedObject, const QModelIndex&  parent) const;
@@ -856,7 +856,7 @@ virtual bool  viewportEvent(QEvent*  arg__1);
 virtual QSize  viewportSizeHint() const;
 virtual void wheelEvent(QWheelEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QAbstractScrollArea : public QAbstractScrollArea
@@ -889,7 +889,7 @@ class PythonQtWrapper_QAbstractScrollArea : public QObject
 public:
 public slots:
 QAbstractScrollArea* new_QAbstractScrollArea(QWidget*  parent = 0);
-void delete_QAbstractScrollArea(QAbstractScrollArea* obj) { delete obj; } 
+void delete_QAbstractScrollArea(QAbstractScrollArea* obj) { delete obj; }
    void addScrollBarWidget(QAbstractScrollArea* theWrappedObject, PythonQtPassOwnershipToCPP<QWidget* >  widget, Qt::Alignment  alignment);
    void contextMenuEvent(QAbstractScrollArea* theWrappedObject, QContextMenuEvent*  arg__1);
    QWidget*  cornerWidget(QAbstractScrollArea* theWrappedObject) const;
@@ -989,7 +989,7 @@ virtual void tabletEvent(QTabletEvent*  arg__1);
 virtual void timerEvent(QTimerEvent*  arg__1);
 virtual void wheelEvent(QWheelEvent*  e);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QAbstractSlider : public QAbstractSlider
@@ -1015,7 +1015,7 @@ enum SliderChange{
   SliderRangeChange = PythonQtPublicPromoter_QAbstractSlider::SliderRangeChange,   SliderOrientationChange = PythonQtPublicPromoter_QAbstractSlider::SliderOrientationChange,   SliderStepsChange = PythonQtPublicPromoter_QAbstractSlider::SliderStepsChange,   SliderValueChange = PythonQtPublicPromoter_QAbstractSlider::SliderValueChange};
 public slots:
 QAbstractSlider* new_QAbstractSlider(QWidget*  parent = 0);
-void delete_QAbstractSlider(QAbstractSlider* obj) { delete obj; } 
+void delete_QAbstractSlider(QAbstractSlider* obj) { delete obj; }
    void changeEvent(QAbstractSlider* theWrappedObject, QEvent*  e);
    bool  event(QAbstractSlider* theWrappedObject, QEvent*  e);
    bool  hasTracking(QAbstractSlider* theWrappedObject) const;
@@ -1105,7 +1105,7 @@ virtual void timerEvent(QTimerEvent*  event);
 virtual QValidator::State  validate(QString&  input, int&  pos) const;
 virtual void wheelEvent(QWheelEvent*  event);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QAbstractSpinBox : public QAbstractSpinBox
@@ -1148,7 +1148,7 @@ enum StepEnabledFlag{
 Q_DECLARE_FLAGS(StepEnabled, StepEnabledFlag)
 public slots:
 QAbstractSpinBox* new_QAbstractSpinBox(QWidget*  parent = 0);
-void delete_QAbstractSpinBox(QAbstractSpinBox* obj) { delete obj; } 
+void delete_QAbstractSpinBox(QAbstractSpinBox* obj) { delete obj; }
    Qt::Alignment  alignment(QAbstractSpinBox* theWrappedObject) const;
    QAbstractSpinBox::ButtonSymbols  buttonSymbols(QAbstractSpinBox* theWrappedObject) const;
    void changeEvent(QAbstractSpinBox* theWrappedObject, QEvent*  event);
@@ -1251,7 +1251,7 @@ virtual Qt::DropActions  supportedDragActions() const;
 virtual Qt::DropActions  supportedDropActions() const;
 virtual void timerEvent(QTimerEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QAbstractTableModel : public QAbstractTableModel
@@ -1266,7 +1266,7 @@ class PythonQtWrapper_QAbstractTableModel : public QObject
 public:
 public slots:
 QAbstractTableModel* new_QAbstractTableModel(QObject*  parent = 0);
-void delete_QAbstractTableModel(QAbstractTableModel* obj) { delete obj; } 
+void delete_QAbstractTableModel(QAbstractTableModel* obj) { delete obj; }
    bool  dropMimeData(QAbstractTableModel* theWrappedObject, const QMimeData*  data, Qt::DropAction  action, int  row, int  column, const QModelIndex&  parent);
    Qt::ItemFlags  flags(QAbstractTableModel* theWrappedObject, const QModelIndex&  index) const;
    QModelIndex  index(QAbstractTableModel* theWrappedObject, int  row, int  column, const QModelIndex&  parent = QModelIndex()) const;
@@ -1300,7 +1300,7 @@ virtual void positionInlineObject(QTextInlineObject  item, int  posInDocument, c
 virtual void resizeInlineObject(QTextInlineObject  item, int  posInDocument, const QTextFormat&  format);
 virtual void timerEvent(QTimerEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QAbstractTextDocumentLayout : public QAbstractTextDocumentLayout
@@ -1324,7 +1324,7 @@ class PythonQtWrapper_QAbstractTextDocumentLayout : public QObject
 public:
 public slots:
 QAbstractTextDocumentLayout* new_QAbstractTextDocumentLayout(QTextDocument*  doc);
-void delete_QAbstractTextDocumentLayout(QAbstractTextDocumentLayout* obj) { delete obj; } 
+void delete_QAbstractTextDocumentLayout(QAbstractTextDocumentLayout* obj) { delete obj; }
    QString  anchorAt(QAbstractTextDocumentLayout* theWrappedObject, const QPointF&  pos) const;
    QRectF  blockBoundingRect(QAbstractTextDocumentLayout* theWrappedObject, const QTextBlock&  block) const;
    QTextDocument*  document(QAbstractTextDocumentLayout* theWrappedObject) const;
@@ -1357,7 +1357,7 @@ public:
    ~PythonQtShell_QAbstractTextDocumentLayout__PaintContext();
 
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtWrapper_QAbstractTextDocumentLayout__PaintContext : public QObject
@@ -1369,7 +1369,7 @@ QAbstractTextDocumentLayout::PaintContext* new_QAbstractTextDocumentLayout__Pain
 PythonQtShell_QAbstractTextDocumentLayout__PaintContext* a = new PythonQtShell_QAbstractTextDocumentLayout__PaintContext();
 *((QAbstractTextDocumentLayout::PaintContext*)a) = other;
 return a; }
-void delete_QAbstractTextDocumentLayout__PaintContext(QAbstractTextDocumentLayout::PaintContext* obj) { delete obj; } 
+void delete_QAbstractTextDocumentLayout__PaintContext(QAbstractTextDocumentLayout::PaintContext* obj) { delete obj; }
 void py_set_clip(QAbstractTextDocumentLayout::PaintContext* theWrappedObject, QRectF  clip){ theWrappedObject->clip = clip; }
 QRectF  py_get_clip(QAbstractTextDocumentLayout::PaintContext* theWrappedObject){ return theWrappedObject->clip; }
 void py_set_cursorPosition(QAbstractTextDocumentLayout::PaintContext* theWrappedObject, int  cursorPosition){ theWrappedObject->cursorPosition = cursorPosition; }
@@ -1390,7 +1390,7 @@ public:
    ~PythonQtShell_QAbstractTextDocumentLayout__Selection();
 
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtWrapper_QAbstractTextDocumentLayout__Selection : public QObject
@@ -1402,7 +1402,7 @@ QAbstractTextDocumentLayout::Selection* new_QAbstractTextDocumentLayout__Selecti
 PythonQtShell_QAbstractTextDocumentLayout__Selection* a = new PythonQtShell_QAbstractTextDocumentLayout__Selection();
 *((QAbstractTextDocumentLayout::Selection*)a) = other;
 return a; }
-void delete_QAbstractTextDocumentLayout__Selection(QAbstractTextDocumentLayout::Selection* obj) { delete obj; } 
+void delete_QAbstractTextDocumentLayout__Selection(QAbstractTextDocumentLayout::Selection* obj) { delete obj; }
 void py_set_cursor(QAbstractTextDocumentLayout::Selection* theWrappedObject, QTextCursor  cursor){ theWrappedObject->cursor = cursor; }
 QTextCursor  py_get_cursor(QAbstractTextDocumentLayout::Selection* theWrappedObject){ return theWrappedObject->cursor; }
 void py_set_format(QAbstractTextDocumentLayout::Selection* theWrappedObject, QTextCharFormat  format){ theWrappedObject->format = format; }
@@ -1421,7 +1421,7 @@ public:
    ~PythonQtShell_QAccessibleEvent();
 
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtWrapper_QAccessibleEvent : public QObject
@@ -1429,7 +1429,7 @@ class PythonQtWrapper_QAccessibleEvent : public QObject
 public:
 public slots:
 QAccessibleEvent* new_QAccessibleEvent(QObject*  obj, QAccessible::Event  typ);
-void delete_QAccessibleEvent(QAccessibleEvent* obj) { delete obj; } 
+void delete_QAccessibleEvent(QAccessibleEvent* obj) { delete obj; }
    int  child(QAccessibleEvent* theWrappedObject) const;
    QObject*  object(QAccessibleEvent* theWrappedObject) const;
    void setChild(QAccessibleEvent* theWrappedObject, int  chld);
@@ -1456,7 +1456,7 @@ virtual bool  event(QEvent*  arg__1);
 virtual bool  eventFilter(QObject*  arg__1, QEvent*  arg__2);
 virtual void timerEvent(QTimerEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QAction : public QAction
@@ -1474,7 +1474,7 @@ public slots:
 QAction* new_QAction(QObject*  parent);
 QAction* new_QAction(const QIcon&  icon, const QString&  text, QObject*  parent);
 QAction* new_QAction(const QString&  text, QObject*  parent);
-void delete_QAction(QAction* obj) { delete obj; } 
+void delete_QAction(QAction* obj) { delete obj; }
    QActionGroup*  actionGroup(QAction* theWrappedObject) const;
    void activate(QAction* theWrappedObject, QAction::ActionEvent  event);
    QList<QGraphicsWidget* >  associatedGraphicsWidgets(QAction* theWrappedObject) const;
@@ -1534,7 +1534,7 @@ class PythonQtWrapper_QActionEvent : public QObject
 public:
 public slots:
 QActionEvent* new_QActionEvent(int  type, QAction*  action, QAction*  before = 0);
-void delete_QActionEvent(QActionEvent* obj) { delete obj; } 
+void delete_QActionEvent(QActionEvent* obj) { delete obj; }
    QAction*  action(QActionEvent* theWrappedObject) const;
    QAction*  before(QActionEvent* theWrappedObject) const;
 };
@@ -1556,7 +1556,7 @@ virtual bool  event(QEvent*  arg__1);
 virtual bool  eventFilter(QObject*  arg__1, QEvent*  arg__2);
 virtual void timerEvent(QTimerEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtWrapper_QActionGroup : public QObject
@@ -1564,7 +1564,7 @@ class PythonQtWrapper_QActionGroup : public QObject
 public:
 public slots:
 QActionGroup* new_QActionGroup(QObject*  parent);
-void delete_QActionGroup(QActionGroup* obj) { delete obj; } 
+void delete_QActionGroup(QActionGroup* obj) { delete obj; }
    QList<QAction* >  actions(QActionGroup* theWrappedObject) const;
    QAction*  addAction(QActionGroup* theWrappedObject, QAction*  a);
    QAction*  addAction(QActionGroup* theWrappedObject, const QIcon&  icon, const QString&  text);
@@ -1593,7 +1593,7 @@ Q_ENUMS(ColorSpec )
 enum ColorSpec{
   NormalColor = QApplication::NormalColor,   CustomColor = QApplication::CustomColor,   ManyColor = QApplication::ManyColor};
 public slots:
-void delete_QApplication(QApplication* obj) { delete obj; } 
+void delete_QApplication(QApplication* obj) { delete obj; }
    QWidget*  static_QApplication_activeModalWidget();
    QWidget*  static_QApplication_activePopupWidget();
    QWidget*  static_QApplication_activeWindow();
@@ -1652,7 +1652,7 @@ class PythonQtWrapper_QBackingStore : public QObject
 public:
 public slots:
 QBackingStore* new_QBackingStore(QWindow*  window);
-void delete_QBackingStore(QBackingStore* obj) { delete obj; } 
+void delete_QBackingStore(QBackingStore* obj) { delete obj; }
    void beginPaint(QBackingStore* theWrappedObject, const QRegion&  arg__1);
    void endPaint(QBackingStore* theWrappedObject);
    void flush(QBackingStore* theWrappedObject, const QRegion&  region, QWindow*  window = 0, const QPoint&  offset = QPoint());
@@ -1697,7 +1697,7 @@ virtual void setGeometry(const QRect&  arg__1);
 virtual QLayoutItem*  takeAt(int  arg__1);
 virtual void timerEvent(QTimerEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QBoxLayout : public QBoxLayout
@@ -1721,7 +1721,7 @@ enum Direction{
   LeftToRight = QBoxLayout::LeftToRight,   RightToLeft = QBoxLayout::RightToLeft,   TopToBottom = QBoxLayout::TopToBottom,   BottomToTop = QBoxLayout::BottomToTop,   Down = QBoxLayout::Down,   Up = QBoxLayout::Up};
 public slots:
 QBoxLayout* new_QBoxLayout(QBoxLayout::Direction  arg__1, QWidget*  parent = 0);
-void delete_QBoxLayout(QBoxLayout* obj) { delete obj; } 
+void delete_QBoxLayout(QBoxLayout* obj) { delete obj; }
    void addItem(QBoxLayout* theWrappedObject, QLayoutItem*  arg__1);
    void addLayout(QBoxLayout* theWrappedObject, PythonQtPassOwnershipToCPP<QLayout* >  layout, int  stretch = 0);
    void addSpacerItem(QBoxLayout* theWrappedObject, PythonQtPassOwnershipToCPP<QSpacerItem* >  spacerItem);
@@ -1774,7 +1774,7 @@ virtual bool  event(QEvent*  arg__1);
 virtual bool  eventFilter(QObject*  arg__1, QEvent*  arg__2);
 virtual void timerEvent(QTimerEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtWrapper_QButtonGroup : public QObject
@@ -1782,7 +1782,7 @@ class PythonQtWrapper_QButtonGroup : public QObject
 public:
 public slots:
 QButtonGroup* new_QButtonGroup(QObject*  parent = 0);
-void delete_QButtonGroup(QButtonGroup* obj) { delete obj; } 
+void delete_QButtonGroup(QButtonGroup* obj) { delete obj; }
    void addButton(QButtonGroup* theWrappedObject, QAbstractButton*  arg__1, int  id = -1);
    QAbstractButton*  button(QButtonGroup* theWrappedObject, int  id) const;
    QList<QAbstractButton* >  buttons(QButtonGroup* theWrappedObject) const;
@@ -1852,7 +1852,7 @@ virtual void tabletEvent(QTabletEvent*  arg__1);
 virtual void timerEvent(QTimerEvent*  arg__1);
 virtual void wheelEvent(QWheelEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QCalendarWidget : public QCalendarWidget
@@ -1874,7 +1874,7 @@ class PythonQtWrapper_QCalendarWidget : public QObject
 public:
 public slots:
 QCalendarWidget* new_QCalendarWidget(QWidget*  parent = 0);
-void delete_QCalendarWidget(QCalendarWidget* obj) { delete obj; } 
+void delete_QCalendarWidget(QCalendarWidget* obj) { delete obj; }
    int  dateEditAcceptDelay(QCalendarWidget* theWrappedObject) const;
    QMap<QDate , QTextCharFormat >  dateTextFormat(QCalendarWidget* theWrappedObject) const;
    QTextCharFormat  dateTextFormat(QCalendarWidget* theWrappedObject, const QDate&  date) const;
@@ -1973,7 +1973,7 @@ virtual void tabletEvent(QTabletEvent*  arg__1);
 virtual void timerEvent(QTimerEvent*  e);
 virtual void wheelEvent(QWheelEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QCheckBox : public QCheckBox
@@ -1993,7 +1993,7 @@ public:
 public slots:
 QCheckBox* new_QCheckBox(QWidget*  parent = 0);
 QCheckBox* new_QCheckBox(const QString&  text, QWidget*  parent = 0);
-void delete_QCheckBox(QCheckBox* obj) { delete obj; } 
+void delete_QCheckBox(QCheckBox* obj) { delete obj; }
    Qt::CheckState  checkState(QCheckBox* theWrappedObject) const;
    void checkStateSet(QCheckBox* theWrappedObject);
    bool  event(QCheckBox* theWrappedObject, QEvent*  e);
@@ -2046,7 +2046,7 @@ class PythonQtWrapper_QCloseEvent : public QObject
 public:
 public slots:
 QCloseEvent* new_QCloseEvent();
-void delete_QCloseEvent(QCloseEvent* obj) { delete obj; } 
+void delete_QCloseEvent(QCloseEvent* obj) { delete obj; }
 };
 
 
@@ -2109,7 +2109,7 @@ virtual void tabletEvent(QTabletEvent*  arg__1);
 virtual void timerEvent(QTimerEvent*  arg__1);
 virtual void wheelEvent(QWheelEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QColorDialog : public QColorDialog
@@ -2125,7 +2125,7 @@ public:
 public slots:
 QColorDialog* new_QColorDialog(QWidget*  parent = 0);
 QColorDialog* new_QColorDialog(const QColor&  initial, QWidget*  parent = 0);
-void delete_QColorDialog(QColorDialog* obj) { delete obj; } 
+void delete_QColorDialog(QColorDialog* obj) { delete obj; }
    void changeEvent(QColorDialog* theWrappedObject, QEvent*  event);
    QColor  currentColor(QColorDialog* theWrappedObject) const;
    QColor  static_QColorDialog_customColor(int  index);
@@ -2243,7 +2243,7 @@ virtual QRect  visualRect(const QModelIndex&  index) const;
 virtual QRegion  visualRegionForSelection(const QItemSelection&  selection) const;
 virtual void wheelEvent(QWheelEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QColumnView : public QColumnView
@@ -2274,7 +2274,7 @@ class PythonQtWrapper_QColumnView : public QObject
 public:
 public slots:
 QColumnView* new_QColumnView(QWidget*  parent = 0);
-void delete_QColumnView(QColumnView* obj) { delete obj; } 
+void delete_QColumnView(QColumnView* obj) { delete obj; }
    QList<int >  columnWidths(QColumnView* theWrappedObject) const;
    QAbstractItemView*  createColumn(QColumnView* theWrappedObject, const QModelIndex&  rootIndex);
    void currentChanged(QColumnView* theWrappedObject, const QModelIndex&  current, const QModelIndex&  previous);
@@ -2359,7 +2359,7 @@ virtual void tabletEvent(QTabletEvent*  arg__1);
 virtual void timerEvent(QTimerEvent*  arg__1);
 virtual void wheelEvent(QWheelEvent*  e);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QComboBox : public QComboBox
@@ -2390,7 +2390,7 @@ class PythonQtWrapper_QComboBox : public QObject
 public:
 public slots:
 QComboBox* new_QComboBox(QWidget*  parent = 0);
-void delete_QComboBox(QComboBox* obj) { delete obj; } 
+void delete_QComboBox(QComboBox* obj) { delete obj; }
    void addItem(QComboBox* theWrappedObject, const QIcon&  icon, const QString&  text, const QVariant&  userData = QVariant());
    void addItem(QComboBox* theWrappedObject, const QString&  text, const QVariant&  userData = QVariant());
    void addItems(QComboBox* theWrappedObject, const QStringList&  texts);
@@ -2527,7 +2527,7 @@ virtual void tabletEvent(QTabletEvent*  arg__1);
 virtual void timerEvent(QTimerEvent*  e);
 virtual void wheelEvent(QWheelEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QCommandLinkButton : public QCommandLinkButton
@@ -2546,7 +2546,7 @@ public slots:
 QCommandLinkButton* new_QCommandLinkButton(QWidget*  parent = 0);
 QCommandLinkButton* new_QCommandLinkButton(const QString&  text, QWidget*  parent = 0);
 QCommandLinkButton* new_QCommandLinkButton(const QString&  text, const QString&  description, QWidget*  parent = 0);
-void delete_QCommandLinkButton(QCommandLinkButton* obj) { delete obj; } 
+void delete_QCommandLinkButton(QCommandLinkButton* obj) { delete obj; }
    QString  description(QCommandLinkButton* theWrappedObject) const;
    bool  event(QCommandLinkButton* theWrappedObject, QEvent*  e);
    int  heightForWidth(QCommandLinkButton* theWrappedObject, int  arg__1) const;
@@ -2595,7 +2595,7 @@ virtual void timerEvent(QTimerEvent*  arg__1);
 virtual void unpolish(QApplication*  application);
 virtual void unpolish(QWidget*  widget);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QCommonStyle : public QCommonStyle
@@ -2624,7 +2624,7 @@ class PythonQtWrapper_QCommonStyle : public QObject
 public:
 public slots:
 QCommonStyle* new_QCommonStyle();
-void delete_QCommonStyle(QCommonStyle* obj) { delete obj; } 
+void delete_QCommonStyle(QCommonStyle* obj) { delete obj; }
    void drawComplexControl(QCommonStyle* theWrappedObject, QStyle::ComplexControl  cc, const QStyleOptionComplex*  opt, QPainter*  p, const QWidget*  w = 0) const;
    void drawControl(QCommonStyle* theWrappedObject, QStyle::ControlElement  element, const QStyleOption*  opt, QPainter*  p, const QWidget*  w = 0) const;
    void drawPrimitive(QCommonStyle* theWrappedObject, QStyle::PrimitiveElement  pe, const QStyleOption*  opt, QPainter*  p, const QWidget*  w = 0) const;
@@ -2665,7 +2665,7 @@ virtual QString  pathFromIndex(const QModelIndex&  index) const;
 virtual QStringList  splitPath(const QString&  path) const;
 virtual void timerEvent(QTimerEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QCompleter : public QCompleter
@@ -2688,7 +2688,7 @@ public slots:
 QCompleter* new_QCompleter(QAbstractItemModel*  model, QObject*  parent = 0);
 QCompleter* new_QCompleter(QObject*  parent = 0);
 QCompleter* new_QCompleter(const QStringList&  completions, QObject*  parent = 0);
-void delete_QCompleter(QCompleter* obj) { delete obj; } 
+void delete_QCompleter(QCompleter* obj) { delete obj; }
    Qt::CaseSensitivity  caseSensitivity(QCompleter* theWrappedObject) const;
    int  completionColumn(QCompleter* theWrappedObject) const;
    int  completionCount(QCompleter* theWrappedObject) const;

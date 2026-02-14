@@ -31,7 +31,7 @@ QUrlQuery* new_QUrlQuery();
 QUrlQuery* new_QUrlQuery(const QString&  queryString);
 QUrlQuery* new_QUrlQuery(const QUrl&  url);
 QUrlQuery* new_QUrlQuery(const QUrlQuery&  other);
-void delete_QUrlQuery(QUrlQuery* obj) { delete obj; } 
+void delete_QUrlQuery(QUrlQuery* obj) { delete obj; }
    void addQueryItem(QUrlQuery* theWrappedObject, const QString&  key, const QString&  value);
    QStringList  allQueryItemValues(QUrlQuery* theWrappedObject, const QString&  key, QUrl::ComponentFormattingOptions  encoding = QUrl::PrettyDecoded) const;
    void clear(QUrlQuery* theWrappedObject);
@@ -72,7 +72,7 @@ public:
    ~PythonQtShell_QUuid();
 
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtWrapper_QUuid : public QObject
@@ -92,7 +92,7 @@ QUuid* new_QUuid(const QUuid& other) {
 PythonQtShell_QUuid* a = new PythonQtShell_QUuid();
 *((QUuid*)a) = other;
 return a; }
-void delete_QUuid(QUuid* obj) { delete obj; } 
+void delete_QUuid(QUuid* obj) { delete obj; }
    QUuid  static_QUuid_createUuid();
    QUuid  static_QUuid_createUuidV3(const QUuid&  ns, const QByteArray&  baseData);
    QUuid  static_QUuid_createUuidV3(const QUuid&  ns, const QString&  baseData);
@@ -144,7 +144,7 @@ virtual void updateCurrentValue(const QVariant&  value);
 virtual void updateDirection(QAbstractAnimation::Direction  direction);
 virtual void updateState(QAbstractAnimation::State  newState, QAbstractAnimation::State  oldState);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QVariantAnimation : public QVariantAnimation
@@ -162,7 +162,7 @@ class PythonQtWrapper_QVariantAnimation : public QObject
 public:
 public slots:
 QVariantAnimation* new_QVariantAnimation(QObject*  parent = 0);
-void delete_QVariantAnimation(QVariantAnimation* obj) { delete obj; } 
+void delete_QVariantAnimation(QVariantAnimation* obj) { delete obj; }
    QVariant  currentValue(QVariantAnimation* theWrappedObject) const;
    int  duration(QVariantAnimation* theWrappedObject) const;
    QEasingCurve  easingCurve(QVariantAnimation* theWrappedObject) const;
@@ -192,7 +192,7 @@ class PythonQtWrapper_QWaitCondition : public QObject
 public:
 public slots:
 QWaitCondition* new_QWaitCondition();
-void delete_QWaitCondition(QWaitCondition* obj) { delete obj; } 
+void delete_QWaitCondition(QWaitCondition* obj) { delete obj; }
    bool  wait(QWaitCondition* theWrappedObject, QMutex*  lockedMutex, unsigned long  time = ULONG_MAX);
    bool  wait(QWaitCondition* theWrappedObject, QReadWriteLock*  lockedReadWriteLock, unsigned long  time = ULONG_MAX);
    void wakeAll(QWaitCondition* theWrappedObject);
@@ -213,7 +213,7 @@ public:
 virtual QString  resolveEntity(const QString&  publicId, const QString&  systemId);
 virtual QString  resolveUndeclaredEntity(const QString&  name);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QXmlStreamEntityResolver : public QXmlStreamEntityResolver
@@ -227,7 +227,7 @@ class PythonQtWrapper_QXmlStreamEntityResolver : public QObject
 public:
 public slots:
 QXmlStreamEntityResolver* new_QXmlStreamEntityResolver();
-void delete_QXmlStreamEntityResolver(QXmlStreamEntityResolver* obj) { delete obj; } 
+void delete_QXmlStreamEntityResolver(QXmlStreamEntityResolver* obj) { delete obj; }
    QString  resolveEntity(QXmlStreamEntityResolver* theWrappedObject, const QString&  publicId, const QString&  systemId);
    QString  resolveUndeclaredEntity(QXmlStreamEntityResolver* theWrappedObject, const QString&  name);
 };

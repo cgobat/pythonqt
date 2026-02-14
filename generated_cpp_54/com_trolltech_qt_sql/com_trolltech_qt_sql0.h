@@ -67,7 +67,7 @@ public:
    ~PythonQtShell_QSqlDatabase();
 
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtWrapper_QSqlDatabase : public QObject
@@ -78,7 +78,7 @@ QSqlDatabase* new_QSqlDatabase();
 QSqlDatabase* new_QSqlDatabase(QSqlDriver*  driver);
 QSqlDatabase* new_QSqlDatabase(const QSqlDatabase&  other);
 QSqlDatabase* new_QSqlDatabase(const QString&  type);
-void delete_QSqlDatabase(QSqlDatabase* obj) { delete obj; } 
+void delete_QSqlDatabase(QSqlDatabase* obj) { delete obj; }
    QSqlDatabase  static_QSqlDatabase_addDatabase(QSqlDriver*  driver, const QString&  connectionName = QLatin1String(QSqlDatabase::defaultConnection));
    QSqlDatabase  static_QSqlDatabase_addDatabase(const QString&  type, const QString&  connectionName = QLatin1String(QSqlDatabase::defaultConnection));
    QSqlDatabase  static_QSqlDatabase_cloneDatabase(const QSqlDatabase&  other, const QString&  connectionName);
@@ -164,7 +164,7 @@ virtual QStringList  tables(QSql::TableType  tableType) const;
 virtual void timerEvent(QTimerEvent*  arg__1);
 virtual bool  unsubscribeFromNotification(const QString&  name);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QSqlDriver : public QSqlDriver
@@ -209,7 +209,7 @@ enum StatementType{
   WhereStatement = QSqlDriver::WhereStatement,   SelectStatement = QSqlDriver::SelectStatement,   UpdateStatement = QSqlDriver::UpdateStatement,   InsertStatement = QSqlDriver::InsertStatement,   DeleteStatement = QSqlDriver::DeleteStatement};
 public slots:
 QSqlDriver* new_QSqlDriver(QObject*  parent = 0);
-void delete_QSqlDriver(QSqlDriver* obj) { delete obj; } 
+void delete_QSqlDriver(QSqlDriver* obj) { delete obj; }
    bool  beginTransaction(QSqlDriver* theWrappedObject);
    bool  cancelQuery(QSqlDriver* theWrappedObject);
    void close(QSqlDriver* theWrappedObject);
@@ -253,7 +253,7 @@ public:
 
 virtual QSqlDriver*  createObject() const;
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QSqlDriverCreatorBase : public QSqlDriverCreatorBase
@@ -266,7 +266,7 @@ class PythonQtWrapper_QSqlDriverCreatorBase : public QObject
 public:
 public slots:
 QSqlDriverCreatorBase* new_QSqlDriverCreatorBase();
-void delete_QSqlDriverCreatorBase(QSqlDriverCreatorBase* obj) { delete obj; } 
+void delete_QSqlDriverCreatorBase(QSqlDriverCreatorBase* obj) { delete obj; }
    QSqlDriver*  createObject(QSqlDriverCreatorBase* theWrappedObject) const;
 };
 
@@ -284,7 +284,7 @@ public slots:
 QSqlError* new_QSqlError(const QSqlError&  other);
 QSqlError* new_QSqlError(const QString&  driverText = QString(), const QString&  databaseText = QString(), QSqlError::ErrorType  type = QSqlError::NoError, const QString&  errorCode = QString());
 QSqlError* new_QSqlError(const QString&  driverText, const QString&  databaseText, QSqlError::ErrorType  type, int  number);
-void delete_QSqlError(QSqlError* obj) { delete obj; } 
+void delete_QSqlError(QSqlError* obj) { delete obj; }
    QString  databaseText(QSqlError* theWrappedObject) const;
    QString  driverText(QSqlError* theWrappedObject) const;
    bool  isValid(QSqlError* theWrappedObject) const;
@@ -314,7 +314,7 @@ enum RequiredStatus{
 public slots:
 QSqlField* new_QSqlField(const QSqlField&  other);
 QSqlField* new_QSqlField(const QString&  fieldName = QString(), QVariant::Type  type = QVariant::Invalid);
-void delete_QSqlField(QSqlField* obj) { delete obj; } 
+void delete_QSqlField(QSqlField* obj) { delete obj; }
    void clear(QSqlField* theWrappedObject);
    QVariant  defaultValue(QSqlField* theWrappedObject) const;
    bool  isAutoValue(QSqlField* theWrappedObject) const;
@@ -357,7 +357,7 @@ public:
 public slots:
 QSqlIndex* new_QSqlIndex(const QSqlIndex&  other);
 QSqlIndex* new_QSqlIndex(const QString&  cursorName = QString(), const QString&  name = QString());
-void delete_QSqlIndex(QSqlIndex* obj) { delete obj; } 
+void delete_QSqlIndex(QSqlIndex* obj) { delete obj; }
    void append(QSqlIndex* theWrappedObject, const QSqlField&  field);
    void append(QSqlIndex* theWrappedObject, const QSqlField&  field, bool  desc);
    QString  cursorName(QSqlIndex* theWrappedObject) const;
@@ -383,7 +383,7 @@ QSqlQuery* new_QSqlQuery(QSqlDatabase  db);
 QSqlQuery* new_QSqlQuery(QSqlResult*  r);
 QSqlQuery* new_QSqlQuery(const QSqlQuery&  other);
 QSqlQuery* new_QSqlQuery(const QString&  query = QString(), QSqlDatabase  db = QSqlDatabase());
-void delete_QSqlQuery(QSqlQuery* obj) { delete obj; } 
+void delete_QSqlQuery(QSqlQuery* obj) { delete obj; }
    void addBindValue(QSqlQuery* theWrappedObject, const QVariant&  val, QSql::ParamType  type = QSql::In);
    int  at(QSqlQuery* theWrappedObject) const;
    void bindValue(QSqlQuery* theWrappedObject, const QString&  placeholder, const QVariant&  val, QSql::ParamType  type = QSql::In);
@@ -477,7 +477,7 @@ virtual Qt::DropActions  supportedDragActions() const;
 virtual Qt::DropActions  supportedDropActions() const;
 virtual void timerEvent(QTimerEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QSqlQueryModel : public QSqlQueryModel
@@ -512,7 +512,7 @@ class PythonQtWrapper_QSqlQueryModel : public QObject
 public:
 public slots:
 QSqlQueryModel* new_QSqlQueryModel(QObject*  parent = 0);
-void delete_QSqlQueryModel(QSqlQueryModel* obj) { delete obj; } 
+void delete_QSqlQueryModel(QSqlQueryModel* obj) { delete obj; }
    void beginInsertColumns(QSqlQueryModel* theWrappedObject, const QModelIndex&  parent, int  first, int  last);
    void beginInsertRows(QSqlQueryModel* theWrappedObject, const QModelIndex&  parent, int  first, int  last);
    void beginRemoveColumns(QSqlQueryModel* theWrappedObject, const QModelIndex&  parent, int  first, int  last);
@@ -554,7 +554,7 @@ public:
 public slots:
 QSqlRecord* new_QSqlRecord();
 QSqlRecord* new_QSqlRecord(const QSqlRecord&  other);
-void delete_QSqlRecord(QSqlRecord* obj) { delete obj; } 
+void delete_QSqlRecord(QSqlRecord* obj) { delete obj; }
    void append(QSqlRecord* theWrappedObject, const QSqlField&  field);
    void clear(QSqlRecord* theWrappedObject);
    void clearValues(QSqlRecord* theWrappedObject);
@@ -600,7 +600,7 @@ QSqlRelation* new_QSqlRelation(const QSqlRelation& other) {
 QSqlRelation* a = new QSqlRelation();
 *((QSqlRelation*)a) = other;
 return a; }
-void delete_QSqlRelation(QSqlRelation* obj) { delete obj; } 
+void delete_QSqlRelation(QSqlRelation* obj) { delete obj; }
    QString  displayColumn(QSqlRelation* theWrappedObject) const;
    QString  indexColumn(QSqlRelation* theWrappedObject) const;
    bool  isValid(QSqlRelation* theWrappedObject) const;
@@ -673,7 +673,7 @@ virtual Qt::DropActions  supportedDropActions() const;
 virtual void timerEvent(QTimerEvent*  arg__1);
 virtual bool  updateRowInTable(int  row, const QSqlRecord&  values);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QSqlRelationalTableModel : public QSqlRelationalTableModel
@@ -701,7 +701,7 @@ enum JoinMode{
   InnerJoin = QSqlRelationalTableModel::InnerJoin,   LeftJoin = QSqlRelationalTableModel::LeftJoin};
 public slots:
 QSqlRelationalTableModel* new_QSqlRelationalTableModel(QObject*  parent = 0, QSqlDatabase  db = QSqlDatabase());
-void delete_QSqlRelationalTableModel(QSqlRelationalTableModel* obj) { delete obj; } 
+void delete_QSqlRelationalTableModel(QSqlRelationalTableModel* obj) { delete obj; }
    void clear(QSqlRelationalTableModel* theWrappedObject);
    QVariant  data(QSqlRelationalTableModel* theWrappedObject, const QModelIndex&  item, int  role = Qt::DisplayRole) const;
    bool  insertRowIntoTable(QSqlRelationalTableModel* theWrappedObject, const QSqlRecord&  values);
@@ -760,7 +760,7 @@ virtual void setSelect(bool  s);
 virtual int  size();
 virtual void virtual_hook(int  id, void*  data);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QSqlResult : public QSqlResult
@@ -831,7 +831,7 @@ enum VirtualHookOperation{
 };
 public slots:
 QSqlResult* new_QSqlResult(const QSqlDriver*  db);
-void delete_QSqlResult(QSqlResult* obj) { delete obj; } 
+void delete_QSqlResult(QSqlResult* obj) { delete obj; }
    void addBindValue(QSqlResult* theWrappedObject, const QVariant&  val, QSql::ParamType  type);
    int  at(QSqlResult* theWrappedObject) const;
    void bindValue(QSqlResult* theWrappedObject, const QString&  placeholder, const QVariant&  val, QSql::ParamType  type);
@@ -948,7 +948,7 @@ virtual Qt::DropActions  supportedDropActions() const;
 virtual void timerEvent(QTimerEvent*  arg__1);
 virtual bool  updateRowInTable(int  row, const QSqlRecord&  values);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QSqlTableModel : public QSqlTableModel
@@ -991,7 +991,7 @@ enum EditStrategy{
   OnFieldChange = QSqlTableModel::OnFieldChange,   OnRowChange = QSqlTableModel::OnRowChange,   OnManualSubmit = QSqlTableModel::OnManualSubmit};
 public slots:
 QSqlTableModel* new_QSqlTableModel(QObject*  parent = 0, QSqlDatabase  db = QSqlDatabase());
-void delete_QSqlTableModel(QSqlTableModel* obj) { delete obj; } 
+void delete_QSqlTableModel(QSqlTableModel* obj) { delete obj; }
    void clear(QSqlTableModel* theWrappedObject);
    QVariant  data(QSqlTableModel* theWrappedObject, const QModelIndex&  idx, int  role = Qt::DisplayRole) const;
    QSqlDatabase  database(QSqlTableModel* theWrappedObject) const;

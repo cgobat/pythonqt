@@ -101,7 +101,7 @@ QMatrix4x4* new_QMatrix4x4(const QMatrix4x4& other) {
 QMatrix4x4* a = new QMatrix4x4();
 *((QMatrix4x4*)a) = other;
 return a; }
-void delete_QMatrix4x4(QMatrix4x4* obj) { delete obj; } 
+void delete_QMatrix4x4(QMatrix4x4* obj) { delete obj; }
    QVector4D  column(QMatrix4x4* theWrappedObject, int  index) const;
    const float*  constData(QMatrix4x4* theWrappedObject) const;
    void copyDataTo(QMatrix4x4* theWrappedObject, float*  values) const;
@@ -225,7 +225,7 @@ virtual bool  viewportEvent(QEvent*  event);
 virtual QSize  viewportSizeHint() const;
 virtual void wheelEvent(QWheelEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QMdiArea : public QMdiArea
@@ -252,7 +252,7 @@ enum AreaOption{
 Q_DECLARE_FLAGS(AreaOptions, AreaOption)
 public slots:
 QMdiArea* new_QMdiArea(QWidget*  parent = 0);
-void delete_QMdiArea(QMdiArea* obj) { delete obj; } 
+void delete_QMdiArea(QMdiArea* obj) { delete obj; }
    QMdiArea::WindowOrder  activationOrder(QMdiArea* theWrappedObject) const;
    QMdiSubWindow*  activeSubWindow(QMdiArea* theWrappedObject) const;
    QMdiSubWindow*  addSubWindow(QMdiArea* theWrappedObject, QWidget*  widget, Qt::WindowFlags  flags = 0);
@@ -344,7 +344,7 @@ virtual void tabletEvent(QTabletEvent*  arg__1);
 virtual void timerEvent(QTimerEvent*  timerEvent);
 virtual void wheelEvent(QWheelEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QMdiSubWindow : public QMdiSubWindow
@@ -381,7 +381,7 @@ enum SubWindowOption{
 Q_DECLARE_FLAGS(SubWindowOptions, SubWindowOption)
 public slots:
 QMdiSubWindow* new_QMdiSubWindow(QWidget*  parent = 0, Qt::WindowFlags  flags = 0);
-void delete_QMdiSubWindow(QMdiSubWindow* obj) { delete obj; } 
+void delete_QMdiSubWindow(QMdiSubWindow* obj) { delete obj; }
    void changeEvent(QMdiSubWindow* theWrappedObject, QEvent*  changeEvent);
    void childEvent(QMdiSubWindow* theWrappedObject, QChildEvent*  childEvent);
    void closeEvent(QMdiSubWindow* theWrappedObject, QCloseEvent*  closeEvent);
@@ -476,7 +476,7 @@ virtual void tabletEvent(QTabletEvent*  arg__1);
 virtual void timerEvent(QTimerEvent*  arg__1);
 virtual void wheelEvent(QWheelEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QMenu : public QMenu
@@ -505,7 +505,7 @@ public:
 public slots:
 QMenu* new_QMenu(QWidget*  parent = 0);
 QMenu* new_QMenu(const QString&  title, QWidget*  parent = 0);
-void delete_QMenu(QMenu* obj) { delete obj; } 
+void delete_QMenu(QMenu* obj) { delete obj; }
    QAction*  actionAt(QMenu* theWrappedObject, const QPoint&  arg__1) const;
    void actionEvent(QMenu* theWrappedObject, QActionEvent*  arg__1);
    QRect  actionGeometry(QMenu* theWrappedObject, QAction*  arg__1) const;
@@ -570,7 +570,7 @@ void delete_QMenu(QMenu* obj) { delete obj; }
     PythonQt::self()->addSignalHandler(a, SIGNAL(triggered(bool)), callable);
     return a;
   }
-  
+
   QAction* addAction (QMenu* menu, const QIcon& icon, const QString& text, PyObject* callable, const QKeySequence& shortcut = 0)
   {
     QAction* a = menu->addAction(text);
@@ -579,7 +579,7 @@ void delete_QMenu(QMenu* obj) { delete obj; }
     PythonQt::self()->addSignalHandler(a, SIGNAL(triggered(bool)), callable);
     return a;
   }
-  
+
 };
 
 
@@ -637,7 +637,7 @@ virtual void tabletEvent(QTabletEvent*  arg__1);
 virtual void timerEvent(QTimerEvent*  arg__1);
 virtual void wheelEvent(QWheelEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QMenuBar : public QMenuBar
@@ -666,7 +666,7 @@ class PythonQtWrapper_QMenuBar : public QObject
 public:
 public slots:
 QMenuBar* new_QMenuBar(QWidget*  parent = 0);
-void delete_QMenuBar(QMenuBar* obj) { delete obj; } 
+void delete_QMenuBar(QMenuBar* obj) { delete obj; }
    QAction*  actionAt(QMenuBar* theWrappedObject, const QPoint&  arg__1) const;
    void actionEvent(QMenuBar* theWrappedObject, QActionEvent*  arg__1);
    QRect  actionGeometry(QMenuBar* theWrappedObject, QAction*  arg__1) const;
@@ -713,7 +713,7 @@ void delete_QMenuBar(QMenuBar* obj) { delete obj; }
     PythonQt::self()->addSignalHandler(a, SIGNAL(triggered(bool)), callable);
     return a;
   }
-  
+
 };
 
 
@@ -776,7 +776,7 @@ virtual void tabletEvent(QTabletEvent*  arg__1);
 virtual void timerEvent(QTimerEvent*  arg__1);
 virtual void wheelEvent(QWheelEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QMessageBox : public QMessageBox
@@ -803,7 +803,7 @@ Q_DECLARE_FLAGS(StandardButtons, StandardButton)
 public slots:
 QMessageBox* new_QMessageBox(QMessageBox::Icon  icon, const QString&  title, const QString&  text, QMessageBox::StandardButtons  buttons = QMessageBox::NoButton, QWidget*  parent = 0, Qt::WindowFlags  flags = Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint);
 QMessageBox* new_QMessageBox(QWidget*  parent = 0);
-void delete_QMessageBox(QMessageBox* obj) { delete obj; } 
+void delete_QMessageBox(QMessageBox* obj) { delete obj; }
    void static_QMessageBox_about(QWidget*  parent, const QString&  title, const QString&  text);
    void static_QMessageBox_aboutQt(QWidget*  parent, const QString&  title = QString());
    void addButton(QMessageBox* theWrappedObject, QAbstractButton*  button, QMessageBox::ButtonRole  role);
@@ -871,7 +871,7 @@ public:
    ~PythonQtShell_QMouseEvent();
 
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtWrapper_QMouseEvent : public QObject
@@ -881,7 +881,7 @@ public slots:
 QMouseEvent* new_QMouseEvent(QEvent::Type  type, const QPointF&  localPos, Qt::MouseButton  button, Qt::MouseButtons  buttons, Qt::KeyboardModifiers  modifiers);
 QMouseEvent* new_QMouseEvent(QEvent::Type  type, const QPointF&  localPos, const QPointF&  screenPos, Qt::MouseButton  button, Qt::MouseButtons  buttons, Qt::KeyboardModifiers  modifiers);
 QMouseEvent* new_QMouseEvent(QEvent::Type  type, const QPointF&  localPos, const QPointF&  windowPos, const QPointF&  screenPos, Qt::MouseButton  button, Qt::MouseButtons  buttons, Qt::KeyboardModifiers  modifiers);
-void delete_QMouseEvent(QMouseEvent* obj) { delete obj; } 
+void delete_QMouseEvent(QMouseEvent* obj) { delete obj; }
    Qt::MouseButton  button(QMouseEvent* theWrappedObject) const;
    Qt::MouseButtons  buttons(QMouseEvent* theWrappedObject) const;
    Qt::MouseEventFlags  flags(QMouseEvent* theWrappedObject) const;
@@ -917,7 +917,7 @@ virtual bool  eventTest(QEvent*  event);
 virtual void onTransition(QEvent*  event);
 virtual void timerEvent(QTimerEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QMouseEventTransition : public QMouseEventTransition
@@ -932,7 +932,7 @@ public:
 public slots:
 QMouseEventTransition* new_QMouseEventTransition(QObject*  object, QEvent::Type  type, Qt::MouseButton  button, QState*  sourceState = 0);
 QMouseEventTransition* new_QMouseEventTransition(QState*  sourceState = 0);
-void delete_QMouseEventTransition(QMouseEventTransition* obj) { delete obj; } 
+void delete_QMouseEventTransition(QMouseEventTransition* obj) { delete obj; }
    Qt::MouseButton  button(QMouseEventTransition* theWrappedObject) const;
    bool  eventTest(QMouseEventTransition* theWrappedObject, QEvent*  event);
    QPainterPath  hitTestPath(QMouseEventTransition* theWrappedObject) const;
@@ -955,7 +955,7 @@ public:
    ~PythonQtShell_QMoveEvent();
 
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtWrapper_QMoveEvent : public QObject
@@ -963,7 +963,7 @@ class PythonQtWrapper_QMoveEvent : public QObject
 public:
 public slots:
 QMoveEvent* new_QMoveEvent(const QPoint&  pos, const QPoint&  oldPos);
-void delete_QMoveEvent(QMoveEvent* obj) { delete obj; } 
+void delete_QMoveEvent(QMoveEvent* obj) { delete obj; }
    const QPoint*  oldPos(QMoveEvent* theWrappedObject) const;
    const QPoint*  pos(QMoveEvent* theWrappedObject) const;
 };
@@ -987,7 +987,7 @@ virtual bool  event(QEvent*  arg__1);
 virtual bool  eventFilter(QObject*  arg__1, QEvent*  arg__2);
 virtual void timerEvent(QTimerEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtWrapper_QMovie : public QObject
@@ -997,7 +997,7 @@ public slots:
 QMovie* new_QMovie(QIODevice*  device, const QByteArray&  format = QByteArray(), QObject*  parent = 0);
 QMovie* new_QMovie(QObject*  parent = 0);
 QMovie* new_QMovie(const QString&  fileName, const QByteArray&  format = QByteArray(), QObject*  parent = 0);
-void delete_QMovie(QMovie* obj) { delete obj; } 
+void delete_QMovie(QMovie* obj) { delete obj; }
    QColor  backgroundColor(QMovie* theWrappedObject) const;
    QMovie::CacheMode  cacheMode(QMovie* theWrappedObject) const;
    int  currentFrameNumber(QMovie* theWrappedObject) const;
@@ -1036,7 +1036,7 @@ public:
    ~PythonQtShell_QNativeGestureEvent();
 
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtWrapper_QNativeGestureEvent : public QObject
@@ -1044,7 +1044,7 @@ class PythonQtWrapper_QNativeGestureEvent : public QObject
 public:
 public slots:
 QNativeGestureEvent* new_QNativeGestureEvent(Qt::NativeGestureType  type, const QPointF&  localPos, const QPointF&  windowPos, const QPointF&  screenPos, qreal  value, ulong  sequenceId, quint64  intArgument);
-void delete_QNativeGestureEvent(QNativeGestureEvent* obj) { delete obj; } 
+void delete_QNativeGestureEvent(QNativeGestureEvent* obj) { delete obj; }
    Qt::NativeGestureType  gestureType(QNativeGestureEvent* theWrappedObject) const;
    const QPoint  globalPos(QNativeGestureEvent* theWrappedObject) const;
    const QPointF*  localPos(QNativeGestureEvent* theWrappedObject) const;
@@ -1074,7 +1074,7 @@ virtual QSize  size() const;
 virtual QSurface::SurfaceType  surfaceType() const;
 virtual void timerEvent(QTimerEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QOffscreenSurface : public QOffscreenSurface
@@ -1089,7 +1089,7 @@ class PythonQtWrapper_QOffscreenSurface : public QObject
 public:
 public slots:
 QOffscreenSurface* new_QOffscreenSurface(QScreen*  screen = 0);
-void delete_QOffscreenSurface(QOffscreenSurface* obj) { delete obj; } 
+void delete_QOffscreenSurface(QOffscreenSurface* obj) { delete obj; }
    void create(QOffscreenSurface* theWrappedObject);
    void destroy(QOffscreenSurface* theWrappedObject);
    QSurfaceFormat  format(QOffscreenSurface* theWrappedObject) const;
@@ -1120,7 +1120,7 @@ public slots:
 QOpenGLBuffer* new_QOpenGLBuffer();
 QOpenGLBuffer* new_QOpenGLBuffer(QOpenGLBuffer::Type  type);
 QOpenGLBuffer* new_QOpenGLBuffer(const QOpenGLBuffer&  other);
-void delete_QOpenGLBuffer(QOpenGLBuffer* obj) { delete obj; } 
+void delete_QOpenGLBuffer(QOpenGLBuffer* obj) { delete obj; }
    void allocate(QOpenGLBuffer* theWrappedObject, const void*  data, int  count);
    void allocate(QOpenGLBuffer* theWrappedObject, int  count);
    bool  bind(QOpenGLBuffer* theWrappedObject);
@@ -1158,7 +1158,7 @@ virtual bool  event(QEvent*  arg__1);
 virtual bool  eventFilter(QObject*  arg__1, QEvent*  arg__2);
 virtual void timerEvent(QTimerEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtWrapper_QOpenGLContext : public QObject
@@ -1169,7 +1169,7 @@ enum OpenGLModuleType{
   LibGL = QOpenGLContext::LibGL,   LibGLES = QOpenGLContext::LibGLES};
 public slots:
 QOpenGLContext* new_QOpenGLContext(QObject*  parent = 0);
-void delete_QOpenGLContext(QOpenGLContext* obj) { delete obj; } 
+void delete_QOpenGLContext(QOpenGLContext* obj) { delete obj; }
    bool  static_QOpenGLContext_areSharing(QOpenGLContext*  first, QOpenGLContext*  second);
    bool  create(QOpenGLContext* theWrappedObject);
    QOpenGLContext*  static_QOpenGLContext_currentContext();
@@ -1204,7 +1204,7 @@ class PythonQtWrapper_QOpenGLContextGroup : public QObject
 { Q_OBJECT
 public:
 public slots:
-void delete_QOpenGLContextGroup(QOpenGLContextGroup* obj) { delete obj; } 
+void delete_QOpenGLContextGroup(QOpenGLContextGroup* obj) { delete obj; }
    QOpenGLContextGroup*  static_QOpenGLContextGroup_currentContextGroup();
    QList<QOpenGLContext* >  shares(QOpenGLContextGroup* theWrappedObject) const;
 };
@@ -1226,7 +1226,7 @@ public:
    ~PythonQtShell_QOpenGLFramebufferObject();
 
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtWrapper_QOpenGLFramebufferObject : public QObject
@@ -1242,7 +1242,7 @@ QOpenGLFramebufferObject* new_QOpenGLFramebufferObject(const QSize&  size, const
 QOpenGLFramebufferObject* new_QOpenGLFramebufferObject(int  width, int  height, GLenum  target = 0x0DE1);
 QOpenGLFramebufferObject* new_QOpenGLFramebufferObject(int  width, int  height, QOpenGLFramebufferObject::Attachment  attachment, GLenum  target = 0x0DE1, GLenum  internal_format = 0);
 QOpenGLFramebufferObject* new_QOpenGLFramebufferObject(int  width, int  height, const QOpenGLFramebufferObjectFormat&  format);
-void delete_QOpenGLFramebufferObject(QOpenGLFramebufferObject* obj) { delete obj; } 
+void delete_QOpenGLFramebufferObject(QOpenGLFramebufferObject* obj) { delete obj; }
    QOpenGLFramebufferObject::Attachment  attachment(QOpenGLFramebufferObject* theWrappedObject) const;
    bool  bind(QOpenGLFramebufferObject* theWrappedObject);
    bool  static_QOpenGLFramebufferObject_bindDefault();
@@ -1275,7 +1275,7 @@ public:
 public slots:
 QOpenGLFramebufferObjectFormat* new_QOpenGLFramebufferObjectFormat();
 QOpenGLFramebufferObjectFormat* new_QOpenGLFramebufferObjectFormat(const QOpenGLFramebufferObjectFormat&  other);
-void delete_QOpenGLFramebufferObjectFormat(QOpenGLFramebufferObjectFormat* obj) { delete obj; } 
+void delete_QOpenGLFramebufferObjectFormat(QOpenGLFramebufferObjectFormat* obj) { delete obj; }
    QOpenGLFramebufferObject::Attachment  attachment(QOpenGLFramebufferObjectFormat* theWrappedObject) const;
    GLenum  internalTextureFormat(QOpenGLFramebufferObjectFormat* theWrappedObject) const;
    bool  mipmap(QOpenGLFramebufferObjectFormat* theWrappedObject) const;
@@ -1306,7 +1306,7 @@ Q_DECLARE_FLAGS(OpenGLFeatures, OpenGLFeature)
 public slots:
 QOpenGLFunctions* new_QOpenGLFunctions();
 QOpenGLFunctions* new_QOpenGLFunctions(QOpenGLContext*  context);
-void delete_QOpenGLFunctions(QOpenGLFunctions* obj) { delete obj; } 
+void delete_QOpenGLFunctions(QOpenGLFunctions* obj) { delete obj; }
    void glActiveTexture(QOpenGLFunctions* theWrappedObject, GLenum  texture);
    void glAttachShader(QOpenGLFunctions* theWrappedObject, GLuint  program, GLuint  shader);
    void glBindAttribLocation(QOpenGLFunctions* theWrappedObject, GLuint  program, GLuint  index, const char*  name);
@@ -1475,7 +1475,7 @@ virtual QPaintEngine*  paintEngine() const;
 virtual QPaintDevice*  redirected(QPoint*  offset) const;
 virtual QPainter*  sharedPainter() const;
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QOpenGLPaintDevice : public QOpenGLPaintDevice
@@ -1493,7 +1493,7 @@ public slots:
 QOpenGLPaintDevice* new_QOpenGLPaintDevice();
 QOpenGLPaintDevice* new_QOpenGLPaintDevice(const QSize&  size);
 QOpenGLPaintDevice* new_QOpenGLPaintDevice(int  width, int  height);
-void delete_QOpenGLPaintDevice(QOpenGLPaintDevice* obj) { delete obj; } 
+void delete_QOpenGLPaintDevice(QOpenGLPaintDevice* obj) { delete obj; }
    QOpenGLContext*  context(QOpenGLPaintDevice* theWrappedObject) const;
    int  devType(QOpenGLPaintDevice* theWrappedObject) const;
    qreal  dotsPerMeterX(QOpenGLPaintDevice* theWrappedObject) const;
@@ -1527,7 +1527,7 @@ virtual bool  event(QEvent*  arg__1);
 virtual bool  eventFilter(QObject*  arg__1, QEvent*  arg__2);
 virtual void timerEvent(QTimerEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtWrapper_QOpenGLShader : public QObject
@@ -1540,7 +1540,7 @@ enum ShaderTypeBit{
 Q_DECLARE_FLAGS(ShaderType, ShaderTypeBit)
 public slots:
 QOpenGLShader* new_QOpenGLShader(QOpenGLShader::ShaderType  type, QObject*  parent = 0);
-void delete_QOpenGLShader(QOpenGLShader* obj) { delete obj; } 
+void delete_QOpenGLShader(QOpenGLShader* obj) { delete obj; }
    bool  compileSourceCode(QOpenGLShader* theWrappedObject, const QByteArray&  source);
    bool  compileSourceCode(QOpenGLShader* theWrappedObject, const QString&  source);
    bool  compileSourceCode(QOpenGLShader* theWrappedObject, const char*  source);
@@ -1571,7 +1571,7 @@ virtual bool  eventFilter(QObject*  arg__1, QEvent*  arg__2);
 virtual bool  link();
 virtual void timerEvent(QTimerEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QOpenGLShaderProgram : public QOpenGLShaderProgram
@@ -1584,7 +1584,7 @@ class PythonQtWrapper_QOpenGLShaderProgram : public QObject
 public:
 public slots:
 QOpenGLShaderProgram* new_QOpenGLShaderProgram(QObject*  parent = 0);
-void delete_QOpenGLShaderProgram(QOpenGLShaderProgram* obj) { delete obj; } 
+void delete_QOpenGLShaderProgram(QOpenGLShaderProgram* obj) { delete obj; }
    bool  addShader(QOpenGLShaderProgram* theWrappedObject, QOpenGLShader*  shader);
    bool  addShaderFromSourceCode(QOpenGLShaderProgram* theWrappedObject, QOpenGLShader::ShaderType  type, const QByteArray&  source);
    bool  addShaderFromSourceCode(QOpenGLShaderProgram* theWrappedObject, QOpenGLShader::ShaderType  type, const QString&  source);
@@ -1744,7 +1744,7 @@ Q_DECLARE_FLAGS(Features, Feature)
 public slots:
 QOpenGLTexture* new_QOpenGLTexture(QOpenGLTexture::Target  target);
 QOpenGLTexture* new_QOpenGLTexture(const QImage&  image, QOpenGLTexture::MipMapGeneration  genMipMaps = QOpenGLTexture::GenerateMipMaps);
-void delete_QOpenGLTexture(QOpenGLTexture* obj) { delete obj; } 
+void delete_QOpenGLTexture(QOpenGLTexture* obj) { delete obj; }
    void allocateStorage(QOpenGLTexture* theWrappedObject);
    void bind(QOpenGLTexture* theWrappedObject);
    void bind(QOpenGLTexture* theWrappedObject, uint  unit, QOpenGLTexture::TextureUnitReset  reset = QOpenGLTexture::DontResetTextureUnit);
@@ -1841,7 +1841,7 @@ virtual bool  event(QEvent*  arg__1);
 virtual bool  eventFilter(QObject*  arg__1, QEvent*  arg__2);
 virtual void timerEvent(QTimerEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtWrapper_QOpenGLTimeMonitor : public QObject
@@ -1849,7 +1849,7 @@ class PythonQtWrapper_QOpenGLTimeMonitor : public QObject
 public:
 public slots:
 QOpenGLTimeMonitor* new_QOpenGLTimeMonitor(QObject*  parent = 0);
-void delete_QOpenGLTimeMonitor(QOpenGLTimeMonitor* obj) { delete obj; } 
+void delete_QOpenGLTimeMonitor(QOpenGLTimeMonitor* obj) { delete obj; }
    bool  create(QOpenGLTimeMonitor* theWrappedObject);
    void destroy(QOpenGLTimeMonitor* theWrappedObject);
    bool  isCreated(QOpenGLTimeMonitor* theWrappedObject) const;
@@ -1880,7 +1880,7 @@ virtual bool  event(QEvent*  arg__1);
 virtual bool  eventFilter(QObject*  arg__1, QEvent*  arg__2);
 virtual void timerEvent(QTimerEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtWrapper_QOpenGLTimerQuery : public QObject
@@ -1888,7 +1888,7 @@ class PythonQtWrapper_QOpenGLTimerQuery : public QObject
 public:
 public slots:
 QOpenGLTimerQuery* new_QOpenGLTimerQuery(QObject*  parent = 0);
-void delete_QOpenGLTimerQuery(QOpenGLTimerQuery* obj) { delete obj; } 
+void delete_QOpenGLTimerQuery(QOpenGLTimerQuery* obj) { delete obj; }
    void begin(QOpenGLTimerQuery* theWrappedObject);
    bool  create(QOpenGLTimerQuery* theWrappedObject);
    void destroy(QOpenGLTimerQuery* theWrappedObject);
@@ -1912,7 +1912,7 @@ public slots:
 QOpenGLVersionProfile* new_QOpenGLVersionProfile();
 QOpenGLVersionProfile* new_QOpenGLVersionProfile(const QOpenGLVersionProfile&  other);
 QOpenGLVersionProfile* new_QOpenGLVersionProfile(const QSurfaceFormat&  format);
-void delete_QOpenGLVersionProfile(QOpenGLVersionProfile* obj) { delete obj; } 
+void delete_QOpenGLVersionProfile(QOpenGLVersionProfile* obj) { delete obj; }
    bool  hasProfiles(QOpenGLVersionProfile* theWrappedObject) const;
    bool  isLegacyVersion(QOpenGLVersionProfile* theWrappedObject) const;
    bool  isValid(QOpenGLVersionProfile* theWrappedObject) const;
@@ -1941,7 +1941,7 @@ virtual bool  event(QEvent*  arg__1);
 virtual bool  eventFilter(QObject*  arg__1, QEvent*  arg__2);
 virtual void timerEvent(QTimerEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtWrapper_QOpenGLVertexArrayObject : public QObject
@@ -1949,7 +1949,7 @@ class PythonQtWrapper_QOpenGLVertexArrayObject : public QObject
 public:
 public slots:
 QOpenGLVertexArrayObject* new_QOpenGLVertexArrayObject(QObject*  parent = 0);
-void delete_QOpenGLVertexArrayObject(QOpenGLVertexArrayObject* obj) { delete obj; } 
+void delete_QOpenGLVertexArrayObject(QOpenGLVertexArrayObject* obj) { delete obj; }
    void bind(QOpenGLVertexArrayObject* theWrappedObject);
    bool  create(QOpenGLVertexArrayObject* theWrappedObject);
    void destroy(QOpenGLVertexArrayObject* theWrappedObject);
@@ -1976,7 +1976,7 @@ public slots:
 QPageLayout* new_QPageLayout();
 QPageLayout* new_QPageLayout(const QPageLayout&  other);
 QPageLayout* new_QPageLayout(const QPageSize&  pageSize, QPageLayout::Orientation  orientation, const QMarginsF&  margins, QPageLayout::Unit  units = QPageLayout::Point, const QMarginsF&  minMargins = QMarginsF(0, 0, 0, 0));
-void delete_QPageLayout(QPageLayout* obj) { delete obj; } 
+void delete_QPageLayout(QPageLayout* obj) { delete obj; }
    QRectF  fullRect(QPageLayout* theWrappedObject) const;
    QRectF  fullRect(QPageLayout* theWrappedObject, QPageLayout::Unit  units) const;
    QRect  fullRectPixels(QPageLayout* theWrappedObject, int  resolution) const;
@@ -2033,7 +2033,7 @@ QPageSize* new_QPageSize(QPageSize::PageSizeId  pageSizeId);
 QPageSize* new_QPageSize(const QPageSize&  other);
 QPageSize* new_QPageSize(const QSize&  pointSize, const QString&  name = QString(), QPageSize::SizeMatchPolicy  matchPolicy = QPageSize::FuzzyMatch);
 QPageSize* new_QPageSize(const QSizeF&  size, QPageSize::Unit  units, const QString&  name = QString(), QPageSize::SizeMatchPolicy  matchPolicy = QPageSize::FuzzyMatch);
-void delete_QPageSize(QPageSize* obj) { delete obj; } 
+void delete_QPageSize(QPageSize* obj) { delete obj; }
    QSizeF  definitionSize(QPageSize* theWrappedObject) const;
    QSizeF  static_QPageSize_definitionSize(QPageSize::PageSizeId  pageSizeId);
    QPageSize::Unit  definitionUnits(QPageSize* theWrappedObject) const;
@@ -2087,7 +2087,7 @@ virtual void setPageSize(QPagedPaintDevice::PageSize  size);
 virtual void setPageSizeMM(const QSizeF&  size);
 virtual QPainter*  sharedPainter() const;
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QPagedPaintDevice : public QPagedPaintDevice
@@ -2107,7 +2107,7 @@ enum PageSize{
   A4 = QPagedPaintDevice::A4,   B5 = QPagedPaintDevice::B5,   Letter = QPagedPaintDevice::Letter,   Legal = QPagedPaintDevice::Legal,   Executive = QPagedPaintDevice::Executive,   A0 = QPagedPaintDevice::A0,   A1 = QPagedPaintDevice::A1,   A2 = QPagedPaintDevice::A2,   A3 = QPagedPaintDevice::A3,   A5 = QPagedPaintDevice::A5,   A6 = QPagedPaintDevice::A6,   A7 = QPagedPaintDevice::A7,   A8 = QPagedPaintDevice::A8,   A9 = QPagedPaintDevice::A9,   B0 = QPagedPaintDevice::B0,   B1 = QPagedPaintDevice::B1,   B10 = QPagedPaintDevice::B10,   B2 = QPagedPaintDevice::B2,   B3 = QPagedPaintDevice::B3,   B4 = QPagedPaintDevice::B4,   B6 = QPagedPaintDevice::B6,   B7 = QPagedPaintDevice::B7,   B8 = QPagedPaintDevice::B8,   B9 = QPagedPaintDevice::B9,   C5E = QPagedPaintDevice::C5E,   Comm10E = QPagedPaintDevice::Comm10E,   DLE = QPagedPaintDevice::DLE,   Folio = QPagedPaintDevice::Folio,   Ledger = QPagedPaintDevice::Ledger,   Tabloid = QPagedPaintDevice::Tabloid,   Custom = QPagedPaintDevice::Custom,   A10 = QPagedPaintDevice::A10,   A3Extra = QPagedPaintDevice::A3Extra,   A4Extra = QPagedPaintDevice::A4Extra,   A4Plus = QPagedPaintDevice::A4Plus,   A4Small = QPagedPaintDevice::A4Small,   A5Extra = QPagedPaintDevice::A5Extra,   B5Extra = QPagedPaintDevice::B5Extra,   JisB0 = QPagedPaintDevice::JisB0,   JisB1 = QPagedPaintDevice::JisB1,   JisB2 = QPagedPaintDevice::JisB2,   JisB3 = QPagedPaintDevice::JisB3,   JisB4 = QPagedPaintDevice::JisB4,   JisB5 = QPagedPaintDevice::JisB5,   JisB6 = QPagedPaintDevice::JisB6,   JisB7 = QPagedPaintDevice::JisB7,   JisB8 = QPagedPaintDevice::JisB8,   JisB9 = QPagedPaintDevice::JisB9,   JisB10 = QPagedPaintDevice::JisB10,   AnsiC = QPagedPaintDevice::AnsiC,   AnsiD = QPagedPaintDevice::AnsiD,   AnsiE = QPagedPaintDevice::AnsiE,   LegalExtra = QPagedPaintDevice::LegalExtra,   LetterExtra = QPagedPaintDevice::LetterExtra,   LetterPlus = QPagedPaintDevice::LetterPlus,   LetterSmall = QPagedPaintDevice::LetterSmall,   TabloidExtra = QPagedPaintDevice::TabloidExtra,   ArchA = QPagedPaintDevice::ArchA,   ArchB = QPagedPaintDevice::ArchB,   ArchC = QPagedPaintDevice::ArchC,   ArchD = QPagedPaintDevice::ArchD,   ArchE = QPagedPaintDevice::ArchE,   Imperial7x9 = QPagedPaintDevice::Imperial7x9,   Imperial8x10 = QPagedPaintDevice::Imperial8x10,   Imperial9x11 = QPagedPaintDevice::Imperial9x11,   Imperial9x12 = QPagedPaintDevice::Imperial9x12,   Imperial10x11 = QPagedPaintDevice::Imperial10x11,   Imperial10x13 = QPagedPaintDevice::Imperial10x13,   Imperial10x14 = QPagedPaintDevice::Imperial10x14,   Imperial12x11 = QPagedPaintDevice::Imperial12x11,   Imperial15x11 = QPagedPaintDevice::Imperial15x11,   ExecutiveStandard = QPagedPaintDevice::ExecutiveStandard,   Note = QPagedPaintDevice::Note,   Quarto = QPagedPaintDevice::Quarto,   Statement = QPagedPaintDevice::Statement,   SuperA = QPagedPaintDevice::SuperA,   SuperB = QPagedPaintDevice::SuperB,   Postcard = QPagedPaintDevice::Postcard,   DoublePostcard = QPagedPaintDevice::DoublePostcard,   Prc16K = QPagedPaintDevice::Prc16K,   Prc32K = QPagedPaintDevice::Prc32K,   Prc32KBig = QPagedPaintDevice::Prc32KBig,   FanFoldUS = QPagedPaintDevice::FanFoldUS,   FanFoldGerman = QPagedPaintDevice::FanFoldGerman,   FanFoldGermanLegal = QPagedPaintDevice::FanFoldGermanLegal,   EnvelopeB4 = QPagedPaintDevice::EnvelopeB4,   EnvelopeB5 = QPagedPaintDevice::EnvelopeB5,   EnvelopeB6 = QPagedPaintDevice::EnvelopeB6,   EnvelopeC0 = QPagedPaintDevice::EnvelopeC0,   EnvelopeC1 = QPagedPaintDevice::EnvelopeC1,   EnvelopeC2 = QPagedPaintDevice::EnvelopeC2,   EnvelopeC3 = QPagedPaintDevice::EnvelopeC3,   EnvelopeC4 = QPagedPaintDevice::EnvelopeC4,   EnvelopeC6 = QPagedPaintDevice::EnvelopeC6,   EnvelopeC65 = QPagedPaintDevice::EnvelopeC65,   EnvelopeC7 = QPagedPaintDevice::EnvelopeC7,   Envelope9 = QPagedPaintDevice::Envelope9,   Envelope11 = QPagedPaintDevice::Envelope11,   Envelope12 = QPagedPaintDevice::Envelope12,   Envelope14 = QPagedPaintDevice::Envelope14,   EnvelopeMonarch = QPagedPaintDevice::EnvelopeMonarch,   EnvelopePersonal = QPagedPaintDevice::EnvelopePersonal,   EnvelopeChou3 = QPagedPaintDevice::EnvelopeChou3,   EnvelopeChou4 = QPagedPaintDevice::EnvelopeChou4,   EnvelopeInvite = QPagedPaintDevice::EnvelopeInvite,   EnvelopeItalian = QPagedPaintDevice::EnvelopeItalian,   EnvelopeKaku2 = QPagedPaintDevice::EnvelopeKaku2,   EnvelopeKaku3 = QPagedPaintDevice::EnvelopeKaku3,   EnvelopePrc1 = QPagedPaintDevice::EnvelopePrc1,   EnvelopePrc2 = QPagedPaintDevice::EnvelopePrc2,   EnvelopePrc3 = QPagedPaintDevice::EnvelopePrc3,   EnvelopePrc4 = QPagedPaintDevice::EnvelopePrc4,   EnvelopePrc5 = QPagedPaintDevice::EnvelopePrc5,   EnvelopePrc6 = QPagedPaintDevice::EnvelopePrc6,   EnvelopePrc7 = QPagedPaintDevice::EnvelopePrc7,   EnvelopePrc8 = QPagedPaintDevice::EnvelopePrc8,   EnvelopePrc9 = QPagedPaintDevice::EnvelopePrc9,   EnvelopePrc10 = QPagedPaintDevice::EnvelopePrc10,   EnvelopeYou4 = QPagedPaintDevice::EnvelopeYou4,   LastPageSize = QPagedPaintDevice::LastPageSize,   NPageSize = QPagedPaintDevice::NPageSize,   NPaperSize = QPagedPaintDevice::NPaperSize,   AnsiA = QPagedPaintDevice::AnsiA,   AnsiB = QPagedPaintDevice::AnsiB,   EnvelopeC5 = QPagedPaintDevice::EnvelopeC5,   EnvelopeDL = QPagedPaintDevice::EnvelopeDL,   Envelope10 = QPagedPaintDevice::Envelope10};
 public slots:
 QPagedPaintDevice* new_QPagedPaintDevice();
-void delete_QPagedPaintDevice(QPagedPaintDevice* obj) { delete obj; } 
+void delete_QPagedPaintDevice(QPagedPaintDevice* obj) { delete obj; }
    QPageLayout*  devicePageLayout(QPagedPaintDevice* theWrappedObject);
    QPagedPaintDevice::Margins  margins(QPagedPaintDevice* theWrappedObject) const;
    bool  newPage(QPagedPaintDevice* theWrappedObject);
@@ -2136,7 +2136,7 @@ public:
    ~PythonQtShell_QPagedPaintDevice__Margins();
 
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtWrapper_QPagedPaintDevice__Margins : public QObject
@@ -2148,7 +2148,7 @@ QPagedPaintDevice::Margins* new_QPagedPaintDevice__Margins(const QPagedPaintDevi
 PythonQtShell_QPagedPaintDevice__Margins* a = new PythonQtShell_QPagedPaintDevice__Margins();
 *((QPagedPaintDevice::Margins*)a) = other;
 return a; }
-void delete_QPagedPaintDevice__Margins(QPagedPaintDevice::Margins* obj) { delete obj; } 
+void delete_QPagedPaintDevice__Margins(QPagedPaintDevice::Margins* obj) { delete obj; }
 void py_set_bottom(QPagedPaintDevice::Margins* theWrappedObject, qreal  bottom){ theWrappedObject->bottom = bottom; }
 qreal  py_get_bottom(QPagedPaintDevice::Margins* theWrappedObject){ return theWrappedObject->bottom; }
 void py_set_left(QPagedPaintDevice::Margins* theWrappedObject, qreal  left){ theWrappedObject->left = left; }

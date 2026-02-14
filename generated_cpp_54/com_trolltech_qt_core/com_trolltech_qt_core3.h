@@ -48,7 +48,7 @@ virtual QString  convertToUnicode(const char*  in, int  length, QTextCodec::Conv
 virtual int  mibEnum() const;
 virtual QByteArray  name() const;
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QTextCodec : public QTextCodec
@@ -104,7 +104,7 @@ public:
 public slots:
 QTextDecoder* new_QTextDecoder(const QTextCodec*  codec);
 QTextDecoder* new_QTextDecoder(const QTextCodec*  codec, QTextCodec::ConversionFlags  flags);
-void delete_QTextDecoder(QTextDecoder* obj) { delete obj; } 
+void delete_QTextDecoder(QTextDecoder* obj) { delete obj; }
    bool  hasFailure(QTextDecoder* theWrappedObject) const;
    QString  toUnicode(QTextDecoder* theWrappedObject, const QByteArray&  ba);
 };
@@ -119,7 +119,7 @@ public:
 public slots:
 QTextEncoder* new_QTextEncoder(const QTextCodec*  codec);
 QTextEncoder* new_QTextEncoder(const QTextCodec*  codec, QTextCodec::ConversionFlags  flags);
-void delete_QTextEncoder(QTextEncoder* obj) { delete obj; } 
+void delete_QTextEncoder(QTextEncoder* obj) { delete obj; }
    QByteArray  fromUnicode(QTextEncoder* theWrappedObject, const QString&  str);
    bool  hasFailure(QTextEncoder* theWrappedObject) const;
 };
@@ -138,7 +138,7 @@ public:
    ~PythonQtShell_QTextStream();
 
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtWrapper_QTextStream : public QObject
@@ -159,7 +159,7 @@ public slots:
 QTextStream* new_QTextStream();
 QTextStream* new_QTextStream(QIODevice*  device);
 QTextStream* new_QTextStream(const QByteArray&  array, QIODevice::OpenMode  openMode = QIODevice::ReadOnly);
-void delete_QTextStream(QTextStream* obj) { delete obj; } 
+void delete_QTextStream(QTextStream* obj) { delete obj; }
    bool  atEnd(QTextStream* theWrappedObject) const;
    bool  autoDetectUnicode(QTextStream* theWrappedObject) const;
    QTextCodec*  codec(QTextStream* theWrappedObject) const;
@@ -229,7 +229,7 @@ virtual bool  event(QEvent*  arg__1);
 virtual bool  eventFilter(QObject*  arg__1, QEvent*  arg__2);
 virtual void timerEvent(QTimerEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtWrapper_QThreadPool : public QObject
@@ -237,7 +237,7 @@ class PythonQtWrapper_QThreadPool : public QObject
 public:
 public slots:
 QThreadPool* new_QThreadPool(QObject*  parent = 0);
-void delete_QThreadPool(QThreadPool* obj) { delete obj; } 
+void delete_QThreadPool(QThreadPool* obj) { delete obj; }
    int  activeThreadCount(QThreadPool* theWrappedObject) const;
    void clear(QThreadPool* theWrappedObject);
    int  expiryTimeout(QThreadPool* theWrappedObject) const;
@@ -270,7 +270,7 @@ virtual bool  eventFilter(QObject*  arg__1, QEvent*  arg__2);
 virtual void timerEvent(QTimerEvent*  event);
 virtual qreal  valueForTime(int  msec) const;
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QTimeLine : public QTimeLine
@@ -291,7 +291,7 @@ enum State{
   NotRunning = QTimeLine::NotRunning,   Paused = QTimeLine::Paused,   Running = QTimeLine::Running};
 public slots:
 QTimeLine* new_QTimeLine(int  duration = 1000, QObject*  parent = 0);
-void delete_QTimeLine(QTimeLine* obj) { delete obj; } 
+void delete_QTimeLine(QTimeLine* obj) { delete obj; }
    int  currentFrame(QTimeLine* theWrappedObject) const;
    int  currentTime(QTimeLine* theWrappedObject) const;
    qreal  currentValue(QTimeLine* theWrappedObject) const;
@@ -336,7 +336,7 @@ QTimeZone* new_QTimeZone(const QByteArray&  ianaId);
 QTimeZone* new_QTimeZone(const QByteArray&  zoneId, int  offsetSeconds, const QString&  name, const QString&  abbreviation, QLocale::Country  country = QLocale::AnyCountry, const QString&  comment = QString());
 QTimeZone* new_QTimeZone(const QTimeZone&  other);
 QTimeZone* new_QTimeZone(int  offsetSeconds);
-void delete_QTimeZone(QTimeZone* obj) { delete obj; } 
+void delete_QTimeZone(QTimeZone* obj) { delete obj; }
    QString  abbreviation(QTimeZone* theWrappedObject, const QDateTime&  atDateTime) const;
    QList<QByteArray >  static_QTimeZone_availableTimeZoneIds();
    QList<QByteArray >  static_QTimeZone_availableTimeZoneIds(QLocale::Country  country);
@@ -386,7 +386,7 @@ virtual bool  event(QEvent*  arg__1);
 virtual bool  eventFilter(QObject*  arg__1, QEvent*  arg__2);
 virtual void timerEvent(QTimerEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QTimer : public QTimer
@@ -399,7 +399,7 @@ class PythonQtWrapper_QTimer : public QObject
 public:
 public slots:
 QTimer* new_QTimer(QObject*  parent = 0);
-void delete_QTimer(QTimer* obj) { delete obj; } 
+void delete_QTimer(QTimer* obj) { delete obj; }
    int  interval(QTimer* theWrappedObject) const;
    bool  isActive(QTimer* theWrappedObject) const;
    bool  isSingleShot(QTimer* theWrappedObject) const;
@@ -426,7 +426,7 @@ public:
    ~PythonQtShell_QTimerEvent();
 
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtWrapper_QTimerEvent : public QObject
@@ -434,7 +434,7 @@ class PythonQtWrapper_QTimerEvent : public QObject
 public:
 public slots:
 QTimerEvent* new_QTimerEvent(int  timerId);
-void delete_QTimerEvent(QTimerEvent* obj) { delete obj; } 
+void delete_QTimerEvent(QTimerEvent* obj) { delete obj; }
    int  timerId(QTimerEvent* theWrappedObject) const;
 };
 
@@ -457,7 +457,7 @@ virtual bool  isEmpty() const;
 virtual void timerEvent(QTimerEvent*  arg__1);
 virtual QString  translate(const char*  context, const char*  sourceText, const char*  disambiguation = 0, int  n = -1) const;
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QTranslator : public QTranslator
@@ -470,7 +470,7 @@ class PythonQtWrapper_QTranslator : public QObject
 public:
 public slots:
 QTranslator* new_QTranslator(QObject*  parent = 0);
-void delete_QTranslator(QTranslator* obj) { delete obj; } 
+void delete_QTranslator(QTranslator* obj) { delete obj; }
    bool  isEmpty(QTranslator* theWrappedObject) const;
    bool  load(QTranslator* theWrappedObject, const QLocale&  locale, const QString&  filename, const QString&  prefix = QString(), const QString&  directory = QString(), const QString&  suffix = QString());
    bool  load(QTranslator* theWrappedObject, const QString&  filename, const QString&  directory = QString(), const QString&  search_delimiters = QString(), const QString&  suffix = QString());
@@ -489,7 +489,7 @@ QUrlQuery* new_QUrlQuery();
 QUrlQuery* new_QUrlQuery(const QString&  queryString);
 QUrlQuery* new_QUrlQuery(const QUrl&  url);
 QUrlQuery* new_QUrlQuery(const QUrlQuery&  other);
-void delete_QUrlQuery(QUrlQuery* obj) { delete obj; } 
+void delete_QUrlQuery(QUrlQuery* obj) { delete obj; }
    void addQueryItem(QUrlQuery* theWrappedObject, const QString&  key, const QString&  value);
    QStringList  allQueryItemValues(QUrlQuery* theWrappedObject, const QString&  key, QUrl::ComponentFormattingOptions  encoding = QUrl::PrettyDecoded) const;
    void clear(QUrlQuery* theWrappedObject);
@@ -530,7 +530,7 @@ public:
    ~PythonQtShell_QUuid();
 
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtWrapper_QUuid : public QObject
@@ -550,7 +550,7 @@ QUuid* new_QUuid(const QUuid& other) {
 PythonQtShell_QUuid* a = new PythonQtShell_QUuid();
 *((QUuid*)a) = other;
 return a; }
-void delete_QUuid(QUuid* obj) { delete obj; } 
+void delete_QUuid(QUuid* obj) { delete obj; }
    QUuid  static_QUuid_createUuid();
    QUuid  static_QUuid_createUuidV3(const QUuid&  ns, const QByteArray&  baseData);
    QUuid  static_QUuid_createUuidV3(const QUuid&  ns, const QString&  baseData);
@@ -602,7 +602,7 @@ virtual void updateCurrentValue(const QVariant&  value);
 virtual void updateDirection(QAbstractAnimation::Direction  direction);
 virtual void updateState(QAbstractAnimation::State  newState, QAbstractAnimation::State  oldState);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QVariantAnimation : public QVariantAnimation
@@ -620,7 +620,7 @@ class PythonQtWrapper_QVariantAnimation : public QObject
 public:
 public slots:
 QVariantAnimation* new_QVariantAnimation(QObject*  parent = 0);
-void delete_QVariantAnimation(QVariantAnimation* obj) { delete obj; } 
+void delete_QVariantAnimation(QVariantAnimation* obj) { delete obj; }
    QVariant  currentValue(QVariantAnimation* theWrappedObject) const;
    int  duration(QVariantAnimation* theWrappedObject) const;
    QEasingCurve  easingCurve(QVariantAnimation* theWrappedObject) const;
@@ -650,7 +650,7 @@ class PythonQtWrapper_QWaitCondition : public QObject
 public:
 public slots:
 QWaitCondition* new_QWaitCondition();
-void delete_QWaitCondition(QWaitCondition* obj) { delete obj; } 
+void delete_QWaitCondition(QWaitCondition* obj) { delete obj; }
    bool  wait(QWaitCondition* theWrappedObject, QMutex*  lockedMutex, unsigned long  time = 0xffffffffUL);
    bool  wait(QWaitCondition* theWrappedObject, QReadWriteLock*  lockedReadWriteLock, unsigned long  time = 0xffffffffUL);
    void wakeAll(QWaitCondition* theWrappedObject);
@@ -671,7 +671,7 @@ public:
 virtual QString  resolveEntity(const QString&  publicId, const QString&  systemId);
 virtual QString  resolveUndeclaredEntity(const QString&  name);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QXmlStreamEntityResolver : public QXmlStreamEntityResolver
@@ -685,7 +685,7 @@ class PythonQtWrapper_QXmlStreamEntityResolver : public QObject
 public:
 public slots:
 QXmlStreamEntityResolver* new_QXmlStreamEntityResolver();
-void delete_QXmlStreamEntityResolver(QXmlStreamEntityResolver* obj) { delete obj; } 
+void delete_QXmlStreamEntityResolver(QXmlStreamEntityResolver* obj) { delete obj; }
    QString  resolveEntity(QXmlStreamEntityResolver* theWrappedObject, const QString&  publicId, const QString&  systemId);
    QString  resolveUndeclaredEntity(QXmlStreamEntityResolver* theWrappedObject, const QString&  name);
 };

@@ -60,7 +60,7 @@ public slots:
 QMediaTimeInterval* new_QMediaTimeInterval();
 QMediaTimeInterval* new_QMediaTimeInterval(const QMediaTimeInterval&  arg__1);
 QMediaTimeInterval* new_QMediaTimeInterval(qint64  start, qint64  end);
-void delete_QMediaTimeInterval(QMediaTimeInterval* obj) { delete obj; } 
+void delete_QMediaTimeInterval(QMediaTimeInterval* obj) { delete obj; }
    bool  contains(QMediaTimeInterval* theWrappedObject, qint64  time) const;
    qint64  end(QMediaTimeInterval* theWrappedObject) const;
    bool  isNormal(QMediaTimeInterval* theWrappedObject) const;
@@ -82,7 +82,7 @@ QMediaTimeRange* new_QMediaTimeRange();
 QMediaTimeRange* new_QMediaTimeRange(const QMediaTimeInterval&  arg__1);
 QMediaTimeRange* new_QMediaTimeRange(const QMediaTimeRange&  range);
 QMediaTimeRange* new_QMediaTimeRange(qint64  start, qint64  end);
-void delete_QMediaTimeRange(QMediaTimeRange* obj) { delete obj; } 
+void delete_QMediaTimeRange(QMediaTimeRange* obj) { delete obj; }
    void addInterval(QMediaTimeRange* theWrappedObject, const QMediaTimeInterval&  interval);
    void addInterval(QMediaTimeRange* theWrappedObject, qint64  start, qint64  end);
    void addTimeRange(QMediaTimeRange* theWrappedObject, const QMediaTimeRange&  arg__1);
@@ -146,7 +146,7 @@ virtual QMediaObject*  mediaObject() const;
 virtual bool  setMediaObject(QMediaObject*  arg__1);
 virtual void timerEvent(QTimerEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QRadioData : public QRadioData
@@ -160,7 +160,7 @@ class PythonQtWrapper_QRadioData : public QObject
 public:
 public slots:
 QRadioData* new_QRadioData(QMediaObject*  mediaObject, QObject*  parent = 0);
-void delete_QRadioData(QRadioData* obj) { delete obj; } 
+void delete_QRadioData(QRadioData* obj) { delete obj; }
    QMultimedia::AvailabilityStatus  availability(QRadioData* theWrappedObject) const;
    QRadioData::Error  error(QRadioData* theWrappedObject) const;
    QString  errorString(QRadioData* theWrappedObject) const;
@@ -196,7 +196,7 @@ virtual QMediaService*  service() const;
 virtual void timerEvent(QTimerEvent*  arg__1);
 virtual void unbind(QObject*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QRadioTuner : public QRadioTuner
@@ -209,7 +209,7 @@ class PythonQtWrapper_QRadioTuner : public QObject
 public:
 public slots:
 QRadioTuner* new_QRadioTuner(QObject*  parent = 0);
-void delete_QRadioTuner(QRadioTuner* obj) { delete obj; } 
+void delete_QRadioTuner(QRadioTuner* obj) { delete obj; }
    QMultimedia::AvailabilityStatus  availability(QRadioTuner* theWrappedObject) const;
    QRadioTuner::Band  band(QRadioTuner* theWrappedObject) const;
    QRadioTuner::Error  error(QRadioTuner* theWrappedObject) const;
@@ -247,7 +247,7 @@ virtual bool  event(QEvent*  arg__1);
 virtual bool  eventFilter(QObject*  arg__1, QEvent*  arg__2);
 virtual void timerEvent(QTimerEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtWrapper_QSoundEffect : public QObject
@@ -260,7 +260,7 @@ enum Status{
   Null = QSoundEffect::Null,   Loading = QSoundEffect::Loading,   Ready = QSoundEffect::Ready,   Error = QSoundEffect::Error};
 public slots:
 QSoundEffect* new_QSoundEffect(QObject*  parent = 0);
-void delete_QSoundEffect(QSoundEffect* obj) { delete obj; } 
+void delete_QSoundEffect(QSoundEffect* obj) { delete obj; }
    QString  category(QSoundEffect* theWrappedObject) const;
    bool  isLoaded(QSoundEffect* theWrappedObject) const;
    bool  isMuted(QSoundEffect* theWrappedObject) const;
@@ -288,7 +288,7 @@ public:
 public slots:
 QVideoEncoderSettings* new_QVideoEncoderSettings();
 QVideoEncoderSettings* new_QVideoEncoderSettings(const QVideoEncoderSettings&  other);
-void delete_QVideoEncoderSettings(QVideoEncoderSettings* obj) { delete obj; } 
+void delete_QVideoEncoderSettings(QVideoEncoderSettings* obj) { delete obj; }
    int  bitRate(QVideoEncoderSettings* theWrappedObject) const;
    QString  codec(QVideoEncoderSettings* theWrappedObject) const;
    QMultimedia::EncodingMode  encodingMode(QVideoEncoderSettings* theWrappedObject) const;
@@ -331,7 +331,7 @@ QVideoFrame* new_QVideoFrame(QAbstractVideoBuffer*  buffer, const QSize&  size, 
 QVideoFrame* new_QVideoFrame(const QImage&  image);
 QVideoFrame* new_QVideoFrame(const QVideoFrame&  other);
 QVideoFrame* new_QVideoFrame(int  bytes, const QSize&  size, int  bytesPerLine, QVideoFrame::PixelFormat  format);
-void delete_QVideoFrame(QVideoFrame* obj) { delete obj; } 
+void delete_QVideoFrame(QVideoFrame* obj) { delete obj; }
    QMap<QString , QVariant >  availableMetaData(QVideoFrame* theWrappedObject) const;
    uchar*  bits(QVideoFrame* theWrappedObject);
    const uchar*  bits(QVideoFrame* theWrappedObject) const;
@@ -381,7 +381,7 @@ virtual bool  event(QEvent*  arg__1);
 virtual bool  eventFilter(QObject*  arg__1, QEvent*  arg__2);
 virtual void timerEvent(QTimerEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtWrapper_QVideoProbe : public QObject
@@ -389,7 +389,7 @@ class PythonQtWrapper_QVideoProbe : public QObject
 public:
 public slots:
 QVideoProbe* new_QVideoProbe(QObject*  parent = 0);
-void delete_QVideoProbe(QVideoProbe* obj) { delete obj; } 
+void delete_QVideoProbe(QVideoProbe* obj) { delete obj; }
    bool  isActive(QVideoProbe* theWrappedObject) const;
    bool  setSource(QVideoProbe* theWrappedObject, QMediaObject*  source);
    bool  setSource(QVideoProbe* theWrappedObject, QMediaRecorder*  source);
@@ -411,7 +411,7 @@ public slots:
 QVideoSurfaceFormat* new_QVideoSurfaceFormat();
 QVideoSurfaceFormat* new_QVideoSurfaceFormat(const QSize&  size, QVideoFrame::PixelFormat  pixelFormat, QAbstractVideoBuffer::HandleType  handleType = QAbstractVideoBuffer::NoHandle);
 QVideoSurfaceFormat* new_QVideoSurfaceFormat(const QVideoSurfaceFormat&  format);
-void delete_QVideoSurfaceFormat(QVideoSurfaceFormat* obj) { delete obj; } 
+void delete_QVideoSurfaceFormat(QVideoSurfaceFormat* obj) { delete obj; }
    int  frameHeight(QVideoSurfaceFormat* theWrappedObject) const;
    qreal  frameRate(QVideoSurfaceFormat* theWrappedObject) const;
    QSize  frameSize(QVideoSurfaceFormat* theWrappedObject) const;
@@ -498,7 +498,7 @@ virtual void tabletEvent(QTabletEvent*  arg__1);
 virtual void timerEvent(QTimerEvent*  arg__1);
 virtual void wheelEvent(QWheelEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QVideoWidget : public QVideoWidget
@@ -518,7 +518,7 @@ class PythonQtWrapper_QVideoWidget : public QObject
 public:
 public slots:
 QVideoWidget* new_QVideoWidget(QWidget*  parent = 0);
-void delete_QVideoWidget(QVideoWidget* obj) { delete obj; } 
+void delete_QVideoWidget(QVideoWidget* obj) { delete obj; }
    Qt::AspectRatioMode  aspectRatioMode(QVideoWidget* theWrappedObject) const;
    int  brightness(QVideoWidget* theWrappedObject) const;
    int  contrast(QVideoWidget* theWrappedObject) const;

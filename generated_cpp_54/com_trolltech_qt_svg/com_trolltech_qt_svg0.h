@@ -67,7 +67,7 @@ virtual void paint(QPainter*  painter, const QStyleOptionGraphicsItem*  option, 
 virtual void timerEvent(QTimerEvent*  arg__1);
 virtual int  type() const;
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QGraphicsSvgItem : public QGraphicsSvgItem
@@ -86,7 +86,7 @@ enum enum_1{
 public slots:
 QGraphicsSvgItem* new_QGraphicsSvgItem(QGraphicsItem*  parentItem = 0);
 QGraphicsSvgItem* new_QGraphicsSvgItem(const QString&  fileName, QGraphicsItem*  parentItem = 0);
-void delete_QGraphicsSvgItem(QGraphicsSvgItem* obj) { delete obj; } 
+void delete_QGraphicsSvgItem(QGraphicsSvgItem* obj) { delete obj; }
    QRectF  boundingRect(QGraphicsSvgItem* theWrappedObject) const;
    QString  elementId(QGraphicsSvgItem* theWrappedObject) const;
    bool  isCachingEnabled(QGraphicsSvgItem* theWrappedObject) const;
@@ -118,7 +118,7 @@ virtual QPaintEngine*  paintEngine() const;
 virtual QPaintDevice*  redirected(QPoint*  offset) const;
 virtual QPainter*  sharedPainter() const;
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QSvgGenerator : public QSvgGenerator
@@ -132,7 +132,7 @@ class PythonQtWrapper_QSvgGenerator : public QObject
 public:
 public slots:
 QSvgGenerator* new_QSvgGenerator();
-void delete_QSvgGenerator(QSvgGenerator* obj) { delete obj; } 
+void delete_QSvgGenerator(QSvgGenerator* obj) { delete obj; }
    QString  description(QSvgGenerator* theWrappedObject) const;
    QString  fileName(QSvgGenerator* theWrappedObject) const;
    int  metric(QSvgGenerator* theWrappedObject, QPaintDevice::PaintDeviceMetric  metric) const;
@@ -173,7 +173,7 @@ virtual bool  event(QEvent*  arg__1);
 virtual bool  eventFilter(QObject*  arg__1, QEvent*  arg__2);
 virtual void timerEvent(QTimerEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtWrapper_QSvgRenderer : public QObject
@@ -184,7 +184,7 @@ QSvgRenderer* new_QSvgRenderer(QObject*  parent = 0);
 QSvgRenderer* new_QSvgRenderer(QXmlStreamReader*  contents, QObject*  parent = 0);
 QSvgRenderer* new_QSvgRenderer(const QByteArray&  contents, QObject*  parent = 0);
 QSvgRenderer* new_QSvgRenderer(const QString&  filename, QObject*  parent = 0);
-void delete_QSvgRenderer(QSvgRenderer* obj) { delete obj; } 
+void delete_QSvgRenderer(QSvgRenderer* obj) { delete obj; }
    bool  animated(QSvgRenderer* theWrappedObject) const;
    int  animationDuration(QSvgRenderer* theWrappedObject) const;
    QRectF  boundsOnElement(QSvgRenderer* theWrappedObject, const QString&  id) const;
@@ -258,7 +258,7 @@ virtual void tabletEvent(QTabletEvent*  arg__1);
 virtual void timerEvent(QTimerEvent*  arg__1);
 virtual void wheelEvent(QWheelEvent*  arg__1);
 
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QSvgWidget : public QSvgWidget
@@ -272,7 +272,7 @@ public:
 public slots:
 QSvgWidget* new_QSvgWidget(QWidget*  parent = 0);
 QSvgWidget* new_QSvgWidget(const QString&  file, QWidget*  parent = 0);
-void delete_QSvgWidget(QSvgWidget* obj) { delete obj; } 
+void delete_QSvgWidget(QSvgWidget* obj) { delete obj; }
    void paintEvent(QSvgWidget* theWrappedObject, QPaintEvent*  event);
    QSvgRenderer*  renderer(QSvgWidget* theWrappedObject) const;
    QSize  sizeHint(QSvgWidget* theWrappedObject) const;

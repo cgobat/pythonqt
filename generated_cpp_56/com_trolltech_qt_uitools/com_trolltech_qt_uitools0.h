@@ -36,7 +36,7 @@ virtual void timerEvent(QTimerEvent*  event);
 
   const QMetaObject* metaObject() const;
   int qt_metacall(QMetaObject::Call call, int id, void** args);
-  PythonQtInstanceWrapper* _wrapper; 
+  PythonQtInstanceWrapper* _wrapper;
 };
 
 class PythonQtPublicPromoter_QUiLoader : public QUiLoader
@@ -52,7 +52,7 @@ class PythonQtWrapper_QUiLoader : public QObject
 public:
 public slots:
 QUiLoader* new_QUiLoader(QObject*  parent = NULL);
-void delete_QUiLoader(QUiLoader* obj) { delete obj; } 
+void delete_QUiLoader(QUiLoader* obj) { delete obj; }
    void addPluginPath(QUiLoader* theWrappedObject, const QString&  path);
    QStringList  availableLayouts(QUiLoader* theWrappedObject) const;
    QStringList  availableWidgets(QUiLoader* theWrappedObject) const;
