@@ -373,7 +373,7 @@ struct DeclaratorAST: public AST
 {
   DECLARE_AST_NODE(Declarator)
   enum ValueReferenceEnum { UnspecifiedRef, Lvalue, Rvalue }; // "&" or "&&" after member function
-  
+
   DeclaratorAST() = default;
   const ListNode<PtrOperatorAST*> *ptr_ops{};
   DeclaratorAST *sub_declarator{};

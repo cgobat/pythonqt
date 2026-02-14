@@ -291,7 +291,7 @@ void Binder::declare_symbol(SimpleDeclarationAST *node, InitDeclaratorAST *init_
       fun->setTemplateParameters(_M_current_template_parameters);
       applyStorageSpecifiers(node->storage_specifiers, model_static_cast<MemberModelItem>(fun));
       applyFunctionSpecifiers(node->function_specifiers, fun);
-      
+
       if (const ListNode<InitDeclaratorAST*> *it = node->init_declarators)
       {
         it = it->toFront();
@@ -471,7 +471,7 @@ void Binder::visitFunctionDefinition(FunctionDefinitionAST *node)
   foreach (DeclaratorCompiler::Parameter p, decl_cc.parameters())
     {
       ArgumentModelItem arg = model()->create<ArgumentModelItem>();
-      
+
       if (_M_current_class && _M_current_class->isTemplateClass())
         {
           QStringList qualifiedName = p.type.qualifiedName();

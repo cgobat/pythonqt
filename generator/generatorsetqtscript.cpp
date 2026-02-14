@@ -48,12 +48,12 @@ GeneratorSet *GeneratorSet::getInstance() {
     return new GeneratorSetQtScript();
 }
 
-GeneratorSetQtScript::GeneratorSetQtScript() 
+GeneratorSetQtScript::GeneratorSetQtScript()
 {}
 
 QString GeneratorSetQtScript::usage() {
     QString usage =
-        "QtScript:\n" 
+        "QtScript:\n"
         "  --nothing-to-report-yet                   \n";
         "  --max-classes-per-file=<n>                \n";
 
@@ -82,7 +82,7 @@ void GeneratorSetQtScript::buildModel(const QString pp_file) {
 }
 
 void GeneratorSetQtScript::dumpObjectTree() {
- 
+
 }
 
 QString GeneratorSetQtScript::generate() {

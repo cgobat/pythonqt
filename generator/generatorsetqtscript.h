@@ -63,7 +63,7 @@ public:
 private:
     MetaQtScriptBuilder builder;
     int maxClassesPerFile{30};
-  
+
 };
 
 #endif // GENERATOR_SET_QT_SCRIPT_H

@@ -45,7 +45,7 @@
 #include "PythonQtQFileImporter.h"
 
 PythonQtQFileImporter::PythonQtQFileImporter() {
-}    
+}
 
 PythonQtQFileImporter::~PythonQtQFileImporter()  {
 }

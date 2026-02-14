@@ -423,7 +423,7 @@ static PyObject *PythonQtInstanceWrapper_getattro(PyObject *obj,PyObject *name)
           if (PyDict_Check(result)) {
             PyDict_Merge(dict, result, false);
           } else {
-            std::cerr << "py_dynamic_dict() should return a dictionary!" << std::endl; 
+            std::cerr << "py_dynamic_dict() should return a dictionary!" << std::endl;
           }
         }
       }
@@ -930,11 +930,11 @@ PyTypeObject PythonQtInstanceWrapper_Type = {
     0,                                           /* tp_weaklistoffset */
     nullptr,                                     /* tp_iter */
     nullptr,                                     /* tp_iternext */
-#ifdef PY3K                                      
-    PythonQtInstanceWrapper_methods,             
-#else                                            
+#ifdef PY3K
+    PythonQtInstanceWrapper_methods,
+#else
     0,                                           /* tp_methods */
-#endif                                           
+#endif
     nullptr,                                     /* tp_members */
     nullptr,                                     /* tp_getset */
     nullptr,                                     /* tp_base */

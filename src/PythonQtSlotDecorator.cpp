@@ -65,7 +65,7 @@ int PythonQtSlotDecorator_init(PyObject *object, PyObject *args, PyObject *kw)
   }
 
   QList<QByteArray> argList;
- 
+
   Py_ssize_t argc = PyTuple_Size(args);
   for (Py_ssize_t i = 0; i < argc; i++) {
     PyObject *argType = PyTuple_GET_ITEM(args, i);
@@ -79,7 +79,7 @@ int PythonQtSlotDecorator_init(PyObject *object, PyObject *args, PyObject *kw)
   }
 
   *self->args = argList.join(",");
-  
+
   return 1;
 }
 

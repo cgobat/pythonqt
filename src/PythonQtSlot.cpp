@@ -74,7 +74,7 @@ bool PythonQtCallSlot(PythonQtClassInfo* classInfo, QObject* objectToCall, PyObj
 
   // set return argument to NULL
   argList[0] = nullptr;
-  
+
   bool ok = true;
   PythonQtPassThisOwnershipType passThisOwnership = IgnoreOwnership;
 
@@ -206,7 +206,7 @@ bool PythonQtCallSlot(PythonQtClassInfo* classInfo, QObject* objectToCall, PyObj
 #endif
       }
     }
-  
+
     if (profilingCB) {
       profilingCB(PythonQt::Leave, nullptr, nullptr, nullptr);
     }
@@ -237,7 +237,7 @@ bool PythonQtCallSlot(PythonQtClassInfo* classInfo, QObject* objectToCall, PyObj
   PythonQtArgumentFrame::deleteFrame(frame);
 
   *pythonReturnValue = result;
-  
+
   if (result && returnValueParam.passOwnershipToPython) {
     // if the ownership should be passed to PythonQt, it has to be a PythonQtInstanceWrapper,
     // cast it and pass the ownership
@@ -247,7 +247,7 @@ bool PythonQtCallSlot(PythonQtClassInfo* classInfo, QObject* objectToCall, PyObj
     }
     // NOTE: a return value can not pass the ownership to CPP, it would not make sense...
   }
-  // Either we have a 
+  // Either we have a
   // a) a result value
   // b) a directReturnValuePointer and it has a value or the return value is void
   // NOTE: it is important to only return here, otherwise the stack will not be popped!!!
@@ -358,7 +358,7 @@ PyObject *PythonQtSlotFunction_CallImpl(PythonQtClassInfo* classInfo, QObject* o
 
   if( (kw != nullptr && PyDict_Check(kw) && (PyDict_Size(kw) > 0)) ) {
     // -------------------keyword args slot call -------------------------
-    
+
     // keyword arguments are given as dict, must be mapped to arguments in correct order
     // very complicated, so call them only on a slot with last variable name kwargs
     // slot must be implemented as

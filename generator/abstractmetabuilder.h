@@ -96,7 +96,7 @@ public:
     void traverseStreamOperator(FunctionModelItem function_item);
     void traverseCompareOperator(FunctionModelItem item);
     void traverseBinaryArithmeticOperator(FunctionModelItem item);
-    
+
     //! remove functions/methods that are overloads with equivalent parameter types
     //! when called from Python
     void removeEquivalentFunctions(AbstractMetaClass* parent);
@@ -128,7 +128,7 @@ public:
     bool isQObject(const QString &qualified_name);
     bool isEnum(const QStringList &qualified_name);
 
-    void fixQObjectForScope  (TypeDatabase *types, 
+    void fixQObjectForScope  (TypeDatabase *types,
                               NamespaceModelItem item);
 
     // QtScript
@@ -156,7 +156,7 @@ private:
     AbstractMetaClassList m_meta_classes;
     QHash<QString,AbstractMetaClass*> m_templates;
     FileModelItem m_dom;
-    
+
     QSet<const TypeEntry *> m_used_types;
 
     QMap<QString, RejectReason> m_rejected_classes;

@@ -56,7 +56,7 @@ QString ShellImplGenerator::fileNameForClass(const AbstractMetaClass *meta_class
 }
 
 /* UNUSED
-static bool include_less_than(const Include &a, const Include &b) 
+static bool include_less_than(const Include &a, const Include &b)
 {
   return a.name < b.name;
 }
@@ -76,7 +76,7 @@ void ShellImplGenerator::write(QTextStream &s, const AbstractMetaClass *meta_cla
   QString fileBaseName = toFileNameBase(meta_class->package() + builtIn);
   QString pro_file_name = fileBaseName + "/" + fileBaseName + ".pri";
   priGenerator->addSource(pro_file_name, fileNameForClass(meta_class));
-  
+
   s << "#include \"PythonQtWrapper_" << meta_class->name() << ".h\"" << endl << endl;
 
   s << "#include <PythonQtSignalReceiver.h>" << endl;
@@ -90,7 +90,7 @@ void ShellImplGenerator::write(QTextStream &s, const AbstractMetaClass *meta_cla
   std::sort(list.begin(), list.end());
   foreach (const Include &inc, list) {
     ShellGenerator::writeInclude(s, inc);
-  }  
+  }
   s << endl;
 
   writeHelperCode(s, meta_class);
@@ -351,12 +351,12 @@ void ShellImplGenerator::write(QTextStream &s, const AbstractMetaClass *meta_cla
   }
 
   if (meta_class->hasDefaultToStringFunction()) {
-    s << "QString PythonQtWrapper_" << meta_class->name() << "::py_toString(" << meta_class->qualifiedCppName() << "* obj) { return obj->toString(); }" << endl; 
+    s << "QString PythonQtWrapper_" << meta_class->name() << "::py_toString(" << meta_class->qualifiedCppName() << "* obj) { return obj->toString(); }" << endl;
   } else if (meta_class->hasToStringCapability()) {
     FunctionModelItem fun = meta_class->hasToStringCapability();
     int indirections = fun->arguments().at(1)->type().indirections();
     QString deref = QLatin1String(indirections == 0 ? "*" : "");
-    s << "QString PythonQtWrapper_" << meta_class->name() << "::py_toString(" << meta_class->qualifiedCppName() << "* obj) {" << endl; 
+    s << "QString PythonQtWrapper_" << meta_class->name() << "::py_toString(" << meta_class->qualifiedCppName() << "* obj) {" << endl;
     s << "  QString result;" << endl;
     s << "  QDebug d(&result);" << endl;
     s << "  d << " << deref  << "obj;" << endl;

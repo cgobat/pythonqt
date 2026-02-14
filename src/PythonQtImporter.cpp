@@ -651,7 +651,7 @@ PythonQtImport::unmarshalCode(const QString& path, const QByteArray& data, time_
 
 #ifdef PY3K
   // Python 3 also stores the size of the *.py file, but we ignore it for now
-  int sourceSize = getLong((unsigned char *)buf + 8); 
+  int sourceSize = getLong((unsigned char *)buf + 8);
   Q_UNUSED(sourceSize)
   // read the module
   code = PyMarshal_ReadObjectFromString(buf + 12, size - 12);

@@ -85,7 +85,7 @@ static PyNumberMethods PythonQtBoolResult_as_number = {
   nullptr,      /* nb_and */
   nullptr,      /* nb_xor */
   nullptr,      /* nb_or */
-#ifndef PY3K   
+#ifndef PY3K
   nullptr,      /* nb_coerce */
 #endif
   nullptr,      /* nb_int */

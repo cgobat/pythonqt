@@ -69,7 +69,7 @@ static void collectAndRemoveFile(QTextStream& stream, const QString& file) {
     QFile::remove(file);
   }
 }
-                   
+
 static QString combineIncludes(const QString& text) {
   QStringList lines = text.split('\n');
   QSet<QString> includes;
@@ -137,13 +137,13 @@ void PriGenerator::generate()
 
         std::sort(list.begin(), list.end());
         FileOut file(m_out_dir + "/generated_cpp/" + pri.key());
-      
+
         // strange idea to do the file compacting so late, but it is the most effective way without patching the generator a lot
         bool compact = true;
         if (compact) {
-          list = compactFiles(list, ".h", m_out_dir + "/generated_cpp/" + folder, folder); 
+          list = compactFiles(list, ".h", m_out_dir + "/generated_cpp/" + folder, folder);
         }
-      
+
         file.stream << "HEADERS += \\\n";
         foreach (const QString &entry, list) {
           file.stream << "           $$PWD/" << entry << " \\\n";
@@ -154,7 +154,7 @@ void PriGenerator::generate()
         list = pri.value().sources;
         std::sort(list.begin(), list.end());
         if (compact) {
-          list = compactFiles(list, ".cpp", m_out_dir + "/generated_cpp/" + folder, folder); 
+          list = compactFiles(list, ".cpp", m_out_dir + "/generated_cpp/" + folder, folder);
         }
         foreach (const QString &entry, list) {
             file.stream << "           $$PWD/" << entry << " \\\n";

@@ -136,7 +136,7 @@ void PythonQt::init(int flags, const QByteArray& pythonQtModuleName)
     PythonQtRegisterToolClassesTemplateConverter(quint32);
     PythonQtRegisterToolClassesTemplateConverter(qint64);
     PythonQtRegisterToolClassesTemplateConverter(quint64);
-    
+
 #ifdef PYTHONQT_SUPPORT_ML_TYPES
     PythonQtMethodInfo::addParameterTypeAlias("QList<MLfloat>", "QList<float>");
     PythonQtMethodInfo::addParameterTypeAlias("QVector<MLfloat>", "QVector<float>");
@@ -296,7 +296,7 @@ void PythonQt::init(int flags, const QByteArray& pythonQtModuleName)
       "QtFatalMsg",
       "QtSystemMsg"
     };
-    
+
     for (auto i = 0u; i < sizeof(enumValues)/sizeof(int); i++) {
       PyObject* obj = PyInt_FromLong(enumValues[i]);
       if (PyModule_AddObject(pack, enumNames[i], obj) == 0) {
@@ -703,7 +703,7 @@ PyObject* PythonQtPrivate::wrapPtr(void* ptr, const QByteArray& name, bool passO
       return (PyObject*)wrap;
     }
 
-    // not a known QObject, try to wrap via foreign wrapper factories 
+    // not a known QObject, try to wrap via foreign wrapper factories
     PyObject* foreignWrapper = nullptr;
     for (int i=0; i<_foreignWrapperFactories.size(); i++) {
       foreignWrapper = _foreignWrapperFactories.at(i)->wrap(name, ptr);
@@ -1094,7 +1094,7 @@ PythonQtObjectPtr PythonQt::parseFileWithPythonLoaders(const QString& file)
     loader.setNewRef(callAndReturnPyObject(loaderClass, args));
     QVariantList args2;
     args2 << dummy;
-    PythonQtObjectPtr getCode; 
+    PythonQtObjectPtr getCode;
     getCode.setNewRef(PyObject_GetAttrString(loader, "get_code"));
     result.setNewRef(callAndReturnPyObject(getCode, args2));
     if (!result) {
@@ -1341,28 +1341,28 @@ PyObject* PythonQt::getObjectByType(const QString& typeName)
   sys.setNewRef(PyImport_ImportModule("sys"));
   PythonQtObjectPtr modules = lookupObject(sys, "modules");
   Q_ASSERT(PyDict_Check(modules));
-  
+
   QStringList tmp = typeName.split(".");
   QString simpleTypeName = tmp.takeLast();
   QString moduleName = tmp.join(".");
-  
+
   PyObject* object = nullptr;
   PyObject* moduleObject = PyDict_GetItemString(modules, QStringToPythonCharPointer(moduleName));
   if (moduleObject) {
     object = PyObject_GetAttrString(moduleObject, QStringToPythonCharPointer(simpleTypeName));
   }
-  
+
   if (!object) {
     moduleObject = PyDict_GetItemString(modules, "__builtin__");
     if (moduleObject) {
       object = PyObject_GetAttrString(moduleObject, QStringToPythonCharPointer(simpleTypeName));
     }
   }
-  
+
   PyErr_Clear();
   return object;
 }
-  
+
 QStringList PythonQt::introspectType(const QString& typeName, ObjectType type)
 {
   QStringList results;
@@ -1907,7 +1907,7 @@ QString PythonQt::getReturnTypeOfWrappedMethod(PyObject* module, const QString& 
   QStringList tmp = name.split(".");
   QString methodName = tmp.takeLast();
   QString variableName = tmp.join(".");
-  PythonQtObjectPtr variableObject = lookupObject(module, variableName);  
+  PythonQtObjectPtr variableObject = lookupObject(module, variableName);
   if (variableObject.isNull()) {
     // try lookup by interpreting the variableName as a type
     QString type = getReturnTypeOfWrappedMethod(variableName, methodName);
@@ -1936,9 +1936,9 @@ QString PythonQt::getReturnTypeOfWrappedMethodHelper(const PythonQtObjectPtr& va
   if (methodObject.isNull()) {
     return "";
   }
-    
+
   QString type;
-  
+
   if (PythonQtUtils::isPythonClassType(methodObject)) {
     // the methodObject is not a method, but the name of a type/class. This means
     // a constructor is called. Return the context.
@@ -2436,13 +2436,13 @@ void PythonQtPrivate::callMethodInPython(QMetaMethod &method, PythonQtInstanceWr
 QString PythonQtPrivate::getSignature(PyObject* object)
 {
   QString signature;
-  
+
   if (object) {
     PyMethodObject* method = nullptr;
     PyFunctionObject* func = nullptr;
-    
+
     bool decrefMethod = false;
-    
+
     if (PythonQtUtils::isPythonClassType(object)) {
       method = (PyMethodObject*)PyObject_GetAttrString(object, "__init__");
       decrefMethod = true;
@@ -2478,7 +2478,7 @@ QString PythonQtPrivate::getSignature(PyObject* object)
         }
       }
     }
-    
+
     if (func) {
       QString funcName;
       PyObject* s = PyObject_GetAttrString((PyObject*)func, "__name__");
@@ -2495,7 +2495,7 @@ QString PythonQtPrivate::getSignature(PyObject* object)
           Py_DECREF(s);
         }
       }
-        
+
       QStringList arguments;
       QStringList defaults;
       QString varargs;
@@ -2525,7 +2525,7 @@ QString PythonQtPrivate::getSignature(PyObject* object)
         }
         Py_DECREF(co_varnames);
       }
-      
+
       PyObject* defaultsTuple = func->func_defaults;
       if (defaultsTuple) {
         Q_ASSERT(PyTuple_Check(defaultsTuple));
@@ -2537,7 +2537,7 @@ QString PythonQtPrivate::getSignature(PyObject* object)
           Py_DECREF(s);
         }
       }
-      
+
       int firstdefault = arguments.size() - defaults.size();
       for (int i=0; i<arguments.size(); i++) {
         if (!signature.isEmpty()) { signature += ", "; }
@@ -2558,12 +2558,12 @@ QString PythonQtPrivate::getSignature(PyObject* object)
       }
       signature = funcName + "(" + signature + ")";
     }
-    
+
     if (method && decrefMethod) {
       Py_DECREF(method);
     }
   }
-  
+
   return signature;
 }
 

@@ -289,7 +289,7 @@ bool PythonQtPropertyData::callReset(PyObject* wrapper)
     bool ok = (result != nullptr);
     Py_XDECREF(result);
     Py_DECREF(pyargs);
-    return ok; 
+    return ok;
   } else {
     PyErr_Format(PyExc_TypeError, "Property is not resettable.");
     return false;

@@ -93,7 +93,7 @@ void ShellGenerator::writeTypeInfo(QTextStream &s, const AbstractMetaType *type,
     }
 
     if (type->instantiations().size() > 0
-        && (!te->isContainer() 
+        && (!te->isContainer()
             || (static_cast<const ContainerTypeEntry *>(te))->type() != ContainerTypeEntry::StringListContainer)) {
         s << '<';
         QList<AbstractMetaType *> args = type->instantiations();
@@ -117,7 +117,7 @@ void ShellGenerator::writeTypeInfo(QTextStream &s, const AbstractMetaType *type,
     if (type->isReference() && (options & ConvertReferenceToPtr)) {
       s << "*";
     }
-    
+
 
     if (!(options & SkipName))
         s << ' ';
@@ -167,7 +167,7 @@ void ShellGenerator::writeFunctionArguments(QTextStream &s,
           }
         }
         if ((option & IncludeDefaultExpression) && !arg->defaultValueExpression().isEmpty()) {
-            s << " = "; 
+            s << " = ";
 
             QString expr = arg->defaultValueExpression();
           if (expr == "NULL")
@@ -197,8 +197,8 @@ void ShellGenerator::writeFunctionArguments(QTextStream &s,
               s << qualifier << "::";
             }
           }
-          
-            s << expr; 
+
+            s << expr;
         }
     }
 }
@@ -269,7 +269,7 @@ void ShellGenerator::writeFunctionSignature(QTextStream &s,
     if (meta_function->isStatic() && (option & ShowStatic)) {
       function_name = "static_" + meta_function->ownerClass()->name() + "_" + function_name;
     }
-  
+
     if (function_name.startsWith("operator")) {
       function_name = meta_function->name();
     }
@@ -284,12 +284,12 @@ void ShellGenerator::writeFunctionSignature(QTextStream &s,
     s << "(";
 
   if ((option & FirstArgIsWrappedObject) && meta_function->ownerClass() && !meta_function->isConstructor() && !meta_function->isStatic()) {
-    s << meta_function->ownerClass()->qualifiedCppName() << "* theWrappedObject"; 
+    s << meta_function->ownerClass()->qualifiedCppName() << "* theWrappedObject";
     if (meta_function->arguments().size() != 0) {
       s << ", ";
     }
   }
-  
+
    writeFunctionArguments(s, meta_function, Option(option & Option(~ConvertReferenceToPtr)), numArguments);
 
     // The extra arguments...
@@ -338,11 +338,11 @@ bool ShellGenerator::functionNeedsNormalWrapperSlot(const AbstractMetaFunction* 
 
 AbstractMetaFunctionList ShellGenerator::getFunctionsToWrap(const AbstractMetaClass* meta_class)
 {
-  AbstractMetaFunctionList functions = meta_class->queryFunctions( 
+  AbstractMetaFunctionList functions = meta_class->queryFunctions(
     AbstractMetaClass::NormalFunctions | AbstractMetaClass::WasVisible
     | AbstractMetaClass::NotRemovedFromTargetLang | AbstractMetaClass::ClassImplements
     );
-  AbstractMetaFunctionList functions2 = meta_class->queryFunctions( 
+  AbstractMetaFunctionList functions2 = meta_class->queryFunctions(
     AbstractMetaClass::VirtualFunctions | AbstractMetaClass::WasVisible
     | AbstractMetaClass::NotRemovedFromTargetLang | AbstractMetaClass::ClassImplements
     );
@@ -378,7 +378,7 @@ AbstractMetaFunctionList ShellGenerator::getFunctionsToWrap(const AbstractMetaCl
 
 AbstractMetaFunctionList ShellGenerator::getVirtualFunctionsForShell(const AbstractMetaClass* meta_class)
 {
-  AbstractMetaFunctionList functions = meta_class->queryFunctions( 
+  AbstractMetaFunctionList functions = meta_class->queryFunctions(
     AbstractMetaClass::VirtualFunctions | AbstractMetaClass::WasVisible
         | AbstractMetaClass::NotRemovedFromTargetLang
     );
@@ -388,8 +388,8 @@ AbstractMetaFunctionList ShellGenerator::getVirtualFunctionsForShell(const Abstr
 
 AbstractMetaFunctionList ShellGenerator::getProtectedFunctionsThatNeedPromotion(const AbstractMetaClass* meta_class)
 {
-  AbstractMetaFunctionList functions; 
-  AbstractMetaFunctionList functions1 = getFunctionsToWrap(meta_class); 
+  AbstractMetaFunctionList functions;
+  AbstractMetaFunctionList functions1 = getFunctionsToWrap(meta_class);
   for (AbstractMetaFunction* func :  functions1) {
     if (func->wasProtected() || func->isVirtual()) {
       functions << func;

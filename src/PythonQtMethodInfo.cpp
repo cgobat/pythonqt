@@ -461,7 +461,7 @@ void PythonQtSlotInfo::deleteOverloadsAndThis()
 
 
 QString PythonQtSlotInfo::fullSignature(bool skipReturnValue, int optionalArgsIndex) const
-{ 
+{
   int firstArgOffset = isInstanceDecorator()?2:1;
   QString result;
   QByteArray sig = slotName();
@@ -527,13 +527,13 @@ QString PythonQtSlotInfo::fullSignature(bool skipReturnValue, int optionalArgsIn
 
   if (isStatic) {
     result = QString("static ") + result;
-  } 
+  }
   if (isConstructor) {
 //    result = QString("constructor ") + result;
-  } 
+  }
   if (isDestructor) {
     result = QString("~") + result;
-  } 
+  }
 
   if (!skipReturnValue) {
     if (!_parameters.at(0).name.isEmpty()) {
@@ -551,7 +551,7 @@ QByteArray PythonQtSlotInfo::slotName(bool removeDecorators) const
   if (removeDecorators) {
     if (name.startsWith("py_q_")) {
       name = name.mid(5);
-    } else 
+    } else
     if (name.startsWith("static_")) {
       name = name.mid(7);
       int idx = name.indexOf("_");

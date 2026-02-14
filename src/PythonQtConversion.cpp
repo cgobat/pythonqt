@@ -1044,7 +1044,7 @@ double PythonQtConv::PyObjGetDouble(PyObject* val, bool strict, bool &ok) {
   return d;
 }
 
-template <typename Map> 
+template <typename Map>
 void PythonQtConv::pythonToMapVariant(PyObject* val, QVariant& result)
 {
   if (PyMapping_Check(val)) {
@@ -1084,7 +1084,7 @@ QVariant PythonQtConv::PyObjToQVariant(PyObject* val, int type)
   QVariant v;
   bool ok = true;
 
-  if (type == -1 
+  if (type == -1
 #if QT_VERSION >= 0x040800
     || type == QMetaType::QVariant
 #endif
@@ -1321,7 +1321,7 @@ QVariant PythonQtConv::PyObjToQVariant(PyObject* val, int type)
         }
       }
     } else if (static_cast<std::uint32_t>(type) >= QVariant::UserType) {
-      // not an instance wrapper, but there might be other converters 
+      // not an instance wrapper, but there might be other converters
       // Maybe we have a special converter that is registered for that type:
       PythonQtConvertPythonToMetaTypeCB* converter = _pythonToMetaTypeConverters.value(type);
       if (converter) {

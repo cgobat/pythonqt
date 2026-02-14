@@ -90,7 +90,7 @@ static QStringList getOperatorCodes(const AbstractMetaClass* cls) {
       r.insert("PythonQt::Type_Xor");
     } else if (op == "~") {
       r.insert("PythonQt::Type_Invert");
-    
+
     } else if (op == "+=") {
       r.insert("PythonQt::Type_InplaceAdd");
     } else if (op == "-=") {
@@ -179,7 +179,7 @@ static QSet<QString> _builtinListTypes = QSet<QString>() << "QByteArray"
 static void addListRegistration(AbstractMetaType* type, QSet<QString>& output) {
   if (type->instantiations().size() > 0) {
     QList<AbstractMetaType *> args = type->instantiations();
-    
+
     /*
     QString debugStr;
     Q_FOREACH(AbstractMetaType* arg, args) {

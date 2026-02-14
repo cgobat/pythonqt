@@ -809,7 +809,7 @@ bool Parser::parseUsingTypedef(DeclarationAST*& node)
 
     return true;
 }
-    
+
 bool Parser::parseUsingDirective(DeclarationAST *&node)
 {
   std::size_t start = token_stream.cursor();
@@ -2088,7 +2088,7 @@ bool Parser::parseClassSpecifier(TypeSpecifierAST *&node)
 
   NameAST *name = 0;
   parseName(name, true);
-  
+
   BaseClauseAST *bases = 0;
 
   if (token_stream.lookAhead() == ':')
@@ -2389,7 +2389,7 @@ bool Parser::parseInitDeclarator(InitDeclaratorAST *&node)
       token_stream.nextToken();
       return true;
     }
-      
+
   DeclaratorAST *decl = 0;
   if (!parseDeclarator(decl))
     {

@@ -443,7 +443,7 @@ bool AbstractMetaFunction::resetObjectAfterUse(int argument_idx) const
         QList<ArgumentModification> argumentModifications = modification.argument_mods;
         foreach (ArgumentModification argumentModification, argumentModifications) {
             if (argumentModification.index == argument_idx && argumentModification.reset_after_use)
-                return true;            
+                return true;
         }
     }
 
@@ -1688,7 +1688,7 @@ void AbstractMetaClass::fixFunctions()
                 AbstractMetaFunction *f = funcs.at(fi);
                 if (f->isRemovedFromAllLanguages(f->implementingClass()))
                     continue;
-                
+
                 uint cmp = f->compareTo(sf);
 
                 if (cmp & AbstractMetaFunction::EqualModifiedName) {
@@ -1878,7 +1878,7 @@ void AbstractMetaClass::fixFunctions()
 
     // we don't care about FinalOverload for PythonQt, so we
     // can remove this compare orgy...
-    
+
     /*foreach (AbstractMetaFunction *f1, funcs) {
         foreach (AbstractMetaFunction *f2, funcs) {
             if (f1 != f2) {

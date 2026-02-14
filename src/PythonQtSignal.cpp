@@ -188,7 +188,7 @@ int PythonQtSignalFunction_init(PyObject *object, PyObject *args, PyObject *kw)
   Q_UNUSED(kw)
   PythonQtSignalFunctionObject* self = (PythonQtSignalFunctionObject*)object;
   self->_dynamicInfo = new PythonQtDynamicSignalInfo();
-  
+
   QList<QByteArray> argList;
   Py_ssize_t argc = PyTuple_Size(args);
   for (Py_ssize_t i = 0; i < argc; i++) {
@@ -211,7 +211,7 @@ int PythonQtSignalFunction_init(PyObject *object, PyObject *args, PyObject *kw)
           }
           Py_XDECREF(value);
         }
-        self->_dynamicInfo->signatures << localArgList.join(","); 
+        self->_dynamicInfo->signatures << localArgList.join(",");
       }
     } else {
       // normal signature (not given as overload sequences)

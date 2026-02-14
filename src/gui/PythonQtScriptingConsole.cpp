@@ -305,7 +305,7 @@ void PythonQtScriptingConsole::handleTabCompletion()
         found << n;
       }
     }
-    
+
     if (!found.isEmpty()) {
       _completer->setCompletionPrefix(compareText);
       _completer->setCompletionMode(QCompleter::PopupCompletion);
@@ -344,7 +344,7 @@ void PythonQtScriptingConsole::keyPressEvent(QKeyEvent* event) {
     case Qt::Key_Escape:
     case Qt::Key_Tab:
     case Qt::Key_Backtab:
-    
+
       event->ignore();
       return; // let the completer do default behavior
     default:
@@ -488,7 +488,7 @@ bool PythonQtScriptingConsole::verifySelectionBeforeDeletion() {
 
   bool deletionAllowed = true;
 
-  
+
   QTextCursor textCursor = this->textCursor();
 
   int commandPromptPosition = this->commandPromptPosition();

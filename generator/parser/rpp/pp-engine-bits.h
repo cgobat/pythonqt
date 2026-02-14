@@ -421,7 +421,7 @@ InputIterator pp::handle_include (bool _skip_current_path, InputIterator _first,
 
   std::string filepath;
   FILE *fp = find_include_file (filename, &filepath, quote == '>' ? INCLUDE_GLOBAL : INCLUDE_LOCAL, _skip_current_path);
-  
+
 #if defined (PP_HOOK_ON_FILE_INCLUDED)
       PP_HOOK_ON_FILE_INCLUDED (env.current_file, fp ? filepath : filename, fp);
 #endif

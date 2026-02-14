@@ -99,7 +99,7 @@ public:
     static QString toFileNameBase(QString packageName) { return packageName.replace('.', '_').toLower(); }
 
     static void writeInclude(QTextStream &stream, const Include &inc);
-  
+
     // this scope is used in writeFunctionArguments
     const AbstractMetaClass* setCurrentScope(const AbstractMetaClass* scope);
     const AbstractMetaClass* currentScope() const { return _currentScope; }

@@ -51,37 +51,37 @@ class MetaQtScriptBuilder : public AbstractMetaBuilder
  protected:
     virtual MetaQtScriptClass *createMetaClass()
         {
-            return new MetaQtScriptClass();            
+            return new MetaQtScriptClass();
         };
 
     virtual MetaQtScriptEnum *createMetaEnum()
         {
-            return new MetaQtScriptEnum();    
+            return new MetaQtScriptEnum();
         };
 
     virtual MetaQtScriptEnumValue *createMetaEnumValue()
         {
-            return new MetaQtScriptEnumValue();    
+            return new MetaQtScriptEnumValue();
         };
-    
+
     virtual MetaQtScriptField *createMetaField()
         {
-            return new MetaQtScriptField();    
+            return new MetaQtScriptField();
         };
 
     virtual MetaQtScriptFunction *createMetaFunction()
         {
-            return new MetaQtScriptFunction(); 
+            return new MetaQtScriptFunction();
         };
 
     virtual MetaQtScriptArgument *createMetaArgument()
         {
-            return new MetaQtScriptArgument(); 
+            return new MetaQtScriptArgument();
         };
 
     virtual MetaQtScriptType *createMetaType()
         {
-            return new MetaQtScriptType(); 
+            return new MetaQtScriptType();
         };
 
 };
