@@ -2,6 +2,8 @@ DEFINES +=  PYTHONQT_EXPORTS
 
 INCLUDEPATH += $$PWD
 
+CONFIG += c++11
+
 gcc:!no_warn:!clang:QMAKE_CXXFLAGS += -Wno-error=missing-field-initializers
 *-clang*:!no_warn:QMAKE_CXXFLAGS += -Wno-error=sometimes-uninitialized
 
@@ -40,7 +42,7 @@ HEADERS +=                    \
   $$PWD/PythonQtUtils.h \
   $$PWD/PythonQtBoolResult.h \
   $$PWD/PythonQtThreadSupport.h \
-  
+
 SOURCES +=                    \
   $$PWD/PythonQtStdDecorators.cpp   \
   $$PWD/PythonQt.cpp                \

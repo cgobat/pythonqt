@@ -25,7 +25,7 @@
     <modify-function signature="contains(const QString &amp;)">
       <modify-argument index="1">
         <replace-default-expression with="QLatin1String(QSqlDatabase::defaultConnection)"/>
-      </modify-argument>      
+      </modify-argument>
     </modify-function>
     <modify-function signature="database(const QString &amp;,bool)">
       <modify-argument index="1">
@@ -115,7 +115,9 @@
       <modify-function signature="virtual_hook(int,void*)">
         <remove/>
       </modify-function>
-
+      <modify-function signature="boundValues(Qt::Disambiguated_t)">
+        <remove/>
+      </modify-function>
   </object-type>
   <object-type name="QSqlTableModel">
     <extra-includes>
