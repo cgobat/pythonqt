@@ -1,47 +1,47 @@
 #include <PythonQt.h>
 #include <QObject>
 #include <QVariant>
-#include <qabstractvideobuffer.h>
-#include <qaudiodeviceinfo.h>
+#include <QtMultimedia/qabstractvideobuffer.h>
+#include <QtMultimedia/qaudiodeviceinfo.h>
+#include <QtMultimedia/qmediacontent.h>
+#include <QtMultimedia/qmediacontrol.h>
+#include <QtMultimedia/qmediaencodersettings.h>
+#include <QtMultimedia/qmediaobject.h>
+#include <QtMultimedia/qmediaplaylist.h>
+#include <QtMultimedia/qmediarecorder.h>
+#include <QtMultimedia/qmediarecordercontrol.h>
+#include <QtMultimedia/qmediaresource.h>
+#include <QtMultimedia/qmediaservice.h>
+#include <QtMultimedia/qmediaserviceproviderplugin.h>
+#include <QtMultimedia/qmediastreamscontrol.h>
+#include <QtMultimedia/qmediatimerange.h>
+#include <QtMultimedia/qmediavideoprobecontrol.h>
+#include <QtMultimedia/qmetadatareadercontrol.h>
+#include <QtMultimedia/qmetadatawritercontrol.h>
+#include <QtMultimedia/qmultimedia.h>
+#include <QtMultimedia/qradiodata.h>
+#include <QtMultimedia/qradiodatacontrol.h>
+#include <QtMultimedia/qradiotuner.h>
+#include <QtMultimedia/qradiotunercontrol.h>
+#include <QtMultimedia/qsound.h>
+#include <QtMultimedia/qsoundeffect.h>
+#include <QtMultimedia/qvideodeviceselectorcontrol.h>
+#include <QtMultimedia/qvideoencodersettingscontrol.h>
+#include <QtMultimedia/qvideoframe.h>
+#include <QtMultimedia/qvideoprobe.h>
 #include <qbytearray.h>
 #include <qcoreevent.h>
 #include <qimage.h>
 #include <qiodevice.h>
 #include <qlist.h>
-#include <qmediacontent.h>
-#include <qmediacontrol.h>
-#include <qmediaencodersettings.h>
-#include <qmediaobject.h>
-#include <qmediaplaylist.h>
-#include <qmediarecorder.h>
-#include <qmediarecordercontrol.h>
-#include <qmediaresource.h>
-#include <qmediaservice.h>
-#include <qmediaserviceproviderplugin.h>
-#include <qmediastreamscontrol.h>
-#include <qmediatimerange.h>
-#include <qmediavideoprobecontrol.h>
-#include <qmetadatareadercontrol.h>
-#include <qmetadatawritercontrol.h>
 #include <qmetaobject.h>
-#include <qmultimedia.h>
 #include <qnetworkrequest.h>
 #include <qobject.h>
 #include <qpair.h>
-#include <qradiodata.h>
-#include <qradiodatacontrol.h>
-#include <qradiotuner.h>
-#include <qradiotunercontrol.h>
 #include <qsize.h>
-#include <qsound.h>
-#include <qsoundeffect.h>
 #include <qstringlist.h>
 #include <qthread.h>
 #include <qurl.h>
-#include <qvideodeviceselectorcontrol.h>
-#include <qvideoencodersettingscontrol.h>
-#include <qvideoframe.h>
-#include <qvideoprobe.h>
 
 
 
@@ -75,7 +75,7 @@ inline bool  py_q_setMediaObject(QMediaObject*  object) { return QMediaPlaylist:
 class PythonQtWrapper_QMediaPlaylist : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QMediaPlaylist* new_QMediaPlaylist(QObject*  parent = nullptr);
 void delete_QMediaPlaylist(QMediaPlaylist* obj) { delete obj; }
    bool  addMedia(QMediaPlaylist* theWrappedObject, const QList<QMediaContent >&  items);
@@ -142,7 +142,7 @@ inline bool  py_q_setMediaObject(QMediaObject*  object) { return QMediaRecorder:
 class PythonQtWrapper_QMediaRecorder : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QMediaRecorder* new_QMediaRecorder(QMediaObject*  mediaObject, QObject*  parent = nullptr);
 void delete_QMediaRecorder(QMediaRecorder* obj) { delete obj; }
    QUrl  actualLocation(QMediaRecorder* theWrappedObject) const;
@@ -233,7 +233,7 @@ inline qreal  py_q_volume() const { return this->volume(); }
 class PythonQtWrapper_QMediaRecorderControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QMediaRecorderControl* new_QMediaRecorderControl(QObject*  parent = nullptr);
 void delete_QMediaRecorderControl(QMediaRecorderControl* obj) { delete obj; }
    void applySettings(QMediaRecorderControl* theWrappedObject);
@@ -264,7 +264,7 @@ void delete_QMediaRecorderControl(QMediaRecorderControl* obj) { delete obj; }
 class PythonQtWrapper_QMediaResource : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QMediaResource* new_QMediaResource();
 QMediaResource* new_QMediaResource(const QMediaResource&  other);
 QMediaResource* new_QMediaResource(const QNetworkRequest&  request, const QString&  mimeType = QString());
@@ -332,7 +332,7 @@ inline QMediaControl*  py_q_requestControl(const char*  name) { return this->req
 class PythonQtWrapper_QMediaService : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QMediaService* new_QMediaService(QObject*  parent);
 void delete_QMediaService(QMediaService* obj) { delete obj; }
    void releaseControl(QMediaService* theWrappedObject, QMediaControl*  control);
@@ -367,7 +367,7 @@ inline QCamera::Position  py_q_cameraPosition(const QByteArray&  device) const {
 class PythonQtWrapper_QMediaServiceCameraInfoInterface : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QMediaServiceCameraInfoInterface* new_QMediaServiceCameraInfoInterface();
 void delete_QMediaServiceCameraInfoInterface(QMediaServiceCameraInfoInterface* obj) { delete obj; }
    int  cameraOrientation(QMediaServiceCameraInfoInterface* theWrappedObject, const QByteArray&  device) const;
@@ -400,7 +400,7 @@ inline QByteArray  py_q_defaultDevice(const QByteArray&  service) const { return
 class PythonQtWrapper_QMediaServiceDefaultDeviceInterface : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QMediaServiceDefaultDeviceInterface* new_QMediaServiceDefaultDeviceInterface();
 void delete_QMediaServiceDefaultDeviceInterface(QMediaServiceDefaultDeviceInterface* obj) { delete obj; }
    QByteArray  defaultDevice(QMediaServiceDefaultDeviceInterface* theWrappedObject, const QByteArray&  service) const;
@@ -433,7 +433,7 @@ inline void py_q_release(QMediaService*  service) { this->release(service); }
 class PythonQtWrapper_QMediaServiceProviderFactoryInterface : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QMediaServiceProviderFactoryInterface* new_QMediaServiceProviderFactoryInterface();
 void delete_QMediaServiceProviderFactoryInterface(QMediaServiceProviderFactoryInterface* obj) { delete obj; }
    QMediaService*  create(QMediaServiceProviderFactoryInterface* theWrappedObject, const QString&  key);
@@ -454,7 +454,7 @@ enum Feature{
   LowLatencyPlayback = QMediaServiceProviderHint::LowLatencyPlayback,   RecordingSupport = QMediaServiceProviderHint::RecordingSupport,   StreamPlayback = QMediaServiceProviderHint::StreamPlayback,   VideoSurface = QMediaServiceProviderHint::VideoSurface};
 enum Type{
   Null = QMediaServiceProviderHint::Null,   ContentType = QMediaServiceProviderHint::ContentType,   Device = QMediaServiceProviderHint::Device,   SupportedFeatures = QMediaServiceProviderHint::SupportedFeatures,   CameraPosition = QMediaServiceProviderHint::CameraPosition};
-public slots:
+public Q_SLOTS:
 QMediaServiceProviderHint* new_QMediaServiceProviderHint();
 QMediaServiceProviderHint* new_QMediaServiceProviderHint(QCamera::Position  position);
 QMediaServiceProviderHint* new_QMediaServiceProviderHint(const QByteArray&  device);
@@ -501,7 +501,7 @@ inline void py_q_release(QMediaService*  service) { this->release(service); }
 class PythonQtWrapper_QMediaServiceProviderPlugin : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QMediaServiceProviderPlugin* new_QMediaServiceProviderPlugin();
 void delete_QMediaServiceProviderPlugin(QMediaServiceProviderPlugin* obj) { delete obj; }
    QMediaService*  create(QMediaServiceProviderPlugin* theWrappedObject, const QString&  key);
@@ -536,7 +536,7 @@ inline QList<QByteArray >  py_q_devices(const QByteArray&  service) const { retu
 class PythonQtWrapper_QMediaServiceSupportedDevicesInterface : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QMediaServiceSupportedDevicesInterface* new_QMediaServiceSupportedDevicesInterface();
 void delete_QMediaServiceSupportedDevicesInterface(QMediaServiceSupportedDevicesInterface* obj) { delete obj; }
    QString  deviceDescription(QMediaServiceSupportedDevicesInterface* theWrappedObject, const QByteArray&  service, const QByteArray&  device);
@@ -571,7 +571,7 @@ inline QStringList  py_q_supportedMimeTypes() const { return this->supportedMime
 class PythonQtWrapper_QMediaServiceSupportedFormatsInterface : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QMediaServiceSupportedFormatsInterface* new_QMediaServiceSupportedFormatsInterface();
 void delete_QMediaServiceSupportedFormatsInterface(QMediaServiceSupportedFormatsInterface* obj) { delete obj; }
    QMultimedia::SupportEstimate  hasSupport(QMediaServiceSupportedFormatsInterface* theWrappedObject, const QString&  mimeType, const QStringList&  codecs) const;
@@ -622,7 +622,7 @@ public:
 Q_ENUMS(StreamType )
 enum StreamType{
   UnknownStream = QMediaStreamsControl::UnknownStream,   VideoStream = QMediaStreamsControl::VideoStream,   AudioStream = QMediaStreamsControl::AudioStream,   SubPictureStream = QMediaStreamsControl::SubPictureStream,   DataStream = QMediaStreamsControl::DataStream};
-public slots:
+public Q_SLOTS:
 QMediaStreamsControl* new_QMediaStreamsControl(QObject*  parent = nullptr);
 void delete_QMediaStreamsControl(QMediaStreamsControl* obj) { delete obj; }
    bool  isActive(QMediaStreamsControl* theWrappedObject, int  streamNumber);
@@ -644,7 +644,7 @@ void delete_QMediaStreamsControl(QMediaStreamsControl* obj) { delete obj; }
 class PythonQtWrapper_QMediaTimeInterval : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QMediaTimeInterval* new_QMediaTimeInterval();
 QMediaTimeInterval* new_QMediaTimeInterval(const QMediaTimeInterval&  arg__1);
 QMediaTimeInterval* new_QMediaTimeInterval(qint64  start, qint64  end);
@@ -667,7 +667,7 @@ void delete_QMediaTimeInterval(QMediaTimeInterval* obj) { delete obj; }
 class PythonQtWrapper_QMediaTimeRange : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QMediaTimeRange* new_QMediaTimeRange();
 QMediaTimeRange* new_QMediaTimeRange(const QMediaTimeInterval&  arg__1);
 QMediaTimeRange* new_QMediaTimeRange(const QMediaTimeRange&  range);
@@ -725,7 +725,7 @@ void timerEvent(QTimerEvent*  event) override;
 class PythonQtWrapper_QMediaVideoProbeControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QMediaVideoProbeControl* new_QMediaVideoProbeControl(QObject*  parent = nullptr);
 void delete_QMediaVideoProbeControl(QMediaVideoProbeControl* obj) { delete obj; }
 };
@@ -765,7 +765,7 @@ inline QVariant  py_q_metaData(const QString&  key) const { return this->metaDat
 class PythonQtWrapper_QMetaDataReaderControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QMetaDataReaderControl* new_QMetaDataReaderControl(QObject*  parent = nullptr);
 void delete_QMetaDataReaderControl(QMetaDataReaderControl* obj) { delete obj; }
    QStringList  availableMetaData(QMetaDataReaderControl* theWrappedObject) const;
@@ -815,7 +815,7 @@ inline void py_q_setMetaData(const QString&  key, const QVariant&  value) { this
 class PythonQtWrapper_QMetaDataWriterControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QMetaDataWriterControl* new_QMetaDataWriterControl(QObject*  parent = nullptr);
 void delete_QMetaDataWriterControl(QMetaDataWriterControl* obj) { delete obj; }
    QStringList  availableMetaData(QMetaDataWriterControl* theWrappedObject) const;
@@ -846,7 +846,7 @@ enum EncodingQuality{
   VeryLowQuality = QMultimedia::VeryLowQuality,   LowQuality = QMultimedia::LowQuality,   NormalQuality = QMultimedia::NormalQuality,   HighQuality = QMultimedia::HighQuality,   VeryHighQuality = QMultimedia::VeryHighQuality};
 enum SupportEstimate{
   NotSupported = QMultimedia::NotSupported,   MaybeSupported = QMultimedia::MaybeSupported,   ProbablySupported = QMultimedia::ProbablySupported,   PreferredService = QMultimedia::PreferredService};
-public slots:
+public Q_SLOTS:
 };
 
 
@@ -883,7 +883,7 @@ inline bool  py_q_setMediaObject(QMediaObject*  arg__1) { return QRadioData::set
 class PythonQtWrapper_QRadioData : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QRadioData* new_QRadioData(QMediaObject*  mediaObject, QObject*  parent = nullptr);
 void delete_QRadioData(QRadioData* obj) { delete obj; }
    QMultimedia::AvailabilityStatus  availability(QRadioData* theWrappedObject) const;
@@ -946,7 +946,7 @@ inline QString  py_q_stationName() const { return this->stationName(); }
 class PythonQtWrapper_QRadioDataControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QRadioDataControl* new_QRadioDataControl(QObject*  parent = nullptr);
 void delete_QRadioDataControl(QRadioDataControl* obj) { delete obj; }
    QRadioData::Error  error(QRadioDataControl* theWrappedObject) const;
@@ -1004,7 +1004,7 @@ inline QMultimedia::AvailabilityStatus  py_q_availability() const { return QRadi
 class PythonQtWrapper_QRadioTuner : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QRadioTuner* new_QRadioTuner(QObject*  parent = nullptr);
 void delete_QRadioTuner(QRadioTuner* obj) { delete obj; }
    QMultimedia::AvailabilityStatus  py_q_availability(QRadioTuner* theWrappedObject) const{  return (((PythonQtPublicPromoter_QRadioTuner*)theWrappedObject)->py_q_availability());}
@@ -1108,7 +1108,7 @@ inline int  py_q_volume() const { return this->volume(); }
 class PythonQtWrapper_QRadioTunerControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QRadioTunerControl* new_QRadioTunerControl(QObject*  parent = nullptr);
 void delete_QRadioTunerControl(QRadioTunerControl* obj) { delete obj; }
    QRadioTuner::Band  band(QRadioTunerControl* theWrappedObject) const;
@@ -1193,7 +1193,7 @@ public:
 Q_ENUMS(Loop )
 enum Loop{
   Infinite = QSound::Infinite};
-public slots:
+public Q_SLOTS:
 QSound* new_QSound(const QString&  filename, QObject*  parent = nullptr);
 void delete_QSound(QSound* obj) { delete obj; }
    QString  fileName(QSound* theWrappedObject) const;
@@ -1230,7 +1230,7 @@ void timerEvent(QTimerEvent*  event) override;
 class PythonQtWrapper_QSoundEffect : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSoundEffect* new_QSoundEffect(QObject*  parent = nullptr);
 QSoundEffect* new_QSoundEffect(const QAudioDeviceInfo&  audioDevice, QObject*  parent = nullptr);
 void delete_QSoundEffect(QSoundEffect* obj) { delete obj; }
@@ -1292,7 +1292,7 @@ inline void py_q_setSelectedDevice(int  index) { this->setSelectedDevice(index);
 class PythonQtWrapper_QVideoDeviceSelectorControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QVideoDeviceSelectorControl* new_QVideoDeviceSelectorControl(QObject*  parent = nullptr);
 void delete_QVideoDeviceSelectorControl(QVideoDeviceSelectorControl* obj) { delete obj; }
    int  defaultDevice(QVideoDeviceSelectorControl* theWrappedObject) const;
@@ -1315,7 +1315,7 @@ void delete_QVideoDeviceSelectorControl(QVideoDeviceSelectorControl* obj) { dele
 class PythonQtWrapper_QVideoEncoderSettings : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QVideoEncoderSettings* new_QVideoEncoderSettings();
 QVideoEncoderSettings* new_QVideoEncoderSettings(const QVideoEncoderSettings&  other);
 void delete_QVideoEncoderSettings(QVideoEncoderSettings* obj) { delete obj; }
@@ -1384,7 +1384,7 @@ inline QVideoEncoderSettings  py_q_videoSettings() const { return this->videoSet
 class PythonQtWrapper_QVideoEncoderSettingsControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QVideoEncoderSettingsControl* new_QVideoEncoderSettingsControl(QObject*  parent = nullptr);
 void delete_QVideoEncoderSettingsControl(QVideoEncoderSettingsControl* obj) { delete obj; }
    void setVideoSettings(QVideoEncoderSettingsControl* theWrappedObject, const QVideoEncoderSettings&  settings);
@@ -1413,7 +1413,7 @@ enum FieldType{
   ProgressiveFrame = QVideoFrame::ProgressiveFrame,   TopField = QVideoFrame::TopField,   BottomField = QVideoFrame::BottomField,   InterlacedFrame = QVideoFrame::InterlacedFrame};
 enum PixelFormat{
   Format_Invalid = QVideoFrame::Format_Invalid,   Format_ARGB32 = QVideoFrame::Format_ARGB32,   Format_ARGB32_Premultiplied = QVideoFrame::Format_ARGB32_Premultiplied,   Format_RGB32 = QVideoFrame::Format_RGB32,   Format_RGB24 = QVideoFrame::Format_RGB24,   Format_RGB565 = QVideoFrame::Format_RGB565,   Format_RGB555 = QVideoFrame::Format_RGB555,   Format_ARGB8565_Premultiplied = QVideoFrame::Format_ARGB8565_Premultiplied,   Format_BGRA32 = QVideoFrame::Format_BGRA32,   Format_BGRA32_Premultiplied = QVideoFrame::Format_BGRA32_Premultiplied,   Format_BGR32 = QVideoFrame::Format_BGR32,   Format_BGR24 = QVideoFrame::Format_BGR24,   Format_BGR565 = QVideoFrame::Format_BGR565,   Format_BGR555 = QVideoFrame::Format_BGR555,   Format_BGRA5658_Premultiplied = QVideoFrame::Format_BGRA5658_Premultiplied,   Format_AYUV444 = QVideoFrame::Format_AYUV444,   Format_AYUV444_Premultiplied = QVideoFrame::Format_AYUV444_Premultiplied,   Format_YUV444 = QVideoFrame::Format_YUV444,   Format_YUV420P = QVideoFrame::Format_YUV420P,   Format_YV12 = QVideoFrame::Format_YV12,   Format_UYVY = QVideoFrame::Format_UYVY,   Format_YUYV = QVideoFrame::Format_YUYV,   Format_NV12 = QVideoFrame::Format_NV12,   Format_NV21 = QVideoFrame::Format_NV21,   Format_IMC1 = QVideoFrame::Format_IMC1,   Format_IMC2 = QVideoFrame::Format_IMC2,   Format_IMC3 = QVideoFrame::Format_IMC3,   Format_IMC4 = QVideoFrame::Format_IMC4,   Format_Y8 = QVideoFrame::Format_Y8,   Format_Y16 = QVideoFrame::Format_Y16,   Format_Jpeg = QVideoFrame::Format_Jpeg,   Format_CameraRaw = QVideoFrame::Format_CameraRaw,   Format_AdobeDng = QVideoFrame::Format_AdobeDng,   Format_ABGR32 = QVideoFrame::Format_ABGR32,   Format_YUV422P = QVideoFrame::Format_YUV422P,   NPixelFormats = QVideoFrame::NPixelFormats,   Format_User = QVideoFrame::Format_User};
-public slots:
+public Q_SLOTS:
 QVideoFrame* new_QVideoFrame();
 QVideoFrame* new_QVideoFrame(QAbstractVideoBuffer*  buffer, const QSize&  size, QVideoFrame::PixelFormat  format);
 QVideoFrame* new_QVideoFrame(const QImage&  image);
@@ -1486,7 +1486,7 @@ void timerEvent(QTimerEvent*  event) override;
 class PythonQtWrapper_QVideoProbe : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QVideoProbe* new_QVideoProbe(QObject*  parent = nullptr);
 void delete_QVideoProbe(QVideoProbe* obj) { delete obj; }
    bool  isActive(QVideoProbe* theWrappedObject) const;

@@ -1,45 +1,48 @@
 #include <PythonQt.h>
 #include <QObject>
 #include <QVariant>
-#include <qabstractvideobuffer.h>
-#include <qabstractvideosurface.h>
-#include <qaudio.h>
-#include <qaudiobuffer.h>
-#include <qaudiodecoder.h>
-#include <qaudiodecodercontrol.h>
-#include <qaudiodeviceinfo.h>
-#include <qaudioencodersettingscontrol.h>
-#include <qaudioformat.h>
-#include <qaudioinput.h>
-#include <qaudioinputselectorcontrol.h>
-#include <qaudiooutput.h>
-#include <qaudiooutputselectorcontrol.h>
-#include <qaudioprobe.h>
-#include <qaudiorecorder.h>
-#include <qaudiorolecontrol.h>
-#include <qaudiosystem.h>
-#include <qaudiosystemplugin.h>
+#include <QtMultimedia/qabstractvideobuffer.h>
+#include <QtMultimedia/qabstractvideosurface.h>
+#include <QtMultimedia/qaudio.h>
+#include <QtMultimedia/qaudiobuffer.h>
+#include <QtMultimedia/qaudiodecoder.h>
+#include <QtMultimedia/qaudiodecodercontrol.h>
+#include <QtMultimedia/qaudiodeviceinfo.h>
+#include <QtMultimedia/qaudioencodersettingscontrol.h>
+#include <QtMultimedia/qaudioformat.h>
+#include <QtMultimedia/qaudioinput.h>
+#include <QtMultimedia/qaudioinputselectorcontrol.h>
+#include <QtMultimedia/qaudiooutput.h>
+#include <QtMultimedia/qaudiooutputselectorcontrol.h>
+#include <QtMultimedia/qaudioprobe.h>
+#include <QtMultimedia/qaudiorecorder.h>
+#include <QtMultimedia/qaudiorolecontrol.h>
+#include <QtMultimedia/qaudiosystem.h>
+#include <QtMultimedia/qaudiosystemplugin.h>
+#include <QtMultimedia/qcamera.h>
+#include <QtMultimedia/qcameracapturebufferformatcontrol.h>
+#include <QtMultimedia/qcameracapturedestinationcontrol.h>
+#include <QtMultimedia/qcameracontrol.h>
+#include <QtMultimedia/qcameraexposure.h>
+#include <QtMultimedia/qcameraexposurecontrol.h>
+#include <QtMultimedia/qcamerafeedbackcontrol.h>
+#include <QtMultimedia/qcameraflashcontrol.h>
+#include <QtMultimedia/qcamerafocus.h>
+#include <QtMultimedia/qcameraimageprocessing.h>
+#include <QtMultimedia/qcamerainfo.h>
+#include <QtMultimedia/qcameraviewfindersettings.h>
+#include <QtMultimedia/qmediaencodersettings.h>
+#include <QtMultimedia/qmediaobject.h>
+#include <QtMultimedia/qmediarecorder.h>
+#include <QtMultimedia/qmediaservice.h>
+#include <QtMultimedia/qvideoframe.h>
+#include <QtMultimedia/qvideosurfaceformat.h>
+#include <QtMultimediaWidgets/qgraphicsvideoitem.h>
+#include <QtMultimediaWidgets/qvideowidget.h>
 #include <qbytearray.h>
-#include <qcamera.h>
-#include <qcameracapturebufferformatcontrol.h>
-#include <qcameracapturedestinationcontrol.h>
-#include <qcameracontrol.h>
-#include <qcameraexposure.h>
-#include <qcameraexposurecontrol.h>
-#include <qcamerafeedbackcontrol.h>
-#include <qcameraflashcontrol.h>
-#include <qcamerafocus.h>
-#include <qcameraimageprocessing.h>
-#include <qcamerainfo.h>
-#include <qcameraviewfindersettings.h>
 #include <qcoreevent.h>
-#include <qgraphicsvideoitem.h>
 #include <qiodevice.h>
 #include <qlist.h>
-#include <qmediaencodersettings.h>
-#include <qmediaobject.h>
-#include <qmediarecorder.h>
-#include <qmediaservice.h>
 #include <qmetaobject.h>
 #include <qobject.h>
 #include <qpoint.h>
@@ -47,9 +50,6 @@
 #include <qstringlist.h>
 #include <qthread.h>
 #include <qurl.h>
-#include <qvideoframe.h>
-#include <qvideosurfaceformat.h>
-#include <qvideowidget.h>
 
 
 
@@ -96,7 +96,7 @@ inline QList<QAudioFormat::SampleType >  py_q_supportedSampleTypes() { return th
 class PythonQtWrapper_QAbstractAudioDeviceInfo : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAbstractAudioDeviceInfo* new_QAbstractAudioDeviceInfo();
 void delete_QAbstractAudioDeviceInfo(QAbstractAudioDeviceInfo* obj) { delete obj; }
    QString  deviceName(QAbstractAudioDeviceInfo* theWrappedObject) const;
@@ -188,7 +188,7 @@ inline qreal  py_q_volume() const { return this->volume(); }
 class PythonQtWrapper_QAbstractAudioInput : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAbstractAudioInput* new_QAbstractAudioInput();
 void delete_QAbstractAudioInput(QAbstractAudioInput* obj) { delete obj; }
    int  bufferSize(QAbstractAudioInput* theWrappedObject) const;
@@ -306,7 +306,7 @@ inline qreal  py_q_volume() const { return QAbstractAudioOutput::volume(); }
 class PythonQtWrapper_QAbstractAudioOutput : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAbstractAudioOutput* new_QAbstractAudioOutput();
 void delete_QAbstractAudioOutput(QAbstractAudioOutput* obj) { delete obj; }
    int  bufferSize(QAbstractAudioOutput* theWrappedObject) const;
@@ -392,7 +392,7 @@ enum HandleType{
   NoHandle = QAbstractVideoBuffer::NoHandle,   GLTextureHandle = QAbstractVideoBuffer::GLTextureHandle,   XvShmImageHandle = QAbstractVideoBuffer::XvShmImageHandle,   CoreImageHandle = QAbstractVideoBuffer::CoreImageHandle,   QPixmapHandle = QAbstractVideoBuffer::QPixmapHandle,   EGLImageHandle = QAbstractVideoBuffer::EGLImageHandle,   UserHandle = QAbstractVideoBuffer::UserHandle};
 enum MapMode{
   NotMapped = QAbstractVideoBuffer::NotMapped,   ReadOnly = QAbstractVideoBuffer::ReadOnly,   WriteOnly = QAbstractVideoBuffer::WriteOnly,   ReadWrite = QAbstractVideoBuffer::ReadWrite};
-public slots:
+public Q_SLOTS:
 QAbstractVideoBuffer* new_QAbstractVideoBuffer(QAbstractVideoBuffer::HandleType  type);
 void delete_QAbstractVideoBuffer(QAbstractVideoBuffer* obj) { delete obj; }
    QVariant  handle(QAbstractVideoBuffer* theWrappedObject) const;
@@ -454,7 +454,7 @@ public:
 Q_ENUMS(Error )
 enum Error{
   NoError = QAbstractVideoSurface::NoError,   UnsupportedFormatError = QAbstractVideoSurface::UnsupportedFormatError,   IncorrectFormatError = QAbstractVideoSurface::IncorrectFormatError,   StoppedError = QAbstractVideoSurface::StoppedError,   ResourceError = QAbstractVideoSurface::ResourceError};
-public slots:
+public Q_SLOTS:
 QAbstractVideoSurface* new_QAbstractVideoSurface(QObject*  parent = nullptr);
 void delete_QAbstractVideoSurface(QAbstractVideoSurface* obj) { delete obj; }
    QAbstractVideoSurface::Error  error(QAbstractVideoSurface* theWrappedObject) const;
@@ -495,7 +495,7 @@ enum State{
   ActiveState = QAudio::ActiveState,   SuspendedState = QAudio::SuspendedState,   StoppedState = QAudio::StoppedState,   IdleState = QAudio::IdleState,   InterruptedState = QAudio::InterruptedState};
 enum VolumeScale{
   LinearVolumeScale = QAudio::LinearVolumeScale,   CubicVolumeScale = QAudio::CubicVolumeScale,   LogarithmicVolumeScale = QAudio::LogarithmicVolumeScale,   DecibelVolumeScale = QAudio::DecibelVolumeScale};
-public slots:
+public Q_SLOTS:
    qreal  static_QAudio_convertVolume(qreal  volume, QAudio::VolumeScale  from, QAudio::VolumeScale  to);
 };
 
@@ -506,7 +506,7 @@ public slots:
 class PythonQtWrapper_QAudioBuffer : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAudioBuffer* new_QAudioBuffer();
 QAudioBuffer* new_QAudioBuffer(const QAudioBuffer&  other);
 QAudioBuffer* new_QAudioBuffer(const QByteArray&  data, const QAudioFormat&  format, qint64  startTime = -1);
@@ -562,7 +562,7 @@ inline void py_q_unbind(QObject*  arg__1) { QAudioDecoder::unbind(arg__1); }
 class PythonQtWrapper_QAudioDecoder : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAudioDecoder* new_QAudioDecoder(QObject*  parent = nullptr);
 void delete_QAudioDecoder(QAudioDecoder* obj) { delete obj; }
    QAudioFormat  audioFormat(QAudioDecoder* theWrappedObject) const;
@@ -638,7 +638,7 @@ inline void py_q_stop() { this->stop(); }
 class PythonQtWrapper_QAudioDecoderControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAudioDecoderControl* new_QAudioDecoderControl(QObject*  parent = nullptr);
 void delete_QAudioDecoderControl(QAudioDecoderControl* obj) { delete obj; }
    QAudioFormat  audioFormat(QAudioDecoderControl* theWrappedObject) const;
@@ -676,7 +676,7 @@ void delete_QAudioDecoderControl(QAudioDecoderControl* obj) { delete obj; }
 class PythonQtWrapper_QAudioDeviceInfo : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAudioDeviceInfo* new_QAudioDeviceInfo();
 QAudioDeviceInfo* new_QAudioDeviceInfo(const QAudioDeviceInfo&  other);
 void delete_QAudioDeviceInfo(QAudioDeviceInfo* obj) { delete obj; }
@@ -708,7 +708,7 @@ void delete_QAudioDeviceInfo(QAudioDeviceInfo* obj) { delete obj; }
 class PythonQtWrapper_QAudioEncoderSettings : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAudioEncoderSettings* new_QAudioEncoderSettings();
 QAudioEncoderSettings* new_QAudioEncoderSettings(const QAudioEncoderSettings&  other);
 void delete_QAudioEncoderSettings(QAudioEncoderSettings* obj) { delete obj; }
@@ -774,7 +774,7 @@ inline QList<int >  py_q_supportedSampleRates(const QAudioEncoderSettings&  sett
 class PythonQtWrapper_QAudioEncoderSettingsControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAudioEncoderSettingsControl* new_QAudioEncoderSettingsControl(QObject*  parent = nullptr);
 void delete_QAudioEncoderSettingsControl(QAudioEncoderSettingsControl* obj) { delete obj; }
    QAudioEncoderSettings  audioSettings(QAudioEncoderSettingsControl* theWrappedObject) const;
@@ -801,7 +801,7 @@ enum Endian{
   BigEndian = QAudioFormat::BigEndian,   LittleEndian = QAudioFormat::LittleEndian};
 enum SampleType{
   Unknown = QAudioFormat::Unknown,   SignedInt = QAudioFormat::SignedInt,   UnSignedInt = QAudioFormat::UnSignedInt,   Float = QAudioFormat::Float};
-public slots:
+public Q_SLOTS:
 QAudioFormat* new_QAudioFormat();
 QAudioFormat* new_QAudioFormat(const QAudioFormat&  other);
 void delete_QAudioFormat(QAudioFormat* obj) { delete obj; }
@@ -858,7 +858,7 @@ void timerEvent(QTimerEvent*  event) override;
 class PythonQtWrapper_QAudioInput : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAudioInput* new_QAudioInput(const QAudioDeviceInfo&  audioDeviceInfo, const QAudioFormat&  format = QAudioFormat(), QObject*  parent = nullptr);
 QAudioInput* new_QAudioInput(const QAudioFormat&  format = QAudioFormat(), QObject*  parent = nullptr);
 void delete_QAudioInput(QAudioInput* obj) { delete obj; }
@@ -922,7 +922,7 @@ inline void py_q_setActiveInput(const QString&  name) { this->setActiveInput(nam
 class PythonQtWrapper_QAudioInputSelectorControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAudioInputSelectorControl* new_QAudioInputSelectorControl(QObject*  parent = nullptr);
 void delete_QAudioInputSelectorControl(QAudioInputSelectorControl* obj) { delete obj; }
    QString  activeInput(QAudioInputSelectorControl* theWrappedObject) const;
@@ -962,7 +962,7 @@ void timerEvent(QTimerEvent*  event) override;
 class PythonQtWrapper_QAudioOutput : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAudioOutput* new_QAudioOutput(const QAudioDeviceInfo&  audioDeviceInfo, const QAudioFormat&  format = QAudioFormat(), QObject*  parent = nullptr);
 QAudioOutput* new_QAudioOutput(const QAudioFormat&  format = QAudioFormat(), QObject*  parent = nullptr);
 void delete_QAudioOutput(QAudioOutput* obj) { delete obj; }
@@ -1028,7 +1028,7 @@ inline void py_q_setActiveOutput(const QString&  name) { this->setActiveOutput(n
 class PythonQtWrapper_QAudioOutputSelectorControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAudioOutputSelectorControl* new_QAudioOutputSelectorControl(QObject*  parent = nullptr);
 void delete_QAudioOutputSelectorControl(QAudioOutputSelectorControl* obj) { delete obj; }
    QString  activeOutput(QAudioOutputSelectorControl* theWrappedObject) const;
@@ -1067,7 +1067,7 @@ void timerEvent(QTimerEvent*  event) override;
 class PythonQtWrapper_QAudioProbe : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAudioProbe* new_QAudioProbe(QObject*  parent = nullptr);
 void delete_QAudioProbe(QAudioProbe* obj) { delete obj; }
    bool  isActive(QAudioProbe* theWrappedObject) const;
@@ -1102,7 +1102,7 @@ void timerEvent(QTimerEvent*  event) override;
 class PythonQtWrapper_QAudioRecorder : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAudioRecorder* new_QAudioRecorder(QObject*  parent = nullptr);
 void delete_QAudioRecorder(QAudioRecorder* obj) { delete obj; }
    QString  audioInput(QAudioRecorder* theWrappedObject) const;
@@ -1146,7 +1146,7 @@ inline QList<QAudio::Role >  py_q_supportedAudioRoles() const { return this->sup
 class PythonQtWrapper_QAudioRoleControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAudioRoleControl* new_QAudioRoleControl(QObject*  parent = nullptr);
 void delete_QAudioRoleControl(QAudioRoleControl* obj) { delete obj; }
    QAudio::Role  audioRole(QAudioRoleControl* theWrappedObject) const;
@@ -1187,7 +1187,7 @@ inline QAbstractAudioOutput*  py_q_createOutput(const QByteArray&  device) { ret
 class PythonQtWrapper_QAudioSystemFactoryInterface : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAudioSystemFactoryInterface* new_QAudioSystemFactoryInterface();
 void delete_QAudioSystemFactoryInterface(QAudioSystemFactoryInterface* obj) { delete obj; }
    QList<QByteArray >  availableDevices(QAudioSystemFactoryInterface* theWrappedObject, QAudio::Mode  arg__1) const;
@@ -1232,7 +1232,7 @@ inline QAbstractAudioOutput*  py_q_createOutput(const QByteArray&  device) { ret
 class PythonQtWrapper_QAudioSystemPlugin : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAudioSystemPlugin* new_QAudioSystemPlugin(QObject*  parent = nullptr);
 void delete_QAudioSystemPlugin(QAudioSystemPlugin* obj) { delete obj; }
    QList<QByteArray >  availableDevices(QAudioSystemPlugin* theWrappedObject, QAudio::Mode  arg__1) const;
@@ -1291,7 +1291,7 @@ enum LockType{
   NoLock = QCamera::NoLock,   LockExposure = QCamera::LockExposure,   LockWhiteBalance = QCamera::LockWhiteBalance,   LockFocus = QCamera::LockFocus};
 Q_DECLARE_FLAGS(CaptureModes, CaptureMode)
 Q_DECLARE_FLAGS(LockTypes, LockType)
-public slots:
+public Q_SLOTS:
 QCamera* new_QCamera(QCamera::Position  position, QObject*  parent = nullptr);
 QCamera* new_QCamera(QObject*  parent = nullptr);
 QCamera* new_QCamera(const QByteArray&  deviceName, QObject*  parent = nullptr);
@@ -1359,7 +1359,7 @@ inline QList<QVideoFrame::PixelFormat >  py_q_supportedBufferFormats() const { r
 class PythonQtWrapper_QCameraCaptureBufferFormatControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QCameraCaptureBufferFormatControl* new_QCameraCaptureBufferFormatControl(QObject*  parent = nullptr);
 void delete_QCameraCaptureBufferFormatControl(QCameraCaptureBufferFormatControl* obj) { delete obj; }
    QVideoFrame::PixelFormat  bufferFormat(QCameraCaptureBufferFormatControl* theWrappedObject) const;
@@ -1405,7 +1405,7 @@ inline void py_q_setCaptureDestination(QCameraImageCapture::CaptureDestinations 
 class PythonQtWrapper_QCameraCaptureDestinationControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QCameraCaptureDestinationControl* new_QCameraCaptureDestinationControl(QObject*  parent = nullptr);
 void delete_QCameraCaptureDestinationControl(QCameraCaptureDestinationControl* obj) { delete obj; }
    QCameraImageCapture::CaptureDestinations  captureDestination(QCameraCaptureDestinationControl* theWrappedObject) const;
@@ -1462,7 +1462,7 @@ public:
 Q_ENUMS(PropertyChangeType )
 enum PropertyChangeType{
   CaptureMode = QCameraControl::CaptureMode,   ImageEncodingSettings = QCameraControl::ImageEncodingSettings,   VideoEncodingSettings = QCameraControl::VideoEncodingSettings,   Viewfinder = QCameraControl::Viewfinder,   ViewfinderSettings = QCameraControl::ViewfinderSettings};
-public slots:
+public Q_SLOTS:
 QCameraControl* new_QCameraControl(QObject*  parent = nullptr);
 void delete_QCameraControl(QCameraControl* obj) { delete obj; }
    bool  canChangeProperty(QCameraControl* theWrappedObject, QCameraControl::PropertyChangeType  changeType, QCamera::Status  status) const;
@@ -1493,7 +1493,7 @@ Q_FLAGS(FlashModes )
 enum FlashMode{
   FlashAuto = QCameraExposure::FlashAuto,   FlashOff = QCameraExposure::FlashOff,   FlashOn = QCameraExposure::FlashOn,   FlashRedEyeReduction = QCameraExposure::FlashRedEyeReduction,   FlashFill = QCameraExposure::FlashFill,   FlashTorch = QCameraExposure::FlashTorch,   FlashVideoLight = QCameraExposure::FlashVideoLight,   FlashSlowSyncFrontCurtain = QCameraExposure::FlashSlowSyncFrontCurtain,   FlashSlowSyncRearCurtain = QCameraExposure::FlashSlowSyncRearCurtain,   FlashManual = QCameraExposure::FlashManual};
 Q_DECLARE_FLAGS(FlashModes, FlashMode)
-public slots:
+public Q_SLOTS:
    qreal  aperture(QCameraExposure* theWrappedObject) const;
    qreal  exposureCompensation(QCameraExposure* theWrappedObject) const;
    QCameraExposure::ExposureMode  exposureMode(QCameraExposure* theWrappedObject) const;
@@ -1555,7 +1555,7 @@ inline QList<QVariant >  py_q_supportedParameterRange(QCameraExposureControl::Ex
 class PythonQtWrapper_QCameraExposureControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QCameraExposureControl* new_QCameraExposureControl(QObject*  parent = nullptr);
 void delete_QCameraExposureControl(QCameraExposureControl* obj) { delete obj; }
    QVariant  actualValue(QCameraExposureControl* theWrappedObject, QCameraExposureControl::ExposureParameter  parameter) const;
@@ -1612,7 +1612,7 @@ public:
 Q_ENUMS(EventType )
 enum EventType{
   ViewfinderStarted = QCameraFeedbackControl::ViewfinderStarted,   ViewfinderStopped = QCameraFeedbackControl::ViewfinderStopped,   ImageCaptured = QCameraFeedbackControl::ImageCaptured,   ImageSaved = QCameraFeedbackControl::ImageSaved,   ImageError = QCameraFeedbackControl::ImageError,   RecordingStarted = QCameraFeedbackControl::RecordingStarted,   RecordingInProgress = QCameraFeedbackControl::RecordingInProgress,   RecordingStopped = QCameraFeedbackControl::RecordingStopped,   AutoFocusInProgress = QCameraFeedbackControl::AutoFocusInProgress,   AutoFocusLocked = QCameraFeedbackControl::AutoFocusLocked,   AutoFocusFailed = QCameraFeedbackControl::AutoFocusFailed};
-public slots:
+public Q_SLOTS:
 QCameraFeedbackControl* new_QCameraFeedbackControl(QObject*  parent = nullptr);
 void delete_QCameraFeedbackControl(QCameraFeedbackControl* obj) { delete obj; }
    bool  isEventFeedbackEnabled(QCameraFeedbackControl* theWrappedObject, QCameraFeedbackControl::EventType  arg__1) const;
@@ -1664,7 +1664,7 @@ inline void py_q_setFlashMode(QCameraExposure::FlashModes  mode) { this->setFlas
 class PythonQtWrapper_QCameraFlashControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QCameraFlashControl* new_QCameraFlashControl(QObject*  parent = nullptr);
 void delete_QCameraFlashControl(QCameraFlashControl* obj) { delete obj; }
    QCameraExposure::FlashModes  flashMode(QCameraFlashControl* theWrappedObject) const;

@@ -88,7 +88,7 @@ inline void py_q_updateMetaData(const QNetworkCacheMetaData&  metaData) { this->
 class PythonQtWrapper_QAbstractNetworkCache : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAbstractNetworkCache* new_QAbstractNetworkCache(QObject*  parent = nullptr);
 void delete_QAbstractNetworkCache(QAbstractNetworkCache* obj) { delete obj; }
    qint64  cacheSize(QAbstractNetworkCache* theWrappedObject) const;
@@ -204,7 +204,7 @@ enum PauseMode{
   PauseNever = QAbstractSocket::PauseNever,   PauseOnSslErrors = QAbstractSocket::PauseOnSslErrors};
 Q_DECLARE_FLAGS(BindMode, BindFlag)
 Q_DECLARE_FLAGS(PauseModes, PauseMode)
-public slots:
+public Q_SLOTS:
 QAbstractSocket* new_QAbstractSocket(QAbstractSocket::SocketType  socketType, QObject*  parent);
 void delete_QAbstractSocket(QAbstractSocket* obj) { delete obj; }
    void abort(QAbstractSocket* theWrappedObject);
@@ -277,7 +277,7 @@ void delete_QAbstractSocket(QAbstractSocket* obj) { delete obj; }
 class PythonQtWrapper_QAuthenticator : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAuthenticator* new_QAuthenticator();
 QAuthenticator* new_QAuthenticator(const QAuthenticator&  other);
 void delete_QAuthenticator(QAuthenticator* obj) { delete obj; }
@@ -303,7 +303,7 @@ void delete_QAuthenticator(QAuthenticator* obj) { delete obj; }
 class PythonQtWrapper_QDnsDomainNameRecord : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDnsDomainNameRecord* new_QDnsDomainNameRecord();
 QDnsDomainNameRecord* new_QDnsDomainNameRecord(const QDnsDomainNameRecord&  other);
 void delete_QDnsDomainNameRecord(QDnsDomainNameRecord* obj) { delete obj; }
@@ -321,7 +321,7 @@ void delete_QDnsDomainNameRecord(QDnsDomainNameRecord* obj) { delete obj; }
 class PythonQtWrapper_QDnsHostAddressRecord : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDnsHostAddressRecord* new_QDnsHostAddressRecord();
 QDnsHostAddressRecord* new_QDnsHostAddressRecord(const QDnsHostAddressRecord&  other);
 void delete_QDnsHostAddressRecord(QDnsHostAddressRecord* obj) { delete obj; }
@@ -359,7 +359,7 @@ void timerEvent(QTimerEvent*  event) override;
 class PythonQtWrapper_QDnsLookup : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDnsLookup* new_QDnsLookup(QDnsLookup::Type  type, const QString&  name, QObject*  parent = nullptr);
 QDnsLookup* new_QDnsLookup(QDnsLookup::Type  type, const QString&  name, const QHostAddress&  nameserver, QObject*  parent = nullptr);
 QDnsLookup* new_QDnsLookup(QObject*  parent = nullptr);
@@ -389,7 +389,7 @@ void delete_QDnsLookup(QDnsLookup* obj) { delete obj; }
 class PythonQtWrapper_QDnsMailExchangeRecord : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDnsMailExchangeRecord* new_QDnsMailExchangeRecord();
 QDnsMailExchangeRecord* new_QDnsMailExchangeRecord(const QDnsMailExchangeRecord&  other);
 void delete_QDnsMailExchangeRecord(QDnsMailExchangeRecord* obj) { delete obj; }
@@ -408,7 +408,7 @@ void delete_QDnsMailExchangeRecord(QDnsMailExchangeRecord* obj) { delete obj; }
 class PythonQtWrapper_QDnsServiceRecord : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDnsServiceRecord* new_QDnsServiceRecord();
 QDnsServiceRecord* new_QDnsServiceRecord(const QDnsServiceRecord&  other);
 void delete_QDnsServiceRecord(QDnsServiceRecord* obj) { delete obj; }
@@ -429,7 +429,7 @@ void delete_QDnsServiceRecord(QDnsServiceRecord* obj) { delete obj; }
 class PythonQtWrapper_QDnsTextRecord : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDnsTextRecord* new_QDnsTextRecord();
 QDnsTextRecord* new_QDnsTextRecord(const QDnsTextRecord&  other);
 void delete_QDnsTextRecord(QDnsTextRecord* obj) { delete obj; }
@@ -468,7 +468,7 @@ public:
 Q_ENUMS(HandshakeState )
 enum HandshakeState{
   HandshakeNotStarted = QDtls::HandshakeNotStarted,   HandshakeInProgress = QDtls::HandshakeInProgress,   PeerVerificationFailed = QDtls::PeerVerificationFailed,   HandshakeComplete = QDtls::HandshakeComplete};
-public slots:
+public Q_SLOTS:
 QDtls* new_QDtls(QSslSocket::SslMode  mode, QObject*  parent = nullptr);
 void delete_QDtls(QDtls* obj) { delete obj; }
    bool  abortHandshake(QDtls* theWrappedObject, QUdpSocket*  socket);
@@ -525,7 +525,7 @@ void timerEvent(QTimerEvent*  event) override;
 class PythonQtWrapper_QDtlsClientVerifier : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDtlsClientVerifier* new_QDtlsClientVerifier(QObject*  parent = nullptr);
 void delete_QDtlsClientVerifier(QDtlsClientVerifier* obj) { delete obj; }
    QDtlsClientVerifier::GeneratorParameters  cookieGeneratorParameters(QDtlsClientVerifier* theWrappedObject) const;
@@ -555,7 +555,7 @@ public:
 class PythonQtWrapper_QDtlsClientVerifier__GeneratorParameters : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDtlsClientVerifier::GeneratorParameters* new_QDtlsClientVerifier__GeneratorParameters();
 QDtlsClientVerifier::GeneratorParameters* new_QDtlsClientVerifier__GeneratorParameters(QCryptographicHash::Algorithm  a, const QByteArray&  s);
 QDtlsClientVerifier::GeneratorParameters* new_QDtlsClientVerifier__GeneratorParameters(const QDtlsClientVerifier::GeneratorParameters& other) {
@@ -581,7 +581,7 @@ enum ConversionModeFlag{
   ConvertV4MappedToIPv4 = QHostAddress::ConvertV4MappedToIPv4,   ConvertV4CompatToIPv4 = QHostAddress::ConvertV4CompatToIPv4,   ConvertUnspecifiedAddress = QHostAddress::ConvertUnspecifiedAddress,   ConvertLocalHost = QHostAddress::ConvertLocalHost,   TolerantConversion = QHostAddress::TolerantConversion,   StrictConversion = QHostAddress::StrictConversion};
 enum SpecialAddress{
   Null = QHostAddress::Null,   Broadcast = QHostAddress::Broadcast,   LocalHost = QHostAddress::LocalHost,   LocalHostIPv6 = QHostAddress::LocalHostIPv6,   Any = QHostAddress::Any,   AnyIPv6 = QHostAddress::AnyIPv6,   AnyIPv4 = QHostAddress::AnyIPv4};
-public slots:
+public Q_SLOTS:
 QHostAddress* new_QHostAddress();
 QHostAddress* new_QHostAddress(QHostAddress::SpecialAddress  address);
 QHostAddress* new_QHostAddress(const QHostAddress&  copy);
@@ -636,7 +636,7 @@ public:
 Q_ENUMS(HostInfoError )
 enum HostInfoError{
   NoError = QHostInfo::NoError,   HostNotFound = QHostInfo::HostNotFound,   UnknownError = QHostInfo::UnknownError};
-public slots:
+public Q_SLOTS:
 QHostInfo* new_QHostInfo(const QHostInfo&  d);
 QHostInfo* new_QHostInfo(int  lookupId = -1);
 void delete_QHostInfo(QHostInfo* obj) { delete obj; }
@@ -668,7 +668,7 @@ public:
 Q_ENUMS(PolicyFlag )
 enum PolicyFlag{
   IncludeSubDomains = QHstsPolicy::IncludeSubDomains};
-public slots:
+public Q_SLOTS:
 QHstsPolicy* new_QHstsPolicy();
 QHstsPolicy* new_QHstsPolicy(const QHstsPolicy&  rhs);
 void delete_QHstsPolicy(QHstsPolicy* obj) { delete obj; }
@@ -692,7 +692,7 @@ void delete_QHstsPolicy(QHstsPolicy* obj) { delete obj; }
 class PythonQtWrapper_QHttp2Configuration : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QHttp2Configuration* new_QHttp2Configuration();
 QHttp2Configuration* new_QHttp2Configuration(const QHttp2Configuration&  other);
 void delete_QHttp2Configuration(QHttp2Configuration* obj) { delete obj; }
@@ -735,7 +735,7 @@ public:
 Q_ENUMS(ContentType )
 enum ContentType{
   MixedType = QHttpMultiPart::MixedType,   RelatedType = QHttpMultiPart::RelatedType,   FormDataType = QHttpMultiPart::FormDataType,   AlternativeType = QHttpMultiPart::AlternativeType};
-public slots:
+public Q_SLOTS:
 QHttpMultiPart* new_QHttpMultiPart(QHttpMultiPart::ContentType  contentType, QObject*  parent = nullptr);
 QHttpMultiPart* new_QHttpMultiPart(QObject*  parent = nullptr);
 void delete_QHttpMultiPart(QHttpMultiPart* obj) { delete obj; }
@@ -752,7 +752,7 @@ void delete_QHttpMultiPart(QHttpMultiPart* obj) { delete obj; }
 class PythonQtWrapper_QHttpPart : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QHttpPart* new_QHttpPart();
 QHttpPart* new_QHttpPart(const QHttpPart&  other);
 void delete_QHttpPart(QHttpPart* obj) { delete obj; }
@@ -784,7 +784,7 @@ public:
 class PythonQtWrapper_QIPv6Address : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QIPv6Address* new_QIPv6Address();
 QIPv6Address* new_QIPv6Address(const QIPv6Address& other) {
 PythonQtShell_QIPv6Address* a = new PythonQtShell_QIPv6Address();
@@ -834,7 +834,7 @@ Q_FLAGS(SocketOptions )
 enum SocketOption{
   NoOptions = QLocalServer::NoOptions,   UserAccessOption = QLocalServer::UserAccessOption,   GroupAccessOption = QLocalServer::GroupAccessOption,   OtherAccessOption = QLocalServer::OtherAccessOption,   WorldAccessOption = QLocalServer::WorldAccessOption};
 Q_DECLARE_FLAGS(SocketOptions, SocketOption)
-public slots:
+public Q_SLOTS:
 QLocalServer* new_QLocalServer(QObject*  parent = nullptr);
 void delete_QLocalServer(QLocalServer* obj) { delete obj; }
    void close(QLocalServer* theWrappedObject);
@@ -922,7 +922,7 @@ enum LocalSocketError{
   ConnectionRefusedError = QLocalSocket::ConnectionRefusedError,   PeerClosedError = QLocalSocket::PeerClosedError,   ServerNotFoundError = QLocalSocket::ServerNotFoundError,   SocketAccessError = QLocalSocket::SocketAccessError,   SocketResourceError = QLocalSocket::SocketResourceError,   SocketTimeoutError = QLocalSocket::SocketTimeoutError,   DatagramTooLargeError = QLocalSocket::DatagramTooLargeError,   ConnectionError = QLocalSocket::ConnectionError,   UnsupportedSocketOperationError = QLocalSocket::UnsupportedSocketOperationError,   UnknownSocketError = QLocalSocket::UnknownSocketError,   OperationError = QLocalSocket::OperationError};
 enum LocalSocketState{
   UnconnectedState = QLocalSocket::UnconnectedState,   ConnectingState = QLocalSocket::ConnectingState,   ConnectedState = QLocalSocket::ConnectedState,   ClosingState = QLocalSocket::ClosingState};
-public slots:
+public Q_SLOTS:
 QLocalSocket* new_QLocalSocket(QObject*  parent = nullptr);
 void delete_QLocalSocket(QLocalSocket* obj) { delete obj; }
    void abort(QLocalSocket* theWrappedObject);
@@ -991,7 +991,7 @@ public:
 Q_ENUMS(Operation )
 enum Operation{
   HeadOperation = QNetworkAccessManager::HeadOperation,   GetOperation = QNetworkAccessManager::GetOperation,   PutOperation = QNetworkAccessManager::PutOperation,   PostOperation = QNetworkAccessManager::PostOperation,   DeleteOperation = QNetworkAccessManager::DeleteOperation,   CustomOperation = QNetworkAccessManager::CustomOperation,   UnknownOperation = QNetworkAccessManager::UnknownOperation};
-public slots:
+public Q_SLOTS:
 QNetworkAccessManager* new_QNetworkAccessManager(QObject*  parent = nullptr);
 void delete_QNetworkAccessManager(QNetworkAccessManager* obj) { delete obj; }
    QNetworkConfiguration  activeConfiguration(QNetworkAccessManager* theWrappedObject) const;
@@ -1051,7 +1051,7 @@ public:
 Q_ENUMS(DnsEligibilityStatus )
 enum DnsEligibilityStatus{
   DnsEligibilityUnknown = QNetworkAddressEntry::DnsEligibilityUnknown,   DnsIneligible = QNetworkAddressEntry::DnsIneligible,   DnsEligible = QNetworkAddressEntry::DnsEligible};
-public slots:
+public Q_SLOTS:
 QNetworkAddressEntry* new_QNetworkAddressEntry();
 QNetworkAddressEntry* new_QNetworkAddressEntry(const QNetworkAddressEntry&  other);
 void delete_QNetworkAddressEntry(QNetworkAddressEntry* obj) { delete obj; }
@@ -1084,7 +1084,7 @@ void delete_QNetworkAddressEntry(QNetworkAddressEntry* obj) { delete obj; }
 class PythonQtWrapper_QNetworkCacheMetaData : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QNetworkCacheMetaData* new_QNetworkCacheMetaData();
 QNetworkCacheMetaData* new_QNetworkCacheMetaData(const QNetworkCacheMetaData&  other);
 void delete_QNetworkCacheMetaData(QNetworkCacheMetaData* obj) { delete obj; }
@@ -1127,7 +1127,7 @@ enum StateFlag{
 enum Type{
   InternetAccessPoint = QNetworkConfiguration::InternetAccessPoint,   ServiceNetwork = QNetworkConfiguration::ServiceNetwork,   UserChoice = QNetworkConfiguration::UserChoice,   Invalid = QNetworkConfiguration::Invalid};
 Q_DECLARE_FLAGS(StateFlags, StateFlag)
-public slots:
+public Q_SLOTS:
 QNetworkConfiguration* new_QNetworkConfiguration();
 QNetworkConfiguration* new_QNetworkConfiguration(const QNetworkConfiguration&  other);
 void delete_QNetworkConfiguration(QNetworkConfiguration* obj) { delete obj; }
@@ -1181,7 +1181,7 @@ Q_FLAGS(Capabilities )
 enum Capability{
   CanStartAndStopInterfaces = QNetworkConfigurationManager::CanStartAndStopInterfaces,   DirectConnectionRouting = QNetworkConfigurationManager::DirectConnectionRouting,   SystemSessionSupport = QNetworkConfigurationManager::SystemSessionSupport,   ApplicationLevelRoaming = QNetworkConfigurationManager::ApplicationLevelRoaming,   ForcedRoaming = QNetworkConfigurationManager::ForcedRoaming,   DataStatistics = QNetworkConfigurationManager::DataStatistics,   NetworkSessionRequired = QNetworkConfigurationManager::NetworkSessionRequired};
 Q_DECLARE_FLAGS(Capabilities, Capability)
-public slots:
+public Q_SLOTS:
 QNetworkConfigurationManager* new_QNetworkConfigurationManager(QObject*  parent = nullptr);
 void delete_QNetworkConfigurationManager(QNetworkConfigurationManager* obj) { delete obj; }
    QList<QNetworkConfiguration >  allConfigurations(QNetworkConfigurationManager* theWrappedObject, QNetworkConfiguration::StateFlags  flags = QNetworkConfiguration::StateFlags()) const;
@@ -1201,7 +1201,7 @@ public:
 Q_ENUMS(RawForm )
 enum RawForm{
   NameAndValueOnly = QNetworkCookie::NameAndValueOnly,   Full = QNetworkCookie::Full};
-public slots:
+public Q_SLOTS:
 QNetworkCookie* new_QNetworkCookie(const QByteArray&  name = QByteArray(), const QByteArray&  value = QByteArray());
 QNetworkCookie* new_QNetworkCookie(const QNetworkCookie&  other);
 void delete_QNetworkCookie(QNetworkCookie* obj) { delete obj; }
@@ -1274,7 +1274,7 @@ inline bool  py_q_validateCookie(const QNetworkCookie&  cookie, const QUrl&  url
 class PythonQtWrapper_QNetworkCookieJar : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QNetworkCookieJar* new_QNetworkCookieJar(QObject*  parent = nullptr);
 void delete_QNetworkCookieJar(QNetworkCookieJar* obj) { delete obj; }
    QList<QNetworkCookie >  allCookies(QNetworkCookieJar* theWrappedObject) const;
@@ -1300,7 +1300,7 @@ void delete_QNetworkCookieJar(QNetworkCookieJar* obj) { delete obj; }
 class PythonQtWrapper_QNetworkDatagram : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QNetworkDatagram* new_QNetworkDatagram();
 QNetworkDatagram* new_QNetworkDatagram(const QByteArray&  data, const QHostAddress&  destinationAddress = QHostAddress(), unsigned short  port = 0);
 QNetworkDatagram* new_QNetworkDatagram(const QNetworkDatagram&  other);
@@ -1374,7 +1374,7 @@ inline void py_q_updateMetaData(const QNetworkCacheMetaData&  metaData) { QNetwo
 class PythonQtWrapper_QNetworkDiskCache : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QNetworkDiskCache* new_QNetworkDiskCache(QObject*  parent = nullptr);
 void delete_QNetworkDiskCache(QNetworkDiskCache* obj) { delete obj; }
    QString  cacheDirectory(QNetworkDiskCache* theWrappedObject) const;

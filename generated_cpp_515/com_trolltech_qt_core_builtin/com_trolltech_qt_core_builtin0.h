@@ -18,6 +18,7 @@
 #include <qnamespace.h>
 #include <qpoint.h>
 #include <qrect.h>
+#include <qregexp.h>
 #include <qregularexpression.h>
 #include <qsize.h>
 #include <qstringlist.h>
@@ -34,7 +35,7 @@
 class PythonQtWrapper_QBitArray : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QBitArray* new_QBitArray();
 QBitArray* new_QBitArray(const QBitArray&  other);
 QBitArray* new_QBitArray(int  size, bool  val = false);
@@ -88,7 +89,7 @@ enum class Base64DecodingStatus{
 enum Base64Option{
   Base64Encoding = QByteArray::Base64Encoding,   Base64UrlEncoding = QByteArray::Base64UrlEncoding,   KeepTrailingEquals = QByteArray::KeepTrailingEquals,   OmitTrailingEquals = QByteArray::OmitTrailingEquals,   IgnoreBase64DecodingErrors = QByteArray::IgnoreBase64DecodingErrors,   AbortOnBase64DecodingErrors = QByteArray::AbortOnBase64DecodingErrors};
 Q_DECLARE_FLAGS(Base64Options, Base64Option)
-public slots:
+public Q_SLOTS:
 QByteArray* new_QByteArray();
 QByteArray* new_QByteArray(const QByteArray&  arg__1);
 QByteArray* new_QByteArray(int  size, char  c);
@@ -214,7 +215,7 @@ void delete_QByteArray(QByteArray* obj) { delete obj; }
   PyObject* data(QByteArray* b) {
     return PyBytes_FromStringAndSize(b->data(), b->size());
   }
-
+    
 };
 
 
@@ -227,7 +228,7 @@ public:
 Q_ENUMS(MonthNameType )
 enum MonthNameType{
   DateFormat = QDate::DateFormat,   StandaloneFormat = QDate::StandaloneFormat};
-public slots:
+public Q_SLOTS:
 QDate* new_QDate();
 QDate* new_QDate(int  y, int  m, int  d);
 QDate* new_QDate(int  y, int  m, int  d, QCalendar  cal);
@@ -305,7 +306,7 @@ public:
 Q_ENUMS(YearRange )
 enum class YearRange{
   First = static_cast<int>(QDateTime::YearRange::First),   Last = static_cast<int>(QDateTime::YearRange::Last)};
-public slots:
+public Q_SLOTS:
 QDateTime* new_QDateTime();
 QDateTime* new_QDateTime(const QDate&  arg__1);
 QDateTime* new_QDateTime(const QDate&  arg__1, const QTime&  arg__2, Qt::TimeSpec  spec = Qt::LocalTime);
@@ -386,7 +387,7 @@ void delete_QDateTime(QDateTime* obj) { delete obj; }
 class PythonQtWrapper_QLine : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QLine* new_QLine();
 QLine* new_QLine(const QPoint&  pt1, const QPoint&  pt2);
 QLine* new_QLine(int  x1, int  y1, int  x2, int  y2);
@@ -433,7 +434,7 @@ public:
 Q_ENUMS(IntersectType )
 enum IntersectType{
   NoIntersection = QLineF::NoIntersection,   BoundedIntersection = QLineF::BoundedIntersection,   UnboundedIntersection = QLineF::UnboundedIntersection};
-public slots:
+public Q_SLOTS:
 QLineF* new_QLineF();
 QLineF* new_QLineF(const QLine&  line);
 QLineF* new_QLineF(const QPointF&  pt1, const QPointF&  pt2);
@@ -514,7 +515,7 @@ enum QuotationStyle{
 enum Script{
   AnyScript = QLocale::AnyScript,   ArabicScript = QLocale::ArabicScript,   CyrillicScript = QLocale::CyrillicScript,   DeseretScript = QLocale::DeseretScript,   GurmukhiScript = QLocale::GurmukhiScript,   SimplifiedHanScript = QLocale::SimplifiedHanScript,   TraditionalHanScript = QLocale::TraditionalHanScript,   LatinScript = QLocale::LatinScript,   MongolianScript = QLocale::MongolianScript,   TifinaghScript = QLocale::TifinaghScript,   ArmenianScript = QLocale::ArmenianScript,   BengaliScript = QLocale::BengaliScript,   CherokeeScript = QLocale::CherokeeScript,   DevanagariScript = QLocale::DevanagariScript,   EthiopicScript = QLocale::EthiopicScript,   GeorgianScript = QLocale::GeorgianScript,   GreekScript = QLocale::GreekScript,   GujaratiScript = QLocale::GujaratiScript,   HebrewScript = QLocale::HebrewScript,   JapaneseScript = QLocale::JapaneseScript,   KhmerScript = QLocale::KhmerScript,   KannadaScript = QLocale::KannadaScript,   KoreanScript = QLocale::KoreanScript,   LaoScript = QLocale::LaoScript,   MalayalamScript = QLocale::MalayalamScript,   MyanmarScript = QLocale::MyanmarScript,   OriyaScript = QLocale::OriyaScript,   TamilScript = QLocale::TamilScript,   TeluguScript = QLocale::TeluguScript,   ThaanaScript = QLocale::ThaanaScript,   ThaiScript = QLocale::ThaiScript,   TibetanScript = QLocale::TibetanScript,   SinhalaScript = QLocale::SinhalaScript,   SyriacScript = QLocale::SyriacScript,   YiScript = QLocale::YiScript,   VaiScript = QLocale::VaiScript,   AvestanScript = QLocale::AvestanScript,   BalineseScript = QLocale::BalineseScript,   BamumScript = QLocale::BamumScript,   BatakScript = QLocale::BatakScript,   BopomofoScript = QLocale::BopomofoScript,   BrahmiScript = QLocale::BrahmiScript,   BugineseScript = QLocale::BugineseScript,   BuhidScript = QLocale::BuhidScript,   CanadianAboriginalScript = QLocale::CanadianAboriginalScript,   CarianScript = QLocale::CarianScript,   ChakmaScript = QLocale::ChakmaScript,   ChamScript = QLocale::ChamScript,   CopticScript = QLocale::CopticScript,   CypriotScript = QLocale::CypriotScript,   EgyptianHieroglyphsScript = QLocale::EgyptianHieroglyphsScript,   FraserScript = QLocale::FraserScript,   GlagoliticScript = QLocale::GlagoliticScript,   GothicScript = QLocale::GothicScript,   HanScript = QLocale::HanScript,   HangulScript = QLocale::HangulScript,   HanunooScript = QLocale::HanunooScript,   ImperialAramaicScript = QLocale::ImperialAramaicScript,   InscriptionalPahlaviScript = QLocale::InscriptionalPahlaviScript,   InscriptionalParthianScript = QLocale::InscriptionalParthianScript,   JavaneseScript = QLocale::JavaneseScript,   KaithiScript = QLocale::KaithiScript,   KatakanaScript = QLocale::KatakanaScript,   KayahLiScript = QLocale::KayahLiScript,   KharoshthiScript = QLocale::KharoshthiScript,   LannaScript = QLocale::LannaScript,   LepchaScript = QLocale::LepchaScript,   LimbuScript = QLocale::LimbuScript,   LinearBScript = QLocale::LinearBScript,   LycianScript = QLocale::LycianScript,   LydianScript = QLocale::LydianScript,   MandaeanScript = QLocale::MandaeanScript,   MeiteiMayekScript = QLocale::MeiteiMayekScript,   MeroiticScript = QLocale::MeroiticScript,   MeroiticCursiveScript = QLocale::MeroiticCursiveScript,   NkoScript = QLocale::NkoScript,   NewTaiLueScript = QLocale::NewTaiLueScript,   OghamScript = QLocale::OghamScript,   OlChikiScript = QLocale::OlChikiScript,   OldItalicScript = QLocale::OldItalicScript,   OldPersianScript = QLocale::OldPersianScript,   OldSouthArabianScript = QLocale::OldSouthArabianScript,   OrkhonScript = QLocale::OrkhonScript,   OsmanyaScript = QLocale::OsmanyaScript,   PhagsPaScript = QLocale::PhagsPaScript,   PhoenicianScript = QLocale::PhoenicianScript,   PollardPhoneticScript = QLocale::PollardPhoneticScript,   RejangScript = QLocale::RejangScript,   RunicScript = QLocale::RunicScript,   SamaritanScript = QLocale::SamaritanScript,   SaurashtraScript = QLocale::SaurashtraScript,   SharadaScript = QLocale::SharadaScript,   ShavianScript = QLocale::ShavianScript,   SoraSompengScript = QLocale::SoraSompengScript,   CuneiformScript = QLocale::CuneiformScript,   SundaneseScript = QLocale::SundaneseScript,   SylotiNagriScript = QLocale::SylotiNagriScript,   TagalogScript = QLocale::TagalogScript,   TagbanwaScript = QLocale::TagbanwaScript,   TaiLeScript = QLocale::TaiLeScript,   TaiVietScript = QLocale::TaiVietScript,   TakriScript = QLocale::TakriScript,   UgariticScript = QLocale::UgariticScript,   BrailleScript = QLocale::BrailleScript,   HiraganaScript = QLocale::HiraganaScript,   CaucasianAlbanianScript = QLocale::CaucasianAlbanianScript,   BassaVahScript = QLocale::BassaVahScript,   DuployanScript = QLocale::DuployanScript,   ElbasanScript = QLocale::ElbasanScript,   GranthaScript = QLocale::GranthaScript,   PahawhHmongScript = QLocale::PahawhHmongScript,   KhojkiScript = QLocale::KhojkiScript,   LinearAScript = QLocale::LinearAScript,   MahajaniScript = QLocale::MahajaniScript,   ManichaeanScript = QLocale::ManichaeanScript,   MendeKikakuiScript = QLocale::MendeKikakuiScript,   ModiScript = QLocale::ModiScript,   MroScript = QLocale::MroScript,   OldNorthArabianScript = QLocale::OldNorthArabianScript,   NabataeanScript = QLocale::NabataeanScript,   PalmyreneScript = QLocale::PalmyreneScript,   PauCinHauScript = QLocale::PauCinHauScript,   OldPermicScript = QLocale::OldPermicScript,   PsalterPahlaviScript = QLocale::PsalterPahlaviScript,   SiddhamScript = QLocale::SiddhamScript,   KhudawadiScript = QLocale::KhudawadiScript,   TirhutaScript = QLocale::TirhutaScript,   VarangKshitiScript = QLocale::VarangKshitiScript,   AhomScript = QLocale::AhomScript,   AnatolianHieroglyphsScript = QLocale::AnatolianHieroglyphsScript,   HatranScript = QLocale::HatranScript,   MultaniScript = QLocale::MultaniScript,   OldHungarianScript = QLocale::OldHungarianScript,   SignWritingScript = QLocale::SignWritingScript,   AdlamScript = QLocale::AdlamScript,   BhaiksukiScript = QLocale::BhaiksukiScript,   MarchenScript = QLocale::MarchenScript,   NewaScript = QLocale::NewaScript,   OsageScript = QLocale::OsageScript,   TangutScript = QLocale::TangutScript,   HanWithBopomofoScript = QLocale::HanWithBopomofoScript,   JamoScript = QLocale::JamoScript,   SimplifiedChineseScript = QLocale::SimplifiedChineseScript,   TraditionalChineseScript = QLocale::TraditionalChineseScript,   LastScript = QLocale::LastScript};
 Q_DECLARE_FLAGS(NumberOptions, NumberOption)
-public slots:
+public Q_SLOTS:
 QLocale* new_QLocale();
 QLocale* new_QLocale(QLocale::Language  language, QLocale::Country  country = QLocale::AnyCountry);
 QLocale* new_QLocale(QLocale::Language  language, QLocale::Script  script, QLocale::Country  country);
@@ -629,7 +630,7 @@ void delete_QLocale(QLocale* obj) { delete obj; }
 class PythonQtWrapper_QPoint : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QPoint* new_QPoint();
 QPoint* new_QPoint(int  xpos, int  ypos);
 QPoint* new_QPoint(const QPoint& other) {
@@ -640,24 +641,26 @@ void delete_QPoint(QPoint* obj) { delete obj; }
    int  static_QPoint_dotProduct(const QPoint&  p1, const QPoint&  p2);
    bool  isNull(QPoint* theWrappedObject) const;
    int  manhattanLength(QPoint* theWrappedObject) const;
-   bool  __ne__(QPoint* theWrappedObject, const QPoint&  p2);
+   bool  __ne__(QPoint* theWrappedObject, const QPoint&  arg__2);
    QPoint  __mul__(QPoint* theWrappedObject, const QMatrix&  m);
    QPoint  __mul__(QPoint* theWrappedObject, const QMatrix4x4&  matrix);
    QPoint  __mul__(QPoint* theWrappedObject, const QTransform&  m);
-   const QPoint  __mul__(QPoint* theWrappedObject, double  factor);
-   const QPoint  __mul__(QPoint* theWrappedObject, float  factor);
-   const QPoint  __mul__(QPoint* theWrappedObject, int  factor);
+   const QPoint  __mul__(QPoint* theWrappedObject, double  arg__2);
+   const QPoint  __mul__(QPoint* theWrappedObject, float  arg__2);
+   const QPoint  __mul__(QPoint* theWrappedObject, int  arg__2);
    QPoint*  __imul__(QPoint* theWrappedObject, double  factor);
    QPoint*  __imul__(QPoint* theWrappedObject, float  factor);
    QPoint*  __imul__(QPoint* theWrappedObject, int  factor);
-   const QPoint  __add__(QPoint* theWrappedObject, const QPoint&  p2);
+   const QPoint  __add__(QPoint* theWrappedObject);
+   const QPoint  __add__(QPoint* theWrappedObject, const QPoint&  arg__2);
    QPoint*  __iadd__(QPoint* theWrappedObject, const QPoint&  p);
-   const QPoint  __sub__(QPoint* theWrappedObject, const QPoint&  p2);
+   const QPoint  __sub__(QPoint* theWrappedObject);
+   const QPoint  __sub__(QPoint* theWrappedObject, const QPoint&  arg__2);
    QPoint*  __isub__(QPoint* theWrappedObject, const QPoint&  p);
-   const QPoint  __div__(QPoint* theWrappedObject, qreal  c);
+   const QPoint  __div__(QPoint* theWrappedObject, qreal  arg__2);
    QPoint*  __idiv__(QPoint* theWrappedObject, qreal  divisor);
    void writeTo(QPoint* theWrappedObject, QDataStream&  arg__1);
-   bool  __eq__(QPoint* theWrappedObject, const QPoint&  p2);
+   bool  __eq__(QPoint* theWrappedObject, const QPoint&  arg__2);
    void readFrom(QPoint* theWrappedObject, QDataStream&  arg__1);
    void setX(QPoint* theWrappedObject, int  x);
    void setY(QPoint* theWrappedObject, int  y);
@@ -675,7 +678,7 @@ void delete_QPoint(QPoint* obj) { delete obj; }
 class PythonQtWrapper_QPointF : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QPointF* new_QPointF();
 QPointF* new_QPointF(const QPoint&  p);
 QPointF* new_QPointF(qreal  xpos, qreal  ypos);
@@ -687,20 +690,22 @@ void delete_QPointF(QPointF* obj) { delete obj; }
    qreal  static_QPointF_dotProduct(const QPointF&  p1, const QPointF&  p2);
    bool  isNull(QPointF* theWrappedObject) const;
    qreal  manhattanLength(QPointF* theWrappedObject) const;
-   bool  __ne__(QPointF* theWrappedObject, const QPointF&  p2);
+   bool  __ne__(QPointF* theWrappedObject, const QPointF&  arg__2);
    QPointF  __mul__(QPointF* theWrappedObject, const QMatrix&  m);
    QPointF  __mul__(QPointF* theWrappedObject, const QMatrix4x4&  matrix);
    QPointF  __mul__(QPointF* theWrappedObject, const QTransform&  m);
-   const QPointF  __mul__(QPointF* theWrappedObject, qreal  c);
+   const QPointF  __mul__(QPointF* theWrappedObject, qreal  arg__2);
    QPointF*  __imul__(QPointF* theWrappedObject, qreal  c);
-   const QPointF  __add__(QPointF* theWrappedObject, const QPointF&  p2);
+   const QPointF  __add__(QPointF* theWrappedObject);
+   const QPointF  __add__(QPointF* theWrappedObject, const QPointF&  arg__2);
    QPointF*  __iadd__(QPointF* theWrappedObject, const QPointF&  p);
-   const QPointF  __sub__(QPointF* theWrappedObject, const QPointF&  p2);
+   const QPointF  __sub__(QPointF* theWrappedObject);
+   const QPointF  __sub__(QPointF* theWrappedObject, const QPointF&  arg__2);
    QPointF*  __isub__(QPointF* theWrappedObject, const QPointF&  p);
-   const QPointF  __div__(QPointF* theWrappedObject, qreal  divisor);
+   const QPointF  __div__(QPointF* theWrappedObject, qreal  arg__2);
    QPointF*  __idiv__(QPointF* theWrappedObject, qreal  c);
    void writeTo(QPointF* theWrappedObject, QDataStream&  arg__1);
-   bool  __eq__(QPointF* theWrappedObject, const QPointF&  p2);
+   bool  __eq__(QPointF* theWrappedObject, const QPointF&  arg__2);
    void readFrom(QPointF* theWrappedObject, QDataStream&  arg__1);
    void setX(QPointF* theWrappedObject, qreal  x);
    void setY(QPointF* theWrappedObject, qreal  y);
@@ -719,7 +724,7 @@ void delete_QPointF(QPointF* obj) { delete obj; }
 class PythonQtWrapper_QRect : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QRect* new_QRect();
 QRect* new_QRect(const QPoint&  topleft, const QPoint&  bottomright);
 QRect* new_QRect(const QPoint&  topleft, const QSize&  size);
@@ -812,7 +817,7 @@ void delete_QRect(QRect* obj) { delete obj; }
 class PythonQtWrapper_QRectF : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QRectF* new_QRectF();
 QRectF* new_QRectF(const QPointF&  topleft, const QPointF&  bottomRight);
 QRectF* new_QRectF(const QPointF&  topleft, const QSizeF&  size);
@@ -904,6 +909,52 @@ void delete_QRectF(QRectF* obj) { delete obj; }
 
 
 
+class PythonQtWrapper_QRegExp : public QObject
+{ Q_OBJECT
+public:
+Q_ENUMS(CaretMode PatternSyntax )
+enum CaretMode{
+  CaretAtZero = QRegExp::CaretAtZero,   CaretAtOffset = QRegExp::CaretAtOffset,   CaretWontMatch = QRegExp::CaretWontMatch};
+enum PatternSyntax{
+  RegExp = QRegExp::RegExp,   Wildcard = QRegExp::Wildcard,   FixedString = QRegExp::FixedString,   RegExp2 = QRegExp::RegExp2,   WildcardUnix = QRegExp::WildcardUnix,   W3CXmlSchema11 = QRegExp::W3CXmlSchema11};
+public Q_SLOTS:
+QRegExp* new_QRegExp();
+QRegExp* new_QRegExp(const QRegExp&  rx);
+QRegExp* new_QRegExp(const QString&  pattern, Qt::CaseSensitivity  cs = Qt::CaseSensitive, QRegExp::PatternSyntax  syntax = QRegExp::RegExp);
+void delete_QRegExp(QRegExp* obj) { delete obj; }
+   QString  cap(QRegExp* theWrappedObject, int  nth = 0);
+   int  captureCount(QRegExp* theWrappedObject) const;
+   QStringList  capturedTexts(QRegExp* theWrappedObject);
+   Qt::CaseSensitivity  caseSensitivity(QRegExp* theWrappedObject) const;
+   QString  errorString(QRegExp* theWrappedObject);
+   QString  static_QRegExp_escape(const QString&  str);
+   bool  exactMatch(QRegExp* theWrappedObject, const QString&  str) const;
+   int  indexIn(QRegExp* theWrappedObject, const QString&  str, int  offset = 0, QRegExp::CaretMode  caretMode = QRegExp::CaretAtZero) const;
+   bool  isEmpty(QRegExp* theWrappedObject) const;
+   bool  isMinimal(QRegExp* theWrappedObject) const;
+   bool  isValid(QRegExp* theWrappedObject) const;
+   int  lastIndexIn(QRegExp* theWrappedObject, const QString&  str, int  offset = -1, QRegExp::CaretMode  caretMode = QRegExp::CaretAtZero) const;
+   int  matchedLength(QRegExp* theWrappedObject) const;
+   bool  __ne__(QRegExp* theWrappedObject, const QRegExp&  rx) const;
+   void writeTo(QRegExp* theWrappedObject, QDataStream&  out);
+   bool  __eq__(QRegExp* theWrappedObject, const QRegExp&  rx) const;
+   void readFrom(QRegExp* theWrappedObject, QDataStream&  in);
+   QString  pattern(QRegExp* theWrappedObject) const;
+   QRegExp::PatternSyntax  patternSyntax(QRegExp* theWrappedObject) const;
+   int  pos(QRegExp* theWrappedObject, int  nth = 0);
+   void setCaseSensitivity(QRegExp* theWrappedObject, Qt::CaseSensitivity  cs);
+   void setMinimal(QRegExp* theWrappedObject, bool  minimal);
+   void setPattern(QRegExp* theWrappedObject, const QString&  pattern);
+   void setPatternSyntax(QRegExp* theWrappedObject, QRegExp::PatternSyntax  syntax);
+   void swap(QRegExp* theWrappedObject, QRegExp&  other);
+    QString py_toString(QRegExp*);
+    bool __nonzero__(QRegExp* obj) { return !obj->isEmpty(); }
+};
+
+
+
+
+
 class PythonQtWrapper_QRegularExpression : public QObject
 { Q_OBJECT
 public:
@@ -917,7 +968,7 @@ enum PatternOption{
   NoPatternOption = QRegularExpression::NoPatternOption,   CaseInsensitiveOption = QRegularExpression::CaseInsensitiveOption,   DotMatchesEverythingOption = QRegularExpression::DotMatchesEverythingOption,   MultilineOption = QRegularExpression::MultilineOption,   ExtendedPatternSyntaxOption = QRegularExpression::ExtendedPatternSyntaxOption,   InvertedGreedinessOption = QRegularExpression::InvertedGreedinessOption,   DontCaptureOption = QRegularExpression::DontCaptureOption,   UseUnicodePropertiesOption = QRegularExpression::UseUnicodePropertiesOption,   OptimizeOnFirstUsageOption = QRegularExpression::OptimizeOnFirstUsageOption,   DontAutomaticallyOptimizeOption = QRegularExpression::DontAutomaticallyOptimizeOption};
 Q_DECLARE_FLAGS(MatchOptions, MatchOption)
 Q_DECLARE_FLAGS(PatternOptions, PatternOption)
-public slots:
+public Q_SLOTS:
 QRegularExpression* new_QRegularExpression();
 QRegularExpression* new_QRegularExpression(const QRegularExpression&  re);
 QRegularExpression* new_QRegularExpression(const QString&  pattern, QRegularExpression::PatternOptions  options = QRegularExpression::NoPatternOption);
@@ -954,7 +1005,7 @@ void delete_QRegularExpression(QRegularExpression* obj) { delete obj; }
 class PythonQtWrapper_QSize : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSize* new_QSize();
 QSize* new_QSize(int  w, int  h);
 QSize* new_QSize(const QSize& other) {
@@ -969,17 +1020,17 @@ void delete_QSize(QSize* obj) { delete obj; }
    bool  isEmpty(QSize* theWrappedObject) const;
    bool  isNull(QSize* theWrappedObject) const;
    bool  isValid(QSize* theWrappedObject) const;
-   bool  __ne__(QSize* theWrappedObject, const QSize&  s2);
-   const QSize  __mul__(QSize* theWrappedObject, qreal  c);
+   bool  __ne__(QSize* theWrappedObject, const QSize&  arg__2);
+   const QSize  __mul__(QSize* theWrappedObject, qreal  arg__2);
    QSize*  __imul__(QSize* theWrappedObject, qreal  c);
-   const QSize  __add__(QSize* theWrappedObject, const QSize&  s2);
+   const QSize  __add__(QSize* theWrappedObject, const QSize&  arg__2);
    QSize*  __iadd__(QSize* theWrappedObject, const QSize&  arg__1);
-   const QSize  __sub__(QSize* theWrappedObject, const QSize&  s2);
+   const QSize  __sub__(QSize* theWrappedObject, const QSize&  arg__2);
    QSize*  __isub__(QSize* theWrappedObject, const QSize&  arg__1);
-   const QSize  __div__(QSize* theWrappedObject, qreal  c);
+   const QSize  __div__(QSize* theWrappedObject, qreal  arg__2);
    QSize*  __idiv__(QSize* theWrappedObject, qreal  c);
    void writeTo(QSize* theWrappedObject, QDataStream&  arg__1);
-   bool  __eq__(QSize* theWrappedObject, const QSize&  s2);
+   bool  __eq__(QSize* theWrappedObject, const QSize&  arg__2);
    void readFrom(QSize* theWrappedObject, QDataStream&  arg__1);
    void scale(QSize* theWrappedObject, const QSize&  s, Qt::AspectRatioMode  mode);
    void scale(QSize* theWrappedObject, int  w, int  h, Qt::AspectRatioMode  mode);
@@ -1002,7 +1053,7 @@ void delete_QSize(QSize* obj) { delete obj; }
 class PythonQtWrapper_QSizeF : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSizeF* new_QSizeF();
 QSizeF* new_QSizeF(const QSize&  sz);
 QSizeF* new_QSizeF(qreal  w, qreal  h);
@@ -1018,17 +1069,17 @@ void delete_QSizeF(QSizeF* obj) { delete obj; }
    bool  isEmpty(QSizeF* theWrappedObject) const;
    bool  isNull(QSizeF* theWrappedObject) const;
    bool  isValid(QSizeF* theWrappedObject) const;
-   bool  __ne__(QSizeF* theWrappedObject, const QSizeF&  s2);
-   const QSizeF  __mul__(QSizeF* theWrappedObject, qreal  c);
+   bool  __ne__(QSizeF* theWrappedObject, const QSizeF&  arg__2);
+   const QSizeF  __mul__(QSizeF* theWrappedObject, qreal  arg__2);
    QSizeF*  __imul__(QSizeF* theWrappedObject, qreal  c);
-   const QSizeF  __add__(QSizeF* theWrappedObject, const QSizeF&  s2);
+   const QSizeF  __add__(QSizeF* theWrappedObject, const QSizeF&  arg__2);
    QSizeF*  __iadd__(QSizeF* theWrappedObject, const QSizeF&  arg__1);
-   const QSizeF  __sub__(QSizeF* theWrappedObject, const QSizeF&  s2);
+   const QSizeF  __sub__(QSizeF* theWrappedObject, const QSizeF&  arg__2);
    QSizeF*  __isub__(QSizeF* theWrappedObject, const QSizeF&  arg__1);
-   const QSizeF  __div__(QSizeF* theWrappedObject, qreal  c);
+   const QSizeF  __div__(QSizeF* theWrappedObject, qreal  arg__2);
    QSizeF*  __idiv__(QSizeF* theWrappedObject, qreal  c);
    void writeTo(QSizeF* theWrappedObject, QDataStream&  arg__1);
-   bool  __eq__(QSizeF* theWrappedObject, const QSizeF&  s2);
+   bool  __eq__(QSizeF* theWrappedObject, const QSizeF&  arg__2);
    void readFrom(QSizeF* theWrappedObject, QDataStream&  arg__1);
    void scale(QSizeF* theWrappedObject, const QSizeF&  s, Qt::AspectRatioMode  mode);
    void scale(QSizeF* theWrappedObject, qreal  w, qreal  h, Qt::AspectRatioMode  mode);
@@ -1052,7 +1103,7 @@ void delete_QSizeF(QSizeF* obj) { delete obj; }
 class PythonQtWrapper_QTime : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QTime* new_QTime();
 QTime* new_QTime(int  h, int  m, int  s = 0, int  ms = 0);
 QTime* new_QTime(const QTime& other) {
@@ -1113,7 +1164,7 @@ enum UserInputResolutionOption{
   DefaultResolution = QUrl::DefaultResolution,   AssumeLocalFile = QUrl::AssumeLocalFile};
 Q_DECLARE_FLAGS(ComponentFormattingOptions, ComponentFormattingOption)
 Q_DECLARE_FLAGS(FormattingOptions, UrlFormattingOption)
-public slots:
+public Q_SLOTS:
 QUrl* new_QUrl();
 QUrl* new_QUrl(const QString&  url, QUrl::ParsingMode  mode = QUrl::TolerantMode);
 QUrl* new_QUrl(const QUrl&  copy);
@@ -1382,7 +1433,7 @@ Q_DECLARE_FLAGS(ToolBarAreas, ToolBarArea)
 Q_DECLARE_FLAGS(TouchPointStates, TouchPointState)
 Q_DECLARE_FLAGS(WindowStates, WindowState)
 Q_DECLARE_FLAGS(WindowFlags, WindowType)
-public slots:
+public Q_SLOTS:
    QTextStream*  static_Qt_bin(QTextStream&  s);
    QTextStream*  static_Qt_bom(QTextStream&  s);
    QTextStream*  static_Qt_center(QTextStream&  s);

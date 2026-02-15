@@ -8,16 +8,26 @@
 #include <QSize>
 #include <QStringList>
 #include <QVariant>
+#include <QtWidgets/qabstractitemview.h>
+#include <QtWidgets/qaction.h>
+#include <QtWidgets/qcompleter.h>
+#include <QtWidgets/qgraphicseffect.h>
+#include <QtWidgets/qgraphicsproxywidget.h>
+#include <QtWidgets/qitemeditorfactory.h>
+#include <QtWidgets/qlayout.h>
+#include <QtWidgets/qlayoutitem.h>
+#include <QtWidgets/qmenu.h>
+#include <QtWidgets/qsizepolicy.h>
+#include <QtWidgets/qstyle.h>
+#include <QtWidgets/qstyleoption.h>
+#include <QtWidgets/qwidget.h>
 #include <qabstractanimation.h>
 #include <qabstractitemmodel.h>
-#include <qabstractitemview.h>
 #include <qabstractstate.h>
-#include <qaction.h>
 #include <qbackingstore.h>
 #include <qbitmap.h>
 #include <qbytearray.h>
 #include <qcolor.h>
-#include <qcompleter.h>
 #include <qcoreevent.h>
 #include <qcursor.h>
 #include <qdatastream.h>
@@ -25,22 +35,16 @@
 #include <qfont.h>
 #include <qfontinfo.h>
 #include <qfontmetrics.h>
-#include <qgraphicseffect.h>
-#include <qgraphicsproxywidget.h>
 #include <qicon.h>
 #include <qiconengine.h>
 #include <qimage.h>
 #include <qimageiohandler.h>
 #include <qiodevice.h>
-#include <qitemeditorfactory.h>
 #include <qitemselectionmodel.h>
 #include <qkeysequence.h>
-#include <qlayout.h>
-#include <qlayoutitem.h>
 #include <qlist.h>
 #include <qlocale.h>
 #include <qmargins.h>
-#include <qmenu.h>
 #include <qmetaobject.h>
 #include <qmovie.h>
 #include <qobject.h>
@@ -55,21 +59,17 @@
 #include <qregion.h>
 #include <qscreen.h>
 #include <qsize.h>
-#include <qsizepolicy.h>
 #include <qstate.h>
 #include <qstatemachine.h>
 #include <qstringlist.h>
-#include <qstyle.h>
-#include <qstyleoption.h>
 #include <qthread.h>
 #include <qtransform.h>
 #include <qvalidator.h>
 #include <qvector.h>
-#include <qwidget.h>
 #include <qwindow.h>
 
 QHelpEvent* PythonQtWrapper_QHelpEvent::new_QHelpEvent(QEvent::Type  type, const QPoint&  pos, const QPoint&  globalPos)
-{
+{ 
 return new QHelpEvent(type, pos, globalPos); }
 
 const QPoint*  PythonQtWrapper_QHelpEvent::globalPos(QHelpEvent* theWrappedObject) const
@@ -105,7 +105,7 @@ int  PythonQtWrapper_QHelpEvent::y(QHelpEvent* theWrappedObject) const
 
 
 QHideEvent* PythonQtWrapper_QHideEvent::new_QHideEvent()
-{
+{ 
 return new QHideEvent(); }
 
 
@@ -115,7 +115,7 @@ PythonQtShell_QHoverEvent::~PythonQtShell_QHoverEvent() {
   if (priv) { priv->shellClassDeleted(this); }
 }
 QHoverEvent* PythonQtWrapper_QHoverEvent::new_QHoverEvent(QEvent::Type  type, const QPointF&  pos, const QPointF&  oldPos, Qt::KeyboardModifiers  modifiers)
-{
+{ 
 return new PythonQtShell_QHoverEvent(type, pos, oldPos, modifiers); }
 
 QPoint  PythonQtWrapper_QHoverEvent::oldPos(QHoverEvent* theWrappedObject) const
@@ -141,7 +141,7 @@ const QPointF*  PythonQtWrapper_QHoverEvent::posF(QHoverEvent* theWrappedObject)
 
 
 QIconDragEvent* PythonQtWrapper_QIconDragEvent::new_QIconDragEvent()
-{
+{ 
 return new QIconDragEvent(); }
 
 
@@ -379,7 +379,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 QPixmap  PythonQtShell_QIconEngine::pixmap(const QSize&  size0, QIcon::Mode  mode1, QIcon::State  state2)
 {
@@ -481,11 +481,11 @@ if (_wrapper) {
   return QIconEngine::write(out0);
 }
 QIconEngine* PythonQtWrapper_QIconEngine::new_QIconEngine()
-{
+{ 
 return new PythonQtShell_QIconEngine(); }
 
 QIconEngine* PythonQtWrapper_QIconEngine::new_QIconEngine(const QIconEngine&  other)
-{
+{ 
 return new PythonQtShell_QIconEngine(other); }
 
 QSize  PythonQtWrapper_QIconEngine::actualSize(QIconEngine* theWrappedObject, const QSize&  size, QIcon::Mode  mode, QIcon::State  state)
@@ -978,7 +978,7 @@ if (_wrapper) {
   return QImageIOHandler::write(image0);
 }
 QImageIOHandler* PythonQtWrapper_QImageIOHandler::new_QImageIOHandler()
-{
+{ 
 return new PythonQtShell_QImageIOHandler(); }
 
 bool  PythonQtWrapper_QImageIOHandler::canRead(QImageIOHandler* theWrappedObject) const
@@ -1271,7 +1271,7 @@ if (_wrapper) {
   QImageIOPlugin::timerEvent(event0);
 }
 QImageIOPlugin* PythonQtWrapper_QImageIOPlugin::new_QImageIOPlugin(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QImageIOPlugin(parent); }
 
 const QMetaObject* PythonQtShell_QImageIOPlugin::metaObject() const {
@@ -1300,15 +1300,15 @@ QImageIOHandler*  PythonQtWrapper_QImageIOPlugin::create(QImageIOPlugin* theWrap
 
 
 QImageReader* PythonQtWrapper_QImageReader::new_QImageReader()
-{
+{ 
 return new QImageReader(); }
 
 QImageReader* PythonQtWrapper_QImageReader::new_QImageReader(QIODevice*  device, const QByteArray&  format)
-{
+{ 
 return new QImageReader(device, format); }
 
 QImageReader* PythonQtWrapper_QImageReader::new_QImageReader(const QString&  fileName, const QByteArray&  format)
-{
+{ 
 return new QImageReader(fileName, format); }
 
 bool  PythonQtWrapper_QImageReader::autoDetectImageFormat(QImageReader* theWrappedObject) const
@@ -1564,15 +1564,15 @@ QString  PythonQtWrapper_QImageReader::static_QImageReader_trUtf8(const char*  s
 
 
 QImageWriter* PythonQtWrapper_QImageWriter::new_QImageWriter()
-{
+{ 
 return new QImageWriter(); }
 
 QImageWriter* PythonQtWrapper_QImageWriter::new_QImageWriter(QIODevice*  device, const QByteArray&  format)
-{
+{ 
 return new QImageWriter(device, format); }
 
 QImageWriter* PythonQtWrapper_QImageWriter::new_QImageWriter(const QString&  fileName, const QByteArray&  format)
-{
+{ 
 return new QImageWriter(fileName, format); }
 
 bool  PythonQtWrapper_QImageWriter::canWrite(QImageWriter* theWrappedObject) const
@@ -2975,7 +2975,7 @@ if (_wrapper) {
   QInputDialog::wheelEvent(event0);
 }
 QInputDialog* PythonQtWrapper_QInputDialog::new_QInputDialog(QWidget*  parent, Qt::WindowFlags  flags)
-{
+{ 
 return new PythonQtShell_QInputDialog(parent, flags); }
 
 const QMetaObject* PythonQtShell_QInputDialog::metaObject() const {
@@ -3233,7 +3233,7 @@ PythonQtShell_QInputEvent::~PythonQtShell_QInputEvent() {
   if (priv) { priv->shellClassDeleted(this); }
 }
 QInputEvent* PythonQtWrapper_QInputEvent::new_QInputEvent(QEvent::Type  type, Qt::KeyboardModifiers  modifiers)
-{
+{ 
 return new PythonQtShell_QInputEvent(type, modifiers); }
 
 Qt::KeyboardModifiers  PythonQtWrapper_QInputEvent::modifiers(QInputEvent* theWrappedObject) const
@@ -3331,15 +3331,15 @@ void PythonQtWrapper_QInputMethod::setVisible(QInputMethod* theWrappedObject, bo
 
 
 QInputMethodEvent* PythonQtWrapper_QInputMethodEvent::new_QInputMethodEvent()
-{
+{ 
 return new QInputMethodEvent(); }
 
 QInputMethodEvent* PythonQtWrapper_QInputMethodEvent::new_QInputMethodEvent(const QInputMethodEvent&  other)
-{
+{ 
 return new QInputMethodEvent(other); }
 
 QInputMethodEvent* PythonQtWrapper_QInputMethodEvent::new_QInputMethodEvent(const QString&  preeditText, const QList<QInputMethodEvent::Attribute >&  attributes)
-{
+{ 
 return new QInputMethodEvent(preeditText, attributes); }
 
 const QList<QInputMethodEvent::Attribute >*  PythonQtWrapper_QInputMethodEvent::attributes(QInputMethodEvent* theWrappedObject) const
@@ -3379,17 +3379,17 @@ PythonQtShell_QInputMethodEvent__Attribute::~PythonQtShell_QInputMethodEvent__At
   if (priv) { priv->shellClassDeleted(this); }
 }
 QInputMethodEvent::Attribute* PythonQtWrapper_QInputMethodEvent__Attribute::new_QInputMethodEvent__Attribute(QInputMethodEvent::AttributeType  typ, int  s, int  l)
-{
+{ 
 return new PythonQtShell_QInputMethodEvent__Attribute(typ, s, l); }
 
 QInputMethodEvent::Attribute* PythonQtWrapper_QInputMethodEvent__Attribute::new_QInputMethodEvent__Attribute(QInputMethodEvent::AttributeType  typ, int  s, int  l, QVariant  val)
-{
+{ 
 return new PythonQtShell_QInputMethodEvent__Attribute(typ, s, l, val); }
 
 
 
 QInputMethodQueryEvent* PythonQtWrapper_QInputMethodQueryEvent::new_QInputMethodQueryEvent(Qt::InputMethodQueries  queries)
-{
+{ 
 return new QInputMethodQueryEvent(queries); }
 
 Qt::InputMethodQueries  PythonQtWrapper_QInputMethodQueryEvent::queries(QInputMethodQueryEvent* theWrappedObject) const
@@ -3623,11 +3623,11 @@ if (_wrapper) {
   return QIntValidator::validate(arg__1, arg__2);
 }
 QIntValidator* PythonQtWrapper_QIntValidator::new_QIntValidator(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QIntValidator(parent); }
 
 QIntValidator* PythonQtWrapper_QIntValidator::new_QIntValidator(int  bottom, int  top, QObject*  parent)
-{
+{ 
 return new PythonQtShell_QIntValidator(bottom, top, parent); }
 
 const QMetaObject* PythonQtShell_QIntValidator::metaObject() const {
@@ -4170,7 +4170,7 @@ if (_wrapper) {
   QItemDelegate::updateEditorGeometry(editor0, option1, index2);
 }
 QItemDelegate* PythonQtWrapper_QItemDelegate::new_QItemDelegate(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QItemDelegate(parent); }
 
 const QMetaObject* PythonQtShell_QItemDelegate::metaObject() const {
@@ -4334,7 +4334,7 @@ if (_wrapper) {
   return QByteArray();
 }
 QItemEditorCreatorBase* PythonQtWrapper_QItemEditorCreatorBase::new_QItemEditorCreatorBase()
-{
+{ 
 return new PythonQtShell_QItemEditorCreatorBase(); }
 
 QWidget*  PythonQtWrapper_QItemEditorCreatorBase::createWidget(QItemEditorCreatorBase* theWrappedObject, QWidget*  parent) const
@@ -4420,7 +4420,7 @@ if (_wrapper) {
   return QItemEditorFactory::valuePropertyName(userType0);
 }
 QItemEditorFactory* PythonQtWrapper_QItemEditorFactory::new_QItemEditorFactory()
-{
+{ 
 return new PythonQtShell_QItemEditorFactory(); }
 
 QWidget*  PythonQtWrapper_QItemEditorFactory::createEditor(QItemEditorFactory* theWrappedObject, int  userType, QWidget*  parent) const
@@ -4451,11 +4451,11 @@ QByteArray  PythonQtWrapper_QItemEditorFactory::valuePropertyName(QItemEditorFac
 
 
 QItemSelection* PythonQtWrapper_QItemSelection::new_QItemSelection()
-{
+{ 
 return new QItemSelection(); }
 
 QItemSelection* PythonQtWrapper_QItemSelection::new_QItemSelection(const QModelIndex&  topLeft, const QModelIndex&  bottomRight)
-{
+{ 
 return new QItemSelection(topLeft, bottomRight); }
 
 void PythonQtWrapper_QItemSelection::append(QItemSelection* theWrappedObject, const QItemSelectionRange&  t)
@@ -4999,11 +4999,11 @@ if (_wrapper) {
   QItemSelectionModel::timerEvent(event0);
 }
 QItemSelectionModel* PythonQtWrapper_QItemSelectionModel::new_QItemSelectionModel(QAbstractItemModel*  model)
-{
+{ 
 return new PythonQtShell_QItemSelectionModel(model); }
 
 QItemSelectionModel* PythonQtWrapper_QItemSelectionModel::new_QItemSelectionModel(QAbstractItemModel*  model, QObject*  parent)
-{
+{ 
 return new PythonQtShell_QItemSelectionModel(model, parent); }
 
 const QMetaObject* PythonQtShell_QItemSelectionModel::metaObject() const {
@@ -5097,19 +5097,19 @@ void PythonQtWrapper_QItemSelectionModel::setModel(QItemSelectionModel* theWrapp
 
 
 QItemSelectionRange* PythonQtWrapper_QItemSelectionRange::new_QItemSelectionRange()
-{
+{ 
 return new QItemSelectionRange(); }
 
 QItemSelectionRange* PythonQtWrapper_QItemSelectionRange::new_QItemSelectionRange(const QItemSelectionRange&  other)
-{
+{ 
 return new QItemSelectionRange(other); }
 
 QItemSelectionRange* PythonQtWrapper_QItemSelectionRange::new_QItemSelectionRange(const QModelIndex&  index)
-{
+{ 
 return new QItemSelectionRange(index); }
 
 QItemSelectionRange* PythonQtWrapper_QItemSelectionRange::new_QItemSelectionRange(const QModelIndex&  topL, const QModelIndex&  bottomR)
-{
+{ 
 return new QItemSelectionRange(topL, bottomR); }
 
 int  PythonQtWrapper_QItemSelectionRange::bottom(QItemSelectionRange* theWrappedObject) const
@@ -5236,11 +5236,11 @@ PythonQtShell_QKeyEvent::~PythonQtShell_QKeyEvent() {
   if (priv) { priv->shellClassDeleted(this); }
 }
 QKeyEvent* PythonQtWrapper_QKeyEvent::new_QKeyEvent(QEvent::Type  type, int  key, Qt::KeyboardModifiers  modifiers, const QString&  text, bool  autorep, ushort  count)
-{
+{ 
 return new PythonQtShell_QKeyEvent(type, key, modifiers, text, autorep, count); }
 
 QKeyEvent* PythonQtWrapper_QKeyEvent::new_QKeyEvent(QEvent::Type  type, int  key, Qt::KeyboardModifiers  modifiers, unsigned int  nativeScanCode, unsigned int  nativeVirtualKey, unsigned int  nativeModifiers, const QString&  text, bool  autorep, ushort  count)
-{
+{ 
 return new PythonQtShell_QKeyEvent(type, key, modifiers, nativeScanCode, nativeVirtualKey, nativeModifiers, text, autorep, count); }
 
 int  PythonQtWrapper_QKeyEvent::count(QKeyEvent* theWrappedObject) const
@@ -5482,11 +5482,11 @@ if (_wrapper) {
   QKeyEventTransition::timerEvent(event0);
 }
 QKeyEventTransition* PythonQtWrapper_QKeyEventTransition::new_QKeyEventTransition(QObject*  object, QEvent::Type  type, int  key, QState*  sourceState)
-{
+{ 
 return new PythonQtShell_QKeyEventTransition(object, type, key, sourceState); }
 
 QKeyEventTransition* PythonQtWrapper_QKeyEventTransition::new_QKeyEventTransition(QState*  sourceState)
-{
+{ 
 return new PythonQtShell_QKeyEventTransition(sourceState); }
 
 const QMetaObject* PythonQtShell_QKeyEventTransition::metaObject() const {
@@ -6215,7 +6215,7 @@ QSize  PythonQtShell_QKeySequenceEdit::minimumSizeHint() const
 if (_wrapper) {
   PYTHONQT_GIL_SCOPE
   if (Py_REFCNT((PyObject*)_wrapper) > 0) {
-    static PyObject* name = PyUnicode_FromString("getMinimumSizeHint");
+    static PyObject* name = PyUnicode_FromString("minimumSizeHint");
     PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
     if (obj) {
       static const char* argumentList[] ={"QSize"};
@@ -6227,7 +6227,7 @@ if (_wrapper) {
         args[0] = PythonQtConv::ConvertPythonToQt(methodInfo->parameters().at(0), result, false, nullptr, &returnValue);
         if (args[0]!=&returnValue) {
           if (args[0]==nullptr) {
-            PythonQt::priv()->handleVirtualOverloadReturnError("getMinimumSizeHint", methodInfo, result);
+            PythonQt::priv()->handleVirtualOverloadReturnError("minimumSizeHint", methodInfo, result);
           } else {
             returnValue = *((QSize*)args[0]);
           }
@@ -6578,7 +6578,7 @@ QSize  PythonQtShell_QKeySequenceEdit::sizeHint() const
 if (_wrapper) {
   PYTHONQT_GIL_SCOPE
   if (Py_REFCNT((PyObject*)_wrapper) > 0) {
-    static PyObject* name = PyUnicode_FromString("getSizeHint");
+    static PyObject* name = PyUnicode_FromString("sizeHint");
     PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
     if (obj) {
       static const char* argumentList[] ={"QSize"};
@@ -6590,7 +6590,7 @@ if (_wrapper) {
         args[0] = PythonQtConv::ConvertPythonToQt(methodInfo->parameters().at(0), result, false, nullptr, &returnValue);
         if (args[0]!=&returnValue) {
           if (args[0]==nullptr) {
-            PythonQt::priv()->handleVirtualOverloadReturnError("getSizeHint", methodInfo, result);
+            PythonQt::priv()->handleVirtualOverloadReturnError("sizeHint", methodInfo, result);
           } else {
             returnValue = *((QSize*)args[0]);
           }
@@ -6673,11 +6673,11 @@ if (_wrapper) {
   QKeySequenceEdit::wheelEvent(event0);
 }
 QKeySequenceEdit* PythonQtWrapper_QKeySequenceEdit::new_QKeySequenceEdit(QWidget*  parent)
-{
+{ 
 return new PythonQtShell_QKeySequenceEdit(parent); }
 
 QKeySequenceEdit* PythonQtWrapper_QKeySequenceEdit::new_QKeySequenceEdit(const QKeySequence&  keySequence, QWidget*  parent)
-{
+{ 
 return new PythonQtShell_QKeySequenceEdit(keySequence, parent); }
 
 const QMetaObject* PythonQtShell_QKeySequenceEdit::metaObject() const {
@@ -7391,7 +7391,7 @@ QSize  PythonQtShell_QLCDNumber::minimumSizeHint() const
 if (_wrapper) {
   PYTHONQT_GIL_SCOPE
   if (Py_REFCNT((PyObject*)_wrapper) > 0) {
-    static PyObject* name = PyUnicode_FromString("getMinimumSizeHint");
+    static PyObject* name = PyUnicode_FromString("minimumSizeHint");
     PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
     if (obj) {
       static const char* argumentList[] ={"QSize"};
@@ -7403,7 +7403,7 @@ if (_wrapper) {
         args[0] = PythonQtConv::ConvertPythonToQt(methodInfo->parameters().at(0), result, false, nullptr, &returnValue);
         if (args[0]!=&returnValue) {
           if (args[0]==nullptr) {
-            PythonQt::priv()->handleVirtualOverloadReturnError("getMinimumSizeHint", methodInfo, result);
+            PythonQt::priv()->handleVirtualOverloadReturnError("minimumSizeHint", methodInfo, result);
           } else {
             returnValue = *((QSize*)args[0]);
           }
@@ -7849,11 +7849,11 @@ if (_wrapper) {
   QLCDNumber::wheelEvent(event0);
 }
 QLCDNumber* PythonQtWrapper_QLCDNumber::new_QLCDNumber(QWidget*  parent)
-{
+{ 
 return new PythonQtShell_QLCDNumber(parent); }
 
 QLCDNumber* PythonQtWrapper_QLCDNumber::new_QLCDNumber(uint  numDigits, QWidget*  parent)
-{
+{ 
 return new PythonQtShell_QLCDNumber(numDigits, parent); }
 
 const QMetaObject* PythonQtShell_QLCDNumber::metaObject() const {
@@ -9075,11 +9075,11 @@ if (_wrapper) {
   QLabel::wheelEvent(event0);
 }
 QLabel* PythonQtWrapper_QLabel::new_QLabel(QWidget*  parent, Qt::WindowFlags  f)
-{
+{ 
 return new PythonQtShell_QLabel(parent, f); }
 
 QLabel* PythonQtWrapper_QLabel::new_QLabel(const QString&  text, QWidget*  parent, Qt::WindowFlags  f)
-{
+{ 
 return new PythonQtShell_QLabel(text, parent, f); }
 
 const QMetaObject* PythonQtShell_QLabel::metaObject() const {
@@ -9123,11 +9123,6 @@ int  PythonQtWrapper_QLabel::indent(QLabel* theWrappedObject) const
 int  PythonQtWrapper_QLabel::margin(QLabel* theWrappedObject) const
 {
   return ( theWrappedObject->margin());
-}
-
-QSize  PythonQtWrapper_QLabel::minimumSizeHint(QLabel* theWrappedObject) const
-{
-  return ( theWrappedObject->minimumSizeHint());
 }
 
 QMovie*  PythonQtWrapper_QLabel::movie(QLabel* theWrappedObject) const
@@ -9256,7 +9251,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 void PythonQtShell_QLayout::childEvent(QChildEvent*  e0)
 {
@@ -9996,11 +9991,11 @@ if (_wrapper) {
   return QLayout::widget();
 }
 QLayout* PythonQtWrapper_QLayout::new_QLayout()
-{
+{ 
 return new PythonQtShell_QLayout(); }
 
 QLayout* PythonQtWrapper_QLayout::new_QLayout(QWidget*  parent)
-{
+{ 
 return new PythonQtShell_QLayout(parent); }
 
 const QMetaObject* PythonQtShell_QLayout::metaObject() const {
@@ -10584,7 +10579,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 QSize  PythonQtShell_QLayoutItem::sizeHint() const
 {
@@ -10686,7 +10681,7 @@ if (_wrapper) {
   return QLayoutItem::widget();
 }
 QLayoutItem* PythonQtWrapper_QLayoutItem::new_QLayoutItem(Qt::Alignment  alignment)
-{
+{ 
 return new PythonQtShell_QLayoutItem(alignment); }
 
 Qt::Alignment  PythonQtWrapper_QLayoutItem::alignment(QLayoutItem* theWrappedObject) const
@@ -11925,11 +11920,11 @@ if (_wrapper) {
   QLineEdit::wheelEvent(event0);
 }
 QLineEdit* PythonQtWrapper_QLineEdit::new_QLineEdit(QWidget*  parent)
-{
+{ 
 return new PythonQtShell_QLineEdit(parent); }
 
 QLineEdit* PythonQtWrapper_QLineEdit::new_QLineEdit(const QString&  arg__1, QWidget*  parent)
-{
+{ 
 return new PythonQtShell_QLineEdit(arg__1, parent); }
 
 const QMetaObject* PythonQtShell_QLineEdit::metaObject() const {
@@ -12120,11 +12115,6 @@ int  PythonQtWrapper_QLineEdit::maxLength(QLineEdit* theWrappedObject) const
   return ( theWrappedObject->maxLength());
 }
 
-QSize  PythonQtWrapper_QLineEdit::minimumSizeHint(QLineEdit* theWrappedObject) const
-{
-  return ( theWrappedObject->minimumSizeHint());
-}
-
 QString  PythonQtWrapper_QLineEdit::placeholderText(QLineEdit* theWrappedObject) const
 {
   return ( theWrappedObject->placeholderText());
@@ -12233,11 +12223,6 @@ void PythonQtWrapper_QLineEdit::setTextMargins(QLineEdit* theWrappedObject, int 
 void PythonQtWrapper_QLineEdit::setValidator(QLineEdit* theWrappedObject, const QValidator*  arg__1)
 {
   ( theWrappedObject->setValidator(arg__1));
-}
-
-QSize  PythonQtWrapper_QLineEdit::sizeHint(QLineEdit* theWrappedObject) const
-{
-  return ( theWrappedObject->sizeHint());
 }
 
 QString  PythonQtWrapper_QLineEdit::text(QLineEdit* theWrappedObject) const

@@ -3,49 +3,53 @@
 #include <QPair>
 #include <QStringList>
 #include <QVariant>
-#include <qabstractitemdelegate.h>
+#include <QtWidgets/qabstractitemdelegate.h>
+#include <QtWidgets/qabstractitemview.h>
+#include <QtWidgets/qaction.h>
+#include <QtWidgets/qcompleter.h>
+#include <QtWidgets/qfocusframe.h>
+#include <QtWidgets/qfontcombobox.h>
+#include <QtWidgets/qfontdialog.h>
+#include <QtWidgets/qformlayout.h>
+#include <QtWidgets/qframe.h>
+#include <QtWidgets/qgesture.h>
+#include <QtWidgets/qgesturerecognizer.h>
+#include <QtWidgets/qgraphicsanchorlayout.h>
+#include <QtWidgets/qgraphicseffect.h>
+#include <QtWidgets/qgraphicsgridlayout.h>
+#include <QtWidgets/qgraphicsitem.h>
+#include <QtWidgets/qgraphicsitemanimation.h>
+#include <QtWidgets/qgraphicslayout.h>
+#include <QtWidgets/qgraphicslayoutitem.h>
+#include <QtWidgets/qgraphicsproxywidget.h>
+#include <QtWidgets/qgraphicsscene.h>
+#include <QtWidgets/qgraphicssceneevent.h>
+#include <QtWidgets/qgraphicstransform.h>
+#include <QtWidgets/qgraphicswidget.h>
+#include <QtWidgets/qlayout.h>
+#include <QtWidgets/qlayoutitem.h>
+#include <QtWidgets/qlineedit.h>
+#include <QtWidgets/qsizepolicy.h>
+#include <QtWidgets/qstyle.h>
+#include <QtWidgets/qstyleoption.h>
+#include <QtWidgets/qwidget.h>
 #include <qabstractitemmodel.h>
-#include <qabstractitemview.h>
-#include <qaction.h>
 #include <qbackingstore.h>
 #include <qbitmap.h>
 #include <qbrush.h>
 #include <qbytearray.h>
 #include <qcolor.h>
-#include <qcompleter.h>
 #include <qcoreevent.h>
 #include <qcursor.h>
 #include <qevent.h>
-#include <qfocusframe.h>
 #include <qfont.h>
-#include <qfontcombobox.h>
 #include <qfontdatabase.h>
-#include <qfontdialog.h>
 #include <qfontinfo.h>
 #include <qfontmetrics.h>
-#include <qformlayout.h>
-#include <qframe.h>
-#include <qgesture.h>
-#include <qgesturerecognizer.h>
 #include <qglyphrun.h>
-#include <qgraphicsanchorlayout.h>
-#include <qgraphicseffect.h>
-#include <qgraphicsgridlayout.h>
-#include <qgraphicsitem.h>
-#include <qgraphicsitemanimation.h>
-#include <qgraphicslayout.h>
-#include <qgraphicslayoutitem.h>
-#include <qgraphicsproxywidget.h>
-#include <qgraphicsscene.h>
-#include <qgraphicssceneevent.h>
-#include <qgraphicstransform.h>
-#include <qgraphicswidget.h>
 #include <qicon.h>
 #include <qkeysequence.h>
-#include <qlayout.h>
-#include <qlayoutitem.h>
 #include <qline.h>
-#include <qlineedit.h>
 #include <qlist.h>
 #include <qlocale.h>
 #include <qmargins.h>
@@ -67,16 +71,12 @@
 #include <qregion.h>
 #include <qscreen.h>
 #include <qsize.h>
-#include <qsizepolicy.h>
 #include <qstringlist.h>
-#include <qstyle.h>
-#include <qstyleoption.h>
 #include <qthread.h>
 #include <qtimeline.h>
 #include <qtransform.h>
 #include <qvalidator.h>
 #include <qvector.h>
-#include <qwidget.h>
 #include <qwindow.h>
 
 
@@ -84,7 +84,7 @@
 class PythonQtWrapper_QFocusEvent : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QFocusEvent* new_QFocusEvent(QEvent::Type  type, Qt::FocusReason  reason = Qt::OtherFocusReason);
 void delete_QFocusEvent(QFocusEvent* obj) { delete obj; }
    bool  gotFocus(QFocusEvent* theWrappedObject) const;
@@ -168,7 +168,7 @@ inline void py_q_paintEvent(QPaintEvent*  arg__1) { QFocusFrame::paintEvent(arg_
 class PythonQtWrapper_QFocusFrame : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QFocusFrame* new_QFocusFrame(QWidget*  parent = nullptr);
 void delete_QFocusFrame(QFocusFrame* obj) { delete obj; }
    bool  py_q_event(QFocusFrame* theWrappedObject, QEvent*  e){  return (((PythonQtPublicPromoter_QFocusFrame*)theWrappedObject)->py_q_event(e));}
@@ -258,7 +258,7 @@ Q_FLAGS(FontFilters )
 enum FontFilter{
   AllFonts = QFontComboBox::AllFonts,   ScalableFonts = QFontComboBox::ScalableFonts,   NonScalableFonts = QFontComboBox::NonScalableFonts,   MonospacedFonts = QFontComboBox::MonospacedFonts,   ProportionalFonts = QFontComboBox::ProportionalFonts};
 Q_DECLARE_FLAGS(FontFilters, FontFilter)
-public slots:
+public Q_SLOTS:
 QFontComboBox* new_QFontComboBox(QWidget*  parent = nullptr);
 void delete_QFontComboBox(QFontComboBox* obj) { delete obj; }
    QFont  currentFont(QFontComboBox* theWrappedObject) const;
@@ -282,7 +282,7 @@ enum SystemFont{
   GeneralFont = QFontDatabase::GeneralFont,   FixedFont = QFontDatabase::FixedFont,   TitleFont = QFontDatabase::TitleFont,   SmallestReadableFont = QFontDatabase::SmallestReadableFont};
 enum WritingSystem{
   Any = QFontDatabase::Any,   Latin = QFontDatabase::Latin,   Greek = QFontDatabase::Greek,   Cyrillic = QFontDatabase::Cyrillic,   Armenian = QFontDatabase::Armenian,   Hebrew = QFontDatabase::Hebrew,   Arabic = QFontDatabase::Arabic,   Syriac = QFontDatabase::Syriac,   Thaana = QFontDatabase::Thaana,   Devanagari = QFontDatabase::Devanagari,   Bengali = QFontDatabase::Bengali,   Gurmukhi = QFontDatabase::Gurmukhi,   Gujarati = QFontDatabase::Gujarati,   Oriya = QFontDatabase::Oriya,   Tamil = QFontDatabase::Tamil,   Telugu = QFontDatabase::Telugu,   Kannada = QFontDatabase::Kannada,   Malayalam = QFontDatabase::Malayalam,   Sinhala = QFontDatabase::Sinhala,   Thai = QFontDatabase::Thai,   Lao = QFontDatabase::Lao,   Tibetan = QFontDatabase::Tibetan,   Myanmar = QFontDatabase::Myanmar,   Georgian = QFontDatabase::Georgian,   Khmer = QFontDatabase::Khmer,   SimplifiedChinese = QFontDatabase::SimplifiedChinese,   TraditionalChinese = QFontDatabase::TraditionalChinese,   Japanese = QFontDatabase::Japanese,   Korean = QFontDatabase::Korean,   Vietnamese = QFontDatabase::Vietnamese,   Symbol = QFontDatabase::Symbol,   Other = QFontDatabase::Other,   Ogham = QFontDatabase::Ogham,   Runic = QFontDatabase::Runic,   Nko = QFontDatabase::Nko,   WritingSystemsCount = QFontDatabase::WritingSystemsCount};
-public slots:
+public Q_SLOTS:
 QFontDatabase* new_QFontDatabase();
 QFontDatabase* new_QFontDatabase(const QFontDatabase& other) {
 QFontDatabase* a = new QFontDatabase();
@@ -405,7 +405,7 @@ Q_FLAGS(FontDialogOptions )
 enum FontDialogOption{
   NoButtons = QFontDialog::NoButtons,   DontUseNativeDialog = QFontDialog::DontUseNativeDialog,   ScalableFonts = QFontDialog::ScalableFonts,   NonScalableFonts = QFontDialog::NonScalableFonts,   MonospacedFonts = QFontDialog::MonospacedFonts,   ProportionalFonts = QFontDialog::ProportionalFonts};
 Q_DECLARE_FLAGS(FontDialogOptions, FontDialogOption)
-public slots:
+public Q_SLOTS:
 QFontDialog* new_QFontDialog(QWidget*  parent = nullptr);
 QFontDialog* new_QFontDialog(const QFont&  initial, QWidget*  parent = nullptr);
 void delete_QFontDialog(QFontDialog* obj) { delete obj; }
@@ -432,7 +432,7 @@ void delete_QFontDialog(QFontDialog* obj) { delete obj; }
 class PythonQtWrapper_QFontInfo : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QFontInfo* new_QFontInfo(const QFont&  arg__1);
 QFontInfo* new_QFontInfo(const QFontInfo&  arg__1);
 void delete_QFontInfo(QFontInfo* obj) { delete obj; }
@@ -455,7 +455,7 @@ void delete_QFontInfo(QFontInfo* obj) { delete obj; }
    int  weight(QFontInfo* theWrappedObject) const;
 
    QFontInfo* new_QFontInfo() { return new QFontInfo(QFont()); }
-
+   
 };
 
 
@@ -465,7 +465,7 @@ void delete_QFontInfo(QFontInfo* obj) { delete obj; }
 class PythonQtWrapper_QFontMetrics : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QFontMetrics* new_QFontMetrics(const QFont&  arg__1);
 QFontMetrics* new_QFontMetrics(const QFont&  font, QPaintDevice*  pd);
 QFontMetrics* new_QFontMetrics(const QFontMetrics&  arg__1);
@@ -506,7 +506,7 @@ void delete_QFontMetrics(QFontMetrics* obj) { delete obj; }
    int  xHeight(QFontMetrics* theWrappedObject) const;
 
    QFontMetrics* new_QFontMetrics() { return new QFontMetrics(QFont()); }
-
+   
 };
 
 
@@ -516,7 +516,7 @@ void delete_QFontMetrics(QFontMetrics* obj) { delete obj; }
 class PythonQtWrapper_QFontMetricsF : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QFontMetricsF* new_QFontMetricsF(const QFont&  font);
 QFontMetricsF* new_QFontMetricsF(const QFont&  font, QPaintDevice*  pd);
 void delete_QFontMetricsF(QFontMetricsF* obj) { delete obj; }
@@ -613,7 +613,7 @@ inline QLayoutItem*  py_q_takeAt(int  index) { return QFormLayout::takeAt(index)
 class PythonQtWrapper_QFormLayout : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QFormLayout* new_QFormLayout(QWidget*  parent = nullptr);
 void delete_QFormLayout(QFormLayout* obj) { delete obj; }
    void py_q_addItem(QFormLayout* theWrappedObject, QLayoutItem*  item){  (((PythonQtPublicPromoter_QFormLayout*)theWrappedObject)->py_q_addItem(item));}
@@ -690,7 +690,7 @@ public:
 class PythonQtWrapper_QFormLayout__TakeRowResult : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QFormLayout::TakeRowResult* new_QFormLayout__TakeRowResult();
 QFormLayout::TakeRowResult* new_QFormLayout__TakeRowResult(const QFormLayout::TakeRowResult& other) {
 PythonQtShell_QFormLayout__TakeRowResult* a = new PythonQtShell_QFormLayout__TakeRowResult();
@@ -784,7 +784,7 @@ public:
 Q_ENUMS(StyleMask )
 enum StyleMask{
   Shadow_Mask = QFrame::Shadow_Mask,   Shape_Mask = QFrame::Shape_Mask};
-public slots:
+public Q_SLOTS:
 QFrame* new_QFrame(QWidget*  parent = nullptr, Qt::WindowFlags  f = Qt::WindowFlags());
 void delete_QFrame(QFrame* obj) { delete obj; }
    void py_q_changeEvent(QFrame* theWrappedObject, QEvent*  arg__1){  (((PythonQtPublicPromoter_QFrame*)theWrappedObject)->py_q_changeEvent(arg__1));}
@@ -805,7 +805,6 @@ void delete_QFrame(QFrame* obj) { delete obj; }
    void setFrameStyle(QFrame* theWrappedObject, int  arg__1);
    void setLineWidth(QFrame* theWrappedObject, int  arg__1);
    void setMidLineWidth(QFrame* theWrappedObject, int  arg__1);
-   QSize  sizeHint(QFrame* theWrappedObject) const;
    QSize  py_q_sizeHint(QFrame* theWrappedObject) const{  return (((PythonQtPublicPromoter_QFrame*)theWrappedObject)->py_q_sizeHint());}
 };
 
@@ -837,7 +836,7 @@ public:
 Q_ENUMS(GestureCancelPolicy )
 enum GestureCancelPolicy{
   CancelNone = QGesture::CancelNone,   CancelAllInContext = QGesture::CancelAllInContext};
-public slots:
+public Q_SLOTS:
 QGesture* new_QGesture(QObject*  parent = nullptr);
 void delete_QGesture(QGesture* obj) { delete obj; }
    QGesture::GestureCancelPolicy  gestureCancelPolicy(QGesture* theWrappedObject) const;
@@ -858,7 +857,7 @@ void delete_QGesture(QGesture* obj) { delete obj; }
 class PythonQtWrapper_QGestureEvent : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QGestureEvent* new_QGestureEvent(const QList<QGesture* >&  gestures);
 void delete_QGestureEvent(QGestureEvent* obj) { delete obj; }
    void accept(QGestureEvent* theWrappedObject, QGesture*  arg__1);
@@ -912,7 +911,7 @@ Q_FLAGS(Result )
 enum ResultFlag{
   Ignore = QGestureRecognizer::Ignore,   MayBeGesture = QGestureRecognizer::MayBeGesture,   TriggerGesture = QGestureRecognizer::TriggerGesture,   FinishGesture = QGestureRecognizer::FinishGesture,   CancelGesture = QGestureRecognizer::CancelGesture,   ResultState_Mask = QGestureRecognizer::ResultState_Mask,   ConsumeEventHint = QGestureRecognizer::ConsumeEventHint,   ResultHint_Mask = QGestureRecognizer::ResultHint_Mask};
 Q_DECLARE_FLAGS(Result, ResultFlag)
-public slots:
+public Q_SLOTS:
 QGestureRecognizer* new_QGestureRecognizer();
 void delete_QGestureRecognizer(QGestureRecognizer* obj) { delete obj; }
    QGesture*  create(QGestureRecognizer* theWrappedObject, QObject*  target);
@@ -937,7 +936,7 @@ Q_FLAGS(GlyphRunFlags )
 enum GlyphRunFlag{
   Overline = QGlyphRun::Overline,   Underline = QGlyphRun::Underline,   StrikeOut = QGlyphRun::StrikeOut,   RightToLeft = QGlyphRun::RightToLeft,   SplitLigature = QGlyphRun::SplitLigature};
 Q_DECLARE_FLAGS(GlyphRunFlags, GlyphRunFlag)
-public slots:
+public Q_SLOTS:
 QGlyphRun* new_QGlyphRun();
 QGlyphRun* new_QGlyphRun(const QGlyphRun&  other);
 void delete_QGlyphRun(QGlyphRun* obj) { delete obj; }
@@ -986,7 +985,7 @@ enum Spread{
   PadSpread = QGradient::PadSpread,   ReflectSpread = QGradient::ReflectSpread,   RepeatSpread = QGradient::RepeatSpread};
 enum Type{
   LinearGradient = QGradient::LinearGradient,   RadialGradient = QGradient::RadialGradient,   ConicalGradient = QGradient::ConicalGradient,   NoGradient = QGradient::NoGradient};
-public slots:
+public Q_SLOTS:
 QGradient* new_QGradient();
 QGradient* new_QGradient(QGradient::Preset  arg__1);
 QGradient* new_QGradient(const QGradient& other) {
@@ -1013,7 +1012,7 @@ void delete_QGradient(QGradient* obj) { delete obj; }
 class PythonQtWrapper_QGraphicsAnchor : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 void delete_QGraphicsAnchor(QGraphicsAnchor* obj) { delete obj; }
    void setSizePolicy(QGraphicsAnchor* theWrappedObject, QSizePolicy::Policy  policy);
    void setSpacing(QGraphicsAnchor* theWrappedObject, qreal  spacing);
@@ -1060,11 +1059,11 @@ inline QSizeF  py_q_sizeHint(Qt::SizeHint  which, const QSizeF&  constraint = QS
 class PythonQtWrapper_QGraphicsAnchorLayout : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QGraphicsAnchorLayout* new_QGraphicsAnchorLayout(QGraphicsLayoutItem*  parent = nullptr);
 void delete_QGraphicsAnchorLayout(QGraphicsAnchorLayout* obj) { delete obj; }
    QGraphicsAnchor*  addAnchor(QGraphicsAnchorLayout* theWrappedObject, QGraphicsLayoutItem*  firstItem, Qt::AnchorPoint  firstEdge, QGraphicsLayoutItem*  secondItem, Qt::AnchorPoint  secondEdge);
-   void addAnchors(QGraphicsAnchorLayout* theWrappedObject, QGraphicsLayoutItem*  firstItem, QGraphicsLayoutItem*  secondItem, Qt::Orientations  orientations = Qt::Horizontal | Qt::Vertical);
+   void addAnchors(QGraphicsAnchorLayout* theWrappedObject, QGraphicsLayoutItem*  firstItem, QGraphicsLayoutItem*  secondItem, Qt::Orientations  orientations = Qt::Horizontal|Qt::Vertical);
    void addCornerAnchors(QGraphicsAnchorLayout* theWrappedObject, QGraphicsLayoutItem*  firstItem, Qt::Corner  firstCorner, QGraphicsLayoutItem*  secondItem, Qt::Corner  secondCorner);
    QGraphicsAnchor*  anchor(QGraphicsAnchorLayout* theWrappedObject, QGraphicsLayoutItem*  firstItem, Qt::AnchorPoint  firstEdge, QGraphicsLayoutItem*  secondItem, Qt::AnchorPoint  secondEdge);
    int  py_q_count(QGraphicsAnchorLayout* theWrappedObject) const{  return (((PythonQtPublicPromoter_QGraphicsAnchorLayout*)theWrappedObject)->py_q_count());}
@@ -1120,7 +1119,7 @@ Q_FLAGS(BlurHints )
 enum BlurHint{
   PerformanceHint = QGraphicsBlurEffect::PerformanceHint,   QualityHint = QGraphicsBlurEffect::QualityHint,   AnimationHint = QGraphicsBlurEffect::AnimationHint};
 Q_DECLARE_FLAGS(BlurHints, BlurHint)
-public slots:
+public Q_SLOTS:
 QGraphicsBlurEffect* new_QGraphicsBlurEffect(QObject*  parent = nullptr);
 void delete_QGraphicsBlurEffect(QGraphicsBlurEffect* obj) { delete obj; }
    QGraphicsBlurEffect::BlurHints  blurHints(QGraphicsBlurEffect* theWrappedObject) const;
@@ -1163,7 +1162,7 @@ inline void py_q_draw(QPainter*  painter) { QGraphicsColorizeEffect::draw(painte
 class PythonQtWrapper_QGraphicsColorizeEffect : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QGraphicsColorizeEffect* new_QGraphicsColorizeEffect(QObject*  parent = nullptr);
 void delete_QGraphicsColorizeEffect(QGraphicsColorizeEffect* obj) { delete obj; }
    QColor  color(QGraphicsColorizeEffect* theWrappedObject) const;
@@ -1206,7 +1205,7 @@ inline void py_q_draw(QPainter*  painter) { QGraphicsDropShadowEffect::draw(pain
 class PythonQtWrapper_QGraphicsDropShadowEffect : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QGraphicsDropShadowEffect* new_QGraphicsDropShadowEffect(QObject*  parent = nullptr);
 void delete_QGraphicsDropShadowEffect(QGraphicsDropShadowEffect* obj) { delete obj; }
    qreal  blurRadius(QGraphicsDropShadowEffect* theWrappedObject) const;
@@ -1267,7 +1266,7 @@ enum ChangeFlag{
 enum PixmapPadMode{
   NoPad = QGraphicsEffect::NoPad,   PadToTransparentBorder = QGraphicsEffect::PadToTransparentBorder,   PadToEffectiveBoundingRect = QGraphicsEffect::PadToEffectiveBoundingRect};
 Q_DECLARE_FLAGS(ChangeFlags, ChangeFlag)
-public slots:
+public Q_SLOTS:
 QGraphicsEffect* new_QGraphicsEffect(QObject*  parent = nullptr);
 void delete_QGraphicsEffect(QGraphicsEffect* obj) { delete obj; }
    QRectF  boundingRect(QGraphicsEffect* theWrappedObject) const;
@@ -1360,7 +1359,7 @@ public:
 Q_ENUMS(enum_1 )
 enum enum_1{
   Type = QGraphicsEllipseItem::Type};
-public slots:
+public Q_SLOTS:
 QGraphicsEllipseItem* new_QGraphicsEllipseItem(QGraphicsItem*  parent = nullptr);
 QGraphicsEllipseItem* new_QGraphicsEllipseItem(const QRectF&  rect, QGraphicsItem*  parent = nullptr);
 QGraphicsEllipseItem* new_QGraphicsEllipseItem(qreal  x, qreal  y, qreal  w, qreal  h, QGraphicsItem*  parent = nullptr);
@@ -1421,7 +1420,7 @@ inline QSizeF  py_q_sizeHint(Qt::SizeHint  which, const QSizeF&  constraint = QS
 class PythonQtWrapper_QGraphicsGridLayout : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QGraphicsGridLayout* new_QGraphicsGridLayout(QGraphicsLayoutItem*  parent = nullptr);
 void delete_QGraphicsGridLayout(QGraphicsGridLayout* obj) { delete obj; }
    void addItem(QGraphicsGridLayout* theWrappedObject, PythonQtPassOwnershipToCPP<QGraphicsLayoutItem* >  item, int  row, int  column, Qt::Alignment  alignment = Qt::Alignment());
@@ -1609,7 +1608,7 @@ enum PanelModality{
 enum enum_1{
   Type = QGraphicsItem::Type,   UserType = QGraphicsItem::UserType};
 Q_DECLARE_FLAGS(GraphicsItemFlags, GraphicsItemFlag)
-public slots:
+public Q_SLOTS:
 QGraphicsItem* new_QGraphicsItem(QGraphicsItem*  parent = nullptr);
 void delete_QGraphicsItem(QGraphicsItem* obj) { delete obj; }
    bool  acceptDrops(QGraphicsItem* theWrappedObject) const;
@@ -1892,7 +1891,7 @@ inline void py_q_beforeAnimationStep(qreal  step) { QGraphicsItemAnimation::befo
 class PythonQtWrapper_QGraphicsItemAnimation : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QGraphicsItemAnimation* new_QGraphicsItemAnimation(QObject*  parent = nullptr);
 void delete_QGraphicsItemAnimation(QGraphicsItemAnimation* obj) { delete obj; }
    void afterAnimationStep(QGraphicsItemAnimation* theWrappedObject, qreal  step);
@@ -1991,7 +1990,7 @@ public:
 Q_ENUMS(enum_1 )
 enum enum_1{
   Type = QGraphicsItemGroup::Type};
-public slots:
+public Q_SLOTS:
 QGraphicsItemGroup* new_QGraphicsItemGroup(QGraphicsItem*  parent = nullptr);
 void delete_QGraphicsItemGroup(QGraphicsItemGroup* obj) { delete obj; }
    void addToGroup(QGraphicsItemGroup* theWrappedObject, QGraphicsItem*  item);
@@ -2042,7 +2041,7 @@ inline void py_q_widgetEvent(QEvent*  e) { QGraphicsLayout::widgetEvent(e); }
 class PythonQtWrapper_QGraphicsLayout : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QGraphicsLayout* new_QGraphicsLayout(QGraphicsLayoutItem*  parent = nullptr);
 void delete_QGraphicsLayout(QGraphicsLayout* obj) { delete obj; }
    void activate(QGraphicsLayout* theWrappedObject);
@@ -2098,7 +2097,7 @@ inline void py_q_updateGeometry() { QGraphicsLayoutItem::updateGeometry(); }
 class PythonQtWrapper_QGraphicsLayoutItem : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QGraphicsLayoutItem* new_QGraphicsLayoutItem(QGraphicsLayoutItem*  parent = nullptr, bool  isLayout = false);
 void delete_QGraphicsLayoutItem(QGraphicsLayoutItem* obj) { delete obj; }
    QRectF  contentsRect(QGraphicsLayoutItem* theWrappedObject) const;
@@ -2220,7 +2219,7 @@ public:
 Q_ENUMS(enum_1 )
 enum enum_1{
   Type = QGraphicsLineItem::Type};
-public slots:
+public Q_SLOTS:
 QGraphicsLineItem* new_QGraphicsLineItem(QGraphicsItem*  parent = nullptr);
 QGraphicsLineItem* new_QGraphicsLineItem(const QLineF&  line, QGraphicsItem*  parent = nullptr);
 QGraphicsLineItem* new_QGraphicsLineItem(qreal  x1, qreal  y1, qreal  x2, qreal  y2, QGraphicsItem*  parent = nullptr);

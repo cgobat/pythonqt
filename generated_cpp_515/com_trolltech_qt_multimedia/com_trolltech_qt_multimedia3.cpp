@@ -3,8 +3,16 @@
 #include <PythonQtMethodInfo.h>
 #include <PythonQtSignalReceiver.h>
 #include <QVariant>
-#include <qabstractvideosurface.h>
-#include <qaction.h>
+#include <QtMultimedia/qabstractvideosurface.h>
+#include <QtMultimedia/qmediaobject.h>
+#include <QtMultimedia/qvideosurfaceformat.h>
+#include <QtWidgets/qaction.h>
+#include <QtWidgets/qgraphicseffect.h>
+#include <QtWidgets/qgraphicsproxywidget.h>
+#include <QtWidgets/qlayout.h>
+#include <QtWidgets/qsizepolicy.h>
+#include <QtWidgets/qstyle.h>
+#include <QtWidgets/qwidget.h>
 #include <qbackingstore.h>
 #include <qbitmap.h>
 #include <qbytearray.h>
@@ -14,15 +22,11 @@
 #include <qfont.h>
 #include <qfontinfo.h>
 #include <qfontmetrics.h>
-#include <qgraphicseffect.h>
-#include <qgraphicsproxywidget.h>
 #include <qicon.h>
 #include <qkeysequence.h>
-#include <qlayout.h>
 #include <qlist.h>
 #include <qlocale.h>
 #include <qmargins.h>
-#include <qmediaobject.h>
 #include <qmetaobject.h>
 #include <qobject.h>
 #include <qpaintdevice.h>
@@ -35,11 +39,7 @@
 #include <qregion.h>
 #include <qscreen.h>
 #include <qsize.h>
-#include <qsizepolicy.h>
-#include <qstyle.h>
 #include <qthread.h>
-#include <qvideosurfaceformat.h>
-#include <qwidget.h>
 #include <qwindow.h>
 
 PythonQtShell_QVideoRendererControl::~PythonQtShell_QVideoRendererControl() {
@@ -176,7 +176,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 QAbstractVideoSurface*  PythonQtShell_QVideoRendererControl::surface() const
 {
@@ -234,7 +234,7 @@ if (_wrapper) {
   QVideoRendererControl::timerEvent(event0);
 }
 QVideoRendererControl* PythonQtWrapper_QVideoRendererControl::new_QVideoRendererControl(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QVideoRendererControl(parent); }
 
 const QMetaObject* PythonQtShell_QVideoRendererControl::metaObject() const {
@@ -263,15 +263,15 @@ QAbstractVideoSurface*  PythonQtWrapper_QVideoRendererControl::surface(QVideoRen
 
 
 QVideoSurfaceFormat* PythonQtWrapper_QVideoSurfaceFormat::new_QVideoSurfaceFormat()
-{
+{ 
 return new QVideoSurfaceFormat(); }
 
 QVideoSurfaceFormat* PythonQtWrapper_QVideoSurfaceFormat::new_QVideoSurfaceFormat(const QSize&  size, QVideoFrame::PixelFormat  pixelFormat, QAbstractVideoBuffer::HandleType  handleType)
-{
+{ 
 return new QVideoSurfaceFormat(size, pixelFormat, handleType); }
 
 QVideoSurfaceFormat* PythonQtWrapper_QVideoSurfaceFormat::new_QVideoSurfaceFormat(const QVideoSurfaceFormat&  format)
-{
+{ 
 return new QVideoSurfaceFormat(format); }
 
 int  PythonQtWrapper_QVideoSurfaceFormat::frameHeight(QVideoSurfaceFormat* theWrappedObject) const
@@ -1147,7 +1147,7 @@ QSize  PythonQtShell_QVideoWidget::minimumSizeHint() const
 if (_wrapper) {
   PYTHONQT_GIL_SCOPE
   if (Py_REFCNT((PyObject*)_wrapper) > 0) {
-    static PyObject* name = PyUnicode_FromString("getMinimumSizeHint");
+    static PyObject* name = PyUnicode_FromString("minimumSizeHint");
     PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
     if (obj) {
       static const char* argumentList[] ={"QSize"};
@@ -1159,7 +1159,7 @@ if (_wrapper) {
         args[0] = PythonQtConv::ConvertPythonToQt(methodInfo->parameters().at(0), result, false, nullptr, &returnValue);
         if (args[0]!=&returnValue) {
           if (args[0]==nullptr) {
-            PythonQt::priv()->handleVirtualOverloadReturnError("getMinimumSizeHint", methodInfo, result);
+            PythonQt::priv()->handleVirtualOverloadReturnError("minimumSizeHint", methodInfo, result);
           } else {
             returnValue = *((QSize*)args[0]);
           }
@@ -1638,7 +1638,7 @@ if (_wrapper) {
   QVideoWidget::wheelEvent(event0);
 }
 QVideoWidget* PythonQtWrapper_QVideoWidget::new_QVideoWidget(QWidget*  parent)
-{
+{ 
 return new PythonQtShell_QVideoWidget(parent); }
 
 const QMetaObject* PythonQtShell_QVideoWidget::metaObject() const {
@@ -1677,11 +1677,6 @@ int  PythonQtWrapper_QVideoWidget::hue(QVideoWidget* theWrappedObject) const
 int  PythonQtWrapper_QVideoWidget::saturation(QVideoWidget* theWrappedObject) const
 {
   return ( theWrappedObject->saturation());
-}
-
-QSize  PythonQtWrapper_QVideoWidget::sizeHint(QVideoWidget* theWrappedObject) const
-{
-  return ( theWrappedObject->sizeHint());
 }
 
 QAbstractVideoSurface*  PythonQtWrapper_QVideoWidget::videoSurface(QVideoWidget* theWrappedObject) const
@@ -2023,7 +2018,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 void PythonQtShell_QVideoWidgetControl::setBrightness(int  brightness0)
 {
@@ -2045,7 +2040,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 void PythonQtShell_QVideoWidgetControl::setContrast(int  contrast0)
 {
@@ -2067,7 +2062,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 void PythonQtShell_QVideoWidgetControl::setFullScreen(bool  fullScreen0)
 {
@@ -2089,7 +2084,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 void PythonQtShell_QVideoWidgetControl::setHue(int  hue0)
 {
@@ -2111,7 +2106,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 void PythonQtShell_QVideoWidgetControl::setSaturation(int  saturation0)
 {
@@ -2133,7 +2128,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 void PythonQtShell_QVideoWidgetControl::timerEvent(QTimerEvent*  event0)
 {
@@ -2191,7 +2186,7 @@ if (_wrapper) {
   return nullptr;
 }
 QVideoWidgetControl* PythonQtWrapper_QVideoWidgetControl::new_QVideoWidgetControl(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QVideoWidgetControl(parent); }
 
 const QMetaObject* PythonQtShell_QVideoWidgetControl::metaObject() const {
@@ -2639,7 +2634,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 int  PythonQtShell_QVideoWindowControl::saturation() const
 {
@@ -2694,7 +2689,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 void PythonQtShell_QVideoWindowControl::setBrightness(int  brightness0)
 {
@@ -2716,7 +2711,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 void PythonQtShell_QVideoWindowControl::setContrast(int  contrast0)
 {
@@ -2738,7 +2733,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 void PythonQtShell_QVideoWindowControl::setDisplayRect(const QRect&  rect0)
 {
@@ -2760,7 +2755,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 void PythonQtShell_QVideoWindowControl::setFullScreen(bool  fullScreen0)
 {
@@ -2782,7 +2777,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 void PythonQtShell_QVideoWindowControl::setHue(int  hue0)
 {
@@ -2804,7 +2799,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 void PythonQtShell_QVideoWindowControl::setSaturation(int  saturation0)
 {
@@ -2826,7 +2821,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 void PythonQtShell_QVideoWindowControl::setWinId(WId  id0)
 {
@@ -2848,7 +2843,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 void PythonQtShell_QVideoWindowControl::timerEvent(QTimerEvent*  event0)
 {
@@ -2906,7 +2901,7 @@ if (_wrapper) {
   return WId();
 }
 QVideoWindowControl* PythonQtWrapper_QVideoWindowControl::new_QVideoWindowControl(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QVideoWindowControl(parent); }
 
 const QMetaObject* PythonQtShell_QVideoWindowControl::metaObject() const {

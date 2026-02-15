@@ -4,60 +4,66 @@
 #include <QPoint>
 #include <QUrl>
 #include <QVariant>
-#include <qabstractbutton.h>
-#include <qabstractitemdelegate.h>
+#include <QtWidgets/qabstractbutton.h>
+#include <QtWidgets/qabstractitemdelegate.h>
+#include <QtWidgets/qabstractitemview.h>
+#include <QtWidgets/qaction.h>
+#include <QtWidgets/qapplication.h>
+#include <QtWidgets/qbuttongroup.h>
+#include <QtWidgets/qcalendarwidget.h>
+#include <QtWidgets/qcommandlinkbutton.h>
+#include <QtWidgets/qcommonstyle.h>
+#include <QtWidgets/qcompleter.h>
+#include <QtWidgets/qdatawidgetmapper.h>
+#include <QtWidgets/qdatetimeedit.h>
+#include <QtWidgets/qdesktopwidget.h>
+#include <QtWidgets/qdial.h>
+#include <QtWidgets/qdialog.h>
+#include <QtWidgets/qdialogbuttonbox.h>
+#include <QtWidgets/qdirmodel.h>
+#include <QtWidgets/qdockwidget.h>
+#include <QtWidgets/qerrormessage.h>
+#include <QtWidgets/qfiledialog.h>
+#include <QtWidgets/qfileiconprovider.h>
+#include <QtWidgets/qfilesystemmodel.h>
+#include <QtWidgets/qgraphicseffect.h>
+#include <QtWidgets/qgraphicsproxywidget.h>
+#include <QtWidgets/qlayout.h>
+#include <QtWidgets/qlineedit.h>
+#include <QtWidgets/qmenu.h>
+#include <QtWidgets/qpushbutton.h>
+#include <QtWidgets/qsizepolicy.h>
+#include <QtWidgets/qspinbox.h>
+#include <QtWidgets/qstyle.h>
+#include <QtWidgets/qstyleoption.h>
+#include <QtWidgets/qwidget.h>
 #include <qabstractitemmodel.h>
-#include <qabstractitemview.h>
 #include <qabstractproxymodel.h>
-#include <qaction.h>
-#include <qapplication.h>
 #include <qbackingstore.h>
 #include <qbitmap.h>
 #include <qbrush.h>
-#include <qbuttongroup.h>
 #include <qbytearray.h>
 #include <qcalendar.h>
-#include <qcalendarwidget.h>
 #include <qcolor.h>
-#include <qcommandlinkbutton.h>
-#include <qcommonstyle.h>
-#include <qcompleter.h>
 #include <qconcatenatetablesproxymodel.h>
 #include <qcoreevent.h>
 #include <qcursor.h>
 #include <qdatastream.h>
-#include <qdatawidgetmapper.h>
 #include <qdatetime.h>
-#include <qdatetimeedit.h>
 #include <qdesktopservices.h>
-#include <qdesktopwidget.h>
-#include <qdial.h>
-#include <qdialog.h>
-#include <qdialogbuttonbox.h>
 #include <qdir.h>
-#include <qdirmodel.h>
-#include <qdockwidget.h>
 #include <qdrag.h>
-#include <qerrormessage.h>
 #include <qevent.h>
 #include <qfile.h>
-#include <qfiledialog.h>
-#include <qfileiconprovider.h>
 #include <qfileinfo.h>
-#include <qfilesystemmodel.h>
 #include <qfont.h>
 #include <qfontinfo.h>
 #include <qfontmetrics.h>
-#include <qgraphicseffect.h>
-#include <qgraphicsproxywidget.h>
 #include <qicon.h>
 #include <qkeysequence.h>
-#include <qlayout.h>
-#include <qlineedit.h>
 #include <qlist.h>
 #include <qlocale.h>
 #include <qmargins.h>
-#include <qmenu.h>
 #include <qmetaobject.h>
 #include <qmimedata.h>
 #include <qobject.h>
@@ -68,21 +74,15 @@
 #include <qpalette.h>
 #include <qpixmap.h>
 #include <qpoint.h>
-#include <qpushbutton.h>
 #include <qrect.h>
 #include <qregion.h>
 #include <qscreen.h>
 #include <qsize.h>
-#include <qsizepolicy.h>
-#include <qspinbox.h>
 #include <qstringlist.h>
-#include <qstyle.h>
-#include <qstyleoption.h>
 #include <qthread.h>
 #include <qurl.h>
 #include <qvalidator.h>
 #include <qvector.h>
-#include <qwidget.h>
 #include <qwindow.h>
 
 
@@ -167,7 +167,7 @@ inline QSize  py_q_sizeHint() const { return QCommandLinkButton::sizeHint(); }
 class PythonQtWrapper_QCommandLinkButton : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QCommandLinkButton* new_QCommandLinkButton(QWidget*  parent = nullptr);
 QCommandLinkButton* new_QCommandLinkButton(const QString&  text, QWidget*  parent = nullptr);
 QCommandLinkButton* new_QCommandLinkButton(const QString&  text, const QString&  description, QWidget*  parent = nullptr);
@@ -250,7 +250,7 @@ inline void py_q_unpolish(QWidget*  widget) { QCommonStyle::unpolish(widget); }
 class PythonQtWrapper_QCommonStyle : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QCommonStyle* new_QCommonStyle();
 void delete_QCommonStyle(QCommonStyle* obj) { delete obj; }
    void py_q_drawComplexControl(QCommonStyle* theWrappedObject, QStyle::ComplexControl  cc, const QStyleOptionComplex*  opt, QPainter*  p, const QWidget*  w = nullptr) const{  (((PythonQtPublicPromoter_QCommonStyle*)theWrappedObject)->py_q_drawComplexControl(cc, opt, p, w));}
@@ -312,7 +312,7 @@ inline QStringList  py_q_splitPath(const QString&  path) const { return QComplet
 class PythonQtWrapper_QCompleter : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QCompleter* new_QCompleter(QAbstractItemModel*  model, QObject*  parent = nullptr);
 QCompleter* new_QCompleter(QObject*  parent = nullptr);
 QCompleter* new_QCompleter(const QStringList&  completions, QObject*  parent = nullptr);
@@ -431,7 +431,7 @@ inline QSize  py_q_span(const QModelIndex&  index) const { return QConcatenateTa
 class PythonQtWrapper_QConcatenateTablesProxyModel : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QConcatenateTablesProxyModel* new_QConcatenateTablesProxyModel(QObject*  parent = nullptr);
 void delete_QConcatenateTablesProxyModel(QConcatenateTablesProxyModel* obj) { delete obj; }
    void addSourceModel(QConcatenateTablesProxyModel* theWrappedObject, QAbstractItemModel*  sourceModel);
@@ -463,7 +463,7 @@ void delete_QConcatenateTablesProxyModel(QConcatenateTablesProxyModel* obj) { de
 class PythonQtWrapper_QConicalGradient : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QConicalGradient* new_QConicalGradient();
 QConicalGradient* new_QConicalGradient(const QPointF&  center, qreal  startAngle);
 QConicalGradient* new_QConicalGradient(qreal  cx, qreal  cy, qreal  startAngle);
@@ -502,7 +502,7 @@ public:
 Q_ENUMS(Reason )
 enum Reason{
   Mouse = QContextMenuEvent::Mouse,   Keyboard = QContextMenuEvent::Keyboard,   Other = QContextMenuEvent::Other};
-public slots:
+public Q_SLOTS:
 QContextMenuEvent* new_QContextMenuEvent(QContextMenuEvent::Reason  reason, const QPoint&  pos);
 QContextMenuEvent* new_QContextMenuEvent(QContextMenuEvent::Reason  reason, const QPoint&  pos, const QPoint&  globalPos);
 QContextMenuEvent* new_QContextMenuEvent(QContextMenuEvent::Reason  reason, const QPoint&  pos, const QPoint&  globalPos, Qt::KeyboardModifiers  modifiers);
@@ -547,7 +547,7 @@ inline void py_q_setCurrentIndex(int  index) { QDataWidgetMapper::setCurrentInde
 class PythonQtWrapper_QDataWidgetMapper : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDataWidgetMapper* new_QDataWidgetMapper(QObject*  parent = nullptr);
 void delete_QDataWidgetMapper(QDataWidgetMapper* obj) { delete obj; }
    void addMapping(QDataWidgetMapper* theWrappedObject, QWidget*  widget, int  section);
@@ -644,7 +644,7 @@ void wheelEvent(QWheelEvent*  event) override;
 class PythonQtWrapper_QDateEdit : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDateEdit* new_QDateEdit(QWidget*  parent = nullptr);
 QDateEdit* new_QDateEdit(const QDate&  date, QWidget*  parent = nullptr);
 void delete_QDateEdit(QDateEdit* obj) { delete obj; }
@@ -661,7 +661,6 @@ public:
     PythonQtShell_QDateTimeEdit(const QDate&  d, QWidget*  parent = nullptr):QDateTimeEdit(d, parent),_wrapper(nullptr) {};
     PythonQtShell_QDateTimeEdit(const QDateTime&  dt, QWidget*  parent = nullptr):QDateTimeEdit(dt, parent),_wrapper(nullptr) {};
     PythonQtShell_QDateTimeEdit(const QTime&  t, QWidget*  parent = nullptr):QDateTimeEdit(t, parent),_wrapper(nullptr) {};
-    PythonQtShell_QDateTimeEdit(const QVariant&  val, QMetaType::Type  parserType, QWidget*  parent = nullptr):QDateTimeEdit(val, parserType, parent),_wrapper(nullptr) {};
     PythonQtShell_QDateTimeEdit(const QVariant&  val, QVariant::Type  parserType, QWidget*  parent = nullptr):QDateTimeEdit(val, parserType, parent),_wrapper(nullptr) {};
 
    ~PythonQtShell_QDateTimeEdit() override;
@@ -763,12 +762,11 @@ Q_FLAGS(Sections )
 enum Section{
   NoSection = QDateTimeEdit::NoSection,   AmPmSection = QDateTimeEdit::AmPmSection,   MSecSection = QDateTimeEdit::MSecSection,   SecondSection = QDateTimeEdit::SecondSection,   MinuteSection = QDateTimeEdit::MinuteSection,   HourSection = QDateTimeEdit::HourSection,   DaySection = QDateTimeEdit::DaySection,   MonthSection = QDateTimeEdit::MonthSection,   YearSection = QDateTimeEdit::YearSection,   TimeSections_Mask = QDateTimeEdit::TimeSections_Mask,   DateSections_Mask = QDateTimeEdit::DateSections_Mask};
 Q_DECLARE_FLAGS(Sections, Section)
-public slots:
+public Q_SLOTS:
 QDateTimeEdit* new_QDateTimeEdit(QWidget*  parent = nullptr);
 QDateTimeEdit* new_QDateTimeEdit(const QDate&  d, QWidget*  parent = nullptr);
 QDateTimeEdit* new_QDateTimeEdit(const QDateTime&  dt, QWidget*  parent = nullptr);
 QDateTimeEdit* new_QDateTimeEdit(const QTime&  t, QWidget*  parent = nullptr);
-QDateTimeEdit* new_QDateTimeEdit(const QVariant&  val, QMetaType::Type  parserType, QWidget*  parent = nullptr);
 QDateTimeEdit* new_QDateTimeEdit(const QVariant&  val, QVariant::Type  parserType, QWidget*  parent = nullptr);
 void delete_QDateTimeEdit(QDateTimeEdit* obj) { delete obj; }
    QCalendar  calendar(QDateTimeEdit* theWrappedObject) const;
@@ -852,7 +850,7 @@ public:
 class PythonQtWrapper_QDesktopServices : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDesktopServices* new_QDesktopServices();
 void delete_QDesktopServices(QDesktopServices* obj) { delete obj; }
    bool  static_QDesktopServices_openUrl(const QUrl&  url);
@@ -931,7 +929,7 @@ inline void py_q_resizeEvent(QResizeEvent*  e) { QDesktopWidget::resizeEvent(e);
 class PythonQtWrapper_QDesktopWidget : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDesktopWidget* new_QDesktopWidget();
 void delete_QDesktopWidget(QDesktopWidget* obj) { delete obj; }
    const QRect  availableGeometry(QDesktopWidget* theWrappedObject, const QPoint&  point) const;
@@ -1037,12 +1035,11 @@ inline void py_q_sliderChange(int  change) { QDial::sliderChange((QAbstractSlide
 class PythonQtWrapper_QDial : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDial* new_QDial(QWidget*  parent = nullptr);
 void delete_QDial(QDial* obj) { delete obj; }
    bool  py_q_event(QDial* theWrappedObject, QEvent*  e){  return (((PythonQtPublicPromoter_QDial*)theWrappedObject)->py_q_event(e));}
    void initStyleOption(QDial* theWrappedObject, QStyleOptionSlider*  option) const;
-   QSize  minimumSizeHint(QDial* theWrappedObject) const;
    QSize  py_q_minimumSizeHint(QDial* theWrappedObject) const{  return (((PythonQtPublicPromoter_QDial*)theWrappedObject)->py_q_minimumSizeHint());}
    void py_q_mouseMoveEvent(QDial* theWrappedObject, QMouseEvent*  me){  (((PythonQtPublicPromoter_QDial*)theWrappedObject)->py_q_mouseMoveEvent(me));}
    void py_q_mousePressEvent(QDial* theWrappedObject, QMouseEvent*  me){  (((PythonQtPublicPromoter_QDial*)theWrappedObject)->py_q_mousePressEvent(me));}
@@ -1053,7 +1050,6 @@ void delete_QDial(QDial* obj) { delete obj; }
    void py_q_paintEvent(QDial* theWrappedObject, QPaintEvent*  pe){  (((PythonQtPublicPromoter_QDial*)theWrappedObject)->py_q_paintEvent(pe));}
    void py_q_resizeEvent(QDial* theWrappedObject, QResizeEvent*  re){  (((PythonQtPublicPromoter_QDial*)theWrappedObject)->py_q_resizeEvent(re));}
    void setNotchTarget(QDial* theWrappedObject, double  target);
-   QSize  sizeHint(QDial* theWrappedObject) const;
    QSize  py_q_sizeHint(QDial* theWrappedObject) const{  return (((PythonQtPublicPromoter_QDial*)theWrappedObject)->py_q_sizeHint());}
    void py_q_sliderChange(QDial* theWrappedObject, int  change){  (((PythonQtPublicPromoter_QDial*)theWrappedObject)->py_q_sliderChange(change));}
    bool  wrapping(QDial* theWrappedObject) const;
@@ -1157,7 +1153,7 @@ public:
 Q_ENUMS(DialogCode )
 enum DialogCode{
   Rejected = QDialog::Rejected,   Accepted = QDialog::Accepted};
-public slots:
+public Q_SLOTS:
 QDialog* new_QDialog(QWidget*  parent = nullptr, Qt::WindowFlags  f = Qt::WindowFlags());
 void delete_QDialog(QDialog* obj) { delete obj; }
    void py_q_accept(QDialog* theWrappedObject){  (((PythonQtPublicPromoter_QDialog*)theWrappedObject)->py_q_accept());}
@@ -1169,7 +1165,6 @@ void delete_QDialog(QDialog* obj) { delete obj; }
    int  py_q_exec(QDialog* theWrappedObject){  return (((PythonQtPublicPromoter_QDialog*)theWrappedObject)->py_q_exec());}
    bool  isSizeGripEnabled(QDialog* theWrappedObject) const;
    void py_q_keyPressEvent(QDialog* theWrappedObject, QKeyEvent*  arg__1){  (((PythonQtPublicPromoter_QDialog*)theWrappedObject)->py_q_keyPressEvent(arg__1));}
-   QSize  minimumSizeHint(QDialog* theWrappedObject) const;
    QSize  py_q_minimumSizeHint(QDialog* theWrappedObject) const{  return (((PythonQtPublicPromoter_QDialog*)theWrappedObject)->py_q_minimumSizeHint());}
    void py_q_open(QDialog* theWrappedObject){  (((PythonQtPublicPromoter_QDialog*)theWrappedObject)->py_q_open());}
    void py_q_reject(QDialog* theWrappedObject){  (((PythonQtPublicPromoter_QDialog*)theWrappedObject)->py_q_reject());}
@@ -1180,7 +1175,6 @@ void delete_QDialog(QDialog* obj) { delete obj; }
    void setSizeGripEnabled(QDialog* theWrappedObject, bool  arg__1);
    void py_q_setVisible(QDialog* theWrappedObject, bool  visible){  (((PythonQtPublicPromoter_QDialog*)theWrappedObject)->py_q_setVisible(visible));}
    void py_q_showEvent(QDialog* theWrappedObject, QShowEvent*  arg__1){  (((PythonQtPublicPromoter_QDialog*)theWrappedObject)->py_q_showEvent(arg__1));}
-   QSize  sizeHint(QDialog* theWrappedObject) const;
    QSize  py_q_sizeHint(QDialog* theWrappedObject) const{  return (((PythonQtPublicPromoter_QDialog*)theWrappedObject)->py_q_sizeHint());}
 };
 
@@ -1269,7 +1263,7 @@ enum ButtonRole{
 enum StandardButton{
   NoButton = QDialogButtonBox::NoButton,   Ok = QDialogButtonBox::Ok,   Save = QDialogButtonBox::Save,   SaveAll = QDialogButtonBox::SaveAll,   Open = QDialogButtonBox::Open,   Yes = QDialogButtonBox::Yes,   YesToAll = QDialogButtonBox::YesToAll,   No = QDialogButtonBox::No,   NoToAll = QDialogButtonBox::NoToAll,   Abort = QDialogButtonBox::Abort,   Retry = QDialogButtonBox::Retry,   Ignore = QDialogButtonBox::Ignore,   Close = QDialogButtonBox::Close,   Cancel = QDialogButtonBox::Cancel,   Discard = QDialogButtonBox::Discard,   Help = QDialogButtonBox::Help,   Apply = QDialogButtonBox::Apply,   Reset = QDialogButtonBox::Reset,   RestoreDefaults = QDialogButtonBox::RestoreDefaults,   FirstButton = QDialogButtonBox::FirstButton,   LastButton = QDialogButtonBox::LastButton};
 Q_DECLARE_FLAGS(StandardButtons, StandardButton)
-public slots:
+public Q_SLOTS:
 QDialogButtonBox* new_QDialogButtonBox(QDialogButtonBox::StandardButtons  buttons, QWidget*  parent = nullptr);
 QDialogButtonBox* new_QDialogButtonBox(QDialogButtonBox::StandardButtons  buttons, Qt::Orientation  orientation, QWidget*  parent = nullptr);
 QDialogButtonBox* new_QDialogButtonBox(QWidget*  parent = nullptr);
@@ -1375,7 +1369,7 @@ public:
 Q_ENUMS(Roles )
 enum Roles{
   FileIconRole = QDirModel::FileIconRole,   FilePathRole = QDirModel::FilePathRole,   FileNameRole = QDirModel::FileNameRole};
-public slots:
+public Q_SLOTS:
 QDirModel* new_QDirModel(QObject*  parent = nullptr);
 QDirModel* new_QDirModel(const QStringList&  nameFilters, QDir::Filters  filters, QDir::SortFlags  sort, QObject*  parent = nullptr);
 void delete_QDirModel(QDirModel* obj) { delete obj; }
@@ -1502,7 +1496,7 @@ Q_FLAGS(DockWidgetFeatures )
 enum DockWidgetFeature{
   DockWidgetClosable = QDockWidget::DockWidgetClosable,   DockWidgetMovable = QDockWidget::DockWidgetMovable,   DockWidgetFloatable = QDockWidget::DockWidgetFloatable,   DockWidgetVerticalTitleBar = QDockWidget::DockWidgetVerticalTitleBar,   DockWidgetFeatureMask = QDockWidget::DockWidgetFeatureMask,   AllDockWidgetFeatures = QDockWidget::AllDockWidgetFeatures,   NoDockWidgetFeatures = QDockWidget::NoDockWidgetFeatures,   Reserved = QDockWidget::Reserved};
 Q_DECLARE_FLAGS(DockWidgetFeatures, DockWidgetFeature)
-public slots:
+public Q_SLOTS:
 QDockWidget* new_QDockWidget(QWidget*  parent = nullptr, Qt::WindowFlags  flags = Qt::WindowFlags());
 QDockWidget* new_QDockWidget(const QString&  title, QWidget*  parent = nullptr, Qt::WindowFlags  flags = Qt::WindowFlags());
 void delete_QDockWidget(QDockWidget* obj) { delete obj; }
@@ -1605,7 +1599,7 @@ inline double  py_q_valueFromText(const QString&  text) const { return QDoubleSp
 class PythonQtWrapper_QDoubleSpinBox : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDoubleSpinBox* new_QDoubleSpinBox(QWidget*  parent = nullptr);
 void delete_QDoubleSpinBox(QDoubleSpinBox* obj) { delete obj; }
    QString  cleanText(QDoubleSpinBox* theWrappedObject) const;
@@ -1668,7 +1662,7 @@ inline QValidator::State  py_q_validate(QString&  arg__1, int&  arg__2) const { 
 class PythonQtWrapper_QDoubleValidator : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDoubleValidator* new_QDoubleValidator(QObject*  parent = nullptr);
 QDoubleValidator* new_QDoubleValidator(double  bottom, double  top, int  decimals, QObject*  parent = nullptr);
 void delete_QDoubleValidator(QDoubleValidator* obj) { delete obj; }
@@ -1710,7 +1704,7 @@ void timerEvent(QTimerEvent*  event) override;
 class PythonQtWrapper_QDrag : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDrag* new_QDrag(QObject*  dragSource);
 void delete_QDrag(QDrag* obj) { delete obj; }
    void static_QDrag_cancel();
@@ -1737,7 +1731,7 @@ void delete_QDrag(QDrag* obj) { delete obj; }
 class PythonQtWrapper_QDragEnterEvent : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDragEnterEvent* new_QDragEnterEvent(const QPoint&  pos, Qt::DropActions  actions, const QMimeData*  data, Qt::MouseButtons  buttons, Qt::KeyboardModifiers  modifiers);
 void delete_QDragEnterEvent(QDragEnterEvent* obj) { delete obj; }
 };
@@ -1749,7 +1743,7 @@ void delete_QDragEnterEvent(QDragEnterEvent* obj) { delete obj; }
 class PythonQtWrapper_QDragLeaveEvent : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDragLeaveEvent* new_QDragLeaveEvent();
 void delete_QDragLeaveEvent(QDragLeaveEvent* obj) { delete obj; }
 };
@@ -1772,7 +1766,7 @@ public:
 class PythonQtWrapper_QDragMoveEvent : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDragMoveEvent* new_QDragMoveEvent(const QPoint&  pos, Qt::DropActions  actions, const QMimeData*  data, Qt::MouseButtons  buttons, Qt::KeyboardModifiers  modifiers, QEvent::Type  type = QEvent::DragMove);
 void delete_QDragMoveEvent(QDragMoveEvent* obj) { delete obj; }
    void accept(QDragMoveEvent* theWrappedObject, const QRect&  r);
@@ -1798,7 +1792,7 @@ public:
 class PythonQtWrapper_QDropEvent : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDropEvent* new_QDropEvent(const QPointF&  pos, Qt::DropActions  actions, const QMimeData*  data, Qt::MouseButtons  buttons, Qt::KeyboardModifiers  modifiers, QEvent::Type  type = QEvent::Drop);
 void delete_QDropEvent(QDropEvent* obj) { delete obj; }
    void acceptProposedAction(QDropEvent* theWrappedObject);
@@ -1832,7 +1826,7 @@ public:
 class PythonQtWrapper_QEnterEvent : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QEnterEvent* new_QEnterEvent(const QPointF&  localPos, const QPointF&  windowPos, const QPointF&  screenPos);
 void delete_QEnterEvent(QEnterEvent* obj) { delete obj; }
    QPoint  globalPos(QEnterEvent* theWrappedObject) const;
@@ -1924,7 +1918,7 @@ inline void py_q_done(int  arg__1) { QErrorMessage::done(arg__1); }
 class PythonQtWrapper_QErrorMessage : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QErrorMessage* new_QErrorMessage(QWidget*  parent = nullptr);
 void delete_QErrorMessage(QErrorMessage* obj) { delete obj; }
    void py_q_changeEvent(QErrorMessage* theWrappedObject, QEvent*  e){  (((PythonQtPublicPromoter_QErrorMessage*)theWrappedObject)->py_q_changeEvent(e));}
@@ -1950,7 +1944,7 @@ public:
 class PythonQtWrapper_QExposeEvent : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QExposeEvent* new_QExposeEvent(const QRegion&  rgn);
 void delete_QExposeEvent(QExposeEvent* obj) { delete obj; }
    const QRegion*  region(QExposeEvent* theWrappedObject) const;
@@ -2044,7 +2038,7 @@ enum DialogLabel{
 enum Option{
   ShowDirsOnly = QFileDialog::ShowDirsOnly,   DontResolveSymlinks = QFileDialog::DontResolveSymlinks,   DontConfirmOverwrite = QFileDialog::DontConfirmOverwrite,   DontUseSheet = QFileDialog::DontUseSheet,   DontUseNativeDialog = QFileDialog::DontUseNativeDialog,   ReadOnly = QFileDialog::ReadOnly,   HideNameFilterDetails = QFileDialog::HideNameFilterDetails,   DontUseCustomDirectoryIcons = QFileDialog::DontUseCustomDirectoryIcons};
 Q_DECLARE_FLAGS(Options, Option)
-public slots:
+public Q_SLOTS:
 QFileDialog* new_QFileDialog(QWidget*  parent, Qt::WindowFlags  f);
 QFileDialog* new_QFileDialog(QWidget*  parent = nullptr, const QString&  caption = QString(), const QString&  directory = QString(), const QString&  filter = QString());
 void delete_QFileDialog(QFileDialog* obj) { delete obj; }
@@ -2155,7 +2149,7 @@ enum IconType{
 enum Option{
   DontUseCustomDirectoryIcons = QFileIconProvider::DontUseCustomDirectoryIcons};
 Q_DECLARE_FLAGS(Options, Option)
-public slots:
+public Q_SLOTS:
 QFileIconProvider* new_QFileIconProvider();
 void delete_QFileIconProvider(QFileIconProvider* obj) { delete obj; }
    QIcon  icon(QFileIconProvider* theWrappedObject, QFileIconProvider::IconType  type) const;
@@ -2175,7 +2169,7 @@ void delete_QFileIconProvider(QFileIconProvider* obj) { delete obj; }
 class PythonQtWrapper_QFileOpenEvent : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QFileOpenEvent* new_QFileOpenEvent(const QString&  file);
 QFileOpenEvent* new_QFileOpenEvent(const QUrl&  url);
 void delete_QFileOpenEvent(QFileOpenEvent* obj) { delete obj; }
@@ -2275,7 +2269,7 @@ enum Option{
 enum Roles{
   FileIconRole = QFileSystemModel::FileIconRole,   FilePathRole = QFileSystemModel::FilePathRole,   FileNameRole = QFileSystemModel::FileNameRole,   FilePermissions = QFileSystemModel::FilePermissions};
 Q_DECLARE_FLAGS(Options, Option)
-public slots:
+public Q_SLOTS:
 QFileSystemModel* new_QFileSystemModel(QObject*  parent = nullptr);
 void delete_QFileSystemModel(QFileSystemModel* obj) { delete obj; }
    bool  py_q_canFetchMore(QFileSystemModel* theWrappedObject, const QModelIndex&  parent) const{  return (((PythonQtPublicPromoter_QFileSystemModel*)theWrappedObject)->py_q_canFetchMore(parent));}

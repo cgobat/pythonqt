@@ -5,13 +5,14 @@
 #include <QStringList>
 #include <QTextCodec>
 #include <QVariant>
+#include <QtWidgets/qwidget.h>
 #include <qabstractanimation.h>
+#include <qabstracteventdispatcher.h>
 #include <qabstractstate.h>
 #include <qabstracttransition.h>
 #include <qanimationgroup.h>
 #include <qbytearray.h>
 #include <qcoreevent.h>
-#include <qdatastream.h>
 #include <qdatetime.h>
 #include <qdeadlinetimer.h>
 #include <qdir.h>
@@ -36,8 +37,126 @@
 #include <qtextstream.h>
 #include <qthread.h>
 #include <qthreadpool.h>
-#include <qtimezone.h>
-#include <qwidget.h>
+
+PythonQtShell_QResource::~PythonQtShell_QResource() {
+  PythonQtPrivate* priv = PythonQt::priv();
+  if (priv) { priv->shellClassDeleted(this); }
+}
+QResource* PythonQtWrapper_QResource::new_QResource(const QString&  file, const QLocale&  locale)
+{ 
+return new PythonQtShell_QResource(file, locale); }
+
+QString  PythonQtWrapper_QResource::absoluteFilePath(QResource* theWrappedObject) const
+{
+  return ( theWrappedObject->absoluteFilePath());
+}
+
+void PythonQtWrapper_QResource::static_QResource_addSearchPath(const QString&  path)
+{
+  (QResource::addSearchPath(path));
+}
+
+QStringList  PythonQtWrapper_QResource::children(QResource* theWrappedObject) const
+{
+  return ( ((PythonQtPublicPromoter_QResource*)theWrappedObject)->promoted_children());
+}
+
+QResource::Compression  PythonQtWrapper_QResource::compressionAlgorithm(QResource* theWrappedObject) const
+{
+  return ( theWrappedObject->compressionAlgorithm());
+}
+
+const uchar*  PythonQtWrapper_QResource::data(QResource* theWrappedObject) const
+{
+  return ( theWrappedObject->data());
+}
+
+QString  PythonQtWrapper_QResource::fileName(QResource* theWrappedObject) const
+{
+  return ( theWrappedObject->fileName());
+}
+
+bool  PythonQtWrapper_QResource::isCompressed(QResource* theWrappedObject) const
+{
+  return ( theWrappedObject->isCompressed());
+}
+
+bool  PythonQtWrapper_QResource::isDir(QResource* theWrappedObject) const
+{
+  return ( ((PythonQtPublicPromoter_QResource*)theWrappedObject)->promoted_isDir());
+}
+
+bool  PythonQtWrapper_QResource::isFile(QResource* theWrappedObject) const
+{
+  return ( ((PythonQtPublicPromoter_QResource*)theWrappedObject)->promoted_isFile());
+}
+
+bool  PythonQtWrapper_QResource::isValid(QResource* theWrappedObject) const
+{
+  return ( theWrappedObject->isValid());
+}
+
+QDateTime  PythonQtWrapper_QResource::lastModified(QResource* theWrappedObject) const
+{
+  return ( theWrappedObject->lastModified());
+}
+
+QLocale  PythonQtWrapper_QResource::locale(QResource* theWrappedObject) const
+{
+  return ( theWrappedObject->locale());
+}
+
+bool  PythonQtWrapper_QResource::static_QResource_registerResource(const QString&  rccFilename, const QString&  resourceRoot)
+{
+  return (QResource::registerResource(rccFilename, resourceRoot));
+}
+
+bool  PythonQtWrapper_QResource::static_QResource_registerResource(const uchar*  rccData, const QString&  resourceRoot)
+{
+  return (QResource::registerResource(rccData, resourceRoot));
+}
+
+QStringList  PythonQtWrapper_QResource::static_QResource_searchPaths()
+{
+  return (QResource::searchPaths());
+}
+
+void PythonQtWrapper_QResource::setFileName(QResource* theWrappedObject, const QString&  file)
+{
+  ( theWrappedObject->setFileName(file));
+}
+
+void PythonQtWrapper_QResource::setLocale(QResource* theWrappedObject, const QLocale&  locale)
+{
+  ( theWrappedObject->setLocale(locale));
+}
+
+qint64  PythonQtWrapper_QResource::size(QResource* theWrappedObject) const
+{
+  return ( theWrappedObject->size());
+}
+
+QByteArray  PythonQtWrapper_QResource::uncompressedData(QResource* theWrappedObject) const
+{
+  return ( theWrappedObject->uncompressedData());
+}
+
+qint64  PythonQtWrapper_QResource::uncompressedSize(QResource* theWrappedObject) const
+{
+  return ( theWrappedObject->uncompressedSize());
+}
+
+bool  PythonQtWrapper_QResource::static_QResource_unregisterResource(const QString&  rccFilename, const QString&  resourceRoot)
+{
+  return (QResource::unregisterResource(rccFilename, resourceRoot));
+}
+
+bool  PythonQtWrapper_QResource::static_QResource_unregisterResource(const uchar*  rccData, const QString&  resourceRoot)
+{
+  return (QResource::unregisterResource(rccData, resourceRoot));
+}
+
+
 
 PythonQtShell_QRunnable::~PythonQtShell_QRunnable() {
   PythonQtPrivate* priv = PythonQt::priv();
@@ -63,10 +182,10 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 QRunnable* PythonQtWrapper_QRunnable::new_QRunnable()
-{
+{ 
 return new PythonQtShell_QRunnable(); }
 
 bool  PythonQtWrapper_QRunnable::autoDelete(QRunnable* theWrappedObject) const
@@ -850,15 +969,15 @@ if (_wrapper) {
   return QSaveFile::writeData(data0, len1);
 }
 QSaveFile* PythonQtWrapper_QSaveFile::new_QSaveFile(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QSaveFile(parent); }
 
 QSaveFile* PythonQtWrapper_QSaveFile::new_QSaveFile(const QString&  name)
-{
+{ 
 return new PythonQtShell_QSaveFile(name); }
 
 QSaveFile* PythonQtWrapper_QSaveFile::new_QSaveFile(const QString&  name, QObject*  parent)
-{
+{ 
 return new PythonQtShell_QSaveFile(name, parent); }
 
 const QMetaObject* PythonQtShell_QSaveFile::metaObject() const {
@@ -902,7 +1021,7 @@ void PythonQtWrapper_QSaveFile::setFileName(QSaveFile* theWrappedObject, const Q
 
 
 QSemaphore* PythonQtWrapper_QSemaphore::new_QSemaphore(int  n)
-{
+{ 
 return new QSemaphore(n); }
 
 void PythonQtWrapper_QSemaphore::acquire(QSemaphore* theWrappedObject, int  n)
@@ -1168,7 +1287,7 @@ if (_wrapper) {
   QSequentialAnimationGroup::updateState(newState0, oldState1);
 }
 QSequentialAnimationGroup* PythonQtWrapper_QSequentialAnimationGroup::new_QSequentialAnimationGroup(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QSequentialAnimationGroup(parent); }
 
 const QMetaObject* PythonQtShell_QSequentialAnimationGroup::metaObject() const {
@@ -1338,27 +1457,27 @@ if (_wrapper) {
   QSettings::timerEvent(event0);
 }
 QSettings* PythonQtWrapper_QSettings::new_QSettings(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QSettings(parent); }
 
 QSettings* PythonQtWrapper_QSettings::new_QSettings(QSettings::Format  format, QSettings::Scope  scope, const QString&  organization, const QString&  application, QObject*  parent)
-{
+{ 
 return new PythonQtShell_QSettings(format, scope, organization, application, parent); }
 
 QSettings* PythonQtWrapper_QSettings::new_QSettings(QSettings::Scope  scope, QObject*  parent)
-{
+{ 
 return new PythonQtShell_QSettings(scope, parent); }
 
 QSettings* PythonQtWrapper_QSettings::new_QSettings(QSettings::Scope  scope, const QString&  organization, const QString&  application, QObject*  parent)
-{
+{ 
 return new PythonQtShell_QSettings(scope, organization, application, parent); }
 
 QSettings* PythonQtWrapper_QSettings::new_QSettings(const QString&  fileName, QSettings::Format  format, QObject*  parent)
-{
+{ 
 return new PythonQtShell_QSettings(fileName, format, parent); }
 
 QSettings* PythonQtWrapper_QSettings::new_QSettings(const QString&  organization, const QString&  application, QObject*  parent)
-{
+{ 
 return new PythonQtShell_QSettings(organization, application, parent); }
 
 const QMetaObject* PythonQtShell_QSettings::metaObject() const {
@@ -1678,11 +1797,11 @@ if (_wrapper) {
   QSharedMemory::timerEvent(event0);
 }
 QSharedMemory* PythonQtWrapper_QSharedMemory::new_QSharedMemory(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QSharedMemory(parent); }
 
 QSharedMemory* PythonQtWrapper_QSharedMemory::new_QSharedMemory(const QString&  key, QObject*  parent)
-{
+{ 
 return new PythonQtShell_QSharedMemory(key, parent); }
 
 const QMetaObject* PythonQtShell_QSharedMemory::metaObject() const {
@@ -1776,11 +1895,11 @@ bool  PythonQtWrapper_QSharedMemory::unlock(QSharedMemory* theWrappedObject)
 
 
 QSignalBlocker* PythonQtWrapper_QSignalBlocker::new_QSignalBlocker(QObject&  o)
-{
+{ 
 return new QSignalBlocker(o); }
 
 QSignalBlocker* PythonQtWrapper_QSignalBlocker::new_QSignalBlocker(QObject*  o)
-{
+{ 
 return new QSignalBlocker(o); }
 
 void PythonQtWrapper_QSignalBlocker::reblock(QSignalBlocker* theWrappedObject)
@@ -1932,7 +2051,7 @@ if (_wrapper) {
   QSignalMapper::timerEvent(event0);
 }
 QSignalMapper* PythonQtWrapper_QSignalMapper::new_QSignalMapper(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QSignalMapper(parent); }
 
 const QMetaObject* PythonQtShell_QSignalMapper::metaObject() const {
@@ -2187,11 +2306,11 @@ if (_wrapper) {
   QSignalTransition::timerEvent(event0);
 }
 QSignalTransition* PythonQtWrapper_QSignalTransition::new_QSignalTransition(QState*  sourceState)
-{
+{ 
 return new PythonQtShell_QSignalTransition(sourceState); }
 
 QSignalTransition* PythonQtWrapper_QSignalTransition::new_QSignalTransition(const QObject*  sender, const char*  signal, QState*  sourceState)
-{
+{ 
 return new PythonQtShell_QSignalTransition(sender, signal, sourceState); }
 
 const QMetaObject* PythonQtShell_QSignalTransition::metaObject() const {
@@ -2366,7 +2485,7 @@ if (_wrapper) {
   QSocketNotifier::timerEvent(event0);
 }
 QSocketNotifier* PythonQtWrapper_QSocketNotifier::new_QSocketNotifier(qintptr  socket, QSocketNotifier::Type  arg__2, QObject*  parent)
-{
+{ 
 return new PythonQtShell_QSocketNotifier(socket, arg__2, parent); }
 
 const QMetaObject* PythonQtShell_QSocketNotifier::metaObject() const {
@@ -2627,11 +2746,11 @@ if (_wrapper) {
   QState::timerEvent(event0);
 }
 QState* PythonQtWrapper_QState::new_QState(QState*  parent)
-{
+{ 
 return new PythonQtShell_QState(parent); }
 
 QState* PythonQtWrapper_QState::new_QState(QState::ChildMode  childMode, QState*  parent)
-{
+{ 
 return new PythonQtShell_QState(childMode, parent); }
 
 const QMetaObject* PythonQtShell_QState::metaObject() const {
@@ -2978,11 +3097,11 @@ if (_wrapper) {
   QStateMachine::timerEvent(event0);
 }
 QStateMachine* PythonQtWrapper_QStateMachine::new_QStateMachine(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QStateMachine(parent); }
 
 QStateMachine* PythonQtWrapper_QStateMachine::new_QStateMachine(QState::ChildMode  childMode, QObject*  parent)
-{
+{ 
 return new PythonQtShell_QStateMachine(childMode, parent); }
 
 const QMetaObject* PythonQtShell_QStateMachine::metaObject() const {
@@ -3106,7 +3225,7 @@ void PythonQtWrapper_QStateMachine::setGlobalRestorePolicy(QStateMachine* theWra
 
 
 QStateMachine::SignalEvent* PythonQtWrapper_QStateMachine__SignalEvent::new_QStateMachine__SignalEvent(QObject*  sender, int  signalIndex, const QList<QVariant >&  arguments)
-{
+{ 
 return new QStateMachine::SignalEvent(sender, signalIndex, arguments); }
 
 QList<QVariant >  PythonQtWrapper_QStateMachine__SignalEvent::arguments(QStateMachine::SignalEvent* theWrappedObject) const
@@ -3127,7 +3246,7 @@ int  PythonQtWrapper_QStateMachine__SignalEvent::signalIndex(QStateMachine::Sign
 
 
 QStateMachine::WrappedEvent* PythonQtWrapper_QStateMachine__WrappedEvent::new_QStateMachine__WrappedEvent(QObject*  object, QEvent*  event)
-{
+{ 
 return new QStateMachine::WrappedEvent(object, event); }
 
 QEvent*  PythonQtWrapper_QStateMachine__WrappedEvent::event(QStateMachine::WrappedEvent* theWrappedObject) const
@@ -3143,19 +3262,19 @@ QObject*  PythonQtWrapper_QStateMachine__WrappedEvent::object(QStateMachine::Wra
 
 
 QStorageInfo* PythonQtWrapper_QStorageInfo::new_QStorageInfo()
-{
+{ 
 return new QStorageInfo(); }
 
 QStorageInfo* PythonQtWrapper_QStorageInfo::new_QStorageInfo(const QDir&  dir)
-{
+{ 
 return new QStorageInfo(dir); }
 
 QStorageInfo* PythonQtWrapper_QStorageInfo::new_QStorageInfo(const QStorageInfo&  other)
-{
+{ 
 return new QStorageInfo(other); }
 
 QStorageInfo* PythonQtWrapper_QStorageInfo::new_QStorageInfo(const QString&  path)
-{
+{ 
 return new QStorageInfo(path); }
 
 int  PythonQtWrapper_QStorageInfo::blockSize(QStorageInfo* theWrappedObject) const
@@ -3278,15 +3397,15 @@ QString PythonQtWrapper_QStorageInfo::py_toString(QStorageInfo* obj) {
 
 
 QStringMatcher* PythonQtWrapper_QStringMatcher::new_QStringMatcher()
-{
+{ 
 return new QStringMatcher(); }
 
 QStringMatcher* PythonQtWrapper_QStringMatcher::new_QStringMatcher(const QString&  pattern, Qt::CaseSensitivity  cs)
-{
+{ 
 return new QStringMatcher(pattern, cs); }
 
 QStringMatcher* PythonQtWrapper_QStringMatcher::new_QStringMatcher(const QStringMatcher&  other)
-{
+{ 
 return new QStringMatcher(other); }
 
 Qt::CaseSensitivity  PythonQtWrapper_QStringMatcher::caseSensitivity(QStringMatcher* theWrappedObject) const
@@ -3326,7 +3445,7 @@ PythonQtShell_QSysInfo::~PythonQtShell_QSysInfo() {
   if (priv) { priv->shellClassDeleted(this); }
 }
 QSysInfo* PythonQtWrapper_QSysInfo::new_QSysInfo()
-{
+{ 
 return new PythonQtShell_QSysInfo(); }
 
 QByteArray  PythonQtWrapper_QSysInfo::static_QSysInfo_bootUniqueId()
@@ -3387,7 +3506,7 @@ QString  PythonQtWrapper_QSysInfo::static_QSysInfo_productVersion()
 
 
 QSystemSemaphore* PythonQtWrapper_QSystemSemaphore::new_QSystemSemaphore(const QString&  key, int  initialValue, QSystemSemaphore::AccessMode  mode)
-{
+{ 
 return new QSystemSemaphore(key, initialValue, mode); }
 
 bool  PythonQtWrapper_QSystemSemaphore::acquire(QSystemSemaphore* theWrappedObject)
@@ -3423,11 +3542,11 @@ void PythonQtWrapper_QSystemSemaphore::setKey(QSystemSemaphore* theWrappedObject
 
 
 QTemporaryDir* PythonQtWrapper_QTemporaryDir::new_QTemporaryDir()
-{
+{ 
 return new QTemporaryDir(); }
 
 QTemporaryDir* PythonQtWrapper_QTemporaryDir::new_QTemporaryDir(const QString&  templateName)
-{
+{ 
 return new QTemporaryDir(templateName); }
 
 bool  PythonQtWrapper_QTemporaryDir::autoRemove(QTemporaryDir* theWrappedObject) const
@@ -3740,7 +3859,7 @@ QString  PythonQtShell_QTemporaryFile::fileName() const
 if (_wrapper) {
   PYTHONQT_GIL_SCOPE
   if (Py_REFCNT((PyObject*)_wrapper) > 0) {
-    static PyObject* name = PyUnicode_FromString("uniqueFilename");
+    static PyObject* name = PyUnicode_FromString("fileName");
     PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
     if (obj) {
       static const char* argumentList[] ={"QString"};
@@ -3752,7 +3871,7 @@ if (_wrapper) {
         args[0] = PythonQtConv::ConvertPythonToQt(methodInfo->parameters().at(0), result, false, nullptr, &returnValue);
         if (args[0]!=&returnValue) {
           if (args[0]==nullptr) {
-            PythonQt::priv()->handleVirtualOverloadReturnError("uniqueFilename", methodInfo, result);
+            PythonQt::priv()->handleVirtualOverloadReturnError("fileName", methodInfo, result);
           } else {
             returnValue = *((QString*)args[0]);
           }
@@ -4253,19 +4372,19 @@ if (_wrapper) {
   return QTemporaryFile::writeData(data0, len1);
 }
 QTemporaryFile* PythonQtWrapper_QTemporaryFile::new_QTemporaryFile()
-{
+{ 
 return new PythonQtShell_QTemporaryFile(); }
 
 QTemporaryFile* PythonQtWrapper_QTemporaryFile::new_QTemporaryFile(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QTemporaryFile(parent); }
 
 QTemporaryFile* PythonQtWrapper_QTemporaryFile::new_QTemporaryFile(const QString&  templateName)
-{
+{ 
 return new PythonQtShell_QTemporaryFile(templateName); }
 
 QTemporaryFile* PythonQtWrapper_QTemporaryFile::new_QTemporaryFile(const QString&  templateName, QObject*  parent)
-{
+{ 
 return new PythonQtShell_QTemporaryFile(templateName, parent); }
 
 const QMetaObject* PythonQtShell_QTemporaryFile::metaObject() const {
@@ -4306,11 +4425,6 @@ QTemporaryFile*  PythonQtWrapper_QTemporaryFile::static_QTemporaryFile_createNat
   return (QTemporaryFile::createNativeFile(fileName));
 }
 
-QString  PythonQtWrapper_QTemporaryFile::fileName(QTemporaryFile* theWrappedObject) const
-{
-  return ( theWrappedObject->fileName());
-}
-
 QString  PythonQtWrapper_QTemporaryFile::fileTemplate(QTemporaryFile* theWrappedObject) const
 {
   return ( theWrappedObject->fileTemplate());
@@ -4339,15 +4453,15 @@ void PythonQtWrapper_QTemporaryFile::setFileTemplate(QTemporaryFile* theWrappedO
 
 
 QTextBoundaryFinder* PythonQtWrapper_QTextBoundaryFinder::new_QTextBoundaryFinder()
-{
+{ 
 return new QTextBoundaryFinder(); }
 
 QTextBoundaryFinder* PythonQtWrapper_QTextBoundaryFinder::new_QTextBoundaryFinder(QTextBoundaryFinder::BoundaryType  type, const QString&  string)
-{
+{ 
 return new QTextBoundaryFinder(type, string); }
 
 QTextBoundaryFinder* PythonQtWrapper_QTextBoundaryFinder::new_QTextBoundaryFinder(const QTextBoundaryFinder&  other)
-{
+{ 
 return new QTextBoundaryFinder(other); }
 
 QTextBoundaryFinder::BoundaryReasons  PythonQtWrapper_QTextBoundaryFinder::boundaryReasons(QTextBoundaryFinder* theWrappedObject) const
@@ -4577,7 +4691,7 @@ if (_wrapper) {
   return QByteArray();
 }
 QTextCodec* PythonQtWrapper_QTextCodec::new_QTextCodec()
-{
+{ 
 return new PythonQtShell_QTextCodec(); }
 
 QList<QByteArray >  PythonQtWrapper_QTextCodec::aliases(QTextCodec* theWrappedObject) const
@@ -4693,11 +4807,11 @@ QString  PythonQtWrapper_QTextCodec::toUnicode(QTextCodec* theWrappedObject, con
 
 
 QTextDecoder* PythonQtWrapper_QTextDecoder::new_QTextDecoder(const QTextCodec*  codec)
-{
+{ 
 return new QTextDecoder(codec); }
 
 QTextDecoder* PythonQtWrapper_QTextDecoder::new_QTextDecoder(const QTextCodec*  codec, QTextCodec::ConversionFlags  flags)
-{
+{ 
 return new QTextDecoder(codec, flags); }
 
 bool  PythonQtWrapper_QTextDecoder::hasFailure(QTextDecoder* theWrappedObject) const
@@ -4718,11 +4832,11 @@ QString  PythonQtWrapper_QTextDecoder::toUnicode(QTextDecoder* theWrappedObject,
 
 
 QTextEncoder* PythonQtWrapper_QTextEncoder::new_QTextEncoder(const QTextCodec*  codec)
-{
+{ 
 return new QTextEncoder(codec); }
 
 QTextEncoder* PythonQtWrapper_QTextEncoder::new_QTextEncoder(const QTextCodec*  codec, QTextCodec::ConversionFlags  flags)
-{
+{ 
 return new QTextEncoder(codec, flags); }
 
 QByteArray  PythonQtWrapper_QTextEncoder::fromUnicode(QTextEncoder* theWrappedObject, const QString&  str)
@@ -4742,15 +4856,15 @@ PythonQtShell_QTextStream::~PythonQtShell_QTextStream() {
   if (priv) { priv->shellClassDeleted(this); }
 }
 QTextStream* PythonQtWrapper_QTextStream::new_QTextStream()
-{
+{ 
 return new PythonQtShell_QTextStream(); }
 
 QTextStream* PythonQtWrapper_QTextStream::new_QTextStream(QIODevice*  device)
-{
+{ 
 return new PythonQtShell_QTextStream(device); }
 
 QTextStream* PythonQtWrapper_QTextStream::new_QTextStream(const QByteArray&  array, QIODevice::OpenMode  openMode)
-{
+{ 
 return new PythonQtShell_QTextStream(array, openMode); }
 
 bool  PythonQtWrapper_QTextStream::atEnd(QTextStream* theWrappedObject) const
@@ -5164,7 +5278,7 @@ if (_wrapper) {
   QThread::timerEvent(event0);
 }
 QThread* PythonQtWrapper_QThread::new_QThread(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QThread(parent); }
 
 const QMetaObject* PythonQtShell_QThread::metaObject() const {
@@ -5439,7 +5553,7 @@ if (_wrapper) {
   QThreadPool::timerEvent(event0);
 }
 QThreadPool* PythonQtWrapper_QThreadPool::new_QThreadPool(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QThreadPool(parent); }
 
 const QMetaObject* PythonQtShell_QThreadPool::metaObject() const {
@@ -5712,7 +5826,7 @@ if (_wrapper) {
   return QTimeLine::valueForTime(msec0);
 }
 QTimeLine* PythonQtWrapper_QTimeLine::new_QTimeLine(int  duration, QObject*  parent)
-{
+{ 
 return new PythonQtShell_QTimeLine(duration, parent); }
 
 const QMetaObject* PythonQtShell_QTimeLine::metaObject() const {
@@ -5841,190 +5955,6 @@ int  PythonQtWrapper_QTimeLine::updateInterval(QTimeLine* theWrappedObject) cons
 qreal  PythonQtWrapper_QTimeLine::valueForTime(QTimeLine* theWrappedObject, int  msec) const
 {
   return ( theWrappedObject->valueForTime(msec));
-}
-
-
-
-QTimeZone* PythonQtWrapper_QTimeZone::new_QTimeZone()
-{
-return new QTimeZone(); }
-
-QTimeZone* PythonQtWrapper_QTimeZone::new_QTimeZone(const QByteArray&  ianaId)
-{
-return new QTimeZone(ianaId); }
-
-QTimeZone* PythonQtWrapper_QTimeZone::new_QTimeZone(const QByteArray&  zoneId, int  offsetSeconds, const QString&  name, const QString&  abbreviation, QLocale::Country  country, const QString&  comment)
-{
-return new QTimeZone(zoneId, offsetSeconds, name, abbreviation, country, comment); }
-
-QTimeZone* PythonQtWrapper_QTimeZone::new_QTimeZone(const QTimeZone&  other)
-{
-return new QTimeZone(other); }
-
-QTimeZone* PythonQtWrapper_QTimeZone::new_QTimeZone(int  offsetSeconds)
-{
-return new QTimeZone(offsetSeconds); }
-
-QString  PythonQtWrapper_QTimeZone::abbreviation(QTimeZone* theWrappedObject, const QDateTime&  atDateTime) const
-{
-  return ( theWrappedObject->abbreviation(atDateTime));
-}
-
-QList<QByteArray >  PythonQtWrapper_QTimeZone::static_QTimeZone_availableTimeZoneIds()
-{
-  return (QTimeZone::availableTimeZoneIds());
-}
-
-QList<QByteArray >  PythonQtWrapper_QTimeZone::static_QTimeZone_availableTimeZoneIds(QLocale::Country  country)
-{
-  return (QTimeZone::availableTimeZoneIds(country));
-}
-
-QList<QByteArray >  PythonQtWrapper_QTimeZone::static_QTimeZone_availableTimeZoneIds(int  offsetSeconds)
-{
-  return (QTimeZone::availableTimeZoneIds(offsetSeconds));
-}
-
-QString  PythonQtWrapper_QTimeZone::comment(QTimeZone* theWrappedObject) const
-{
-  return ( theWrappedObject->comment());
-}
-
-QLocale::Country  PythonQtWrapper_QTimeZone::country(QTimeZone* theWrappedObject) const
-{
-  return ( theWrappedObject->country());
-}
-
-int  PythonQtWrapper_QTimeZone::daylightTimeOffset(QTimeZone* theWrappedObject, const QDateTime&  atDateTime) const
-{
-  return ( theWrappedObject->daylightTimeOffset(atDateTime));
-}
-
-QString  PythonQtWrapper_QTimeZone::displayName(QTimeZone* theWrappedObject, QTimeZone::TimeType  timeType, QTimeZone::NameType  nameType, const QLocale&  locale) const
-{
-  return ( theWrappedObject->displayName(timeType, nameType, locale));
-}
-
-QString  PythonQtWrapper_QTimeZone::displayName(QTimeZone* theWrappedObject, const QDateTime&  atDateTime, QTimeZone::NameType  nameType, const QLocale&  locale) const
-{
-  return ( theWrappedObject->displayName(atDateTime, nameType, locale));
-}
-
-bool  PythonQtWrapper_QTimeZone::hasDaylightTime(QTimeZone* theWrappedObject) const
-{
-  return ( theWrappedObject->hasDaylightTime());
-}
-
-bool  PythonQtWrapper_QTimeZone::hasTransitions(QTimeZone* theWrappedObject) const
-{
-  return ( theWrappedObject->hasTransitions());
-}
-
-QByteArray  PythonQtWrapper_QTimeZone::static_QTimeZone_ianaIdToWindowsId(const QByteArray&  ianaId)
-{
-  return (QTimeZone::ianaIdToWindowsId(ianaId));
-}
-
-QByteArray  PythonQtWrapper_QTimeZone::id(QTimeZone* theWrappedObject) const
-{
-  return ( theWrappedObject->id());
-}
-
-bool  PythonQtWrapper_QTimeZone::isDaylightTime(QTimeZone* theWrappedObject, const QDateTime&  atDateTime) const
-{
-  return ( theWrappedObject->isDaylightTime(atDateTime));
-}
-
-bool  PythonQtWrapper_QTimeZone::static_QTimeZone_isTimeZoneIdAvailable(const QByteArray&  ianaId)
-{
-  return (QTimeZone::isTimeZoneIdAvailable(ianaId));
-}
-
-bool  PythonQtWrapper_QTimeZone::isValid(QTimeZone* theWrappedObject) const
-{
-  return ( theWrappedObject->isValid());
-}
-
-int  PythonQtWrapper_QTimeZone::offsetFromUtc(QTimeZone* theWrappedObject, const QDateTime&  atDateTime) const
-{
-  return ( theWrappedObject->offsetFromUtc(atDateTime));
-}
-
-bool  PythonQtWrapper_QTimeZone::__ne__(QTimeZone* theWrappedObject, const QTimeZone&  other) const
-{
-  return ( (*theWrappedObject)!= other);
-}
-
-void PythonQtWrapper_QTimeZone::writeTo(QTimeZone* theWrappedObject, QDataStream&  ds)
-{
-  ds <<  (*theWrappedObject);
-}
-
-QTimeZone*  PythonQtWrapper_QTimeZone::operator_assign(QTimeZone* theWrappedObject, const QTimeZone&  other)
-{
-  return &( (*theWrappedObject)= other);
-}
-
-bool  PythonQtWrapper_QTimeZone::__eq__(QTimeZone* theWrappedObject, const QTimeZone&  other) const
-{
-  return ( (*theWrappedObject)== other);
-}
-
-void PythonQtWrapper_QTimeZone::readFrom(QTimeZone* theWrappedObject, QDataStream&  ds)
-{
-  ds >>  (*theWrappedObject);
-}
-
-int  PythonQtWrapper_QTimeZone::standardTimeOffset(QTimeZone* theWrappedObject, const QDateTime&  atDateTime) const
-{
-  return ( theWrappedObject->standardTimeOffset(atDateTime));
-}
-
-void PythonQtWrapper_QTimeZone::swap(QTimeZone* theWrappedObject, QTimeZone&  other)
-{
-  ( theWrappedObject->swap(other));
-}
-
-QTimeZone  PythonQtWrapper_QTimeZone::static_QTimeZone_systemTimeZone()
-{
-  return (QTimeZone::systemTimeZone());
-}
-
-QByteArray  PythonQtWrapper_QTimeZone::static_QTimeZone_systemTimeZoneId()
-{
-  return (QTimeZone::systemTimeZoneId());
-}
-
-QTimeZone  PythonQtWrapper_QTimeZone::static_QTimeZone_utc()
-{
-  return (QTimeZone::utc());
-}
-
-QByteArray  PythonQtWrapper_QTimeZone::static_QTimeZone_windowsIdToDefaultIanaId(const QByteArray&  windowsId)
-{
-  return (QTimeZone::windowsIdToDefaultIanaId(windowsId));
-}
-
-QByteArray  PythonQtWrapper_QTimeZone::static_QTimeZone_windowsIdToDefaultIanaId(const QByteArray&  windowsId, QLocale::Country  country)
-{
-  return (QTimeZone::windowsIdToDefaultIanaId(windowsId, country));
-}
-
-QList<QByteArray >  PythonQtWrapper_QTimeZone::static_QTimeZone_windowsIdToIanaIds(const QByteArray&  windowsId)
-{
-  return (QTimeZone::windowsIdToIanaIds(windowsId));
-}
-
-QList<QByteArray >  PythonQtWrapper_QTimeZone::static_QTimeZone_windowsIdToIanaIds(const QByteArray&  windowsId, QLocale::Country  country)
-{
-  return (QTimeZone::windowsIdToIanaIds(windowsId, country));
-}
-
-QString PythonQtWrapper_QTimeZone::py_toString(QTimeZone* obj) {
-  QString result;
-  QDebug d(&result);
-  d << *obj;
-  return result;
 }
 
 

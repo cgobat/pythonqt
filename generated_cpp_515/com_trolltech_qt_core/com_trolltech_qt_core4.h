@@ -6,6 +6,7 @@
 #include <qcborcommon.h>
 #include <qcoreevent.h>
 #include <qdatastream.h>
+#include <qdatetime.h>
 #include <qdeadlinetimer.h>
 #include <qeasingcurve.h>
 #include <qlist.h>
@@ -19,14 +20,70 @@
 #include <qstringlist.h>
 #include <qthread.h>
 #include <qtimer.h>
+#include <qtimezone.h>
 #include <qtranslator.h>
 #include <qurl.h>
 #include <qurlquery.h>
 #include <quuid.h>
 #include <qvariantanimation.h>
 #include <qvector.h>
+#include <qversionnumber.h>
 #include <qwaitcondition.h>
 #include <qxmlstream.h>
+
+
+
+class PythonQtWrapper_QTimeZone : public QObject
+{ Q_OBJECT
+public:
+Q_ENUMS(NameType TimeType )
+enum NameType{
+  DefaultName = QTimeZone::DefaultName,   LongName = QTimeZone::LongName,   ShortName = QTimeZone::ShortName,   OffsetName = QTimeZone::OffsetName};
+enum TimeType{
+  StandardTime = QTimeZone::StandardTime,   DaylightTime = QTimeZone::DaylightTime,   GenericTime = QTimeZone::GenericTime};
+public Q_SLOTS:
+QTimeZone* new_QTimeZone();
+QTimeZone* new_QTimeZone(const QByteArray&  ianaId);
+QTimeZone* new_QTimeZone(const QByteArray&  zoneId, int  offsetSeconds, const QString&  name, const QString&  abbreviation, QLocale::Country  country = QLocale::AnyCountry, const QString&  comment = QString());
+QTimeZone* new_QTimeZone(const QTimeZone&  other);
+QTimeZone* new_QTimeZone(int  offsetSeconds);
+void delete_QTimeZone(QTimeZone* obj) { delete obj; }
+   QString  abbreviation(QTimeZone* theWrappedObject, const QDateTime&  atDateTime) const;
+   QList<QByteArray >  static_QTimeZone_availableTimeZoneIds();
+   QList<QByteArray >  static_QTimeZone_availableTimeZoneIds(QLocale::Country  country);
+   QList<QByteArray >  static_QTimeZone_availableTimeZoneIds(int  offsetSeconds);
+   QString  comment(QTimeZone* theWrappedObject) const;
+   QLocale::Country  country(QTimeZone* theWrappedObject) const;
+   int  daylightTimeOffset(QTimeZone* theWrappedObject, const QDateTime&  atDateTime) const;
+   QString  displayName(QTimeZone* theWrappedObject, QTimeZone::TimeType  timeType, QTimeZone::NameType  nameType = QTimeZone::DefaultName, const QLocale&  locale = QLocale()) const;
+   QString  displayName(QTimeZone* theWrappedObject, const QDateTime&  atDateTime, QTimeZone::NameType  nameType = QTimeZone::DefaultName, const QLocale&  locale = QLocale()) const;
+   bool  hasDaylightTime(QTimeZone* theWrappedObject) const;
+   bool  hasTransitions(QTimeZone* theWrappedObject) const;
+   QByteArray  static_QTimeZone_ianaIdToWindowsId(const QByteArray&  ianaId);
+   QByteArray  id(QTimeZone* theWrappedObject) const;
+   bool  isDaylightTime(QTimeZone* theWrappedObject, const QDateTime&  atDateTime) const;
+   bool  static_QTimeZone_isTimeZoneIdAvailable(const QByteArray&  ianaId);
+   bool  isValid(QTimeZone* theWrappedObject) const;
+   int  offsetFromUtc(QTimeZone* theWrappedObject, const QDateTime&  atDateTime) const;
+   bool  __ne__(QTimeZone* theWrappedObject, const QTimeZone&  other) const;
+   void writeTo(QTimeZone* theWrappedObject, QDataStream&  ds);
+   QTimeZone*  operator_assign(QTimeZone* theWrappedObject, const QTimeZone&  other);
+   bool  __eq__(QTimeZone* theWrappedObject, const QTimeZone&  other) const;
+   void readFrom(QTimeZone* theWrappedObject, QDataStream&  ds);
+   int  standardTimeOffset(QTimeZone* theWrappedObject, const QDateTime&  atDateTime) const;
+   void swap(QTimeZone* theWrappedObject, QTimeZone&  other);
+   QTimeZone  static_QTimeZone_systemTimeZone();
+   QByteArray  static_QTimeZone_systemTimeZoneId();
+   QTimeZone  static_QTimeZone_utc();
+   QByteArray  static_QTimeZone_windowsIdToDefaultIanaId(const QByteArray&  windowsId);
+   QByteArray  static_QTimeZone_windowsIdToDefaultIanaId(const QByteArray&  windowsId, QLocale::Country  country);
+   QList<QByteArray >  static_QTimeZone_windowsIdToIanaIds(const QByteArray&  windowsId);
+   QList<QByteArray >  static_QTimeZone_windowsIdToIanaIds(const QByteArray&  windowsId, QLocale::Country  country);
+    QString py_toString(QTimeZone*);
+    bool __nonzero__(QTimeZone* obj) { return obj->isValid(); }
+};
+
+
 
 
 
@@ -57,7 +114,7 @@ inline void py_q_timerEvent(QTimerEvent*  arg__1) { QTimer::timerEvent(arg__1); 
 class PythonQtWrapper_QTimer : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QTimer* new_QTimer(QObject*  parent = nullptr);
 void delete_QTimer(QTimer* obj) { delete obj; }
    int  interval(QTimer* theWrappedObject) const;
@@ -92,7 +149,7 @@ public:
 class PythonQtWrapper_QTimerEvent : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QTimerEvent* new_QTimerEvent(int  timerId);
 void delete_QTimerEvent(QTimerEvent* obj) { delete obj; }
    int  timerId(QTimerEvent* theWrappedObject) const;
@@ -131,7 +188,7 @@ inline QString  py_q_translate(const char*  context, const char*  sourceText, co
 class PythonQtWrapper_QTranslator : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QTranslator* new_QTranslator(QObject*  parent = nullptr);
 void delete_QTranslator(QTranslator* obj) { delete obj; }
    QString  filePath(QTranslator* theWrappedObject) const;
@@ -153,7 +210,7 @@ void delete_QTranslator(QTranslator* obj) { delete obj; }
 class PythonQtWrapper_QUrlQuery : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QUrlQuery* new_QUrlQuery();
 QUrlQuery* new_QUrlQuery(const QString&  queryString);
 QUrlQuery* new_QUrlQuery(const QUrl&  url);
@@ -213,7 +270,7 @@ enum Variant{
   VarUnknown = QUuid::VarUnknown,   NCS = QUuid::NCS,   DCE = QUuid::DCE,   Microsoft = QUuid::Microsoft,   Reserved = QUuid::Reserved};
 enum Version{
   VerUnknown = QUuid::VerUnknown,   Time = QUuid::Time,   EmbeddedPOSIX = QUuid::EmbeddedPOSIX,   Md5 = QUuid::Md5,   Name = QUuid::Name,   Random = QUuid::Random,   Sha1 = QUuid::Sha1};
-public slots:
+public Q_SLOTS:
 QUuid* new_QUuid();
 QUuid* new_QUuid(const QByteArray&  arg__1);
 QUuid* new_QUuid(const QString&  arg__1);
@@ -303,7 +360,7 @@ inline void py_q_updateState(QAbstractAnimation::State  newState, QAbstractAnima
 class PythonQtWrapper_QVariantAnimation : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QVariantAnimation* new_QVariantAnimation(QObject*  parent = nullptr);
 void delete_QVariantAnimation(QVariantAnimation* obj) { delete obj; }
    QVariant  currentValue(QVariantAnimation* theWrappedObject) const;
@@ -332,10 +389,54 @@ void delete_QVariantAnimation(QVariantAnimation* obj) { delete obj; }
 
 
 
+class PythonQtWrapper_QVersionNumber : public QObject
+{ Q_OBJECT
+public:
+public Q_SLOTS:
+QVersionNumber* new_QVersionNumber();
+QVersionNumber* new_QVersionNumber(const QVector<int >&  seg);
+QVersionNumber* new_QVersionNumber(int  maj);
+QVersionNumber* new_QVersionNumber(int  maj, int  min);
+QVersionNumber* new_QVersionNumber(int  maj, int  min, int  mic);
+QVersionNumber* new_QVersionNumber(const QVersionNumber& other) {
+QVersionNumber* a = new QVersionNumber();
+*((QVersionNumber*)a) = other;
+return a; }
+void delete_QVersionNumber(QVersionNumber* obj) { delete obj; }
+   QVersionNumber  static_QVersionNumber_commonPrefix(const QVersionNumber&  v1, const QVersionNumber&  v2);
+   int  static_QVersionNumber_compare(const QVersionNumber&  v1, const QVersionNumber&  v2);
+   QVersionNumber  static_QVersionNumber_fromString(const QString&  string, int*  suffixIndex = nullptr);
+   bool  isNormalized(QVersionNumber* theWrappedObject) const;
+   bool  isNull(QVersionNumber* theWrappedObject) const;
+   bool  isPrefixOf(QVersionNumber* theWrappedObject, const QVersionNumber&  other) const;
+   int  majorVersion(QVersionNumber* theWrappedObject) const;
+   int  microVersion(QVersionNumber* theWrappedObject) const;
+   int  minorVersion(QVersionNumber* theWrappedObject) const;
+   QVersionNumber  normalized(QVersionNumber* theWrappedObject) const;
+   bool  __ne__(QVersionNumber* theWrappedObject, const QVersionNumber&  rhs);
+   bool  __lt__(QVersionNumber* theWrappedObject, const QVersionNumber&  rhs);
+   void writeTo(QVersionNumber* theWrappedObject, QDataStream&  out);
+   bool  __le__(QVersionNumber* theWrappedObject, const QVersionNumber&  rhs);
+   bool  __eq__(QVersionNumber* theWrappedObject, const QVersionNumber&  rhs);
+   bool  __gt__(QVersionNumber* theWrappedObject, const QVersionNumber&  rhs);
+   bool  __ge__(QVersionNumber* theWrappedObject, const QVersionNumber&  rhs);
+   void readFrom(QVersionNumber* theWrappedObject, QDataStream&  in);
+   int  segmentAt(QVersionNumber* theWrappedObject, int  index) const;
+   int  segmentCount(QVersionNumber* theWrappedObject) const;
+   QVector<int >  segments(QVersionNumber* theWrappedObject) const;
+   QString  toString(QVersionNumber* theWrappedObject) const;
+    QString py_toString(QVersionNumber*);
+    bool __nonzero__(QVersionNumber* obj) { return !obj->isNull(); }
+};
+
+
+
+
+
 class PythonQtWrapper_QWaitCondition : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QWaitCondition* new_QWaitCondition();
 void delete_QWaitCondition(QWaitCondition* obj) { delete obj; }
    void notify_all(QWaitCondition* theWrappedObject);
@@ -355,7 +456,7 @@ void delete_QWaitCondition(QWaitCondition* obj) { delete obj; }
 class PythonQtWrapper_QWriteLocker : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QWriteLocker* new_QWriteLocker(QReadWriteLock*  readWriteLock);
 void delete_QWriteLocker(QWriteLocker* obj) { delete obj; }
    QReadWriteLock*  readWriteLock(QWriteLocker* theWrappedObject) const;
@@ -364,7 +465,7 @@ void delete_QWriteLocker(QWriteLocker* obj) { delete obj; }
 
     void __enter__(QWriteLocker* /*self*/) {}
     void __exit__(QWriteLocker* self, PyObject* /*type*/, PyObject* /*value*/, PyObject* /*traceback*/) { self->unlock(); }
-
+    
 };
 
 
@@ -393,7 +494,7 @@ inline QString  py_q_resolveUndeclaredEntity(const QString&  name) { return QXml
 class PythonQtWrapper_QXmlStreamEntityResolver : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QXmlStreamEntityResolver* new_QXmlStreamEntityResolver();
 void delete_QXmlStreamEntityResolver(QXmlStreamEntityResolver* obj) { delete obj; }
    QString  resolveEntity(QXmlStreamEntityResolver* theWrappedObject, const QString&  publicId, const QString&  systemId);
@@ -418,7 +519,7 @@ enum class QCborTag{
 };
 enum QtMsgType{
   QtDebugMsg = ::QtDebugMsg,   QtWarningMsg = ::QtWarningMsg,   QtCriticalMsg = ::QtCriticalMsg,   QtFatalMsg = ::QtFatalMsg,   QtInfoMsg = ::QtInfoMsg,   QtSystemMsg = ::QtSystemMsg};
-public slots:
+public Q_SLOTS:
 };
 
 

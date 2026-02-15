@@ -2,12 +2,37 @@
 #include <QObject>
 #include <QPrinterInfo>
 #include <QVariant>
-#include <qaction.h>
-#include <qapplication.h>
+#include <QtPrintSupport/qprintdialog.h>
+#include <QtPrintSupport/qprintengine.h>
+#include <QtPrintSupport/qprinter.h>
+#include <QtPrintSupport/qprinterinfo.h>
+#include <QtPrintSupport/qprintpreviewdialog.h>
+#include <QtPrintSupport/qprintpreviewwidget.h>
+#include <QtWidgets/qaction.h>
+#include <QtWidgets/qapplication.h>
+#include <QtWidgets/qbuttongroup.h>
+#include <QtWidgets/qgraphicseffect.h>
+#include <QtWidgets/qgraphicsproxywidget.h>
+#include <QtWidgets/qlabel.h>
+#include <QtWidgets/qlayout.h>
+#include <QtWidgets/qmenu.h>
+#include <QtWidgets/qprogressbar.h>
+#include <QtWidgets/qprogressdialog.h>
+#include <QtWidgets/qproxystyle.h>
+#include <QtWidgets/qpushbutton.h>
+#include <QtWidgets/qradiobutton.h>
+#include <QtWidgets/qrubberband.h>
+#include <QtWidgets/qscrollarea.h>
+#include <QtWidgets/qscrollbar.h>
+#include <QtWidgets/qscroller.h>
+#include <QtWidgets/qscrollerproperties.h>
+#include <QtWidgets/qsizepolicy.h>
+#include <QtWidgets/qstyle.h>
+#include <QtWidgets/qstyleoption.h>
+#include <QtWidgets/qwidget.h>
 #include <qbackingstore.h>
 #include <qbitmap.h>
 #include <qbrush.h>
-#include <qbuttongroup.h>
 #include <qbytearray.h>
 #include <qcolor.h>
 #include <qcoreevent.h>
@@ -17,18 +42,13 @@
 #include <qfont.h>
 #include <qfontinfo.h>
 #include <qfontmetrics.h>
-#include <qgraphicseffect.h>
-#include <qgraphicsproxywidget.h>
 #include <qicon.h>
 #include <qimage.h>
 #include <qkeysequence.h>
-#include <qlabel.h>
-#include <qlayout.h>
 #include <qlist.h>
 #include <qlocale.h>
 #include <qmargins.h>
 #include <qmatrix.h>
-#include <qmenu.h>
 #include <qmetaobject.h>
 #include <qobject.h>
 #include <qpagedpaintdevice.h>
@@ -43,18 +63,7 @@
 #include <qpixmap.h>
 #include <qpoint.h>
 #include <qpolygon.h>
-#include <qprintdialog.h>
-#include <qprintengine.h>
-#include <qprinter.h>
-#include <qprinterinfo.h>
-#include <qprintpreviewdialog.h>
-#include <qprintpreviewwidget.h>
-#include <qprogressbar.h>
-#include <qprogressdialog.h>
-#include <qproxystyle.h>
-#include <qpushbutton.h>
 #include <qquaternion.h>
-#include <qradiobutton.h>
 #include <qrasterwindow.h>
 #include <qrawfont.h>
 #include <qrect.h>
@@ -62,17 +71,10 @@
 #include <qregion.h>
 #include <qregularexpression.h>
 #include <qrgba64.h>
-#include <qrubberband.h>
 #include <qscreen.h>
-#include <qscrollarea.h>
-#include <qscrollbar.h>
-#include <qscroller.h>
-#include <qscrollerproperties.h>
+#include <qsessionmanager.h>
 #include <qsize.h>
-#include <qsizepolicy.h>
 #include <qstringlist.h>
-#include <qstyle.h>
-#include <qstyleoption.h>
 #include <qsurfaceformat.h>
 #include <qthread.h>
 #include <qtransform.h>
@@ -80,42 +82,14 @@
 #include <qvector.h>
 #include <qvector3d.h>
 #include <qvector4d.h>
-#include <qwidget.h>
 #include <qwindow.h>
-
-
-
-class PythonQtShell_QPlatformSurfaceEvent : public QPlatformSurfaceEvent
-{
-public:
-    PythonQtShell_QPlatformSurfaceEvent(QPlatformSurfaceEvent::SurfaceEventType  surfaceEventType):QPlatformSurfaceEvent(surfaceEventType),_wrapper(nullptr) {};
-
-   ~PythonQtShell_QPlatformSurfaceEvent() override;
-
-
-  PythonQtInstanceWrapper* _wrapper;
-};
-
-class PythonQtWrapper_QPlatformSurfaceEvent : public QObject
-{ Q_OBJECT
-public:
-Q_ENUMS(SurfaceEventType )
-enum SurfaceEventType{
-  SurfaceCreated = QPlatformSurfaceEvent::SurfaceCreated,   SurfaceAboutToBeDestroyed = QPlatformSurfaceEvent::SurfaceAboutToBeDestroyed};
-public slots:
-QPlatformSurfaceEvent* new_QPlatformSurfaceEvent(QPlatformSurfaceEvent::SurfaceEventType  surfaceEventType);
-void delete_QPlatformSurfaceEvent(QPlatformSurfaceEvent* obj) { delete obj; }
-   QPlatformSurfaceEvent::SurfaceEventType  surfaceEventType(QPlatformSurfaceEvent* theWrappedObject) const;
-};
-
-
 
 
 
 class PythonQtWrapper_QPolygonF : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QPolygonF* new_QPolygonF();
 QPolygonF* new_QPolygonF(const QPolygon&  a);
 QPolygonF* new_QPolygonF(const QPolygonF&  a);
@@ -275,7 +249,7 @@ inline void py_q_setVisible(bool  visible) { QPrintDialog::setVisible(visible); 
 class PythonQtWrapper_QPrintDialog : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QPrintDialog* new_QPrintDialog(QPrinter*  printer, QWidget*  parent = nullptr);
 QPrintDialog* new_QPrintDialog(QWidget*  parent = nullptr);
 void delete_QPrintDialog(QPrintDialog* obj) { delete obj; }
@@ -327,7 +301,7 @@ public:
 Q_ENUMS(PrintEnginePropertyKey )
 enum PrintEnginePropertyKey{
   PPK_CollateCopies = QPrintEngine::PPK_CollateCopies,   PPK_ColorMode = QPrintEngine::PPK_ColorMode,   PPK_Creator = QPrintEngine::PPK_Creator,   PPK_DocumentName = QPrintEngine::PPK_DocumentName,   PPK_FullPage = QPrintEngine::PPK_FullPage,   PPK_NumberOfCopies = QPrintEngine::PPK_NumberOfCopies,   PPK_Orientation = QPrintEngine::PPK_Orientation,   PPK_OutputFileName = QPrintEngine::PPK_OutputFileName,   PPK_PageOrder = QPrintEngine::PPK_PageOrder,   PPK_PageRect = QPrintEngine::PPK_PageRect,   PPK_PageSize = QPrintEngine::PPK_PageSize,   PPK_PaperRect = QPrintEngine::PPK_PaperRect,   PPK_PaperSource = QPrintEngine::PPK_PaperSource,   PPK_PrinterName = QPrintEngine::PPK_PrinterName,   PPK_PrinterProgram = QPrintEngine::PPK_PrinterProgram,   PPK_Resolution = QPrintEngine::PPK_Resolution,   PPK_SelectionOption = QPrintEngine::PPK_SelectionOption,   PPK_SupportedResolutions = QPrintEngine::PPK_SupportedResolutions,   PPK_WindowsPageSize = QPrintEngine::PPK_WindowsPageSize,   PPK_FontEmbedding = QPrintEngine::PPK_FontEmbedding,   PPK_Duplex = QPrintEngine::PPK_Duplex,   PPK_PaperSources = QPrintEngine::PPK_PaperSources,   PPK_CustomPaperSize = QPrintEngine::PPK_CustomPaperSize,   PPK_PageMargins = QPrintEngine::PPK_PageMargins,   PPK_CopyCount = QPrintEngine::PPK_CopyCount,   PPK_SupportsMultipleCopies = QPrintEngine::PPK_SupportsMultipleCopies,   PPK_PaperName = QPrintEngine::PPK_PaperName,   PPK_QPageSize = QPrintEngine::PPK_QPageSize,   PPK_QPageMargins = QPrintEngine::PPK_QPageMargins,   PPK_QPageLayout = QPrintEngine::PPK_QPageLayout,   PPK_PaperSize = QPrintEngine::PPK_PaperSize,   PPK_CustomBase = QPrintEngine::PPK_CustomBase};
-public slots:
+public Q_SLOTS:
 QPrintEngine* new_QPrintEngine();
 void delete_QPrintEngine(QPrintEngine* obj) { delete obj; }
    bool  abort(QPrintEngine* theWrappedObject);
@@ -420,7 +394,7 @@ inline void py_q_setVisible(bool  visible) { QPrintPreviewDialog::setVisible(vis
 class PythonQtWrapper_QPrintPreviewDialog : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QPrintPreviewDialog* new_QPrintPreviewDialog(QPrinter*  printer, QWidget*  parent = nullptr, Qt::WindowFlags  flags = Qt::WindowFlags());
 QPrintPreviewDialog* new_QPrintPreviewDialog(QWidget*  parent = nullptr, Qt::WindowFlags  flags = Qt::WindowFlags());
 void delete_QPrintPreviewDialog(QPrintPreviewDialog* obj) { delete obj; }
@@ -506,7 +480,7 @@ enum ViewMode{
   SinglePageView = QPrintPreviewWidget::SinglePageView,   FacingPagesView = QPrintPreviewWidget::FacingPagesView,   AllPagesView = QPrintPreviewWidget::AllPagesView};
 enum ZoomMode{
   CustomZoom = QPrintPreviewWidget::CustomZoom,   FitToWidth = QPrintPreviewWidget::FitToWidth,   FitInView = QPrintPreviewWidget::FitInView};
-public slots:
+public Q_SLOTS:
 QPrintPreviewWidget* new_QPrintPreviewWidget(QPrinter*  printer, QWidget*  parent = nullptr, Qt::WindowFlags  flags = Qt::WindowFlags());
 QPrintPreviewWidget* new_QPrintPreviewWidget(QWidget*  parent = nullptr, Qt::WindowFlags  flags = Qt::WindowFlags());
 void delete_QPrintPreviewWidget(QPrintPreviewWidget* obj) { delete obj; }
@@ -582,7 +556,7 @@ enum PrinterState{
   Idle = QPrinter::Idle,   Active = QPrinter::Active,   Aborted = QPrinter::Aborted,   Error = QPrinter::Error};
 enum Unit{
   Millimeter = QPrinter::Millimeter,   Point = QPrinter::Point,   Inch = QPrinter::Inch,   Pica = QPrinter::Pica,   Didot = QPrinter::Didot,   Cicero = QPrinter::Cicero,   DevicePixel = QPrinter::DevicePixel};
-public slots:
+public Q_SLOTS:
 QPrinter* new_QPrinter(QPrinter::PrinterMode  mode = QPrinter::ScreenResolution);
 QPrinter* new_QPrinter(const QPrinterInfo&  printer, QPrinter::PrinterMode  mode = QPrinter::ScreenResolution);
 void delete_QPrinter(QPrinter* obj) { delete obj; }
@@ -669,7 +643,7 @@ void delete_QPrinter(QPrinter* obj) { delete obj; }
 class PythonQtWrapper_QPrinterInfo : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QPrinterInfo* new_QPrinterInfo();
 QPrinterInfo* new_QPrinterInfo(const QPrinter&  printer);
 QPrinterInfo* new_QPrinterInfo(const QPrinterInfo&  other);
@@ -699,6 +673,7 @@ void delete_QPrinterInfo(QPrinterInfo* obj) { delete obj; }
    QList<int >  supportedResolutions(QPrinterInfo* theWrappedObject) const;
    QList<QPair<QString , QSizeF >  >  supportedSizesWithNames(QPrinterInfo* theWrappedObject) const;
    bool  supportsCustomPageSizes(QPrinterInfo* theWrappedObject) const;
+    QString py_toString(QPrinterInfo*);
     bool __nonzero__(QPrinterInfo* obj) { return !obj->isNull(); }
 };
 
@@ -780,7 +755,7 @@ inline QString  py_q_text() const { return QProgressBar::text(); }
 class PythonQtWrapper_QProgressBar : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QProgressBar* new_QProgressBar(QWidget*  parent = nullptr);
 void delete_QProgressBar(QProgressBar* obj) { delete obj; }
    Qt::Alignment  alignment(QProgressBar* theWrappedObject) const;
@@ -791,7 +766,6 @@ void delete_QProgressBar(QProgressBar* obj) { delete obj; }
    bool  isTextVisible(QProgressBar* theWrappedObject) const;
    int  maximum(QProgressBar* theWrappedObject) const;
    int  minimum(QProgressBar* theWrappedObject) const;
-   QSize  minimumSizeHint(QProgressBar* theWrappedObject) const;
    QSize  py_q_minimumSizeHint(QProgressBar* theWrappedObject) const{  return (((PythonQtPublicPromoter_QProgressBar*)theWrappedObject)->py_q_minimumSizeHint());}
    Qt::Orientation  orientation(QProgressBar* theWrappedObject) const;
    void py_q_paintEvent(QProgressBar* theWrappedObject, QPaintEvent*  arg__1){  (((PythonQtPublicPromoter_QProgressBar*)theWrappedObject)->py_q_paintEvent(arg__1));}
@@ -801,7 +775,6 @@ void delete_QProgressBar(QProgressBar* obj) { delete obj; }
    void setInvertedAppearance(QProgressBar* theWrappedObject, bool  invert);
    void setTextDirection(QProgressBar* theWrappedObject, QProgressBar::Direction  textDirection);
    void setTextVisible(QProgressBar* theWrappedObject, bool  visible);
-   QSize  sizeHint(QProgressBar* theWrappedObject) const;
    QSize  py_q_sizeHint(QProgressBar* theWrappedObject) const{  return (((PythonQtPublicPromoter_QProgressBar*)theWrappedObject)->py_q_sizeHint());}
    QString  text(QProgressBar* theWrappedObject) const;
    QString  py_q_text(QProgressBar* theWrappedObject) const{  return (((PythonQtPublicPromoter_QProgressBar*)theWrappedObject)->py_q_text());}
@@ -893,7 +866,7 @@ inline QSize  py_q_sizeHint() const { return QProgressDialog::sizeHint(); }
 class PythonQtWrapper_QProgressDialog : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QProgressDialog* new_QProgressDialog(QWidget*  parent = nullptr, Qt::WindowFlags  flags = Qt::WindowFlags());
 QProgressDialog* new_QProgressDialog(const QString&  labelText, const QString&  cancelButtonText, int  minimum, int  maximum, QWidget*  parent = nullptr, Qt::WindowFlags  flags = Qt::WindowFlags());
 void delete_QProgressDialog(QProgressDialog* obj) { delete obj; }
@@ -996,7 +969,7 @@ inline void py_q_unpolish(QWidget*  widget) { QProxyStyle::unpolish(widget); }
 class PythonQtWrapper_QProxyStyle : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QProxyStyle* new_QProxyStyle(QStyle*  style = nullptr);
 QProxyStyle* new_QProxyStyle(const QString&  key);
 void delete_QProxyStyle(QProxyStyle* obj) { delete obj; }
@@ -1118,7 +1091,7 @@ inline QSize  py_q_sizeHint() const { return QPushButton::sizeHint(); }
 class PythonQtWrapper_QPushButton : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QPushButton* new_QPushButton(QWidget*  parent = nullptr);
 QPushButton* new_QPushButton(const QIcon&  icon, const QString&  text, QWidget*  parent = nullptr);
 QPushButton* new_QPushButton(const QString&  text, QWidget*  parent = nullptr);
@@ -1133,14 +1106,12 @@ void delete_QPushButton(QPushButton* obj) { delete obj; }
    bool  isFlat(QPushButton* theWrappedObject) const;
    void py_q_keyPressEvent(QPushButton* theWrappedObject, QKeyEvent*  arg__1){  (((PythonQtPublicPromoter_QPushButton*)theWrappedObject)->py_q_keyPressEvent(arg__1));}
    QMenu*  menu(QPushButton* theWrappedObject) const;
-   QSize  minimumSizeHint(QPushButton* theWrappedObject) const;
    QSize  py_q_minimumSizeHint(QPushButton* theWrappedObject) const{  return (((PythonQtPublicPromoter_QPushButton*)theWrappedObject)->py_q_minimumSizeHint());}
    void py_q_paintEvent(QPushButton* theWrappedObject, QPaintEvent*  arg__1){  (((PythonQtPublicPromoter_QPushButton*)theWrappedObject)->py_q_paintEvent(arg__1));}
    void setAutoDefault(QPushButton* theWrappedObject, bool  arg__1);
    void setDefault(QPushButton* theWrappedObject, bool  arg__1);
    void setFlat(QPushButton* theWrappedObject, bool  arg__1);
    void setMenu(QPushButton* theWrappedObject, QMenu*  menu);
-   QSize  sizeHint(QPushButton* theWrappedObject) const;
    QSize  py_q_sizeHint(QPushButton* theWrappedObject) const{  return (((PythonQtPublicPromoter_QPushButton*)theWrappedObject)->py_q_sizeHint());}
 };
 
@@ -1151,7 +1122,7 @@ void delete_QPushButton(QPushButton* obj) { delete obj; }
 class PythonQtWrapper_QQuaternion : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QQuaternion* new_QQuaternion();
 QQuaternion* new_QQuaternion(const QVector4D&  vector);
 QQuaternion* new_QQuaternion(float  scalar, const QVector3D&  vector);
@@ -1190,6 +1161,7 @@ void delete_QQuaternion(QQuaternion* obj) { delete obj; }
    QQuaternion*  __imul__(QQuaternion* theWrappedObject, float  factor);
    const QQuaternion  __add__(QQuaternion* theWrappedObject, const QQuaternion&  q2);
    QQuaternion*  __iadd__(QQuaternion* theWrappedObject, const QQuaternion&  quaternion);
+   const QQuaternion  __sub__(QQuaternion* theWrappedObject);
    const QQuaternion  __sub__(QQuaternion* theWrappedObject, const QQuaternion&  q2);
    QQuaternion*  __isub__(QQuaternion* theWrappedObject, const QQuaternion&  quaternion);
    const QQuaternion  __div__(QQuaternion* theWrappedObject, float  divisor);
@@ -1224,7 +1196,7 @@ void delete_QQuaternion(QQuaternion* obj) { delete obj; }
 class PythonQtWrapper_QRadialGradient : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QRadialGradient* new_QRadialGradient();
 QRadialGradient* new_QRadialGradient(const QPointF&  center, qreal  centerRadius, const QPointF&  focalPoint, qreal  focalRadius);
 QRadialGradient* new_QRadialGradient(const QPointF&  center, qreal  radius);
@@ -1335,18 +1307,16 @@ inline QSize  py_q_sizeHint() const { return QRadioButton::sizeHint(); }
 class PythonQtWrapper_QRadioButton : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QRadioButton* new_QRadioButton(QWidget*  parent = nullptr);
 QRadioButton* new_QRadioButton(const QString&  text, QWidget*  parent = nullptr);
 void delete_QRadioButton(QRadioButton* obj) { delete obj; }
    bool  py_q_event(QRadioButton* theWrappedObject, QEvent*  e){  return (((PythonQtPublicPromoter_QRadioButton*)theWrappedObject)->py_q_event(e));}
    bool  py_q_hitButton(QRadioButton* theWrappedObject, const QPoint&  arg__1) const{  return (((PythonQtPublicPromoter_QRadioButton*)theWrappedObject)->py_q_hitButton(arg__1));}
    void initStyleOption(QRadioButton* theWrappedObject, QStyleOptionButton*  button) const;
-   QSize  minimumSizeHint(QRadioButton* theWrappedObject) const;
    QSize  py_q_minimumSizeHint(QRadioButton* theWrappedObject) const{  return (((PythonQtPublicPromoter_QRadioButton*)theWrappedObject)->py_q_minimumSizeHint());}
    void py_q_mouseMoveEvent(QRadioButton* theWrappedObject, QMouseEvent*  arg__1){  (((PythonQtPublicPromoter_QRadioButton*)theWrappedObject)->py_q_mouseMoveEvent(arg__1));}
    void py_q_paintEvent(QRadioButton* theWrappedObject, QPaintEvent*  arg__1){  (((PythonQtPublicPromoter_QRadioButton*)theWrappedObject)->py_q_paintEvent(arg__1));}
-   QSize  sizeHint(QRadioButton* theWrappedObject) const;
    QSize  py_q_sizeHint(QRadioButton* theWrappedObject) const{  return (((PythonQtPublicPromoter_QRadioButton*)theWrappedObject)->py_q_sizeHint());}
 };
 
@@ -1410,7 +1380,7 @@ inline QPaintDevice*  py_q_redirected(QPoint*  arg__1) const { return QRasterWin
 class PythonQtWrapper_QRasterWindow : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QRasterWindow* new_QRasterWindow(QWindow*  parent = nullptr);
 void delete_QRasterWindow(QRasterWindow* obj) { delete obj; }
    int  py_q_metric(QRasterWindow* theWrappedObject, QPaintDevice::PaintDeviceMetric  metric) const{  return (((PythonQtPublicPromoter_QRasterWindow*)theWrappedObject)->py_q_metric(metric));}
@@ -1431,7 +1401,7 @@ enum AntialiasingType{
 enum LayoutFlag{
   SeparateAdvances = QRawFont::SeparateAdvances,   KernedAdvances = QRawFont::KernedAdvances,   UseDesignMetrics = QRawFont::UseDesignMetrics};
 Q_DECLARE_FLAGS(LayoutFlags, LayoutFlag)
-public slots:
+public Q_SLOTS:
 QRawFont* new_QRawFont();
 QRawFont* new_QRawFont(const QByteArray&  fontData, qreal  pixelSize, QFont::HintingPreference  hintingPreference = QFont::PreferDefaultHinting);
 QRawFont* new_QRawFont(const QRawFont&  other);
@@ -1511,7 +1481,7 @@ inline QValidator::State  py_q_validate(QString&  input, int&  pos) const { retu
 class PythonQtWrapper_QRegExpValidator : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QRegExpValidator* new_QRegExpValidator(QObject*  parent = nullptr);
 QRegExpValidator* new_QRegExpValidator(const QRegExp&  rx, QObject*  parent = nullptr);
 void delete_QRegExpValidator(QRegExpValidator* obj) { delete obj; }
@@ -1553,7 +1523,7 @@ inline QValidator::State  py_q_validate(QString&  input, int&  pos) const { retu
 class PythonQtWrapper_QRegularExpressionValidator : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QRegularExpressionValidator* new_QRegularExpressionValidator(QObject*  parent = nullptr);
 QRegularExpressionValidator* new_QRegularExpressionValidator(const QRegularExpression&  re, QObject*  parent = nullptr);
 void delete_QRegularExpressionValidator(QRegularExpressionValidator* obj) { delete obj; }
@@ -1579,7 +1549,7 @@ public:
 class PythonQtWrapper_QResizeEvent : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QResizeEvent* new_QResizeEvent(const QSize&  size, const QSize&  oldSize);
 void delete_QResizeEvent(QResizeEvent* obj) { delete obj; }
    const QSize*  oldSize(QResizeEvent* theWrappedObject) const;
@@ -1593,7 +1563,7 @@ void delete_QResizeEvent(QResizeEvent* obj) { delete obj; }
 class PythonQtWrapper_QRgba64 : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QRgba64* new_QRgba64();
 QRgba64* new_QRgba64(const QRgba64& other) {
 QRgba64* a = new QRgba64();
@@ -1710,7 +1680,7 @@ public:
 Q_ENUMS(Shape )
 enum Shape{
   Line = QRubberBand::Line,   Rectangle = QRubberBand::Rectangle};
-public slots:
+public Q_SLOTS:
 QRubberBand* new_QRubberBand(QRubberBand::Shape  arg__1, QWidget*  arg__2 = nullptr);
 void delete_QRubberBand(QRubberBand* obj) { delete obj; }
    void py_q_changeEvent(QRubberBand* theWrappedObject, QEvent*  arg__1){  (((PythonQtPublicPromoter_QRubberBand*)theWrappedObject)->py_q_changeEvent(arg__1));}
@@ -1736,7 +1706,7 @@ void delete_QRubberBand(QRubberBand* obj) { delete obj; }
 class PythonQtWrapper_QScreen : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 void delete_QScreen(QScreen* obj) { delete obj; }
    int  angleBetween(QScreen* theWrappedObject, Qt::ScreenOrientation  a, Qt::ScreenOrientation  b) const;
    QRect  availableGeometry(QScreen* theWrappedObject) const;
@@ -1783,7 +1753,7 @@ void delete_QScreen(QScreen* obj) { delete obj; }
 class PythonQtWrapper_QScreenOrientationChangeEvent : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QScreenOrientationChangeEvent* new_QScreenOrientationChangeEvent(QScreen*  screen, Qt::ScreenOrientation  orientation);
 void delete_QScreenOrientationChangeEvent(QScreenOrientationChangeEvent* obj) { delete obj; }
    Qt::ScreenOrientation  orientation(QScreenOrientationChangeEvent* theWrappedObject) const;
@@ -1875,7 +1845,7 @@ inline QSize  py_q_viewportSizeHint() const { return QScrollArea::viewportSizeHi
 class PythonQtWrapper_QScrollArea : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QScrollArea* new_QScrollArea(QWidget*  parent = nullptr);
 void delete_QScrollArea(QScrollArea* obj) { delete obj; }
    Qt::Alignment  alignment(QScrollArea* theWrappedObject) const;
@@ -1986,7 +1956,7 @@ inline void py_q_wheelEvent(QWheelEvent*  arg__1) { QScrollBar::wheelEvent(arg__
 class PythonQtWrapper_QScrollBar : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QScrollBar* new_QScrollBar(QWidget*  parent = nullptr);
 QScrollBar* new_QScrollBar(Qt::Orientation  arg__1, QWidget*  parent = nullptr);
 void delete_QScrollBar(QScrollBar* obj) { delete obj; }
@@ -1998,7 +1968,6 @@ void delete_QScrollBar(QScrollBar* obj) { delete obj; }
    void py_q_mousePressEvent(QScrollBar* theWrappedObject, QMouseEvent*  arg__1){  (((PythonQtPublicPromoter_QScrollBar*)theWrappedObject)->py_q_mousePressEvent(arg__1));}
    void py_q_mouseReleaseEvent(QScrollBar* theWrappedObject, QMouseEvent*  arg__1){  (((PythonQtPublicPromoter_QScrollBar*)theWrappedObject)->py_q_mouseReleaseEvent(arg__1));}
    void py_q_paintEvent(QScrollBar* theWrappedObject, QPaintEvent*  arg__1){  (((PythonQtPublicPromoter_QScrollBar*)theWrappedObject)->py_q_paintEvent(arg__1));}
-   QSize  sizeHint(QScrollBar* theWrappedObject) const;
    QSize  py_q_sizeHint(QScrollBar* theWrappedObject) const{  return (((PythonQtPublicPromoter_QScrollBar*)theWrappedObject)->py_q_sizeHint());}
    void py_q_sliderChange(QScrollBar* theWrappedObject, int  change){  (((PythonQtPublicPromoter_QScrollBar*)theWrappedObject)->py_q_sliderChange(change));}
    void py_q_wheelEvent(QScrollBar* theWrappedObject, QWheelEvent*  arg__1){  (((PythonQtPublicPromoter_QScrollBar*)theWrappedObject)->py_q_wheelEvent(arg__1));}
@@ -2014,7 +1983,7 @@ public:
 Q_ENUMS(ScrollState )
 enum ScrollState{
   ScrollStarted = QScrollEvent::ScrollStarted,   ScrollUpdated = QScrollEvent::ScrollUpdated,   ScrollFinished = QScrollEvent::ScrollFinished};
-public slots:
+public Q_SLOTS:
 QScrollEvent* new_QScrollEvent(const QPointF&  contentPos, const QPointF&  overshoot, QScrollEvent::ScrollState  scrollState);
 void delete_QScrollEvent(QScrollEvent* obj) { delete obj; }
    QPointF  contentPos(QScrollEvent* theWrappedObject) const;
@@ -2029,7 +1998,7 @@ void delete_QScrollEvent(QScrollEvent* obj) { delete obj; }
 class PythonQtWrapper_QScrollPrepareEvent : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QScrollPrepareEvent* new_QScrollPrepareEvent(const QPointF&  startPos);
 void delete_QScrollPrepareEvent(QScrollPrepareEvent* obj) { delete obj; }
    QPointF  contentPos(QScrollPrepareEvent* theWrappedObject) const;
@@ -2053,7 +2022,7 @@ enum Input{
   InputPress = QScroller::InputPress,   InputMove = QScroller::InputMove,   InputRelease = QScroller::InputRelease};
 enum ScrollerGestureType{
   TouchGesture = QScroller::TouchGesture,   LeftMouseButtonGesture = QScroller::LeftMouseButtonGesture,   RightMouseButtonGesture = QScroller::RightMouseButtonGesture,   MiddleMouseButtonGesture = QScroller::MiddleMouseButtonGesture};
-public slots:
+public Q_SLOTS:
    QList<QScroller* >  static_QScroller_activeScrollers();
    QPointF  finalPosition(QScroller* theWrappedObject) const;
    Qt::GestureType  static_QScroller_grabGesture(QObject*  target, QScroller::ScrollerGestureType  gestureType = QScroller::TouchGesture);
@@ -2101,7 +2070,7 @@ enum OvershootPolicy{
   OvershootWhenScrollable = QScrollerProperties::OvershootWhenScrollable,   OvershootAlwaysOff = QScrollerProperties::OvershootAlwaysOff,   OvershootAlwaysOn = QScrollerProperties::OvershootAlwaysOn};
 enum ScrollMetric{
   MousePressEventDelay = QScrollerProperties::MousePressEventDelay,   DragStartDistance = QScrollerProperties::DragStartDistance,   DragVelocitySmoothingFactor = QScrollerProperties::DragVelocitySmoothingFactor,   AxisLockThreshold = QScrollerProperties::AxisLockThreshold,   ScrollingCurve = QScrollerProperties::ScrollingCurve,   DecelerationFactor = QScrollerProperties::DecelerationFactor,   MinimumVelocity = QScrollerProperties::MinimumVelocity,   MaximumVelocity = QScrollerProperties::MaximumVelocity,   MaximumClickThroughVelocity = QScrollerProperties::MaximumClickThroughVelocity,   AcceleratingFlickMaximumTime = QScrollerProperties::AcceleratingFlickMaximumTime,   AcceleratingFlickSpeedupFactor = QScrollerProperties::AcceleratingFlickSpeedupFactor,   SnapPositionRatio = QScrollerProperties::SnapPositionRatio,   SnapTime = QScrollerProperties::SnapTime,   OvershootDragResistanceFactor = QScrollerProperties::OvershootDragResistanceFactor,   OvershootDragDistanceFactor = QScrollerProperties::OvershootDragDistanceFactor,   OvershootScrollDistanceFactor = QScrollerProperties::OvershootScrollDistanceFactor,   OvershootScrollTime = QScrollerProperties::OvershootScrollTime,   HorizontalOvershootPolicy = QScrollerProperties::HorizontalOvershootPolicy,   VerticalOvershootPolicy = QScrollerProperties::VerticalOvershootPolicy,   FrameRate = QScrollerProperties::FrameRate,   ScrollMetricCount = QScrollerProperties::ScrollMetricCount};
-public slots:
+public Q_SLOTS:
 QScrollerProperties* new_QScrollerProperties();
 QScrollerProperties* new_QScrollerProperties(const QScrollerProperties&  sp);
 void delete_QScrollerProperties(QScrollerProperties* obj) { delete obj; }
@@ -2112,6 +2081,35 @@ void delete_QScrollerProperties(QScrollerProperties* obj) { delete obj; }
    void static_QScrollerProperties_setDefaultScrollerProperties(const QScrollerProperties&  sp);
    void setScrollMetric(QScrollerProperties* theWrappedObject, QScrollerProperties::ScrollMetric  metric, const QVariant&  value);
    void static_QScrollerProperties_unsetDefaultScrollerProperties();
+};
+
+
+
+
+
+class PythonQtWrapper_QSessionManager : public QObject
+{ Q_OBJECT
+public:
+Q_ENUMS(RestartHint )
+enum RestartHint{
+  RestartIfRunning = QSessionManager::RestartIfRunning,   RestartAnyway = QSessionManager::RestartAnyway,   RestartImmediately = QSessionManager::RestartImmediately,   RestartNever = QSessionManager::RestartNever};
+public Q_SLOTS:
+   bool  allowsErrorInteraction(QSessionManager* theWrappedObject);
+   bool  allowsInteraction(QSessionManager* theWrappedObject);
+   void cancel(QSessionManager* theWrappedObject);
+   QStringList  discardCommand(QSessionManager* theWrappedObject) const;
+   bool  isPhase2(QSessionManager* theWrappedObject) const;
+   void release(QSessionManager* theWrappedObject);
+   void requestPhase2(QSessionManager* theWrappedObject);
+   QStringList  restartCommand(QSessionManager* theWrappedObject) const;
+   QSessionManager::RestartHint  restartHint(QSessionManager* theWrappedObject) const;
+   QString  sessionId(QSessionManager* theWrappedObject) const;
+   QString  sessionKey(QSessionManager* theWrappedObject) const;
+   void setDiscardCommand(QSessionManager* theWrappedObject, const QStringList&  arg__1);
+   void setManagerProperty(QSessionManager* theWrappedObject, const QString&  name, const QString&  value);
+   void setManagerProperty(QSessionManager* theWrappedObject, const QString&  name, const QStringList&  value);
+   void setRestartCommand(QSessionManager* theWrappedObject, const QStringList&  arg__1);
+   void setRestartHint(QSessionManager* theWrappedObject, QSessionManager::RestartHint  arg__1);
 };
 
 

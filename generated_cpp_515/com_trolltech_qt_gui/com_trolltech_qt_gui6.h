@@ -5,8 +5,23 @@
 #include <QVarLengthArray>
 #include <QVariant>
 #include <QWidget>
+#include <QtPrintSupport/qpagesetupdialog.h>
+#include <QtPrintSupport/qprinter.h>
+#include <QtWidgets/qaction.h>
+#include <QtWidgets/qgesture.h>
+#include <QtWidgets/qgraphicseffect.h>
+#include <QtWidgets/qgraphicsproxywidget.h>
+#include <QtWidgets/qlayout.h>
+#include <QtWidgets/qmenu.h>
+#include <QtWidgets/qopenglwidget.h>
+#include <QtWidgets/qplaintextedit.h>
+#include <QtWidgets/qscrollbar.h>
+#include <QtWidgets/qsizepolicy.h>
+#include <QtWidgets/qstyle.h>
+#include <QtWidgets/qstyleoption.h>
+#include <QtWidgets/qtextedit.h>
+#include <QtWidgets/qwidget.h>
 #include <qabstracttextdocumentlayout.h>
-#include <qaction.h>
 #include <qbackingstore.h>
 #include <qbitmap.h>
 #include <qbrush.h>
@@ -19,38 +34,30 @@
 #include <qfont.h>
 #include <qfontinfo.h>
 #include <qfontmetrics.h>
-#include <qgesture.h>
 #include <qglyphrun.h>
-#include <qgraphicseffect.h>
-#include <qgraphicsproxywidget.h>
 #include <qicon.h>
 #include <qimage.h>
 #include <qiodevice.h>
 #include <qkeysequence.h>
-#include <qlayout.h>
 #include <qline.h>
 #include <qlist.h>
 #include <qlocale.h>
 #include <qmargins.h>
 #include <qmatrix.h>
-#include <qmenu.h>
 #include <qmetaobject.h>
 #include <qmimedata.h>
 #include <qobject.h>
 #include <qopenglcontext.h>
 #include <qopenglvertexarrayobject.h>
-#include <qopenglwidget.h>
 #include <qopenglwindow.h>
 #include <qpagedpaintdevice.h>
 #include <qpagelayout.h>
-#include <qpagesetupdialog.h>
 #include <qpagesize.h>
 #include <qpaintdevice.h>
 #include <qpaintdevicewindow.h>
 #include <qpaintengine.h>
 #include <qpainter.h>
 #include <qpainterpath.h>
-#include <qpair.h>
 #include <qpalette.h>
 #include <qpdfwriter.h>
 #include <qpen.h>
@@ -59,25 +66,18 @@
 #include <qpixelformat.h>
 #include <qpixmap.h>
 #include <qpixmapcache.h>
-#include <qplaintextedit.h>
 #include <qpoint.h>
 #include <qpolygon.h>
-#include <qprinter.h>
 #include <qrect.h>
 #include <qregexp.h>
 #include <qregion.h>
 #include <qregularexpression.h>
 #include <qscreen.h>
-#include <qscrollbar.h>
 #include <qsize.h>
-#include <qsizepolicy.h>
 #include <qstatictext.h>
-#include <qstyle.h>
-#include <qstyleoption.h>
 #include <qsurfaceformat.h>
 #include <qtextcursor.h>
 #include <qtextdocument.h>
-#include <qtextedit.h>
 #include <qtextformat.h>
 #include <qtextlayout.h>
 #include <qtextobject.h>
@@ -86,34 +86,7 @@
 #include <qtransform.h>
 #include <qurl.h>
 #include <qvector.h>
-#include <qwidget.h>
 #include <qwindow.h>
-
-
-
-class PythonQtWrapper_QOpenGLVersionProfile : public QObject
-{ Q_OBJECT
-public:
-public slots:
-QOpenGLVersionProfile* new_QOpenGLVersionProfile();
-QOpenGLVersionProfile* new_QOpenGLVersionProfile(const QOpenGLVersionProfile&  other);
-QOpenGLVersionProfile* new_QOpenGLVersionProfile(const QSurfaceFormat&  format);
-void delete_QOpenGLVersionProfile(QOpenGLVersionProfile* obj) { delete obj; }
-   bool  hasProfiles(QOpenGLVersionProfile* theWrappedObject) const;
-   bool  isLegacyVersion(QOpenGLVersionProfile* theWrappedObject) const;
-   bool  isValid(QOpenGLVersionProfile* theWrappedObject) const;
-   bool  __ne__(QOpenGLVersionProfile* theWrappedObject, const QOpenGLVersionProfile&  rhs);
-   QOpenGLVersionProfile*  operator_assign(QOpenGLVersionProfile* theWrappedObject, const QOpenGLVersionProfile&  rhs);
-   bool  __eq__(QOpenGLVersionProfile* theWrappedObject, const QOpenGLVersionProfile&  rhs);
-   QSurfaceFormat::OpenGLContextProfile  profile(QOpenGLVersionProfile* theWrappedObject) const;
-   void setProfile(QOpenGLVersionProfile* theWrappedObject, QSurfaceFormat::OpenGLContextProfile  profile);
-   void setVersion(QOpenGLVersionProfile* theWrappedObject, int  majorVersion, int  minorVersion);
-   QPair<int , int >  version(QOpenGLVersionProfile* theWrappedObject) const;
-    QString py_toString(QOpenGLVersionProfile*);
-    bool __nonzero__(QOpenGLVersionProfile* obj) { return obj->isValid(); }
-};
-
-
 
 
 
@@ -138,7 +111,7 @@ void timerEvent(QTimerEvent*  event) override;
 class PythonQtWrapper_QOpenGLVertexArrayObject : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QOpenGLVertexArrayObject* new_QOpenGLVertexArrayObject(QObject*  parent = nullptr);
 void delete_QOpenGLVertexArrayObject(QOpenGLVertexArrayObject* obj) { delete obj; }
    void bind(QOpenGLVertexArrayObject* theWrappedObject);
@@ -242,7 +215,7 @@ public:
 Q_ENUMS(UpdateBehavior )
 enum UpdateBehavior{
   NoPartialUpdate = QOpenGLWidget::NoPartialUpdate,   PartialUpdate = QOpenGLWidget::PartialUpdate};
-public slots:
+public Q_SLOTS:
 QOpenGLWidget* new_QOpenGLWidget(QWidget*  parent = nullptr, Qt::WindowFlags  f = Qt::WindowFlags());
 void delete_QOpenGLWidget(QOpenGLWidget* obj) { delete obj; }
    QOpenGLContext*  context(QOpenGLWidget* theWrappedObject) const;
@@ -355,7 +328,7 @@ public:
 Q_ENUMS(UpdateBehavior )
 enum UpdateBehavior{
   NoPartialUpdate = QOpenGLWindow::NoPartialUpdate,   PartialUpdateBlit = QOpenGLWindow::PartialUpdateBlit,   PartialUpdateBlend = QOpenGLWindow::PartialUpdateBlend};
-public slots:
+public Q_SLOTS:
 QOpenGLWindow* new_QOpenGLWindow(QOpenGLContext*  shareContext, QOpenGLWindow::UpdateBehavior  updateBehavior = QOpenGLWindow::NoPartialUpdate, QWindow*  parent = nullptr);
 QOpenGLWindow* new_QOpenGLWindow(QOpenGLWindow::UpdateBehavior  updateBehavior = QOpenGLWindow::NoPartialUpdate, QWindow*  parent = nullptr);
 void delete_QOpenGLWindow(QOpenGLWindow* obj) { delete obj; }
@@ -398,10 +371,10 @@ enum Orientation{
   Portrait = QPageLayout::Portrait,   Landscape = QPageLayout::Landscape};
 enum Unit{
   Millimeter = QPageLayout::Millimeter,   Point = QPageLayout::Point,   Inch = QPageLayout::Inch,   Pica = QPageLayout::Pica,   Didot = QPageLayout::Didot,   Cicero = QPageLayout::Cicero};
-public slots:
+public Q_SLOTS:
 QPageLayout* new_QPageLayout();
 QPageLayout* new_QPageLayout(const QPageLayout&  other);
-QPageLayout* new_QPageLayout(const QPageSize&  pageSize, QPageLayout::Orientation  orientation, const QMarginsF&  margins, QPageLayout::Unit  units = QPageLayout::Point, const QMarginsF&  minMargins = QMarginsF(0, 0, 0, 0));
+QPageLayout* new_QPageLayout(const QPageSize&  pageSize, QPageLayout::Orientation  orientation, const QMarginsF&  margins, QPageLayout::Unit  units = QPageLayout::Point, const QMarginsF&  minMargins = QMarginsF(0,0,0,0));
 void delete_QPageLayout(QPageLayout* obj) { delete obj; }
    QRectF  fullRect(QPageLayout* theWrappedObject) const;
    QRectF  fullRect(QPageLayout* theWrappedObject, QPageLayout::Unit  units) const;
@@ -431,7 +404,7 @@ void delete_QPageLayout(QPageLayout* obj) { delete obj; }
    void setMinimumMargins(QPageLayout* theWrappedObject, const QMarginsF&  minMargins);
    void setMode(QPageLayout* theWrappedObject, QPageLayout::Mode  mode);
    void setOrientation(QPageLayout* theWrappedObject, QPageLayout::Orientation  orientation);
-   void setPageSize(QPageLayout* theWrappedObject, const QPageSize&  pageSize, const QMarginsF&  minMargins = QMarginsF(0, 0, 0, 0));
+   void setPageSize(QPageLayout* theWrappedObject, const QPageSize&  pageSize, const QMarginsF&  minMargins = QMarginsF(0,0,0,0));
    bool  setRightMargin(QPageLayout* theWrappedObject, qreal  rightMargin);
    bool  setTopMargin(QPageLayout* theWrappedObject, qreal  topMargin);
    void setUnits(QPageLayout* theWrappedObject, QPageLayout::Unit  units);
@@ -517,7 +490,7 @@ inline int  py_q_exec() { return QPageSetupDialog::exec(); }
 class PythonQtWrapper_QPageSetupDialog : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QPageSetupDialog* new_QPageSetupDialog(QPrinter*  printer, QWidget*  parent = nullptr);
 QPageSetupDialog* new_QPageSetupDialog(QWidget*  parent = nullptr);
 void delete_QPageSetupDialog(QPageSetupDialog* obj) { delete obj; }
@@ -541,7 +514,7 @@ enum SizeMatchPolicy{
   FuzzyMatch = QPageSize::FuzzyMatch,   FuzzyOrientationMatch = QPageSize::FuzzyOrientationMatch,   ExactMatch = QPageSize::ExactMatch};
 enum Unit{
   Millimeter = QPageSize::Millimeter,   Point = QPageSize::Point,   Inch = QPageSize::Inch,   Pica = QPageSize::Pica,   Didot = QPageSize::Didot,   Cicero = QPageSize::Cicero};
-public slots:
+public Q_SLOTS:
 QPageSize* new_QPageSize();
 QPageSize* new_QPageSize(QPageSize::PageSizeId  pageSizeId);
 QPageSize* new_QPageSize(const QPageSize&  other);
@@ -602,7 +575,7 @@ enum PageSize{
   A4 = QPagedPaintDevice::A4,   B5 = QPagedPaintDevice::B5,   Letter = QPagedPaintDevice::Letter,   Legal = QPagedPaintDevice::Legal,   Executive = QPagedPaintDevice::Executive,   A0 = QPagedPaintDevice::A0,   A1 = QPagedPaintDevice::A1,   A2 = QPagedPaintDevice::A2,   A3 = QPagedPaintDevice::A3,   A5 = QPagedPaintDevice::A5,   A6 = QPagedPaintDevice::A6,   A7 = QPagedPaintDevice::A7,   A8 = QPagedPaintDevice::A8,   A9 = QPagedPaintDevice::A9,   B0 = QPagedPaintDevice::B0,   B1 = QPagedPaintDevice::B1,   B10 = QPagedPaintDevice::B10,   B2 = QPagedPaintDevice::B2,   B3 = QPagedPaintDevice::B3,   B4 = QPagedPaintDevice::B4,   B6 = QPagedPaintDevice::B6,   B7 = QPagedPaintDevice::B7,   B8 = QPagedPaintDevice::B8,   B9 = QPagedPaintDevice::B9,   C5E = QPagedPaintDevice::C5E,   Comm10E = QPagedPaintDevice::Comm10E,   DLE = QPagedPaintDevice::DLE,   Folio = QPagedPaintDevice::Folio,   Ledger = QPagedPaintDevice::Ledger,   Tabloid = QPagedPaintDevice::Tabloid,   Custom = QPagedPaintDevice::Custom,   A10 = QPagedPaintDevice::A10,   A3Extra = QPagedPaintDevice::A3Extra,   A4Extra = QPagedPaintDevice::A4Extra,   A4Plus = QPagedPaintDevice::A4Plus,   A4Small = QPagedPaintDevice::A4Small,   A5Extra = QPagedPaintDevice::A5Extra,   B5Extra = QPagedPaintDevice::B5Extra,   JisB0 = QPagedPaintDevice::JisB0,   JisB1 = QPagedPaintDevice::JisB1,   JisB2 = QPagedPaintDevice::JisB2,   JisB3 = QPagedPaintDevice::JisB3,   JisB4 = QPagedPaintDevice::JisB4,   JisB5 = QPagedPaintDevice::JisB5,   JisB6 = QPagedPaintDevice::JisB6,   JisB7 = QPagedPaintDevice::JisB7,   JisB8 = QPagedPaintDevice::JisB8,   JisB9 = QPagedPaintDevice::JisB9,   JisB10 = QPagedPaintDevice::JisB10,   AnsiC = QPagedPaintDevice::AnsiC,   AnsiD = QPagedPaintDevice::AnsiD,   AnsiE = QPagedPaintDevice::AnsiE,   LegalExtra = QPagedPaintDevice::LegalExtra,   LetterExtra = QPagedPaintDevice::LetterExtra,   LetterPlus = QPagedPaintDevice::LetterPlus,   LetterSmall = QPagedPaintDevice::LetterSmall,   TabloidExtra = QPagedPaintDevice::TabloidExtra,   ArchA = QPagedPaintDevice::ArchA,   ArchB = QPagedPaintDevice::ArchB,   ArchC = QPagedPaintDevice::ArchC,   ArchD = QPagedPaintDevice::ArchD,   ArchE = QPagedPaintDevice::ArchE,   Imperial7x9 = QPagedPaintDevice::Imperial7x9,   Imperial8x10 = QPagedPaintDevice::Imperial8x10,   Imperial9x11 = QPagedPaintDevice::Imperial9x11,   Imperial9x12 = QPagedPaintDevice::Imperial9x12,   Imperial10x11 = QPagedPaintDevice::Imperial10x11,   Imperial10x13 = QPagedPaintDevice::Imperial10x13,   Imperial10x14 = QPagedPaintDevice::Imperial10x14,   Imperial12x11 = QPagedPaintDevice::Imperial12x11,   Imperial15x11 = QPagedPaintDevice::Imperial15x11,   ExecutiveStandard = QPagedPaintDevice::ExecutiveStandard,   Note = QPagedPaintDevice::Note,   Quarto = QPagedPaintDevice::Quarto,   Statement = QPagedPaintDevice::Statement,   SuperA = QPagedPaintDevice::SuperA,   SuperB = QPagedPaintDevice::SuperB,   Postcard = QPagedPaintDevice::Postcard,   DoublePostcard = QPagedPaintDevice::DoublePostcard,   Prc16K = QPagedPaintDevice::Prc16K,   Prc32K = QPagedPaintDevice::Prc32K,   Prc32KBig = QPagedPaintDevice::Prc32KBig,   FanFoldUS = QPagedPaintDevice::FanFoldUS,   FanFoldGerman = QPagedPaintDevice::FanFoldGerman,   FanFoldGermanLegal = QPagedPaintDevice::FanFoldGermanLegal,   EnvelopeB4 = QPagedPaintDevice::EnvelopeB4,   EnvelopeB5 = QPagedPaintDevice::EnvelopeB5,   EnvelopeB6 = QPagedPaintDevice::EnvelopeB6,   EnvelopeC0 = QPagedPaintDevice::EnvelopeC0,   EnvelopeC1 = QPagedPaintDevice::EnvelopeC1,   EnvelopeC2 = QPagedPaintDevice::EnvelopeC2,   EnvelopeC3 = QPagedPaintDevice::EnvelopeC3,   EnvelopeC4 = QPagedPaintDevice::EnvelopeC4,   EnvelopeC6 = QPagedPaintDevice::EnvelopeC6,   EnvelopeC65 = QPagedPaintDevice::EnvelopeC65,   EnvelopeC7 = QPagedPaintDevice::EnvelopeC7,   Envelope9 = QPagedPaintDevice::Envelope9,   Envelope11 = QPagedPaintDevice::Envelope11,   Envelope12 = QPagedPaintDevice::Envelope12,   Envelope14 = QPagedPaintDevice::Envelope14,   EnvelopeMonarch = QPagedPaintDevice::EnvelopeMonarch,   EnvelopePersonal = QPagedPaintDevice::EnvelopePersonal,   EnvelopeChou3 = QPagedPaintDevice::EnvelopeChou3,   EnvelopeChou4 = QPagedPaintDevice::EnvelopeChou4,   EnvelopeInvite = QPagedPaintDevice::EnvelopeInvite,   EnvelopeItalian = QPagedPaintDevice::EnvelopeItalian,   EnvelopeKaku2 = QPagedPaintDevice::EnvelopeKaku2,   EnvelopeKaku3 = QPagedPaintDevice::EnvelopeKaku3,   EnvelopePrc1 = QPagedPaintDevice::EnvelopePrc1,   EnvelopePrc2 = QPagedPaintDevice::EnvelopePrc2,   EnvelopePrc3 = QPagedPaintDevice::EnvelopePrc3,   EnvelopePrc4 = QPagedPaintDevice::EnvelopePrc4,   EnvelopePrc5 = QPagedPaintDevice::EnvelopePrc5,   EnvelopePrc6 = QPagedPaintDevice::EnvelopePrc6,   EnvelopePrc7 = QPagedPaintDevice::EnvelopePrc7,   EnvelopePrc8 = QPagedPaintDevice::EnvelopePrc8,   EnvelopePrc9 = QPagedPaintDevice::EnvelopePrc9,   EnvelopePrc10 = QPagedPaintDevice::EnvelopePrc10,   EnvelopeYou4 = QPagedPaintDevice::EnvelopeYou4,   LastPageSize = QPagedPaintDevice::LastPageSize,   NPageSize = QPagedPaintDevice::NPageSize,   NPaperSize = QPagedPaintDevice::NPaperSize,   AnsiA = QPagedPaintDevice::AnsiA,   AnsiB = QPagedPaintDevice::AnsiB,   EnvelopeC5 = QPagedPaintDevice::EnvelopeC5,   EnvelopeDL = QPagedPaintDevice::EnvelopeDL,   Envelope10 = QPagedPaintDevice::Envelope10};
 enum PdfVersion{
   PdfVersion_1_4 = QPagedPaintDevice::PdfVersion_1_4,   PdfVersion_A1b = QPagedPaintDevice::PdfVersion_A1b,   PdfVersion_1_6 = QPagedPaintDevice::PdfVersion_1_6};
-public slots:
+public Q_SLOTS:
 void delete_QPagedPaintDevice(QPagedPaintDevice* obj) { delete obj; }
    QPageLayout*  devicePageLayout(QPagedPaintDevice* theWrappedObject);
    QPagedPaintDevice::Margins  margins(QPagedPaintDevice* theWrappedObject) const;
@@ -642,7 +615,7 @@ public:
 class PythonQtWrapper_QPagedPaintDevice__Margins : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QPagedPaintDevice::Margins* new_QPagedPaintDevice__Margins();
 QPagedPaintDevice::Margins* new_QPagedPaintDevice__Margins(const QPagedPaintDevice::Margins& other) {
 PythonQtShell_QPagedPaintDevice__Margins* a = new PythonQtShell_QPagedPaintDevice__Margins();
@@ -700,7 +673,7 @@ public:
 Q_ENUMS(PaintDeviceMetric )
 enum PaintDeviceMetric{
   PdmWidth = QPaintDevice::PdmWidth,   PdmHeight = QPaintDevice::PdmHeight,   PdmWidthMM = QPaintDevice::PdmWidthMM,   PdmHeightMM = QPaintDevice::PdmHeightMM,   PdmNumColors = QPaintDevice::PdmNumColors,   PdmDepth = QPaintDevice::PdmDepth,   PdmDpiX = QPaintDevice::PdmDpiX,   PdmDpiY = QPaintDevice::PdmDpiY,   PdmPhysicalDpiX = QPaintDevice::PdmPhysicalDpiX,   PdmPhysicalDpiY = QPaintDevice::PdmPhysicalDpiY,   PdmDevicePixelRatio = QPaintDevice::PdmDevicePixelRatio,   PdmDevicePixelRatioScaled = QPaintDevice::PdmDevicePixelRatioScaled};
-public slots:
+public Q_SLOTS:
 QPaintDevice* new_QPaintDevice();
 void delete_QPaintDevice(QPaintDevice* obj) { delete obj; }
    int  colorCount(QPaintDevice* theWrappedObject) const;
@@ -750,7 +723,7 @@ inline void py_q_paintEvent(QPaintEvent*  event) { QPaintDeviceWindow::paintEven
 class PythonQtWrapper_QPaintDeviceWindow : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 void delete_QPaintDeviceWindow(QPaintDeviceWindow* obj) { delete obj; }
    bool  py_q_event(QPaintDeviceWindow* theWrappedObject, QEvent*  event){  return (((PythonQtPublicPromoter_QPaintDeviceWindow*)theWrappedObject)->py_q_event(event));}
    void py_q_exposeEvent(QPaintDeviceWindow* theWrappedObject, QExposeEvent*  arg__1){  (((PythonQtPublicPromoter_QPaintDeviceWindow*)theWrappedObject)->py_q_exposeEvent(arg__1));}
@@ -835,7 +808,7 @@ enum Type{
   X11 = QPaintEngine::X11,   Windows = QPaintEngine::Windows,   QuickDraw = QPaintEngine::QuickDraw,   CoreGraphics = QPaintEngine::CoreGraphics,   MacPrinter = QPaintEngine::MacPrinter,   QWindowSystem = QPaintEngine::QWindowSystem,   PostScript = QPaintEngine::PostScript,   OpenGL = QPaintEngine::OpenGL,   Picture = QPaintEngine::Picture,   SVG = QPaintEngine::SVG,   Raster = QPaintEngine::Raster,   Direct3D = QPaintEngine::Direct3D,   Pdf = QPaintEngine::Pdf,   OpenVG = QPaintEngine::OpenVG,   OpenGL2 = QPaintEngine::OpenGL2,   PaintBuffer = QPaintEngine::PaintBuffer,   Blitter = QPaintEngine::Blitter,   Direct2D = QPaintEngine::Direct2D,   User = QPaintEngine::User,   MaxUser = QPaintEngine::MaxUser};
 Q_DECLARE_FLAGS(DirtyFlags, DirtyFlag)
 Q_DECLARE_FLAGS(PaintEngineFeatures, PaintEngineFeature)
-public slots:
+public Q_SLOTS:
 QPaintEngine* new_QPaintEngine(QPaintEngine::PaintEngineFeatures  features = QPaintEngine::PaintEngineFeatures());
 void delete_QPaintEngine(QPaintEngine* obj) { delete obj; }
    bool  begin(QPaintEngine* theWrappedObject, QPaintDevice*  pdev);
@@ -912,7 +885,7 @@ public:
 class PythonQtWrapper_QPaintEngineState : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QPaintEngineState* new_QPaintEngineState();
 void delete_QPaintEngineState(QPaintEngineState* obj) { delete obj; }
    QBrush  backgroundBrush(QPaintEngineState* theWrappedObject) const;
@@ -955,7 +928,7 @@ public:
 class PythonQtWrapper_QPaintEvent : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QPaintEvent* new_QPaintEvent(const QRect&  paintRect);
 QPaintEvent* new_QPaintEvent(const QRegion&  paintRegion);
 void delete_QPaintEvent(QPaintEvent* obj) { delete obj; }
@@ -980,7 +953,7 @@ enum RenderHint{
   Antialiasing = QPainter::Antialiasing,   TextAntialiasing = QPainter::TextAntialiasing,   SmoothPixmapTransform = QPainter::SmoothPixmapTransform,   HighQualityAntialiasing = QPainter::HighQualityAntialiasing,   NonCosmeticDefaultPen = QPainter::NonCosmeticDefaultPen,   Qt4CompatiblePainting = QPainter::Qt4CompatiblePainting,   LosslessImageRendering = QPainter::LosslessImageRendering};
 Q_DECLARE_FLAGS(PixmapFragmentHints, PixmapFragmentHint)
 Q_DECLARE_FLAGS(RenderHints, RenderHint)
-public slots:
+public Q_SLOTS:
 QPainter* new_QPainter();
 QPainter* new_QPainter(QPaintDevice*  arg__1);
 void delete_QPainter(QPainter* obj) { delete obj; }
@@ -1186,7 +1159,7 @@ public:
 Q_ENUMS(ElementType )
 enum ElementType{
   MoveToElement = QPainterPath::MoveToElement,   LineToElement = QPainterPath::LineToElement,   CurveToElement = QPainterPath::CurveToElement,   CurveToDataElement = QPainterPath::CurveToDataElement};
-public slots:
+public Q_SLOTS:
 QPainterPath* new_QPainterPath();
 QPainterPath* new_QPainterPath(const QPainterPath&  other);
 QPainterPath* new_QPainterPath(const QPointF&  startPoint);
@@ -1285,7 +1258,7 @@ void delete_QPainterPath(QPainterPath* obj) { delete obj; }
 class PythonQtWrapper_QPainterPathStroker : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QPainterPathStroker* new_QPainterPathStroker();
 QPainterPathStroker* new_QPainterPathStroker(const QPen&  pen);
 void delete_QPainterPathStroker(QPainterPathStroker* obj) { delete obj; }
@@ -1325,7 +1298,7 @@ public:
 class PythonQtWrapper_QPainterPath__Element : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QPainterPath::Element* new_QPainterPath__Element();
 QPainterPath::Element* new_QPainterPath__Element(const QPainterPath::Element& other) {
 PythonQtShell_QPainterPath__Element* a = new PythonQtShell_QPainterPath__Element();
@@ -1364,7 +1337,7 @@ public:
 class PythonQtWrapper_QPainter__PixmapFragment : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QPainter::PixmapFragment* new_QPainter__PixmapFragment();
 QPainter::PixmapFragment* new_QPainter__PixmapFragment(const QPainter::PixmapFragment& other) {
 PythonQtShell_QPainter__PixmapFragment* a = new PythonQtShell_QPainter__PixmapFragment();
@@ -1419,7 +1392,7 @@ void timerEvent(QTimerEvent*  event) override;
 class PythonQtWrapper_QPanGesture : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QPanGesture* new_QPanGesture(QObject*  parent = nullptr);
 void delete_QPanGesture(QPanGesture* obj) { delete obj; }
    qreal  acceleration(QPanGesture* theWrappedObject) const;
@@ -1479,7 +1452,7 @@ inline void py_q_setPageSizeMM(const QSizeF&  size) { QPdfWriter::setPageSizeMM(
 class PythonQtWrapper_QPdfWriter : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QPdfWriter* new_QPdfWriter(QIODevice*  device);
 QPdfWriter* new_QPdfWriter(const QString&  filename);
 void delete_QPdfWriter(QPdfWriter* obj) { delete obj; }
@@ -1535,7 +1508,7 @@ inline QPaintEngine*  py_q_paintEngine() const { return QPicture::paintEngine();
 class PythonQtWrapper_QPicture : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QPicture* new_QPicture(const QPicture&  arg__1);
 QPicture* new_QPicture(int  formatVersion = -1);
 void delete_QPicture(QPicture* obj) { delete obj; }
@@ -1593,7 +1566,7 @@ inline bool  py_q_savePicture(const QString&  format, const QString&  filename, 
 class PythonQtWrapper_QPictureFormatPlugin : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QPictureFormatPlugin* new_QPictureFormatPlugin(QObject*  parent = nullptr);
 void delete_QPictureFormatPlugin(QPictureFormatPlugin* obj) { delete obj; }
    bool  installIOHandler(QPictureFormatPlugin* theWrappedObject, const QString&  format);
@@ -1611,7 +1584,7 @@ void delete_QPictureFormatPlugin(QPictureFormatPlugin* obj) { delete obj; }
 class PythonQtWrapper_QPictureIO : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QPictureIO* new_QPictureIO();
 QPictureIO* new_QPictureIO(QIODevice*  ioDevice, const char*  format);
 QPictureIO* new_QPictureIO(const QString&  fileName, const char*  format);
@@ -1672,7 +1645,7 @@ Q_FLAGS(ChangeFlags )
 enum ChangeFlag{
   ScaleFactorChanged = QPinchGesture::ScaleFactorChanged,   RotationAngleChanged = QPinchGesture::RotationAngleChanged,   CenterPointChanged = QPinchGesture::CenterPointChanged};
 Q_DECLARE_FLAGS(ChangeFlags, ChangeFlag)
-public slots:
+public Q_SLOTS:
 QPinchGesture* new_QPinchGesture(QObject*  parent = nullptr);
 void delete_QPinchGesture(QPinchGesture* obj) { delete obj; }
    QPointF  centerPoint(QPinchGesture* theWrappedObject) const;
@@ -1721,7 +1694,7 @@ enum TypeInterpretation{
   UnsignedInteger = QPixelFormat::UnsignedInteger,   UnsignedShort = QPixelFormat::UnsignedShort,   UnsignedByte = QPixelFormat::UnsignedByte,   FloatingPoint = QPixelFormat::FloatingPoint};
 enum YUVLayout{
   YUV444 = QPixelFormat::YUV444,   YUV422 = QPixelFormat::YUV422,   YUV411 = QPixelFormat::YUV411,   YUV420P = QPixelFormat::YUV420P,   YUV420SP = QPixelFormat::YUV420SP,   YV12 = QPixelFormat::YV12,   UYVY = QPixelFormat::UYVY,   YUYV = QPixelFormat::YUYV,   NV12 = QPixelFormat::NV12,   NV21 = QPixelFormat::NV21,   IMC1 = QPixelFormat::IMC1,   IMC2 = QPixelFormat::IMC2,   IMC3 = QPixelFormat::IMC3,   IMC4 = QPixelFormat::IMC4,   Y8 = QPixelFormat::Y8,   Y16 = QPixelFormat::Y16};
-public slots:
+public Q_SLOTS:
 QPixelFormat* new_QPixelFormat();
 QPixelFormat* new_QPixelFormat(QPixelFormat::ColorModel  colorModel, uchar  firstSize, uchar  secondSize, uchar  thirdSize, uchar  fourthSize, uchar  fifthSize, uchar  alphaSize, QPixelFormat::AlphaUsage  alphaUsage, QPixelFormat::AlphaPosition  alphaPosition, QPixelFormat::AlphaPremultiplied  premultiplied, QPixelFormat::TypeInterpretation  typeInterpretation, QPixelFormat::ByteOrder  byteOrder = QPixelFormat::CurrentSystemEndian, uchar  subEnum = 0);
 void delete_QPixelFormat(QPixelFormat* obj) { delete obj; }
@@ -1769,13 +1742,15 @@ public:
 class PythonQtWrapper_QPixmapCache : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QPixmapCache* new_QPixmapCache();
 void delete_QPixmapCache(QPixmapCache* obj) { delete obj; }
    int  static_QPixmapCache_cacheLimit();
    void static_QPixmapCache_clear();
    bool  static_QPixmapCache_find(const QPixmapCache::Key&  key, QPixmap*  pixmap);
+   QPixmap*  static_QPixmapCache_find(const QString&  key);
    bool  static_QPixmapCache_find(const QString&  key, QPixmap&  pixmap);
+   bool  static_QPixmapCache_find(const QString&  key, QPixmap*  pixmap);
    QPixmapCache::Key  static_QPixmapCache_insert(const QPixmap&  pixmap);
    bool  static_QPixmapCache_insert(const QString&  key, const QPixmap&  pixmap);
    void static_QPixmapCache_remove(const QPixmapCache::Key&  key);
@@ -1791,7 +1766,7 @@ void delete_QPixmapCache(QPixmapCache* obj) { delete obj; }
 class PythonQtWrapper_QPixmapCache__Key : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QPixmapCache::Key* new_QPixmapCache__Key();
 QPixmapCache::Key* new_QPixmapCache__Key(const QPixmapCache::Key&  other);
 void delete_QPixmapCache__Key(QPixmapCache::Key* obj) { delete obj; }
@@ -1850,7 +1825,7 @@ inline int  py_q_pageCount() const { return QPlainTextDocumentLayout::pageCount(
 class PythonQtWrapper_QPlainTextDocumentLayout : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QPlainTextDocumentLayout* new_QPlainTextDocumentLayout(QTextDocument*  document);
 void delete_QPlainTextDocumentLayout(QPlainTextDocumentLayout* obj) { delete obj; }
    QRectF  py_q_blockBoundingRect(QPlainTextDocumentLayout* theWrappedObject, const QTextBlock&  block) const{  return (((PythonQtPublicPromoter_QPlainTextDocumentLayout*)theWrappedObject)->py_q_blockBoundingRect(block));}
@@ -2007,7 +1982,7 @@ inline void py_q_wheelEvent(QWheelEvent*  e) { QPlainTextEdit::wheelEvent(e); }
 class PythonQtWrapper_QPlainTextEdit : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QPlainTextEdit* new_QPlainTextEdit(QWidget*  parent = nullptr);
 QPlainTextEdit* new_QPlainTextEdit(const QString&  text, QWidget*  parent = nullptr);
 void delete_QPlainTextEdit(QPlainTextEdit* obj) { delete obj; }
@@ -2106,6 +2081,33 @@ void delete_QPlainTextEdit(QPlainTextEdit* obj) { delete obj; }
    void py_q_wheelEvent(QPlainTextEdit* theWrappedObject, QWheelEvent*  e){  (((PythonQtPublicPromoter_QPlainTextEdit*)theWrappedObject)->py_q_wheelEvent(e));}
    QTextOption::WrapMode  wordWrapMode(QPlainTextEdit* theWrappedObject) const;
    void zoomInF(QPlainTextEdit* theWrappedObject, float  range);
+};
+
+
+
+
+
+class PythonQtShell_QPlatformSurfaceEvent : public QPlatformSurfaceEvent
+{
+public:
+    PythonQtShell_QPlatformSurfaceEvent(QPlatformSurfaceEvent::SurfaceEventType  surfaceEventType):QPlatformSurfaceEvent(surfaceEventType),_wrapper(nullptr) {};
+
+   ~PythonQtShell_QPlatformSurfaceEvent() override;
+
+
+  PythonQtInstanceWrapper* _wrapper;
+};
+
+class PythonQtWrapper_QPlatformSurfaceEvent : public QObject
+{ Q_OBJECT
+public:
+Q_ENUMS(SurfaceEventType )
+enum SurfaceEventType{
+  SurfaceCreated = QPlatformSurfaceEvent::SurfaceCreated,   SurfaceAboutToBeDestroyed = QPlatformSurfaceEvent::SurfaceAboutToBeDestroyed};
+public Q_SLOTS:
+QPlatformSurfaceEvent* new_QPlatformSurfaceEvent(QPlatformSurfaceEvent::SurfaceEventType  surfaceEventType);
+void delete_QPlatformSurfaceEvent(QPlatformSurfaceEvent* obj) { delete obj; }
+   QPlatformSurfaceEvent::SurfaceEventType  surfaceEventType(QPlatformSurfaceEvent* theWrappedObject) const;
 };
 
 

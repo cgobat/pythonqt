@@ -13,7 +13,7 @@
 class PythonQtWrapper_QXmlStreamAttribute : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QXmlStreamAttribute* new_QXmlStreamAttribute();
 QXmlStreamAttribute* new_QXmlStreamAttribute(const QString&  namespaceUri, const QString&  name, const QString&  value);
 QXmlStreamAttribute* new_QXmlStreamAttribute(const QString&  qualifiedName, const QString&  value);
@@ -36,7 +36,7 @@ void delete_QXmlStreamAttribute(QXmlStreamAttribute* obj) { delete obj; }
 class PythonQtWrapper_QXmlStreamAttributes : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QXmlStreamAttributes* new_QXmlStreamAttributes();
 QXmlStreamAttributes* new_QXmlStreamAttributes(const QXmlStreamAttributes& other) {
 QXmlStreamAttributes* a = new QXmlStreamAttributes();
@@ -104,7 +104,7 @@ void delete_QXmlStreamAttributes(QXmlStreamAttributes* obj) { delete obj; }
 class PythonQtWrapper_QXmlStreamEntityDeclaration : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QXmlStreamEntityDeclaration* new_QXmlStreamEntityDeclaration();
 QXmlStreamEntityDeclaration* new_QXmlStreamEntityDeclaration(const QXmlStreamEntityDeclaration&  arg__1);
 void delete_QXmlStreamEntityDeclaration(QXmlStreamEntityDeclaration* obj) { delete obj; }
@@ -124,7 +124,7 @@ void delete_QXmlStreamEntityDeclaration(QXmlStreamEntityDeclaration* obj) { dele
 class PythonQtWrapper_QXmlStreamNamespaceDeclaration : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QXmlStreamNamespaceDeclaration* new_QXmlStreamNamespaceDeclaration();
 QXmlStreamNamespaceDeclaration* new_QXmlStreamNamespaceDeclaration(const QString&  prefix, const QString&  namespaceUri);
 QXmlStreamNamespaceDeclaration* new_QXmlStreamNamespaceDeclaration(const QXmlStreamNamespaceDeclaration&  arg__1);
@@ -142,7 +142,7 @@ void delete_QXmlStreamNamespaceDeclaration(QXmlStreamNamespaceDeclaration* obj) 
 class PythonQtWrapper_QXmlStreamNotationDeclaration : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QXmlStreamNotationDeclaration* new_QXmlStreamNotationDeclaration();
 QXmlStreamNotationDeclaration* new_QXmlStreamNotationDeclaration(const QXmlStreamNotationDeclaration&  arg__1);
 void delete_QXmlStreamNotationDeclaration(QXmlStreamNotationDeclaration* obj) { delete obj; }
@@ -167,7 +167,7 @@ enum ReadElementTextBehaviour{
   ErrorOnUnexpectedElement = QXmlStreamReader::ErrorOnUnexpectedElement,   IncludeChildElements = QXmlStreamReader::IncludeChildElements,   SkipChildElements = QXmlStreamReader::SkipChildElements};
 enum TokenType{
   NoToken = QXmlStreamReader::NoToken,   Invalid = QXmlStreamReader::Invalid,   StartDocument = QXmlStreamReader::StartDocument,   EndDocument = QXmlStreamReader::EndDocument,   StartElement = QXmlStreamReader::StartElement,   EndElement = QXmlStreamReader::EndElement,   Characters = QXmlStreamReader::Characters,   Comment = QXmlStreamReader::Comment,   DTD = QXmlStreamReader::DTD,   EntityReference = QXmlStreamReader::EntityReference,   ProcessingInstruction = QXmlStreamReader::ProcessingInstruction};
-public slots:
+public Q_SLOTS:
 QXmlStreamReader* new_QXmlStreamReader();
 QXmlStreamReader* new_QXmlStreamReader(QIODevice*  device);
 QXmlStreamReader* new_QXmlStreamReader(const QByteArray&  data);
@@ -237,7 +237,7 @@ void delete_QXmlStreamReader(QXmlStreamReader* obj) { delete obj; }
 class PythonQtWrapper_QXmlStreamWriter : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QXmlStreamWriter* new_QXmlStreamWriter();
 QXmlStreamWriter* new_QXmlStreamWriter(QByteArray*  array);
 QXmlStreamWriter* new_QXmlStreamWriter(QIODevice*  device);

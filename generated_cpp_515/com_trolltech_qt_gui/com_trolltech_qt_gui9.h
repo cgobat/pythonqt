@@ -1,36 +1,9 @@
 #include <PythonQt.h>
 #include <QObject>
 #include <QVariant>
-#include <qstyleoption.h>
+#include <QtWidgets/qstyleoption.h>
+#include <QtWidgets/qwidget.h>
 #include <qtransform.h>
-#include <qwidget.h>
-
-
-
-class PythonQtShell_QStyleOptionDockWidgetV2 : public QStyleOptionDockWidgetV2
-{
-public:
-    PythonQtShell_QStyleOptionDockWidgetV2():QStyleOptionDockWidgetV2(),_wrapper(nullptr) {};
-
-   ~PythonQtShell_QStyleOptionDockWidgetV2();
-
-
-  PythonQtInstanceWrapper* _wrapper;
-};
-
-class PythonQtWrapper_QStyleOptionDockWidgetV2 : public QObject
-{ Q_OBJECT
-public:
-public slots:
-QStyleOptionDockWidgetV2* new_QStyleOptionDockWidgetV2();
-QStyleOptionDockWidgetV2* new_QStyleOptionDockWidgetV2(const QStyleOptionDockWidgetV2& other) {
-PythonQtShell_QStyleOptionDockWidgetV2* a = new PythonQtShell_QStyleOptionDockWidgetV2();
-*((QStyleOptionDockWidgetV2*)a) = other;
-return a; }
-void delete_QStyleOptionDockWidgetV2(QStyleOptionDockWidgetV2* obj) { delete obj; }
-};
-
-
 
 
 
@@ -55,7 +28,7 @@ enum StyleOptionType{
   Type = QStyleOptionFocusRect::Type};
 enum StyleOptionVersion{
   Version = QStyleOptionFocusRect::Version};
-public slots:
+public Q_SLOTS:
 QStyleOptionFocusRect* new_QStyleOptionFocusRect();
 QStyleOptionFocusRect* new_QStyleOptionFocusRect(const QStyleOptionFocusRect&  other);
 QStyleOptionFocusRect* new_QStyleOptionFocusRect(int  version);
@@ -94,7 +67,7 @@ enum StyleOptionType{
 enum StyleOptionVersion{
   Version = QStyleOptionFrame::Version};
 Q_DECLARE_FLAGS(FrameFeatures, FrameFeature)
-public slots:
+public Q_SLOTS:
 QStyleOptionFrame* new_QStyleOptionFrame();
 QStyleOptionFrame* new_QStyleOptionFrame(const QStyleOptionFrame&  other);
 QStyleOptionFrame* new_QStyleOptionFrame(int  version);
@@ -128,7 +101,7 @@ public:
 class PythonQtWrapper_QStyleOptionFrameV2 : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QStyleOptionFrameV2* new_QStyleOptionFrameV2();
 QStyleOptionFrameV2* new_QStyleOptionFrameV2(const QStyleOptionFrameV2& other) {
 PythonQtShell_QStyleOptionFrameV2* a = new PythonQtShell_QStyleOptionFrameV2();
@@ -155,7 +128,7 @@ public:
 class PythonQtWrapper_QStyleOptionFrameV3 : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QStyleOptionFrameV3* new_QStyleOptionFrameV3();
 QStyleOptionFrameV3* new_QStyleOptionFrameV3(const QStyleOptionFrameV3& other) {
 PythonQtShell_QStyleOptionFrameV3* a = new PythonQtShell_QStyleOptionFrameV3();
@@ -189,7 +162,7 @@ enum StyleOptionType{
   Type = QStyleOptionGraphicsItem::Type};
 enum StyleOptionVersion{
   Version = QStyleOptionGraphicsItem::Version};
-public slots:
+public Q_SLOTS:
 QStyleOptionGraphicsItem* new_QStyleOptionGraphicsItem();
 QStyleOptionGraphicsItem* new_QStyleOptionGraphicsItem(const QStyleOptionGraphicsItem&  other);
 QStyleOptionGraphicsItem* new_QStyleOptionGraphicsItem(int  version);
@@ -229,7 +202,7 @@ enum StyleOptionType{
   Type = QStyleOptionGroupBox::Type};
 enum StyleOptionVersion{
   Version = QStyleOptionGroupBox::Version};
-public slots:
+public Q_SLOTS:
 QStyleOptionGroupBox* new_QStyleOptionGroupBox();
 QStyleOptionGroupBox* new_QStyleOptionGroupBox(const QStyleOptionGroupBox&  other);
 QStyleOptionGroupBox* new_QStyleOptionGroupBox(int  version);
@@ -280,7 +253,7 @@ enum StyleOptionType{
   Type = QStyleOptionHeader::Type};
 enum StyleOptionVersion{
   Version = QStyleOptionHeader::Version};
-public slots:
+public Q_SLOTS:
 QStyleOptionHeader* new_QStyleOptionHeader();
 QStyleOptionHeader* new_QStyleOptionHeader(const QStyleOptionHeader&  other);
 QStyleOptionHeader* new_QStyleOptionHeader(int  version);
@@ -334,7 +307,7 @@ enum StyleOptionType{
   Type = QStyleOptionMenuItem::Type};
 enum StyleOptionVersion{
   Version = QStyleOptionMenuItem::Version};
-public slots:
+public Q_SLOTS:
 QStyleOptionMenuItem* new_QStyleOptionMenuItem();
 QStyleOptionMenuItem* new_QStyleOptionMenuItem(const QStyleOptionMenuItem&  other);
 QStyleOptionMenuItem* new_QStyleOptionMenuItem(int  version);
@@ -387,7 +360,7 @@ enum StyleOptionType{
   Type = QStyleOptionProgressBar::Type};
 enum StyleOptionVersion{
   Version = QStyleOptionProgressBar::Version};
-public slots:
+public Q_SLOTS:
 QStyleOptionProgressBar* new_QStyleOptionProgressBar();
 QStyleOptionProgressBar* new_QStyleOptionProgressBar(const QStyleOptionProgressBar&  other);
 QStyleOptionProgressBar* new_QStyleOptionProgressBar(int  version);
@@ -431,7 +404,7 @@ public:
 class PythonQtWrapper_QStyleOptionProgressBarV2 : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QStyleOptionProgressBarV2* new_QStyleOptionProgressBarV2();
 QStyleOptionProgressBarV2* new_QStyleOptionProgressBarV2(const QStyleOptionProgressBarV2& other) {
 PythonQtShell_QStyleOptionProgressBarV2* a = new PythonQtShell_QStyleOptionProgressBarV2();
@@ -465,7 +438,7 @@ enum StyleOptionType{
   Type = QStyleOptionRubberBand::Type};
 enum StyleOptionVersion{
   Version = QStyleOptionRubberBand::Version};
-public slots:
+public Q_SLOTS:
 QStyleOptionRubberBand* new_QStyleOptionRubberBand();
 QStyleOptionRubberBand* new_QStyleOptionRubberBand(const QStyleOptionRubberBand&  other);
 QStyleOptionRubberBand* new_QStyleOptionRubberBand(int  version);
@@ -502,7 +475,7 @@ enum StyleOptionType{
   Type = QStyleOptionSizeGrip::Type};
 enum StyleOptionVersion{
   Version = QStyleOptionSizeGrip::Version};
-public slots:
+public Q_SLOTS:
 QStyleOptionSizeGrip* new_QStyleOptionSizeGrip();
 QStyleOptionSizeGrip* new_QStyleOptionSizeGrip(const QStyleOptionSizeGrip&  other);
 QStyleOptionSizeGrip* new_QStyleOptionSizeGrip(int  version);
@@ -537,7 +510,7 @@ enum StyleOptionType{
   Type = QStyleOptionSlider::Type};
 enum StyleOptionVersion{
   Version = QStyleOptionSlider::Version};
-public slots:
+public Q_SLOTS:
 QStyleOptionSlider* new_QStyleOptionSlider();
 QStyleOptionSlider* new_QStyleOptionSlider(const QStyleOptionSlider&  other);
 QStyleOptionSlider* new_QStyleOptionSlider(int  version);
@@ -594,7 +567,7 @@ enum StyleOptionType{
   Type = QStyleOptionSpinBox::Type};
 enum StyleOptionVersion{
   Version = QStyleOptionSpinBox::Version};
-public slots:
+public Q_SLOTS:
 QStyleOptionSpinBox* new_QStyleOptionSpinBox();
 QStyleOptionSpinBox* new_QStyleOptionSpinBox(const QStyleOptionSpinBox&  other);
 QStyleOptionSpinBox* new_QStyleOptionSpinBox(int  version);
@@ -644,7 +617,7 @@ enum TabPosition{
   Beginning = QStyleOptionTab::Beginning,   Middle = QStyleOptionTab::Middle,   End = QStyleOptionTab::End,   OnlyOneTab = QStyleOptionTab::OnlyOneTab};
 Q_DECLARE_FLAGS(CornerWidgets, CornerWidget)
 Q_DECLARE_FLAGS(TabFeatures, TabFeature)
-public slots:
+public Q_SLOTS:
 QStyleOptionTab* new_QStyleOptionTab();
 QStyleOptionTab* new_QStyleOptionTab(const QStyleOptionTab&  other);
 QStyleOptionTab* new_QStyleOptionTab(int  version);
@@ -701,7 +674,7 @@ enum StyleOptionType{
   Type = QStyleOptionTabBarBase::Type};
 enum StyleOptionVersion{
   Version = QStyleOptionTabBarBase::Version};
-public slots:
+public Q_SLOTS:
 QStyleOptionTabBarBase* new_QStyleOptionTabBarBase();
 QStyleOptionTabBarBase* new_QStyleOptionTabBarBase(const QStyleOptionTabBarBase&  other);
 QStyleOptionTabBarBase* new_QStyleOptionTabBarBase(int  version);
@@ -735,7 +708,7 @@ public:
 class PythonQtWrapper_QStyleOptionTabBarBaseV2 : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QStyleOptionTabBarBaseV2* new_QStyleOptionTabBarBaseV2();
 QStyleOptionTabBarBaseV2* new_QStyleOptionTabBarBaseV2(const QStyleOptionTabBarBaseV2& other) {
 PythonQtShell_QStyleOptionTabBarBaseV2* a = new PythonQtShell_QStyleOptionTabBarBaseV2();
@@ -762,7 +735,7 @@ public:
 class PythonQtWrapper_QStyleOptionTabV2 : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QStyleOptionTabV2* new_QStyleOptionTabV2();
 QStyleOptionTabV2* new_QStyleOptionTabV2(const QStyleOptionTabV2& other) {
 PythonQtShell_QStyleOptionTabV2* a = new PythonQtShell_QStyleOptionTabV2();
@@ -789,7 +762,7 @@ public:
 class PythonQtWrapper_QStyleOptionTabV3 : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QStyleOptionTabV3* new_QStyleOptionTabV3();
 QStyleOptionTabV3* new_QStyleOptionTabV3(const QStyleOptionTabV3& other) {
 PythonQtShell_QStyleOptionTabV3* a = new PythonQtShell_QStyleOptionTabV3();
@@ -823,7 +796,7 @@ enum StyleOptionType{
   Type = QStyleOptionTabWidgetFrame::Type};
 enum StyleOptionVersion{
   Version = QStyleOptionTabWidgetFrame::Version};
-public slots:
+public Q_SLOTS:
 QStyleOptionTabWidgetFrame* new_QStyleOptionTabWidgetFrame();
 QStyleOptionTabWidgetFrame* new_QStyleOptionTabWidgetFrame(const QStyleOptionTabWidgetFrame&  other);
 QStyleOptionTabWidgetFrame* new_QStyleOptionTabWidgetFrame(int  version);
@@ -865,7 +838,7 @@ public:
 class PythonQtWrapper_QStyleOptionTabWidgetFrameV2 : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QStyleOptionTabWidgetFrameV2* new_QStyleOptionTabWidgetFrameV2();
 QStyleOptionTabWidgetFrameV2* new_QStyleOptionTabWidgetFrameV2(const QStyleOptionTabWidgetFrameV2& other) {
 PythonQtShell_QStyleOptionTabWidgetFrameV2* a = new PythonQtShell_QStyleOptionTabWidgetFrameV2();
@@ -899,7 +872,7 @@ enum StyleOptionType{
   Type = QStyleOptionTitleBar::Type};
 enum StyleOptionVersion{
   Version = QStyleOptionTitleBar::Version};
-public slots:
+public Q_SLOTS:
 QStyleOptionTitleBar* new_QStyleOptionTitleBar();
 QStyleOptionTitleBar* new_QStyleOptionTitleBar(const QStyleOptionTitleBar&  other);
 QStyleOptionTitleBar* new_QStyleOptionTitleBar(int  version);
@@ -946,7 +919,7 @@ enum ToolBarFeature{
 enum ToolBarPosition{
   Beginning = QStyleOptionToolBar::Beginning,   Middle = QStyleOptionToolBar::Middle,   End = QStyleOptionToolBar::End,   OnlyOne = QStyleOptionToolBar::OnlyOne};
 Q_DECLARE_FLAGS(ToolBarFeatures, ToolBarFeature)
-public slots:
+public Q_SLOTS:
 QStyleOptionToolBar* new_QStyleOptionToolBar();
 QStyleOptionToolBar* new_QStyleOptionToolBar(const QStyleOptionToolBar&  other);
 QStyleOptionToolBar* new_QStyleOptionToolBar(int  version);
@@ -995,7 +968,7 @@ enum StyleOptionVersion{
   Version = QStyleOptionToolBox::Version};
 enum TabPosition{
   Beginning = QStyleOptionToolBox::Beginning,   Middle = QStyleOptionToolBox::Middle,   End = QStyleOptionToolBox::End,   OnlyOneTab = QStyleOptionToolBox::OnlyOneTab};
-public slots:
+public Q_SLOTS:
 QStyleOptionToolBox* new_QStyleOptionToolBox();
 QStyleOptionToolBox* new_QStyleOptionToolBox(const QStyleOptionToolBox&  other);
 QStyleOptionToolBox* new_QStyleOptionToolBox(int  version);
@@ -1029,7 +1002,7 @@ public:
 class PythonQtWrapper_QStyleOptionToolBoxV2 : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QStyleOptionToolBoxV2* new_QStyleOptionToolBoxV2();
 QStyleOptionToolBoxV2* new_QStyleOptionToolBoxV2(const QStyleOptionToolBoxV2& other) {
 PythonQtShell_QStyleOptionToolBoxV2* a = new PythonQtShell_QStyleOptionToolBoxV2();
@@ -1067,7 +1040,7 @@ enum StyleOptionVersion{
 enum ToolButtonFeature{
   None = QStyleOptionToolButton::None,   Arrow = QStyleOptionToolButton::Arrow,   Menu = QStyleOptionToolButton::Menu,   MenuButtonPopup = QStyleOptionToolButton::MenuButtonPopup,   PopupDelay = QStyleOptionToolButton::PopupDelay,   HasMenu = QStyleOptionToolButton::HasMenu};
 Q_DECLARE_FLAGS(ToolButtonFeatures, ToolButtonFeature)
-public slots:
+public Q_SLOTS:
 QStyleOptionToolButton* new_QStyleOptionToolButton();
 QStyleOptionToolButton* new_QStyleOptionToolButton(const QStyleOptionToolButton&  other);
 QStyleOptionToolButton* new_QStyleOptionToolButton(int  version);
@@ -1124,7 +1097,7 @@ enum ViewItemFeature{
 enum ViewItemPosition{
   Invalid = QStyleOptionViewItem::Invalid,   Beginning = QStyleOptionViewItem::Beginning,   Middle = QStyleOptionViewItem::Middle,   End = QStyleOptionViewItem::End,   OnlyOne = QStyleOptionViewItem::OnlyOne};
 Q_DECLARE_FLAGS(ViewItemFeatures, ViewItemFeature)
-public slots:
+public Q_SLOTS:
 QStyleOptionViewItem* new_QStyleOptionViewItem();
 QStyleOptionViewItem* new_QStyleOptionViewItem(const QStyleOptionViewItem&  other);
 QStyleOptionViewItem* new_QStyleOptionViewItem(int  version);
@@ -1181,7 +1154,7 @@ public:
 class PythonQtWrapper_QStyleOptionViewItemV2 : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QStyleOptionViewItemV2* new_QStyleOptionViewItemV2();
 QStyleOptionViewItemV2* new_QStyleOptionViewItemV2(const QStyleOptionViewItemV2& other) {
 PythonQtShell_QStyleOptionViewItemV2* a = new PythonQtShell_QStyleOptionViewItemV2();
@@ -1208,13 +1181,40 @@ public:
 class PythonQtWrapper_QStyleOptionViewItemV3 : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QStyleOptionViewItemV3* new_QStyleOptionViewItemV3();
 QStyleOptionViewItemV3* new_QStyleOptionViewItemV3(const QStyleOptionViewItemV3& other) {
 PythonQtShell_QStyleOptionViewItemV3* a = new PythonQtShell_QStyleOptionViewItemV3();
 *((QStyleOptionViewItemV3*)a) = other;
 return a; }
 void delete_QStyleOptionViewItemV3(QStyleOptionViewItemV3* obj) { delete obj; }
+};
+
+
+
+
+
+class PythonQtShell_QStyleOptionViewItemV4 : public QStyleOptionViewItemV4
+{
+public:
+    PythonQtShell_QStyleOptionViewItemV4():QStyleOptionViewItemV4(),_wrapper(nullptr) {};
+
+   ~PythonQtShell_QStyleOptionViewItemV4();
+
+
+  PythonQtInstanceWrapper* _wrapper;
+};
+
+class PythonQtWrapper_QStyleOptionViewItemV4 : public QObject
+{ Q_OBJECT
+public:
+public Q_SLOTS:
+QStyleOptionViewItemV4* new_QStyleOptionViewItemV4();
+QStyleOptionViewItemV4* new_QStyleOptionViewItemV4(const QStyleOptionViewItemV4& other) {
+PythonQtShell_QStyleOptionViewItemV4* a = new PythonQtShell_QStyleOptionViewItemV4();
+*((QStyleOptionViewItemV4*)a) = other;
+return a; }
+void delete_QStyleOptionViewItemV4(QStyleOptionViewItemV4* obj) { delete obj; }
 };
 
 

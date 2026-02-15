@@ -1,37 +1,37 @@
 #include <PythonQt.h>
 #include <QObject>
 #include <QVariant>
+#include <QtQml/qjsengine.h>
+#include <QtQml/qjsvalue.h>
+#include <QtQml/qqmlabstracturlinterceptor.h>
+#include <QtQml/qqmlapplicationengine.h>
+#include <QtQml/qqmlcomponent.h>
+#include <QtQml/qqmlcontext.h>
+#include <QtQml/qqmldebug.h>
+#include <QtQml/qqmlengine.h>
+#include <QtQml/qqmlerror.h>
+#include <QtQml/qqmlexpression.h>
+#include <QtQml/qqmlextensioninterface.h>
+#include <QtQml/qqmlextensionplugin.h>
+#include <QtQml/qqmlfile.h>
+#include <QtQml/qqmlfileselector.h>
+#include <QtQml/qqmlincubator.h>
+#include <QtQml/qqmlinfo.h>
+#include <QtQml/qqmllist.h>
+#include <QtQml/qqmlnetworkaccessmanagerfactory.h>
+#include <QtQml/qqmlparserstatus.h>
+#include <QtQml/qqmlproperty.h>
+#include <QtQml/qqmlpropertymap.h>
+#include <QtQml/qqmlpropertyvaluesource.h>
+#include <QtQml/qqmlscriptstring.h>
 #include <qbytearray.h>
 #include <qcoreevent.h>
 #include <qdatetime.h>
 #include <qfileselector.h>
-#include <qjsengine.h>
-#include <qjsvalue.h>
 #include <qlist.h>
 #include <qmetaobject.h>
 #include <qnetworkaccessmanager.h>
 #include <qobject.h>
-#include <qqmlabstracturlinterceptor.h>
-#include <qqmlapplicationengine.h>
-#include <qqmlcomponent.h>
-#include <qqmlcontext.h>
-#include <qqmldebug.h>
-#include <qqmlengine.h>
-#include <qqmlerror.h>
-#include <qqmlexpression.h>
-#include <qqmlextensioninterface.h>
-#include <qqmlextensionplugin.h>
-#include <qqmlfile.h>
-#include <qqmlfileselector.h>
-#include <qqmlincubator.h>
-#include <qqmlinfo.h>
-#include <qqmllist.h>
-#include <qqmlnetworkaccessmanagerfactory.h>
-#include <qqmlparserstatus.h>
-#include <qqmlproperty.h>
-#include <qqmlpropertymap.h>
-#include <qqmlpropertyvaluesource.h>
-#include <qqmlscriptstring.h>
 #include <qstringlist.h>
 #include <qthread.h>
 #include <qurl.h>
@@ -63,7 +63,7 @@ public:
 Q_ENUMS(Extension )
 enum Extension{
   TranslationExtension = QJSEngine::TranslationExtension,   ConsoleExtension = QJSEngine::ConsoleExtension,   GarbageCollectionExtension = QJSEngine::GarbageCollectionExtension,   AllExtensions = QJSEngine::AllExtensions};
-public slots:
+public Q_SLOTS:
 QJSEngine* new_QJSEngine();
 QJSEngine* new_QJSEngine(QObject*  parent);
 void delete_QJSEngine(QJSEngine* obj) { delete obj; }
@@ -97,7 +97,7 @@ enum ErrorType{
   NoError = QJSValue::NoError,   GenericError = QJSValue::GenericError,   EvalError = QJSValue::EvalError,   RangeError = QJSValue::RangeError,   ReferenceError = QJSValue::ReferenceError,   SyntaxError = QJSValue::SyntaxError,   TypeError = QJSValue::TypeError,   URIError = QJSValue::URIError};
 enum SpecialValue{
   NullValue = QJSValue::NullValue,   UndefinedValue = QJSValue::UndefinedValue};
-public slots:
+public Q_SLOTS:
 QJSValue* new_QJSValue(QJSValue::SpecialValue  value = QJSValue::UndefinedValue);
 QJSValue* new_QJSValue(bool  value);
 QJSValue* new_QJSValue(const QJSValue&  other);
@@ -178,7 +178,7 @@ public:
 Q_ENUMS(DataType )
 enum DataType{
   QmlFile = QQmlAbstractUrlInterceptor::QmlFile,   JavaScriptFile = QQmlAbstractUrlInterceptor::JavaScriptFile,   QmldirFile = QQmlAbstractUrlInterceptor::QmldirFile,   UrlString = QQmlAbstractUrlInterceptor::UrlString};
-public slots:
+public Q_SLOTS:
 QQmlAbstractUrlInterceptor* new_QQmlAbstractUrlInterceptor();
 void delete_QQmlAbstractUrlInterceptor(QQmlAbstractUrlInterceptor* obj) { delete obj; }
    QUrl  intercept(QQmlAbstractUrlInterceptor* theWrappedObject, const QUrl&  path, QQmlAbstractUrlInterceptor::DataType  type);
@@ -212,7 +212,7 @@ void timerEvent(QTimerEvent*  event) override;
 class PythonQtWrapper_QQmlApplicationEngine : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QQmlApplicationEngine* new_QQmlApplicationEngine(QObject*  parent = nullptr);
 QQmlApplicationEngine* new_QQmlApplicationEngine(const QString&  filePath, QObject*  parent = nullptr);
 QQmlApplicationEngine* new_QQmlApplicationEngine(const QUrl&  url, QObject*  parent = nullptr);
@@ -261,7 +261,7 @@ inline QObject*  py_q_create(QQmlContext*  context = nullptr) { return QQmlCompo
 class PythonQtWrapper_QQmlComponent : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QQmlComponent* new_QQmlComponent(QObject*  parent = nullptr);
 QQmlComponent* new_QQmlComponent(QQmlEngine*  arg__1, QObject*  parent = nullptr);
 QQmlComponent* new_QQmlComponent(QQmlEngine*  arg__1, const QString&  fileName, QObject*  parent = nullptr);
@@ -318,7 +318,7 @@ void timerEvent(QTimerEvent*  event) override;
 class PythonQtWrapper_QQmlContext : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QQmlContext* new_QQmlContext(QQmlContext*  parent, QObject*  objParent = nullptr);
 QQmlContext* new_QQmlContext(QQmlEngine*  parent, QObject*  objParent = nullptr);
 void delete_QQmlContext(QQmlContext* obj) { delete obj; }
@@ -347,7 +347,7 @@ public:
 Q_ENUMS(StartMode )
 enum StartMode{
   DoNotWaitForClient = QQmlDebuggingEnabler::DoNotWaitForClient,   WaitForClient = QQmlDebuggingEnabler::WaitForClient};
-public slots:
+public Q_SLOTS:
 QQmlDebuggingEnabler* new_QQmlDebuggingEnabler(bool  printWarning = true);
 void delete_QQmlDebuggingEnabler(QQmlDebuggingEnabler* obj) { delete obj; }
    bool  static_QQmlDebuggingEnabler_connectToLocalDebugger(const QString&  socketFileName, QQmlDebuggingEnabler::StartMode  mode = QQmlDebuggingEnabler::DoNotWaitForClient);
@@ -394,7 +394,7 @@ public:
 Q_ENUMS(ObjectOwnership )
 enum ObjectOwnership{
   CppOwnership = QQmlEngine::CppOwnership,   JavaScriptOwnership = QQmlEngine::JavaScriptOwnership};
-public slots:
+public Q_SLOTS:
 QQmlEngine* new_QQmlEngine(QObject*  p = nullptr);
 void delete_QQmlEngine(QQmlEngine* obj) { delete obj; }
    void addImportPath(QQmlEngine* theWrappedObject, const QString&  dir);
@@ -437,7 +437,7 @@ void delete_QQmlEngine(QQmlEngine* obj) { delete obj; }
 class PythonQtWrapper_QQmlError : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QQmlError* new_QQmlError();
 QQmlError* new_QQmlError(const QQmlError&  arg__1);
 void delete_QQmlError(QQmlError* obj) { delete obj; }
@@ -487,7 +487,7 @@ void timerEvent(QTimerEvent*  event) override;
 class PythonQtWrapper_QQmlExpression : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QQmlExpression* new_QQmlExpression();
 QQmlExpression* new_QQmlExpression(QQmlContext*  arg__1, QObject*  arg__2, const QString&  arg__3, QObject*  arg__4 = nullptr);
 QQmlExpression* new_QQmlExpression(const QQmlScriptString&  arg__1, QQmlContext*  arg__2 = nullptr, QObject*  arg__3 = nullptr, QObject*  arg__4 = nullptr);
@@ -534,7 +534,7 @@ inline void py_q_initializeEngine(QQmlEngine*  engine, const char*  uri) { this-
 class PythonQtWrapper_QQmlExtensionInterface : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QQmlExtensionInterface* new_QQmlExtensionInterface();
 void delete_QQmlExtensionInterface(QQmlExtensionInterface* obj) { delete obj; }
    void initializeEngine(QQmlExtensionInterface* theWrappedObject, QQmlEngine*  engine, const char*  uri);
@@ -569,7 +569,7 @@ inline void py_q_registerTypes(const char*  uri) { this->registerTypes(uri); }
 class PythonQtWrapper_QQmlExtensionPlugin : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QQmlExtensionPlugin* new_QQmlExtensionPlugin(QObject*  parent = nullptr);
 void delete_QQmlExtensionPlugin(QQmlExtensionPlugin* obj) { delete obj; }
    QUrl  baseUrl(QQmlExtensionPlugin* theWrappedObject) const;
@@ -589,7 +589,7 @@ public:
 Q_ENUMS(Status )
 enum Status{
   Null = QQmlFile::Null,   Ready = QQmlFile::Ready,   Error = QQmlFile::Error,   Loading = QQmlFile::Loading};
-public slots:
+public Q_SLOTS:
 QQmlFile* new_QQmlFile();
 QQmlFile* new_QQmlFile(QQmlEngine*  arg__1, const QString&  arg__2);
 QQmlFile* new_QQmlFile(QQmlEngine*  arg__1, const QUrl&  arg__2);
@@ -646,7 +646,7 @@ void timerEvent(QTimerEvent*  event) override;
 class PythonQtWrapper_QQmlFileSelector : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QQmlFileSelector* new_QQmlFileSelector(QQmlEngine*  engine, QObject*  parent = nullptr);
 void delete_QQmlFileSelector(QQmlFileSelector* obj) { delete obj; }
    QQmlFileSelector*  static_QQmlFileSelector_get(QQmlEngine*  arg__1);
@@ -681,7 +681,7 @@ inline void py_q_incubatingObjectCountChanged(int  arg__1) { QQmlIncubationContr
 class PythonQtWrapper_QQmlIncubationController : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QQmlIncubationController* new_QQmlIncubationController();
 void delete_QQmlIncubationController(QQmlIncubationController* obj) { delete obj; }
    QQmlEngine*  engine(QQmlIncubationController* theWrappedObject) const;
@@ -725,7 +725,7 @@ enum IncubationMode{
   Asynchronous = QQmlIncubator::Asynchronous,   AsynchronousIfNested = QQmlIncubator::AsynchronousIfNested,   Synchronous = QQmlIncubator::Synchronous};
 enum Status{
   Null = QQmlIncubator::Null,   Ready = QQmlIncubator::Ready,   Loading = QQmlIncubator::Loading,   Error = QQmlIncubator::Error};
-public slots:
+public Q_SLOTS:
 QQmlIncubator* new_QQmlIncubator(QQmlIncubator::IncubationMode  arg__1 = QQmlIncubator::Asynchronous);
 void delete_QQmlIncubator(QQmlIncubator* obj) { delete obj; }
    void clear(QQmlIncubator* theWrappedObject);
@@ -753,7 +753,7 @@ void delete_QQmlIncubator(QQmlIncubator* obj) { delete obj; }
 class PythonQtWrapper_QQmlInfo : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QQmlInfo* new_QQmlInfo(const QQmlInfo&  arg__1);
 void delete_QQmlInfo(QQmlInfo* obj) { delete obj; }
    QQmlInfo*  __lshift__(QQmlInfo* theWrappedObject, QChar  t);
@@ -783,7 +783,7 @@ void delete_QQmlInfo(QQmlInfo* obj) { delete obj; }
 class PythonQtWrapper_QQmlListReference : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QQmlListReference* new_QQmlListReference();
 QQmlListReference* new_QQmlListReference(QObject*  arg__1, const char*  property, QQmlEngine*  arg__3 = nullptr);
 QQmlListReference* new_QQmlListReference(const QQmlListReference&  arg__1);
@@ -833,7 +833,7 @@ inline QNetworkAccessManager*  py_q_create(QObject*  parent) { return this->crea
 class PythonQtWrapper_QQmlNetworkAccessManagerFactory : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QQmlNetworkAccessManagerFactory* new_QQmlNetworkAccessManagerFactory();
 void delete_QQmlNetworkAccessManagerFactory(QQmlNetworkAccessManagerFactory* obj) { delete obj; }
    QNetworkAccessManager*  create(QQmlNetworkAccessManagerFactory* theWrappedObject, QObject*  parent);
@@ -866,7 +866,7 @@ inline void py_q_componentComplete() { this->componentComplete(); }
 class PythonQtWrapper_QQmlParserStatus : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QQmlParserStatus* new_QQmlParserStatus();
 void delete_QQmlParserStatus(QQmlParserStatus* obj) { delete obj; }
    void classBegin(QQmlParserStatus* theWrappedObject);
@@ -887,7 +887,7 @@ enum PropertyTypeCategory{
   InvalidCategory = QQmlProperty::InvalidCategory,   List = QQmlProperty::List,   Object = QQmlProperty::Object,   Normal = QQmlProperty::Normal};
 enum Type{
   Invalid = QQmlProperty::Invalid,   Property = QQmlProperty::Property,   SignalProperty = QQmlProperty::SignalProperty};
-public slots:
+public Q_SLOTS:
 QQmlProperty* new_QQmlProperty();
 QQmlProperty* new_QQmlProperty(QObject*  arg__1);
 QQmlProperty* new_QQmlProperty(QObject*  arg__1, QQmlContext*  arg__2);
@@ -962,7 +962,7 @@ inline QVariant  py_q_updateValue(const QString&  key, const QVariant&  input) {
 class PythonQtWrapper_QQmlPropertyMap : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QQmlPropertyMap* new_QQmlPropertyMap(QObject*  parent = nullptr);
 void delete_QQmlPropertyMap(QQmlPropertyMap* obj) { delete obj; }
    void clear(QQmlPropertyMap* theWrappedObject, const QString&  key);
@@ -1003,7 +1003,7 @@ inline void py_q_setTarget(const QQmlProperty&  arg__1) { this->setTarget(arg__1
 class PythonQtWrapper_QQmlPropertyValueSource : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QQmlPropertyValueSource* new_QQmlPropertyValueSource();
 void delete_QQmlPropertyValueSource(QQmlPropertyValueSource* obj) { delete obj; }
    void setTarget(QQmlPropertyValueSource* theWrappedObject, const QQmlProperty&  arg__1);
@@ -1017,7 +1017,7 @@ void delete_QQmlPropertyValueSource(QQmlPropertyValueSource* obj) { delete obj; 
 class PythonQtWrapper_QQmlScriptString : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QQmlScriptString* new_QQmlScriptString();
 QQmlScriptString* new_QQmlScriptString(const QQmlScriptString&  arg__1);
 void delete_QQmlScriptString(QQmlScriptString* obj) { delete obj; }
@@ -1057,7 +1057,7 @@ inline void py_q_registerTypes(const char*  uri) { this->registerTypes(uri); }
 class PythonQtWrapper_QQmlTypesExtensionInterface : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QQmlTypesExtensionInterface* new_QQmlTypesExtensionInterface();
 void delete_QQmlTypesExtensionInterface(QQmlTypesExtensionInterface* obj) { delete obj; }
    void registerTypes(QQmlTypesExtensionInterface* theWrappedObject, const char*  uri);

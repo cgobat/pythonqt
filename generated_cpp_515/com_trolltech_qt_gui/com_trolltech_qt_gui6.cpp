@@ -7,8 +7,19 @@
 #include <QVarLengthArray>
 #include <QVariant>
 #include <QWidget>
+#include <QtPrintSupport/qprinter.h>
+#include <QtWidgets/qaction.h>
+#include <QtWidgets/qgraphicseffect.h>
+#include <QtWidgets/qgraphicsproxywidget.h>
+#include <QtWidgets/qlayout.h>
+#include <QtWidgets/qmenu.h>
+#include <QtWidgets/qscrollbar.h>
+#include <QtWidgets/qsizepolicy.h>
+#include <QtWidgets/qstyle.h>
+#include <QtWidgets/qstyleoption.h>
+#include <QtWidgets/qtextedit.h>
+#include <QtWidgets/qwidget.h>
 #include <qabstracttextdocumentlayout.h>
-#include <qaction.h>
 #include <qbackingstore.h>
 #include <qbitmap.h>
 #include <qbrush.h>
@@ -22,19 +33,15 @@
 #include <qfontinfo.h>
 #include <qfontmetrics.h>
 #include <qglyphrun.h>
-#include <qgraphicseffect.h>
-#include <qgraphicsproxywidget.h>
 #include <qicon.h>
 #include <qimage.h>
 #include <qiodevice.h>
 #include <qkeysequence.h>
-#include <qlayout.h>
 #include <qline.h>
 #include <qlist.h>
 #include <qlocale.h>
 #include <qmargins.h>
 #include <qmatrix.h>
-#include <qmenu.h>
 #include <qmetaobject.h>
 #include <qmimedata.h>
 #include <qobject.h>
@@ -46,7 +53,6 @@
 #include <qpaintengine.h>
 #include <qpainter.h>
 #include <qpainterpath.h>
-#include <qpair.h>
 #include <qpalette.h>
 #include <qpen.h>
 #include <qpicture.h>
@@ -54,22 +60,16 @@
 #include <qpixmapcache.h>
 #include <qpoint.h>
 #include <qpolygon.h>
-#include <qprinter.h>
 #include <qrect.h>
 #include <qregexp.h>
 #include <qregion.h>
 #include <qregularexpression.h>
 #include <qscreen.h>
-#include <qscrollbar.h>
 #include <qsize.h>
-#include <qsizepolicy.h>
 #include <qstatictext.h>
-#include <qstyle.h>
-#include <qstyleoption.h>
 #include <qsurfaceformat.h>
 #include <qtextcursor.h>
 #include <qtextdocument.h>
-#include <qtextedit.h>
 #include <qtextformat.h>
 #include <qtextlayout.h>
 #include <qtextobject.h>
@@ -78,79 +78,7 @@
 #include <qtransform.h>
 #include <qurl.h>
 #include <qvector.h>
-#include <qwidget.h>
 #include <qwindow.h>
-
-QOpenGLVersionProfile* PythonQtWrapper_QOpenGLVersionProfile::new_QOpenGLVersionProfile()
-{
-return new QOpenGLVersionProfile(); }
-
-QOpenGLVersionProfile* PythonQtWrapper_QOpenGLVersionProfile::new_QOpenGLVersionProfile(const QOpenGLVersionProfile&  other)
-{
-return new QOpenGLVersionProfile(other); }
-
-QOpenGLVersionProfile* PythonQtWrapper_QOpenGLVersionProfile::new_QOpenGLVersionProfile(const QSurfaceFormat&  format)
-{
-return new QOpenGLVersionProfile(format); }
-
-bool  PythonQtWrapper_QOpenGLVersionProfile::hasProfiles(QOpenGLVersionProfile* theWrappedObject) const
-{
-  return ( theWrappedObject->hasProfiles());
-}
-
-bool  PythonQtWrapper_QOpenGLVersionProfile::isLegacyVersion(QOpenGLVersionProfile* theWrappedObject) const
-{
-  return ( theWrappedObject->isLegacyVersion());
-}
-
-bool  PythonQtWrapper_QOpenGLVersionProfile::isValid(QOpenGLVersionProfile* theWrappedObject) const
-{
-  return ( theWrappedObject->isValid());
-}
-
-bool  PythonQtWrapper_QOpenGLVersionProfile::__ne__(QOpenGLVersionProfile* theWrappedObject, const QOpenGLVersionProfile&  rhs)
-{
-  return ( (*theWrappedObject)!= rhs);
-}
-
-QOpenGLVersionProfile*  PythonQtWrapper_QOpenGLVersionProfile::operator_assign(QOpenGLVersionProfile* theWrappedObject, const QOpenGLVersionProfile&  rhs)
-{
-  return &( (*theWrappedObject)= rhs);
-}
-
-bool  PythonQtWrapper_QOpenGLVersionProfile::__eq__(QOpenGLVersionProfile* theWrappedObject, const QOpenGLVersionProfile&  rhs)
-{
-  return ( (*theWrappedObject)== rhs);
-}
-
-QSurfaceFormat::OpenGLContextProfile  PythonQtWrapper_QOpenGLVersionProfile::profile(QOpenGLVersionProfile* theWrappedObject) const
-{
-  return ( theWrappedObject->profile());
-}
-
-void PythonQtWrapper_QOpenGLVersionProfile::setProfile(QOpenGLVersionProfile* theWrappedObject, QSurfaceFormat::OpenGLContextProfile  profile)
-{
-  ( theWrappedObject->setProfile(profile));
-}
-
-void PythonQtWrapper_QOpenGLVersionProfile::setVersion(QOpenGLVersionProfile* theWrappedObject, int  majorVersion, int  minorVersion)
-{
-  ( theWrappedObject->setVersion(majorVersion, minorVersion));
-}
-
-QPair<int , int >  PythonQtWrapper_QOpenGLVersionProfile::version(QOpenGLVersionProfile* theWrappedObject) const
-{
-  return ( theWrappedObject->version());
-}
-
-QString PythonQtWrapper_QOpenGLVersionProfile::py_toString(QOpenGLVersionProfile* obj) {
-  QString result;
-  QDebug d(&result);
-  d << *obj;
-  return result;
-}
-
-
 
 PythonQtShell_QOpenGLVertexArrayObject::~PythonQtShell_QOpenGLVertexArrayObject() {
   PythonQtPrivate* priv = PythonQt::priv();
@@ -289,7 +217,7 @@ if (_wrapper) {
   QOpenGLVertexArrayObject::timerEvent(event0);
 }
 QOpenGLVertexArrayObject* PythonQtWrapper_QOpenGLVertexArrayObject::new_QOpenGLVertexArrayObject(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QOpenGLVertexArrayObject(parent); }
 
 const QMetaObject* PythonQtShell_QOpenGLVertexArrayObject::metaObject() const {
@@ -1050,7 +978,7 @@ QSize  PythonQtShell_QOpenGLWidget::minimumSizeHint() const
 if (_wrapper) {
   PYTHONQT_GIL_SCOPE
   if (Py_REFCNT((PyObject*)_wrapper) > 0) {
-    static PyObject* name = PyUnicode_FromString("getMinimumSizeHint");
+    static PyObject* name = PyUnicode_FromString("minimumSizeHint");
     PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
     if (obj) {
       static const char* argumentList[] ={"QSize"};
@@ -1062,7 +990,7 @@ if (_wrapper) {
         args[0] = PythonQtConv::ConvertPythonToQt(methodInfo->parameters().at(0), result, false, nullptr, &returnValue);
         if (args[0]!=&returnValue) {
           if (args[0]==nullptr) {
-            PythonQt::priv()->handleVirtualOverloadReturnError("getMinimumSizeHint", methodInfo, result);
+            PythonQt::priv()->handleVirtualOverloadReturnError("minimumSizeHint", methodInfo, result);
           } else {
             returnValue = *((QSize*)args[0]);
           }
@@ -1457,7 +1385,7 @@ QSize  PythonQtShell_QOpenGLWidget::sizeHint() const
 if (_wrapper) {
   PYTHONQT_GIL_SCOPE
   if (Py_REFCNT((PyObject*)_wrapper) > 0) {
-    static PyObject* name = PyUnicode_FromString("getSizeHint");
+    static PyObject* name = PyUnicode_FromString("sizeHint");
     PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
     if (obj) {
       static const char* argumentList[] ={"QSize"};
@@ -1469,7 +1397,7 @@ if (_wrapper) {
         args[0] = PythonQtConv::ConvertPythonToQt(methodInfo->parameters().at(0), result, false, nullptr, &returnValue);
         if (args[0]!=&returnValue) {
           if (args[0]==nullptr) {
-            PythonQt::priv()->handleVirtualOverloadReturnError("getSizeHint", methodInfo, result);
+            PythonQt::priv()->handleVirtualOverloadReturnError("sizeHint", methodInfo, result);
           } else {
             returnValue = *((QSize*)args[0]);
           }
@@ -1552,7 +1480,7 @@ if (_wrapper) {
   QOpenGLWidget::wheelEvent(event0);
 }
 QOpenGLWidget* PythonQtWrapper_QOpenGLWidget::new_QOpenGLWidget(QWidget*  parent, Qt::WindowFlags  f)
-{
+{ 
 return new PythonQtShell_QOpenGLWidget(parent, f); }
 
 const QMetaObject* PythonQtShell_QOpenGLWidget::metaObject() const {
@@ -2585,11 +2513,11 @@ if (_wrapper) {
   QOpenGLWindow::wheelEvent(arg__1);
 }
 QOpenGLWindow* PythonQtWrapper_QOpenGLWindow::new_QOpenGLWindow(QOpenGLContext*  shareContext, QOpenGLWindow::UpdateBehavior  updateBehavior, QWindow*  parent)
-{
+{ 
 return new PythonQtShell_QOpenGLWindow(shareContext, updateBehavior, parent); }
 
 QOpenGLWindow* PythonQtWrapper_QOpenGLWindow::new_QOpenGLWindow(QOpenGLWindow::UpdateBehavior  updateBehavior, QWindow*  parent)
-{
+{ 
 return new PythonQtShell_QOpenGLWindow(updateBehavior, parent); }
 
 const QMetaObject* PythonQtShell_QOpenGLWindow::metaObject() const {
@@ -2673,15 +2601,15 @@ QOpenGLWindow::UpdateBehavior  PythonQtWrapper_QOpenGLWindow::updateBehavior(QOp
 
 
 QPageLayout* PythonQtWrapper_QPageLayout::new_QPageLayout()
-{
+{ 
 return new QPageLayout(); }
 
 QPageLayout* PythonQtWrapper_QPageLayout::new_QPageLayout(const QPageLayout&  other)
-{
+{ 
 return new QPageLayout(other); }
 
 QPageLayout* PythonQtWrapper_QPageLayout::new_QPageLayout(const QPageSize&  pageSize, QPageLayout::Orientation  orientation, const QMarginsF&  margins, QPageLayout::Unit  units, const QMarginsF&  minMargins)
-{
+{ 
 return new QPageLayout(pageSize, orientation, margins, units, minMargins); }
 
 QRectF  PythonQtWrapper_QPageLayout::fullRect(QPageLayout* theWrappedObject) const
@@ -4111,11 +4039,11 @@ if (_wrapper) {
   QPageSetupDialog::wheelEvent(event0);
 }
 QPageSetupDialog* PythonQtWrapper_QPageSetupDialog::new_QPageSetupDialog(QPrinter*  printer, QWidget*  parent)
-{
+{ 
 return new PythonQtShell_QPageSetupDialog(printer, parent); }
 
 QPageSetupDialog* PythonQtWrapper_QPageSetupDialog::new_QPageSetupDialog(QWidget*  parent)
-{
+{ 
 return new PythonQtShell_QPageSetupDialog(parent); }
 
 const QMetaObject* PythonQtShell_QPageSetupDialog::metaObject() const {
@@ -4144,23 +4072,23 @@ QPrinter*  PythonQtWrapper_QPageSetupDialog::printer(QPageSetupDialog* theWrappe
 
 
 QPageSize* PythonQtWrapper_QPageSize::new_QPageSize()
-{
+{ 
 return new QPageSize(); }
 
 QPageSize* PythonQtWrapper_QPageSize::new_QPageSize(QPageSize::PageSizeId  pageSizeId)
-{
+{ 
 return new QPageSize(pageSizeId); }
 
 QPageSize* PythonQtWrapper_QPageSize::new_QPageSize(const QPageSize&  other)
-{
+{ 
 return new QPageSize(other); }
 
 QPageSize* PythonQtWrapper_QPageSize::new_QPageSize(const QSize&  pointSize, const QString&  name, QPageSize::SizeMatchPolicy  matchPolicy)
-{
+{ 
 return new QPageSize(pointSize, name, matchPolicy); }
 
 QPageSize* PythonQtWrapper_QPageSize::new_QPageSize(const QSizeF&  size, QPageSize::Unit  units, const QString&  name, QPageSize::SizeMatchPolicy  matchPolicy)
-{
+{ 
 return new QPageSize(size, units, name, matchPolicy); }
 
 QSizeF  PythonQtWrapper_QPageSize::definitionSize(QPageSize* theWrappedObject) const
@@ -4394,7 +4322,7 @@ PythonQtShell_QPagedPaintDevice__Margins::~PythonQtShell_QPagedPaintDevice__Marg
   if (priv) { priv->shellClassDeleted(this); }
 }
 QPagedPaintDevice::Margins* PythonQtWrapper_QPagedPaintDevice__Margins::new_QPagedPaintDevice__Margins()
-{
+{ 
 return new PythonQtShell_QPagedPaintDevice__Margins(); }
 
 
@@ -4591,7 +4519,7 @@ if (_wrapper) {
   return QPaintDevice::sharedPainter();
 }
 QPaintDevice* PythonQtWrapper_QPaintDevice::new_QPaintDevice()
-{
+{ 
 return new PythonQtShell_QPaintDevice(); }
 
 int  PythonQtWrapper_QPaintDevice::colorCount(QPaintDevice* theWrappedObject) const
@@ -4935,7 +4863,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 void PythonQtShell_QPaintEngine::drawPoints(const QPoint*  points0, int  pointCount1)
 {
@@ -5199,10 +5127,10 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 QPaintEngine* PythonQtWrapper_QPaintEngine::new_QPaintEngine(QPaintEngine::PaintEngineFeatures  features)
-{
+{ 
 return new PythonQtShell_QPaintEngine(features); }
 
 bool  PythonQtWrapper_QPaintEngine::begin(QPaintEngine* theWrappedObject, QPaintDevice*  pdev)
@@ -5382,7 +5310,7 @@ PythonQtShell_QPaintEngineState::~PythonQtShell_QPaintEngineState() {
   if (priv) { priv->shellClassDeleted(this); }
 }
 QPaintEngineState* PythonQtWrapper_QPaintEngineState::new_QPaintEngineState()
-{
+{ 
 return new PythonQtShell_QPaintEngineState(); }
 
 QBrush  PythonQtWrapper_QPaintEngineState::backgroundBrush(QPaintEngineState* theWrappedObject) const
@@ -5487,11 +5415,11 @@ PythonQtShell_QPaintEvent::~PythonQtShell_QPaintEvent() {
   if (priv) { priv->shellClassDeleted(this); }
 }
 QPaintEvent* PythonQtWrapper_QPaintEvent::new_QPaintEvent(const QRect&  paintRect)
-{
+{ 
 return new PythonQtShell_QPaintEvent(paintRect); }
 
 QPaintEvent* PythonQtWrapper_QPaintEvent::new_QPaintEvent(const QRegion&  paintRegion)
-{
+{ 
 return new PythonQtShell_QPaintEvent(paintRegion); }
 
 const QRect*  PythonQtWrapper_QPaintEvent::rect(QPaintEvent* theWrappedObject) const
@@ -5507,11 +5435,11 @@ const QRegion*  PythonQtWrapper_QPaintEvent::region(QPaintEvent* theWrappedObjec
 
 
 QPainter* PythonQtWrapper_QPainter::new_QPainter()
-{
+{ 
 return new QPainter(); }
 
 QPainter* PythonQtWrapper_QPainter::new_QPainter(QPaintDevice*  arg__1)
-{
+{ 
 return new QPainter(arg__1); }
 
 const QBrush*  PythonQtWrapper_QPainter::background(QPainter* theWrappedObject) const
@@ -6467,15 +6395,15 @@ const QTransform*  PythonQtWrapper_QPainter::worldTransform(QPainter* theWrapped
 
 
 QPainterPath* PythonQtWrapper_QPainterPath::new_QPainterPath()
-{
+{ 
 return new QPainterPath(); }
 
 QPainterPath* PythonQtWrapper_QPainterPath::new_QPainterPath(const QPainterPath&  other)
-{
+{ 
 return new QPainterPath(other); }
 
 QPainterPath* PythonQtWrapper_QPainterPath::new_QPainterPath(const QPointF&  startPoint)
-{
+{ 
 return new QPainterPath(startPoint); }
 
 void PythonQtWrapper_QPainterPath::addEllipse(QPainterPath* theWrappedObject, const QPointF&  center, qreal  rx, qreal  ry)
@@ -6903,11 +6831,11 @@ QString PythonQtWrapper_QPainterPath::py_toString(QPainterPath* obj) {
 
 
 QPainterPathStroker* PythonQtWrapper_QPainterPathStroker::new_QPainterPathStroker()
-{
+{ 
 return new QPainterPathStroker(); }
 
 QPainterPathStroker* PythonQtWrapper_QPainterPathStroker::new_QPainterPathStroker(const QPen&  pen)
-{
+{ 
 return new QPainterPathStroker(pen); }
 
 Qt::PenCapStyle  PythonQtWrapper_QPainterPathStroker::capStyle(QPainterPathStroker* theWrappedObject) const
@@ -6997,7 +6925,7 @@ PythonQtShell_QPainterPath__Element::~PythonQtShell_QPainterPath__Element() {
   if (priv) { priv->shellClassDeleted(this); }
 }
 QPainterPath::Element* PythonQtWrapper_QPainterPath__Element::new_QPainterPath__Element()
-{
+{ 
 return new PythonQtShell_QPainterPath__Element(); }
 
 bool  PythonQtWrapper_QPainterPath__Element::isCurveTo(QPainterPath::Element* theWrappedObject) const
@@ -7037,7 +6965,7 @@ PythonQtShell_QPainter__PixmapFragment::~PythonQtShell_QPainter__PixmapFragment(
   if (priv) { priv->shellClassDeleted(this); }
 }
 QPainter::PixmapFragment* PythonQtWrapper_QPainter__PixmapFragment::new_QPainter__PixmapFragment()
-{
+{ 
 return new PythonQtShell_QPainter__PixmapFragment(); }
 
 QPainter::PixmapFragment  PythonQtWrapper_QPainter__PixmapFragment::static_QPainter__PixmapFragment_create(const QPointF&  pos, const QRectF&  sourceRect, qreal  scaleX, qreal  scaleY, qreal  rotation, qreal  opacity)
@@ -7184,7 +7112,7 @@ if (_wrapper) {
   QPanGesture::timerEvent(event0);
 }
 QPanGesture* PythonQtWrapper_QPanGesture::new_QPanGesture(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QPanGesture(parent); }
 
 const QMetaObject* PythonQtShell_QPanGesture::metaObject() const {
@@ -7660,11 +7588,11 @@ if (_wrapper) {
   QPdfWriter::timerEvent(event0);
 }
 QPdfWriter* PythonQtWrapper_QPdfWriter::new_QPdfWriter(QIODevice*  device)
-{
+{ 
 return new PythonQtShell_QPdfWriter(device); }
 
 QPdfWriter* PythonQtWrapper_QPdfWriter::new_QPdfWriter(const QString&  filename)
-{
+{ 
 return new PythonQtShell_QPdfWriter(filename); }
 
 const QMetaObject* PythonQtShell_QPdfWriter::metaObject() const {
@@ -7929,11 +7857,11 @@ if (_wrapper) {
   return QPicture::sharedPainter();
 }
 QPicture* PythonQtWrapper_QPicture::new_QPicture(const QPicture&  arg__1)
-{
+{ 
 return new PythonQtShell_QPicture(arg__1); }
 
 QPicture* PythonQtWrapper_QPicture::new_QPicture(int  formatVersion)
-{
+{ 
 return new PythonQtShell_QPicture(formatVersion); }
 
 QRect  PythonQtWrapper_QPicture::boundingRect(QPicture* theWrappedObject) const
@@ -8239,7 +8167,7 @@ if (_wrapper) {
   QPictureFormatPlugin::timerEvent(event0);
 }
 QPictureFormatPlugin* PythonQtWrapper_QPictureFormatPlugin::new_QPictureFormatPlugin(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QPictureFormatPlugin(parent); }
 
 const QMetaObject* PythonQtShell_QPictureFormatPlugin::metaObject() const {
@@ -8273,15 +8201,15 @@ bool  PythonQtWrapper_QPictureFormatPlugin::savePicture(QPictureFormatPlugin* th
 
 
 QPictureIO* PythonQtWrapper_QPictureIO::new_QPictureIO()
-{
+{ 
 return new QPictureIO(); }
 
 QPictureIO* PythonQtWrapper_QPictureIO::new_QPictureIO(QIODevice*  ioDevice, const char*  format)
-{
+{ 
 return new QPictureIO(ioDevice, format); }
 
 QPictureIO* PythonQtWrapper_QPictureIO::new_QPictureIO(const QString&  fileName, const char*  format)
-{
+{ 
 return new QPictureIO(fileName, format); }
 
 QString  PythonQtWrapper_QPictureIO::description(QPictureIO* theWrappedObject) const
@@ -8543,7 +8471,7 @@ if (_wrapper) {
   QPinchGesture::timerEvent(event0);
 }
 QPinchGesture* PythonQtWrapper_QPinchGesture::new_QPinchGesture(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QPinchGesture(parent); }
 
 const QMetaObject* PythonQtShell_QPinchGesture::metaObject() const {
@@ -8672,11 +8600,11 @@ qreal  PythonQtWrapper_QPinchGesture::totalScaleFactor(QPinchGesture* theWrapped
 
 
 QPixelFormat* PythonQtWrapper_QPixelFormat::new_QPixelFormat()
-{
+{ 
 return new QPixelFormat(); }
 
 QPixelFormat* PythonQtWrapper_QPixelFormat::new_QPixelFormat(QPixelFormat::ColorModel  colorModel, uchar  firstSize, uchar  secondSize, uchar  thirdSize, uchar  fourthSize, uchar  fifthSize, uchar  alphaSize, QPixelFormat::AlphaUsage  alphaUsage, QPixelFormat::AlphaPosition  alphaPosition, QPixelFormat::AlphaPremultiplied  premultiplied, QPixelFormat::TypeInterpretation  typeInterpretation, QPixelFormat::ByteOrder  byteOrder, uchar  subEnum)
-{
+{ 
 return new QPixelFormat(colorModel, firstSize, secondSize, thirdSize, fourthSize, fifthSize, alphaSize, alphaUsage, alphaPosition, premultiplied, typeInterpretation, byteOrder, subEnum); }
 
 QPixelFormat::AlphaPosition  PythonQtWrapper_QPixelFormat::alphaPosition(QPixelFormat* theWrappedObject) const
@@ -8806,7 +8734,7 @@ PythonQtShell_QPixmapCache::~PythonQtShell_QPixmapCache() {
   if (priv) { priv->shellClassDeleted(this); }
 }
 QPixmapCache* PythonQtWrapper_QPixmapCache::new_QPixmapCache()
-{
+{ 
 return new PythonQtShell_QPixmapCache(); }
 
 int  PythonQtWrapper_QPixmapCache::static_QPixmapCache_cacheLimit()
@@ -8824,7 +8752,17 @@ bool  PythonQtWrapper_QPixmapCache::static_QPixmapCache_find(const QPixmapCache:
   return (QPixmapCache::find(key, pixmap));
 }
 
+QPixmap*  PythonQtWrapper_QPixmapCache::static_QPixmapCache_find(const QString&  key)
+{
+  return (QPixmapCache::find(key));
+}
+
 bool  PythonQtWrapper_QPixmapCache::static_QPixmapCache_find(const QString&  key, QPixmap&  pixmap)
+{
+  return (QPixmapCache::find(key, pixmap));
+}
+
+bool  PythonQtWrapper_QPixmapCache::static_QPixmapCache_find(const QString&  key, QPixmap*  pixmap)
 {
   return (QPixmapCache::find(key, pixmap));
 }
@@ -8862,11 +8800,11 @@ void PythonQtWrapper_QPixmapCache::static_QPixmapCache_setCacheLimit(int  arg__1
 
 
 QPixmapCache::Key* PythonQtWrapper_QPixmapCache__Key::new_QPixmapCache__Key()
-{
+{ 
 return new QPixmapCache::Key(); }
 
 QPixmapCache::Key* PythonQtWrapper_QPixmapCache__Key::new_QPixmapCache__Key(const QPixmapCache::Key&  other)
-{
+{ 
 return new QPixmapCache::Key(other); }
 
 bool  PythonQtWrapper_QPixmapCache__Key::isValid(QPixmapCache::Key* theWrappedObject) const
@@ -9308,7 +9246,7 @@ if (_wrapper) {
   QPlainTextDocumentLayout::timerEvent(event0);
 }
 QPlainTextDocumentLayout* PythonQtWrapper_QPlainTextDocumentLayout::new_QPlainTextDocumentLayout(QTextDocument*  document)
-{
+{ 
 return new PythonQtShell_QPlainTextDocumentLayout(document); }
 
 const QMetaObject* PythonQtShell_QPlainTextDocumentLayout::metaObject() const {
@@ -10748,11 +10686,11 @@ if (_wrapper) {
   QPlainTextEdit::wheelEvent(e0);
 }
 QPlainTextEdit* PythonQtWrapper_QPlainTextEdit::new_QPlainTextEdit(QWidget*  parent)
-{
+{ 
 return new PythonQtShell_QPlainTextEdit(parent); }
 
 QPlainTextEdit* PythonQtWrapper_QPlainTextEdit::new_QPlainTextEdit(const QString&  text, QWidget*  parent)
-{
+{ 
 return new PythonQtShell_QPlainTextEdit(text, parent); }
 
 const QMetaObject* PythonQtShell_QPlainTextEdit::metaObject() const {
@@ -11096,6 +11034,21 @@ QTextOption::WrapMode  PythonQtWrapper_QPlainTextEdit::wordWrapMode(QPlainTextEd
 void PythonQtWrapper_QPlainTextEdit::zoomInF(QPlainTextEdit* theWrappedObject, float  range)
 {
   ( ((PythonQtPublicPromoter_QPlainTextEdit*)theWrappedObject)->promoted_zoomInF(range));
+}
+
+
+
+PythonQtShell_QPlatformSurfaceEvent::~PythonQtShell_QPlatformSurfaceEvent() {
+  PythonQtPrivate* priv = PythonQt::priv();
+  if (priv) { priv->shellClassDeleted(this); }
+}
+QPlatformSurfaceEvent* PythonQtWrapper_QPlatformSurfaceEvent::new_QPlatformSurfaceEvent(QPlatformSurfaceEvent::SurfaceEventType  surfaceEventType)
+{ 
+return new PythonQtShell_QPlatformSurfaceEvent(surfaceEventType); }
+
+QPlatformSurfaceEvent::SurfaceEventType  PythonQtWrapper_QPlatformSurfaceEvent::surfaceEventType(QPlatformSurfaceEvent* theWrappedObject) const
+{
+  return ( theWrappedObject->surfaceEventType());
 }
 
 

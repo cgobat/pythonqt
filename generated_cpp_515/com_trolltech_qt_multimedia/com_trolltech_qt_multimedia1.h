@@ -1,65 +1,71 @@
 #include <PythonQt.h>
 #include <QObject>
 #include <QVariant>
-#include <qabstractvideosurface.h>
-#include <qaction.h>
-#include <qaudiobuffer.h>
+#include <QtMultimedia/qabstractvideosurface.h>
+#include <QtMultimedia/qaudiobuffer.h>
+#include <QtMultimedia/qcamera.h>
+#include <QtMultimedia/qcamerafocus.h>
+#include <QtMultimedia/qcamerafocuscontrol.h>
+#include <QtMultimedia/qcameraimagecapture.h>
+#include <QtMultimedia/qcameraimagecapturecontrol.h>
+#include <QtMultimedia/qcameraimageprocessing.h>
+#include <QtMultimedia/qcameraimageprocessingcontrol.h>
+#include <QtMultimedia/qcamerainfo.h>
+#include <QtMultimedia/qcamerainfocontrol.h>
+#include <QtMultimedia/qcameralockscontrol.h>
+#include <QtMultimedia/qcameraviewfindersettings.h>
+#include <QtMultimedia/qcameraviewfindersettingscontrol.h>
+#include <QtMultimedia/qcamerazoomcontrol.h>
+#include <QtMultimedia/qimageencodercontrol.h>
+#include <QtMultimedia/qmediaaudioprobecontrol.h>
+#include <QtMultimedia/qmediaavailabilitycontrol.h>
+#include <QtMultimedia/qmediabindableinterface.h>
+#include <QtMultimedia/qmediacontainercontrol.h>
+#include <QtMultimedia/qmediacontent.h>
+#include <QtMultimedia/qmediacontrol.h>
+#include <QtMultimedia/qmediaencodersettings.h>
+#include <QtMultimedia/qmediagaplessplaybackcontrol.h>
+#include <QtMultimedia/qmedianetworkaccesscontrol.h>
+#include <QtMultimedia/qmediaobject.h>
+#include <QtMultimedia/qmediaplayer.h>
+#include <QtMultimedia/qmediaplayercontrol.h>
+#include <QtMultimedia/qmediaplaylist.h>
+#include <QtMultimedia/qmediaresource.h>
+#include <QtMultimedia/qmediaservice.h>
+#include <QtMultimedia/qmediatimerange.h>
+#include <QtMultimedia/qvideoframe.h>
+#include <QtMultimediaWidgets/qcameraviewfinder.h>
+#include <QtMultimediaWidgets/qgraphicsvideoitem.h>
+#include <QtMultimediaWidgets/qvideowidget.h>
+#include <QtWidgets/qaction.h>
+#include <QtWidgets/qgraphicseffect.h>
+#include <QtWidgets/qgraphicsitem.h>
+#include <QtWidgets/qgraphicsproxywidget.h>
+#include <QtWidgets/qgraphicsscene.h>
+#include <QtWidgets/qgraphicssceneevent.h>
+#include <QtWidgets/qgraphicstransform.h>
+#include <QtWidgets/qgraphicswidget.h>
+#include <QtWidgets/qlayout.h>
+#include <QtWidgets/qsizepolicy.h>
+#include <QtWidgets/qstyle.h>
+#include <QtWidgets/qstyleoption.h>
+#include <QtWidgets/qwidget.h>
 #include <qbackingstore.h>
 #include <qbitmap.h>
 #include <qbytearray.h>
-#include <qcamera.h>
-#include <qcamerafocus.h>
-#include <qcamerafocuscontrol.h>
-#include <qcameraimagecapture.h>
-#include <qcameraimagecapturecontrol.h>
-#include <qcameraimageprocessing.h>
-#include <qcameraimageprocessingcontrol.h>
-#include <qcamerainfo.h>
-#include <qcamerainfocontrol.h>
-#include <qcameralockscontrol.h>
-#include <qcameraviewfinder.h>
-#include <qcameraviewfindersettings.h>
-#include <qcameraviewfindersettingscontrol.h>
-#include <qcamerazoomcontrol.h>
 #include <qcoreevent.h>
 #include <qcursor.h>
 #include <qevent.h>
 #include <qfont.h>
 #include <qfontinfo.h>
 #include <qfontmetrics.h>
-#include <qgraphicseffect.h>
-#include <qgraphicsitem.h>
-#include <qgraphicsproxywidget.h>
-#include <qgraphicsscene.h>
-#include <qgraphicssceneevent.h>
-#include <qgraphicstransform.h>
-#include <qgraphicsvideoitem.h>
-#include <qgraphicswidget.h>
 #include <qicon.h>
 #include <qimage.h>
-#include <qimageencodercontrol.h>
 #include <qiodevice.h>
 #include <qkeysequence.h>
-#include <qlayout.h>
 #include <qlist.h>
 #include <qlocale.h>
 #include <qmargins.h>
-#include <qmediaaudioprobecontrol.h>
-#include <qmediaavailabilitycontrol.h>
-#include <qmediabindableinterface.h>
-#include <qmediacontainercontrol.h>
-#include <qmediacontent.h>
-#include <qmediacontrol.h>
-#include <qmediaencodersettings.h>
-#include <qmediagaplessplaybackcontrol.h>
-#include <qmedianetworkaccesscontrol.h>
-#include <qmediaobject.h>
-#include <qmediaplayer.h>
-#include <qmediaplayercontrol.h>
-#include <qmediaplaylist.h>
-#include <qmediaresource.h>
-#include <qmediaservice.h>
-#include <qmediatimerange.h>
 #include <qmetaobject.h>
 #include <qnetworkconfiguration.h>
 #include <qnetworkrequest.h>
@@ -76,17 +82,11 @@
 #include <qregion.h>
 #include <qscreen.h>
 #include <qsize.h>
-#include <qsizepolicy.h>
 #include <qstringlist.h>
-#include <qstyle.h>
-#include <qstyleoption.h>
 #include <qthread.h>
 #include <qtransform.h>
 #include <qurl.h>
 #include <qvector.h>
-#include <qvideoframe.h>
-#include <qvideowidget.h>
-#include <qwidget.h>
 #include <qwindow.h>
 
 
@@ -99,7 +99,7 @@ Q_FLAGS(FocusModes )
 enum FocusMode{
   ManualFocus = QCameraFocus::ManualFocus,   HyperfocalFocus = QCameraFocus::HyperfocalFocus,   InfinityFocus = QCameraFocus::InfinityFocus,   AutoFocus = QCameraFocus::AutoFocus,   ContinuousFocus = QCameraFocus::ContinuousFocus,   MacroFocus = QCameraFocus::MacroFocus};
 Q_DECLARE_FLAGS(FocusModes, FocusMode)
-public slots:
+public Q_SLOTS:
    QPointF  customFocusPoint(QCameraFocus* theWrappedObject) const;
    qreal  digitalZoom(QCameraFocus* theWrappedObject) const;
    QCameraFocus::FocusModes  focusMode(QCameraFocus* theWrappedObject) const;
@@ -164,7 +164,7 @@ inline void py_q_setFocusPointMode(QCameraFocus::FocusPointMode  mode) { this->s
 class PythonQtWrapper_QCameraFocusControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QCameraFocusControl* new_QCameraFocusControl(QObject*  parent = nullptr);
 void delete_QCameraFocusControl(QCameraFocusControl* obj) { delete obj; }
    QPointF  customFocusPoint(QCameraFocusControl* theWrappedObject) const;
@@ -197,7 +197,7 @@ public:
 Q_ENUMS(FocusZoneStatus )
 enum FocusZoneStatus{
   Invalid = QCameraFocusZone::Invalid,   Unused = QCameraFocusZone::Unused,   Selected = QCameraFocusZone::Selected,   Focused = QCameraFocusZone::Focused};
-public slots:
+public Q_SLOTS:
 QCameraFocusZone* new_QCameraFocusZone();
 QCameraFocusZone* new_QCameraFocusZone(const QCameraFocusZone&  other);
 QCameraFocusZone* new_QCameraFocusZone(const QRectF&  area, QCameraFocusZone::FocusZoneStatus  status = QCameraFocusZone::Selected);
@@ -253,7 +253,7 @@ enum CaptureDestination{
 enum DriveMode{
   SingleImageCapture = QCameraImageCapture::SingleImageCapture};
 Q_DECLARE_FLAGS(CaptureDestinations, CaptureDestination)
-public slots:
+public Q_SLOTS:
 QCameraImageCapture* new_QCameraImageCapture(QMediaObject*  mediaObject, QObject*  parent = nullptr);
 void delete_QCameraImageCapture(QCameraImageCapture* obj) { delete obj; }
    QMultimedia::AvailabilityStatus  availability(QCameraImageCapture* theWrappedObject) const;
@@ -315,7 +315,7 @@ inline void py_q_setDriveMode(QCameraImageCapture::DriveMode  mode) { this->setD
 class PythonQtWrapper_QCameraImageCaptureControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QCameraImageCaptureControl* new_QCameraImageCaptureControl(QObject*  parent = nullptr);
 void delete_QCameraImageCaptureControl(QCameraImageCaptureControl* obj) { delete obj; }
    void cancelCapture(QCameraImageCaptureControl* theWrappedObject);
@@ -337,7 +337,7 @@ void delete_QCameraImageCaptureControl(QCameraImageCaptureControl* obj) { delete
 class PythonQtWrapper_QCameraImageProcessing : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
    qreal  brightness(QCameraImageProcessing* theWrappedObject) const;
    QCameraImageProcessing::ColorFilter  colorFilter(QCameraImageProcessing* theWrappedObject) const;
    qreal  contrast(QCameraImageProcessing* theWrappedObject) const;
@@ -396,7 +396,7 @@ inline void py_q_setParameter(QCameraImageProcessingControl::ProcessingParameter
 class PythonQtWrapper_QCameraImageProcessingControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QCameraImageProcessingControl* new_QCameraImageProcessingControl(QObject*  parent = nullptr);
 void delete_QCameraImageProcessingControl(QCameraImageProcessingControl* obj) { delete obj; }
    bool  isParameterSupported(QCameraImageProcessingControl* theWrappedObject, QCameraImageProcessingControl::ProcessingParameter  arg__1) const;
@@ -416,7 +416,7 @@ void delete_QCameraImageProcessingControl(QCameraImageProcessingControl* obj) { 
 class PythonQtWrapper_QCameraInfo : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QCameraInfo* new_QCameraInfo(const QByteArray&  name = QByteArray());
 QCameraInfo* new_QCameraInfo(const QCamera&  camera);
 QCameraInfo* new_QCameraInfo(const QCameraInfo&  other);
@@ -468,7 +468,7 @@ inline QCamera::Position  py_q_cameraPosition(const QString&  deviceName) const 
 class PythonQtWrapper_QCameraInfoControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QCameraInfoControl* new_QCameraInfoControl(QObject*  parent = nullptr);
 void delete_QCameraInfoControl(QCameraInfoControl* obj) { delete obj; }
    int  cameraOrientation(QCameraInfoControl* theWrappedObject, const QString&  deviceName) const;
@@ -514,7 +514,7 @@ inline void py_q_unlock(QCamera::LockTypes  locks) { this->unlock(locks); }
 class PythonQtWrapper_QCameraLocksControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QCameraLocksControl* new_QCameraLocksControl(QObject*  parent = nullptr);
 void delete_QCameraLocksControl(QCameraLocksControl* obj) { delete obj; }
    QCamera::LockStatus  lockStatus(QCameraLocksControl* theWrappedObject, QCamera::LockType  lock) const;
@@ -601,7 +601,7 @@ inline bool  py_q_setMediaObject(QMediaObject*  object) { return QCameraViewfind
 class PythonQtWrapper_QCameraViewfinder : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QCameraViewfinder* new_QCameraViewfinder(QWidget*  parent = nullptr);
 void delete_QCameraViewfinder(QCameraViewfinder* obj) { delete obj; }
    QMediaObject*  py_q_mediaObject(QCameraViewfinder* theWrappedObject) const{  return (((PythonQtPublicPromoter_QCameraViewfinder*)theWrappedObject)->py_q_mediaObject());}
@@ -615,7 +615,7 @@ void delete_QCameraViewfinder(QCameraViewfinder* obj) { delete obj; }
 class PythonQtWrapper_QCameraViewfinderSettings : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QCameraViewfinderSettings* new_QCameraViewfinderSettings();
 QCameraViewfinderSettings* new_QCameraViewfinderSettings(const QCameraViewfinderSettings&  other);
 void delete_QCameraViewfinderSettings(QCameraViewfinderSettings* obj) { delete obj; }
@@ -624,6 +624,7 @@ void delete_QCameraViewfinderSettings(QCameraViewfinderSettings* obj) { delete o
    qreal  minimumFrameRate(QCameraViewfinderSettings* theWrappedObject) const;
    bool  __ne__(QCameraViewfinderSettings* theWrappedObject, const QCameraViewfinderSettings&  rhs);
    QCameraViewfinderSettings*  operator_assign(QCameraViewfinderSettings* theWrappedObject, const QCameraViewfinderSettings&  other);
+   bool  __eq__(QCameraViewfinderSettings* theWrappedObject, const QCameraViewfinderSettings&  rhs);
    QSize  pixelAspectRatio(QCameraViewfinderSettings* theWrappedObject) const;
    QVideoFrame::PixelFormat  pixelFormat(QCameraViewfinderSettings* theWrappedObject) const;
    QSize  resolution(QCameraViewfinderSettings* theWrappedObject) const;
@@ -676,7 +677,7 @@ public:
 Q_ENUMS(ViewfinderParameter )
 enum ViewfinderParameter{
   Resolution = QCameraViewfinderSettingsControl::Resolution,   PixelAspectRatio = QCameraViewfinderSettingsControl::PixelAspectRatio,   MinimumFrameRate = QCameraViewfinderSettingsControl::MinimumFrameRate,   MaximumFrameRate = QCameraViewfinderSettingsControl::MaximumFrameRate,   PixelFormat = QCameraViewfinderSettingsControl::PixelFormat,   UserParameter = QCameraViewfinderSettingsControl::UserParameter};
-public slots:
+public Q_SLOTS:
 QCameraViewfinderSettingsControl* new_QCameraViewfinderSettingsControl(QObject*  parent = nullptr);
 void delete_QCameraViewfinderSettingsControl(QCameraViewfinderSettingsControl* obj) { delete obj; }
    bool  isViewfinderParameterSupported(QCameraViewfinderSettingsControl* theWrappedObject, QCameraViewfinderSettingsControl::ViewfinderParameter  parameter) const;
@@ -722,7 +723,7 @@ inline QCameraViewfinderSettings  py_q_viewfinderSettings() const { return this-
 class PythonQtWrapper_QCameraViewfinderSettingsControl2 : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QCameraViewfinderSettingsControl2* new_QCameraViewfinderSettingsControl2(QObject*  parent = nullptr);
 void delete_QCameraViewfinderSettingsControl2(QCameraViewfinderSettingsControl2* obj) { delete obj; }
    void setViewfinderSettings(QCameraViewfinderSettingsControl2* theWrappedObject, const QCameraViewfinderSettings&  settings);
@@ -776,7 +777,7 @@ inline void py_q_zoomTo(qreal  optical, qreal  digital) { this->zoomTo(optical, 
 class PythonQtWrapper_QCameraZoomControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QCameraZoomControl* new_QCameraZoomControl(QObject*  parent = nullptr);
 void delete_QCameraZoomControl(QCameraZoomControl* obj) { delete obj; }
    qreal  currentDigitalZoom(QCameraZoomControl* theWrappedObject) const;
@@ -814,7 +815,7 @@ public:
 class PythonQtWrapper_QCamera__FrameRateRange : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QCamera::FrameRateRange* new_QCamera__FrameRateRange();
 QCamera::FrameRateRange* new_QCamera__FrameRateRange(qreal  minimum, qreal  maximum);
 void delete_QCamera__FrameRateRange(QCamera::FrameRateRange* obj) { delete obj; }
@@ -901,7 +902,7 @@ inline void py_q_timerEvent(QTimerEvent*  event) { QGraphicsVideoItem::timerEven
 class PythonQtWrapper_QGraphicsVideoItem : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QGraphicsVideoItem* new_QGraphicsVideoItem(QGraphicsItem*  parent = nullptr);
 void delete_QGraphicsVideoItem(QGraphicsVideoItem* obj) { delete obj; }
    Qt::AspectRatioMode  aspectRatioMode(QGraphicsVideoItem* theWrappedObject) const;
@@ -959,7 +960,7 @@ inline QList<QSize >  py_q_supportedResolutions(const QImageEncoderSettings&  se
 class PythonQtWrapper_QImageEncoderControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QImageEncoderControl* new_QImageEncoderControl(QObject*  parent = nullptr);
 void delete_QImageEncoderControl(QImageEncoderControl* obj) { delete obj; }
    QString  imageCodecDescription(QImageEncoderControl* theWrappedObject, const QString&  codec) const;
@@ -981,7 +982,7 @@ void delete_QImageEncoderControl(QImageEncoderControl* obj) { delete obj; }
 class PythonQtWrapper_QImageEncoderSettings : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QImageEncoderSettings* new_QImageEncoderSettings();
 QImageEncoderSettings* new_QImageEncoderSettings(const QImageEncoderSettings&  other);
 void delete_QImageEncoderSettings(QImageEncoderSettings* obj) { delete obj; }
@@ -1028,7 +1029,7 @@ void timerEvent(QTimerEvent*  event) override;
 class PythonQtWrapper_QMediaAudioProbeControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QMediaAudioProbeControl* new_QMediaAudioProbeControl(QObject*  parent = nullptr);
 void delete_QMediaAudioProbeControl(QMediaAudioProbeControl* obj) { delete obj; }
 };
@@ -1064,7 +1065,7 @@ inline QMultimedia::AvailabilityStatus  py_q_availability() const { return this-
 class PythonQtWrapper_QMediaAvailabilityControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QMediaAvailabilityControl* new_QMediaAvailabilityControl(QObject*  parent = nullptr);
 void delete_QMediaAvailabilityControl(QMediaAvailabilityControl* obj) { delete obj; }
    QMultimedia::AvailabilityStatus  availability(QMediaAvailabilityControl* theWrappedObject) const;
@@ -1098,7 +1099,7 @@ inline bool  py_q_setMediaObject(QMediaObject*  object) { return this->setMediaO
 class PythonQtWrapper_QMediaBindableInterface : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QMediaBindableInterface* new_QMediaBindableInterface();
 void delete_QMediaBindableInterface(QMediaBindableInterface* obj) { delete obj; }
    QMediaObject*  mediaObject(QMediaBindableInterface* theWrappedObject) const;
@@ -1144,7 +1145,7 @@ inline QStringList  py_q_supportedContainers() const { return this->supportedCon
 class PythonQtWrapper_QMediaContainerControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QMediaContainerControl* new_QMediaContainerControl(QObject*  parent = nullptr);
 void delete_QMediaContainerControl(QMediaContainerControl* obj) { delete obj; }
    QString  containerDescription(QMediaContainerControl* theWrappedObject, const QString&  formatMimeType) const;
@@ -1164,7 +1165,7 @@ void delete_QMediaContainerControl(QMediaContainerControl* obj) { delete obj; }
 class PythonQtWrapper_QMediaContent : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QMediaContent* new_QMediaContent();
 QMediaContent* new_QMediaContent(QMediaPlaylist*  playlist, const QUrl&  contentUrl = QUrl(), bool  takeOwnership = false);
 QMediaContent* new_QMediaContent(const QList<QMediaResource >&  resources);
@@ -1211,7 +1212,7 @@ void timerEvent(QTimerEvent*  event) override;
 class PythonQtWrapper_QMediaControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QMediaControl* new_QMediaControl(QObject*  parent = nullptr);
 void delete_QMediaControl(QMediaControl* obj) { delete obj; }
 };
@@ -1255,7 +1256,7 @@ inline void py_q_setNextMedia(const QMediaContent&  media) { this->setNextMedia(
 class PythonQtWrapper_QMediaGaplessPlaybackControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QMediaGaplessPlaybackControl* new_QMediaGaplessPlaybackControl(QObject*  parent = nullptr);
 void delete_QMediaGaplessPlaybackControl(QMediaGaplessPlaybackControl* obj) { delete obj; }
    qreal  crossfadeTime(QMediaGaplessPlaybackControl* theWrappedObject) const;
@@ -1303,7 +1304,7 @@ inline void py_q_setConfigurations(const QList<QNetworkConfiguration >&  configu
 class PythonQtWrapper_QMediaNetworkAccessControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QMediaNetworkAccessControl* new_QMediaNetworkAccessControl(QObject*  parent = nullptr);
 void delete_QMediaNetworkAccessControl(QMediaNetworkAccessControl* obj) { delete obj; }
    QNetworkConfiguration  currentConfiguration(QMediaNetworkAccessControl* theWrappedObject) const;
@@ -1353,7 +1354,7 @@ inline void py_q_unbind(QObject*  arg__1) { QMediaObject::unbind(arg__1); }
 class PythonQtWrapper_QMediaObject : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QMediaObject* new_QMediaObject(QObject*  parent, QMediaService*  service);
 void delete_QMediaObject(QMediaObject* obj) { delete obj; }
    void addPropertyWatch(QMediaObject* theWrappedObject, const QByteArray&  name);
@@ -1417,7 +1418,7 @@ Q_FLAGS(Flags )
 enum Flag{
   LowLatency = QMediaPlayer::LowLatency,   StreamPlayback = QMediaPlayer::StreamPlayback,   VideoSurface = QMediaPlayer::VideoSurface};
 Q_DECLARE_FLAGS(Flags, Flag)
-public slots:
+public Q_SLOTS:
 QMediaPlayer* new_QMediaPlayer(QObject*  parent = nullptr, QMediaPlayer::Flags  flags = QMediaPlayer::Flags());
 void delete_QMediaPlayer(QMediaPlayer* obj) { delete obj; }
    QAudio::Role  audioRole(QMediaPlayer* theWrappedObject) const;
@@ -1528,7 +1529,7 @@ inline int  py_q_volume() const { return this->volume(); }
 class PythonQtWrapper_QMediaPlayerControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QMediaPlayerControl* new_QMediaPlayerControl(QObject*  parent = nullptr);
 void delete_QMediaPlayerControl(QMediaPlayerControl* obj) { delete obj; }
    QMediaTimeRange  availablePlaybackRanges(QMediaPlayerControl* theWrappedObject) const;

@@ -9,6 +9,18 @@
 #include <QSqlRecord>
 #include <QStringList>
 #include <QVariant>
+#include <QtSql/qsqldatabase.h>
+#include <QtSql/qsqldriver.h>
+#include <QtSql/qsqlerror.h>
+#include <QtSql/qsqlfield.h>
+#include <QtSql/qsqlindex.h>
+#include <QtSql/qsqlquery.h>
+#include <QtSql/qsqlquerymodel.h>
+#include <QtSql/qsqlrecord.h>
+#include <QtSql/qsqlrelationaltablemodel.h>
+#include <QtSql/qsqlresult.h>
+#include <QtSql/qsqltablemodel.h>
+#include <QtSql/qtsqlglobal.h>
 #include <qabstractitemmodel.h>
 #include <qbytearray.h>
 #include <qcoreevent.h>
@@ -19,20 +31,8 @@
 #include <qobject.h>
 #include <qsize.h>
 #include <qsql.h>
-#include <qsqldatabase.h>
-#include <qsqldriver.h>
-#include <qsqlerror.h>
-#include <qsqlfield.h>
-#include <qsqlindex.h>
-#include <qsqlquery.h>
-#include <qsqlquerymodel.h>
-#include <qsqlrecord.h>
-#include <qsqlrelationaltablemodel.h>
-#include <qsqlresult.h>
-#include <qsqltablemodel.h>
 #include <qstringlist.h>
 #include <qthread.h>
-#include <qtsqlglobal.h>
 #include <qvector.h>
 
 
@@ -51,7 +51,7 @@ enum ParamTypeFlag{
 enum TableType{
   Tables = QSql::Tables,   SystemTables = QSql::SystemTables,   Views = QSql::Views,   AllTables = QSql::AllTables};
 Q_DECLARE_FLAGS(ParamType, ParamTypeFlag)
-public slots:
+public Q_SLOTS:
 };
 
 
@@ -75,7 +75,7 @@ public:
 class PythonQtWrapper_QSqlDatabase : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSqlDatabase* new_QSqlDatabase();
 QSqlDatabase* new_QSqlDatabase(QSqlDriver*  driver);
 QSqlDatabase* new_QSqlDatabase(const QSqlDatabase&  other);
@@ -218,7 +218,7 @@ enum NotificationSource{
   UnknownSource = QSqlDriver::UnknownSource,   SelfSource = QSqlDriver::SelfSource,   OtherSource = QSqlDriver::OtherSource};
 enum StatementType{
   WhereStatement = QSqlDriver::WhereStatement,   SelectStatement = QSqlDriver::SelectStatement,   UpdateStatement = QSqlDriver::UpdateStatement,   InsertStatement = QSqlDriver::InsertStatement,   DeleteStatement = QSqlDriver::DeleteStatement};
-public slots:
+public Q_SLOTS:
 QSqlDriver* new_QSqlDriver(QObject*  parent = nullptr);
 void delete_QSqlDriver(QSqlDriver* obj) { delete obj; }
    bool  beginTransaction(QSqlDriver* theWrappedObject);
@@ -299,7 +299,7 @@ inline QSqlDriver*  py_q_createObject() const { return this->createObject(); }
 class PythonQtWrapper_QSqlDriverCreatorBase : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSqlDriverCreatorBase* new_QSqlDriverCreatorBase();
 void delete_QSqlDriverCreatorBase(QSqlDriverCreatorBase* obj) { delete obj; }
    QSqlDriver*  createObject(QSqlDriverCreatorBase* theWrappedObject) const;
@@ -316,7 +316,7 @@ public:
 Q_ENUMS(ErrorType )
 enum ErrorType{
   NoError = QSqlError::NoError,   ConnectionError = QSqlError::ConnectionError,   StatementError = QSqlError::StatementError,   TransactionError = QSqlError::TransactionError,   UnknownError = QSqlError::UnknownError};
-public slots:
+public Q_SLOTS:
 QSqlError* new_QSqlError(const QSqlError&  other);
 QSqlError* new_QSqlError(const QString&  driverText = QString(), const QString&  databaseText = QString(), QSqlError::ErrorType  type = QSqlError::NoError, const QString&  errorCode = QString());
 QSqlError* new_QSqlError(const QString&  driverText, const QString&  databaseText, QSqlError::ErrorType  type, int  number);
@@ -349,7 +349,7 @@ public:
 Q_ENUMS(RequiredStatus )
 enum RequiredStatus{
   Unknown = QSqlField::Unknown,   Optional = QSqlField::Optional,   Required = QSqlField::Required};
-public slots:
+public Q_SLOTS:
 QSqlField* new_QSqlField(const QSqlField&  other);
 QSqlField* new_QSqlField(const QString&  fieldName = QString(), QVariant::Type  type = {});
 QSqlField* new_QSqlField(const QString&  fieldName, QVariant::Type  type, const QString&  tableName);
@@ -395,7 +395,7 @@ void delete_QSqlField(QSqlField* obj) { delete obj; }
 class PythonQtWrapper_QSqlIndex : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSqlIndex* new_QSqlIndex(const QSqlIndex&  other);
 QSqlIndex* new_QSqlIndex(const QString&  cursorName = QString(), const QString&  name = QString());
 void delete_QSqlIndex(QSqlIndex* obj) { delete obj; }
@@ -420,7 +420,7 @@ public:
 Q_ENUMS(BatchExecutionMode )
 enum BatchExecutionMode{
   ValuesAsRows = QSqlQuery::ValuesAsRows,   ValuesAsColumns = QSqlQuery::ValuesAsColumns};
-public slots:
+public Q_SLOTS:
 QSqlQuery* new_QSqlQuery(QSqlDatabase  db);
 QSqlQuery* new_QSqlQuery(QSqlResult*  r);
 QSqlQuery* new_QSqlQuery(const QSqlQuery&  other);
@@ -558,7 +558,7 @@ inline bool  py_q_setHeaderData(int  section, Qt::Orientation  orientation, cons
 class PythonQtWrapper_QSqlQueryModel : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSqlQueryModel* new_QSqlQueryModel(QObject*  parent = nullptr);
 void delete_QSqlQueryModel(QSqlQueryModel* obj) { delete obj; }
    void beginInsertColumns(QSqlQueryModel* theWrappedObject, const QModelIndex&  parent, int  first, int  last);
@@ -603,7 +603,7 @@ void delete_QSqlQueryModel(QSqlQueryModel* obj) { delete obj; }
 class PythonQtWrapper_QSqlRecord : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSqlRecord* new_QSqlRecord();
 QSqlRecord* new_QSqlRecord(const QSqlRecord&  other);
 void delete_QSqlRecord(QSqlRecord* obj) { delete obj; }
@@ -646,7 +646,7 @@ void delete_QSqlRecord(QSqlRecord* obj) { delete obj; }
 class PythonQtWrapper_QSqlRelation : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSqlRelation* new_QSqlRelation();
 QSqlRelation* new_QSqlRelation(const QString&  aTableName, const QString&  indexCol, const QString&  displayCol);
 QSqlRelation* new_QSqlRelation(const QSqlRelation& other) {
@@ -760,7 +760,7 @@ public:
 Q_ENUMS(JoinMode )
 enum JoinMode{
   InnerJoin = QSqlRelationalTableModel::InnerJoin,   LeftJoin = QSqlRelationalTableModel::LeftJoin};
-public slots:
+public Q_SLOTS:
 QSqlRelationalTableModel* new_QSqlRelationalTableModel(QObject*  parent = nullptr, QSqlDatabase  db = QSqlDatabase());
 void delete_QSqlRelationalTableModel(QSqlRelationalTableModel* obj) { delete obj; }
    void py_q_clear(QSqlRelationalTableModel* theWrappedObject){  (((PythonQtPublicPromoter_QSqlRelationalTableModel*)theWrappedObject)->py_q_clear());}
@@ -918,7 +918,7 @@ enum BindingSyntax{
   PositionalBinding = PythonQtPublicPromoter_QSqlResult::PositionalBinding,   NamedBinding = PythonQtPublicPromoter_QSqlResult::NamedBinding};
 enum VirtualHookOperation{
 };
-public slots:
+public Q_SLOTS:
 QSqlResult* new_QSqlResult(const QSqlDriver*  db);
 void delete_QSqlResult(QSqlResult* obj) { delete obj; }
    void addBindValue(QSqlResult* theWrappedObject, const QVariant&  val, QSql::ParamType  type);
@@ -1114,7 +1114,7 @@ public:
 Q_ENUMS(EditStrategy )
 enum EditStrategy{
   OnFieldChange = QSqlTableModel::OnFieldChange,   OnRowChange = QSqlTableModel::OnRowChange,   OnManualSubmit = QSqlTableModel::OnManualSubmit};
-public slots:
+public Q_SLOTS:
 QSqlTableModel* new_QSqlTableModel(QObject*  parent = nullptr, QSqlDatabase  db = QSqlDatabase());
 void delete_QSqlTableModel(QSqlTableModel* obj) { delete obj; }
    void py_q_clear(QSqlTableModel* theWrappedObject){  (((PythonQtPublicPromoter_QSqlTableModel*)theWrappedObject)->py_q_clear());}

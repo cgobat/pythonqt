@@ -54,7 +54,7 @@ enum InterfaceFlag{
 enum InterfaceType{
   Loopback = QNetworkInterface::Loopback,   Virtual = QNetworkInterface::Virtual,   Ethernet = QNetworkInterface::Ethernet,   Slip = QNetworkInterface::Slip,   CanBus = QNetworkInterface::CanBus,   Ppp = QNetworkInterface::Ppp,   Fddi = QNetworkInterface::Fddi,   Wifi = QNetworkInterface::Wifi,   Ieee80211 = QNetworkInterface::Ieee80211,   Phonet = QNetworkInterface::Phonet,   Ieee802154 = QNetworkInterface::Ieee802154,   SixLoWPAN = QNetworkInterface::SixLoWPAN,   Ieee80216 = QNetworkInterface::Ieee80216,   Ieee1394 = QNetworkInterface::Ieee1394,   Unknown = QNetworkInterface::Unknown};
 Q_DECLARE_FLAGS(InterfaceFlags, InterfaceFlag)
-public slots:
+public Q_SLOTS:
 QNetworkInterface* new_QNetworkInterface();
 QNetworkInterface* new_QNetworkInterface(const QNetworkInterface&  other);
 void delete_QNetworkInterface(QNetworkInterface* obj) { delete obj; }
@@ -92,7 +92,7 @@ enum Capability{
 enum ProxyType{
   DefaultProxy = QNetworkProxy::DefaultProxy,   Socks5Proxy = QNetworkProxy::Socks5Proxy,   NoProxy = QNetworkProxy::NoProxy,   HttpProxy = QNetworkProxy::HttpProxy,   HttpCachingProxy = QNetworkProxy::HttpCachingProxy,   FtpCachingProxy = QNetworkProxy::FtpCachingProxy};
 Q_DECLARE_FLAGS(Capabilities, Capability)
-public slots:
+public Q_SLOTS:
 QNetworkProxy* new_QNetworkProxy();
 QNetworkProxy* new_QNetworkProxy(QNetworkProxy::ProxyType  type, const QString&  hostName = QString(), unsigned short  port = 0, const QString&  user = QString(), const QString&  password = QString());
 QNetworkProxy* new_QNetworkProxy(const QNetworkProxy&  other);
@@ -149,7 +149,7 @@ inline QList<QNetworkProxy >  py_q_queryProxy(const QNetworkProxyQuery&  query =
 class PythonQtWrapper_QNetworkProxyFactory : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QNetworkProxyFactory* new_QNetworkProxyFactory();
 void delete_QNetworkProxyFactory(QNetworkProxyFactory* obj) { delete obj; }
    QList<QNetworkProxy >  static_QNetworkProxyFactory_proxyForQuery(const QNetworkProxyQuery&  query);
@@ -171,7 +171,7 @@ public:
 Q_ENUMS(QueryType )
 enum QueryType{
   TcpSocket = QNetworkProxyQuery::TcpSocket,   UdpSocket = QNetworkProxyQuery::UdpSocket,   SctpSocket = QNetworkProxyQuery::SctpSocket,   TcpServer = QNetworkProxyQuery::TcpServer,   UrlRequest = QNetworkProxyQuery::UrlRequest,   SctpServer = QNetworkProxyQuery::SctpServer};
-public slots:
+public Q_SLOTS:
 QNetworkProxyQuery* new_QNetworkProxyQuery();
 QNetworkProxyQuery* new_QNetworkProxyQuery(const QNetworkConfiguration&  networkConfiguration, const QString&  hostname, int  port, const QString&  protocolTag = QString(), QNetworkProxyQuery::QueryType  queryType = QNetworkProxyQuery::TcpSocket);
 QNetworkProxyQuery* new_QNetworkProxyQuery(const QNetworkConfiguration&  networkConfiguration, const QUrl&  requestUrl, QNetworkProxyQuery::QueryType  queryType = QNetworkProxyQuery::UrlRequest);
@@ -273,7 +273,7 @@ inline qint64  py_q_writeData(const char*  data, qint64  len) { return QNetworkR
 class PythonQtWrapper_QNetworkReply : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QNetworkReply* new_QNetworkReply(QObject*  parent = nullptr);
 void delete_QNetworkReply(QNetworkReply* obj) { delete obj; }
    void py_q_abort(QNetworkReply* theWrappedObject){  (((PythonQtPublicPromoter_QNetworkReply*)theWrappedObject)->py_q_abort());}
@@ -337,7 +337,7 @@ enum RedirectPolicy{
   ManualRedirectPolicy = QNetworkRequest::ManualRedirectPolicy,   NoLessSafeRedirectPolicy = QNetworkRequest::NoLessSafeRedirectPolicy,   SameOriginRedirectPolicy = QNetworkRequest::SameOriginRedirectPolicy,   UserVerifiedRedirectPolicy = QNetworkRequest::UserVerifiedRedirectPolicy};
 enum TransferTimeoutConstant{
   DefaultTransferTimeoutConstant = QNetworkRequest::DefaultTransferTimeoutConstant};
-public slots:
+public Q_SLOTS:
 QNetworkRequest* new_QNetworkRequest();
 QNetworkRequest* new_QNetworkRequest(const QNetworkRequest&  other);
 QNetworkRequest* new_QNetworkRequest(const QUrl&  url);
@@ -415,7 +415,7 @@ enum State{
 enum UsagePolicy{
   NoPolicy = QNetworkSession::NoPolicy,   NoBackgroundTrafficPolicy = QNetworkSession::NoBackgroundTrafficPolicy};
 Q_DECLARE_FLAGS(UsagePolicies, UsagePolicy)
-public slots:
+public Q_SLOTS:
 QNetworkSession* new_QNetworkSession(const QNetworkConfiguration&  connConfig, QObject*  parent = nullptr);
 void delete_QNetworkSession(QNetworkSession* obj) { delete obj; }
    quint64  activeTime(QNetworkSession* theWrappedObject) const;
@@ -444,13 +444,14 @@ void delete_QNetworkSession(QNetworkSession* obj) { delete obj; }
 class PythonQtWrapper_QOcspResponse : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QOcspResponse* new_QOcspResponse();
 QOcspResponse* new_QOcspResponse(const QOcspResponse&  other);
 void delete_QOcspResponse(QOcspResponse* obj) { delete obj; }
    QOcspCertificateStatus  certificateStatus(QOcspResponse* theWrappedObject) const;
    bool  __ne__(QOcspResponse* theWrappedObject, const QOcspResponse&  rhs);
    QOcspResponse*  operator_assign(QOcspResponse* theWrappedObject, const QOcspResponse&  other);
+   bool  __eq__(QOcspResponse* theWrappedObject, const QOcspResponse&  rhs);
    QSslCertificate  responder(QOcspResponse* theWrappedObject) const;
    QOcspRevocationReason  revocationReason(QOcspResponse* theWrappedObject) const;
    QSslCertificate  subject(QOcspResponse* theWrappedObject) const;
@@ -480,7 +481,7 @@ enum SslOption{
 enum SslProtocol{
   SslV3 = QSsl::SslV3,   SslV2 = QSsl::SslV2,   TlsV1_0 = QSsl::TlsV1_0,   TlsV1_1 = QSsl::TlsV1_1,   TlsV1_2 = QSsl::TlsV1_2,   AnyProtocol = QSsl::AnyProtocol,   TlsV1SslV3 = QSsl::TlsV1SslV3,   SecureProtocols = QSsl::SecureProtocols,   TlsV1_0OrLater = QSsl::TlsV1_0OrLater,   TlsV1_1OrLater = QSsl::TlsV1_1OrLater,   TlsV1_2OrLater = QSsl::TlsV1_2OrLater,   DtlsV1_0 = QSsl::DtlsV1_0,   DtlsV1_0OrLater = QSsl::DtlsV1_0OrLater,   DtlsV1_2 = QSsl::DtlsV1_2,   DtlsV1_2OrLater = QSsl::DtlsV1_2OrLater,   TlsV1_3 = QSsl::TlsV1_3,   TlsV1_3OrLater = QSsl::TlsV1_3OrLater,   UnknownProtocol = QSsl::UnknownProtocol};
 Q_DECLARE_FLAGS(SslOptions, SslOption)
-public slots:
+public Q_SLOTS:
 };
 
 #endif
@@ -498,7 +499,7 @@ enum class PatternSyntax{
   RegularExpression = static_cast<int>(QSslCertificate::PatternSyntax::RegularExpression),   Wildcard = static_cast<int>(QSslCertificate::PatternSyntax::Wildcard),   FixedString = static_cast<int>(QSslCertificate::PatternSyntax::FixedString)};
 enum SubjectInfo{
   Organization = QSslCertificate::Organization,   CommonName = QSslCertificate::CommonName,   LocalityName = QSslCertificate::LocalityName,   OrganizationalUnitName = QSslCertificate::OrganizationalUnitName,   CountryName = QSslCertificate::CountryName,   StateOrProvinceName = QSslCertificate::StateOrProvinceName,   DistinguishedNameQualifier = QSslCertificate::DistinguishedNameQualifier,   SerialNumber = QSslCertificate::SerialNumber,   EmailAddress = QSslCertificate::EmailAddress};
-public slots:
+public Q_SLOTS:
 QSslCertificate* new_QSslCertificate(QIODevice*  device, QSsl::EncodingFormat  format = QSsl::Pem);
 QSslCertificate* new_QSslCertificate(const QByteArray&  data = QByteArray(), QSsl::EncodingFormat  format = QSsl::Pem);
 QSslCertificate* new_QSslCertificate(const QSslCertificate&  other);
@@ -551,7 +552,7 @@ void delete_QSslCertificate(QSslCertificate* obj) { delete obj; }
 class PythonQtWrapper_QSslCertificateExtension : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSslCertificateExtension* new_QSslCertificateExtension();
 QSslCertificateExtension* new_QSslCertificateExtension(const QSslCertificateExtension&  other);
 void delete_QSslCertificateExtension(QSslCertificateExtension* obj) { delete obj; }
@@ -574,7 +575,7 @@ void delete_QSslCertificateExtension(QSslCertificateExtension* obj) { delete obj
 class PythonQtWrapper_QSslCipher : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSslCipher* new_QSslCipher();
 QSslCipher* new_QSslCipher(const QSslCipher&  other);
 QSslCipher* new_QSslCipher(const QString&  name);
@@ -622,7 +623,7 @@ public:
 Q_ENUMS(NextProtocolNegotiationStatus )
 enum NextProtocolNegotiationStatus{
   NextProtocolNegotiationNone = QSslConfiguration::NextProtocolNegotiationNone,   NextProtocolNegotiationNegotiated = QSslConfiguration::NextProtocolNegotiationNegotiated,   NextProtocolNegotiationUnsupported = QSslConfiguration::NextProtocolNegotiationUnsupported};
-public slots:
+public Q_SLOTS:
 QSslConfiguration* new_QSslConfiguration();
 QSslConfiguration* new_QSslConfiguration(const QSslConfiguration&  other);
 void delete_QSslConfiguration(QSslConfiguration* obj) { delete obj; }
@@ -660,7 +661,7 @@ void delete_QSslConfiguration(QSslConfiguration* obj) { delete obj; }
    QByteArray  sessionTicket(QSslConfiguration* theWrappedObject) const;
    int  sessionTicketLifeTimeHint(QSslConfiguration* theWrappedObject) const;
    void setAllowedNextProtocols(QSslConfiguration* theWrappedObject, QList<QByteArray >  protocols);
-   void setBackendConfiguration(QSslConfiguration* theWrappedObject, const QMap<QByteArray , QVariant >&  backendConfiguration = QMap<QByteArray, QVariant>());
+   void setBackendConfiguration(QSslConfiguration* theWrappedObject, const QMap<QByteArray , QVariant >&  backendConfiguration = QMap<QByteArray,QVariant>());
    void setBackendConfigurationOption(QSslConfiguration* theWrappedObject, const QByteArray&  name, const QVariant&  value);
    void setCaCertificates(QSslConfiguration* theWrappedObject, const QList<QSslCertificate >&  certificates);
    void setCiphers(QSslConfiguration* theWrappedObject, const QList<QSslCipher >&  ciphers);
@@ -700,7 +701,7 @@ public:
 Q_ENUMS(Error )
 enum Error{
   NoError = QSslDiffieHellmanParameters::NoError,   InvalidInputDataError = QSslDiffieHellmanParameters::InvalidInputDataError,   UnsafeParametersError = QSslDiffieHellmanParameters::UnsafeParametersError};
-public slots:
+public Q_SLOTS:
 QSslDiffieHellmanParameters* new_QSslDiffieHellmanParameters();
 QSslDiffieHellmanParameters* new_QSslDiffieHellmanParameters(const QSslDiffieHellmanParameters&  other);
 void delete_QSslDiffieHellmanParameters(QSslDiffieHellmanParameters* obj) { delete obj; }
@@ -729,7 +730,7 @@ void delete_QSslDiffieHellmanParameters(QSslDiffieHellmanParameters* obj) { dele
 class PythonQtWrapper_QSslEllipticCurve : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSslEllipticCurve* new_QSslEllipticCurve();
 void delete_QSslEllipticCurve(QSslEllipticCurve* obj) { delete obj; }
    QSslEllipticCurve  static_QSslEllipticCurve_fromLongName(const QString&  name);
@@ -757,7 +758,7 @@ public:
 Q_ENUMS(SslError )
 enum SslError{
   NoError = QSslError::NoError,   UnableToGetIssuerCertificate = QSslError::UnableToGetIssuerCertificate,   UnableToDecryptCertificateSignature = QSslError::UnableToDecryptCertificateSignature,   UnableToDecodeIssuerPublicKey = QSslError::UnableToDecodeIssuerPublicKey,   CertificateSignatureFailed = QSslError::CertificateSignatureFailed,   CertificateNotYetValid = QSslError::CertificateNotYetValid,   CertificateExpired = QSslError::CertificateExpired,   InvalidNotBeforeField = QSslError::InvalidNotBeforeField,   InvalidNotAfterField = QSslError::InvalidNotAfterField,   SelfSignedCertificate = QSslError::SelfSignedCertificate,   SelfSignedCertificateInChain = QSslError::SelfSignedCertificateInChain,   UnableToGetLocalIssuerCertificate = QSslError::UnableToGetLocalIssuerCertificate,   UnableToVerifyFirstCertificate = QSslError::UnableToVerifyFirstCertificate,   CertificateRevoked = QSslError::CertificateRevoked,   InvalidCaCertificate = QSslError::InvalidCaCertificate,   PathLengthExceeded = QSslError::PathLengthExceeded,   InvalidPurpose = QSslError::InvalidPurpose,   CertificateUntrusted = QSslError::CertificateUntrusted,   CertificateRejected = QSslError::CertificateRejected,   SubjectIssuerMismatch = QSslError::SubjectIssuerMismatch,   AuthorityIssuerSerialNumberMismatch = QSslError::AuthorityIssuerSerialNumberMismatch,   NoPeerCertificate = QSslError::NoPeerCertificate,   HostNameMismatch = QSslError::HostNameMismatch,   NoSslSupport = QSslError::NoSslSupport,   CertificateBlacklisted = QSslError::CertificateBlacklisted,   CertificateStatusUnknown = QSslError::CertificateStatusUnknown,   OcspNoResponseFound = QSslError::OcspNoResponseFound,   OcspMalformedRequest = QSslError::OcspMalformedRequest,   OcspMalformedResponse = QSslError::OcspMalformedResponse,   OcspInternalError = QSslError::OcspInternalError,   OcspTryLater = QSslError::OcspTryLater,   OcspSigRequred = QSslError::OcspSigRequred,   OcspUnauthorized = QSslError::OcspUnauthorized,   OcspResponseCannotBeTrusted = QSslError::OcspResponseCannotBeTrusted,   OcspResponseCertIdUnknown = QSslError::OcspResponseCertIdUnknown,   OcspResponseExpired = QSslError::OcspResponseExpired,   OcspStatusUnknown = QSslError::OcspStatusUnknown,   UnspecifiedError = QSslError::UnspecifiedError};
-public slots:
+public Q_SLOTS:
 QSslError* new_QSslError();
 QSslError* new_QSslError(QSslError::SslError  error);
 QSslError* new_QSslError(QSslError::SslError  error, const QSslCertificate&  certificate);
@@ -783,7 +784,7 @@ void delete_QSslError(QSslError* obj) { delete obj; }
 class PythonQtWrapper_QSslKey : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSslKey* new_QSslKey();
 QSslKey* new_QSslKey(QIODevice*  device, QSsl::KeyAlgorithm  algorithm, QSsl::EncodingFormat  format = QSsl::Pem, QSsl::KeyType  type = QSsl::PrivateKey, const QByteArray&  passPhrase = QByteArray());
 QSslKey* new_QSslKey(Qt::HANDLE  handle, QSsl::KeyType  type = QSsl::PrivateKey);
@@ -816,7 +817,7 @@ void delete_QSslKey(QSslKey* obj) { delete obj; }
 class PythonQtWrapper_QSslPreSharedKeyAuthenticator : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSslPreSharedKeyAuthenticator* new_QSslPreSharedKeyAuthenticator();
 QSslPreSharedKeyAuthenticator* new_QSslPreSharedKeyAuthenticator(const QSslPreSharedKeyAuthenticator&  authenticator);
 void delete_QSslPreSharedKeyAuthenticator(QSslPreSharedKeyAuthenticator* obj) { delete obj; }
@@ -826,6 +827,7 @@ void delete_QSslPreSharedKeyAuthenticator(QSslPreSharedKeyAuthenticator* obj) { 
    int  maximumPreSharedKeyLength(QSslPreSharedKeyAuthenticator* theWrappedObject) const;
    bool  __ne__(QSslPreSharedKeyAuthenticator* theWrappedObject, const QSslPreSharedKeyAuthenticator&  rhs);
    QSslPreSharedKeyAuthenticator*  operator_assign(QSslPreSharedKeyAuthenticator* theWrappedObject, const QSslPreSharedKeyAuthenticator&  authenticator);
+   bool  __eq__(QSslPreSharedKeyAuthenticator* theWrappedObject, const QSslPreSharedKeyAuthenticator&  rhs);
    QByteArray  preSharedKey(QSslPreSharedKeyAuthenticator* theWrappedObject) const;
    void setIdentity(QSslPreSharedKeyAuthenticator* theWrappedObject, const QByteArray&  identity);
    void setPreSharedKey(QSslPreSharedKeyAuthenticator* theWrappedObject, const QByteArray&  preSharedKey);
@@ -915,7 +917,7 @@ enum PeerVerifyMode{
   VerifyNone = QSslSocket::VerifyNone,   QueryPeer = QSslSocket::QueryPeer,   VerifyPeer = QSslSocket::VerifyPeer,   AutoVerifyPeer = QSslSocket::AutoVerifyPeer};
 enum SslMode{
   UnencryptedMode = QSslSocket::UnencryptedMode,   SslClientMode = QSslSocket::SslClientMode,   SslServerMode = QSslSocket::SslServerMode};
-public slots:
+public Q_SLOTS:
 QSslSocket* new_QSslSocket(QObject*  parent = nullptr);
 void delete_QSslSocket(QSslSocket* obj) { delete obj; }
    void abort(QSslSocket* theWrappedObject);
@@ -1035,7 +1037,7 @@ inline QTcpSocket*  py_q_nextPendingConnection() { return QTcpServer::nextPendin
 class PythonQtWrapper_QTcpServer : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QTcpServer* new_QTcpServer(QObject*  parent = nullptr);
 void delete_QTcpServer(QTcpServer* obj) { delete obj; }
    void addPendingConnection(QTcpServer* theWrappedObject, QTcpSocket*  socket);
@@ -1115,7 +1117,7 @@ qint64  writeData(const char*  data, qint64  len) override;
 class PythonQtWrapper_QTcpSocket : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QTcpSocket* new_QTcpSocket(QObject*  parent = nullptr);
 void delete_QTcpSocket(QTcpSocket* obj) { delete obj; }
     bool __nonzero__(QTcpSocket* obj) { return obj->isValid(); }
@@ -1173,7 +1175,7 @@ qint64  writeData(const char*  data, qint64  len) override;
 class PythonQtWrapper_QUdpSocket : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QUdpSocket* new_QUdpSocket(QObject*  parent = nullptr);
 void delete_QUdpSocket(QUdpSocket* obj) { delete obj; }
    bool  hasPendingDatagrams(QUdpSocket* theWrappedObject) const;
@@ -1205,7 +1207,7 @@ enum class QOcspCertificateStatus{
   Good = static_cast<int>(::QOcspCertificateStatus::Good),   Revoked = static_cast<int>(::QOcspCertificateStatus::Revoked),   Unknown = static_cast<int>(::QOcspCertificateStatus::Unknown)};
 enum class QOcspRevocationReason{
   None = static_cast<int>(::QOcspRevocationReason::None),   Unspecified = static_cast<int>(::QOcspRevocationReason::Unspecified),   KeyCompromise = static_cast<int>(::QOcspRevocationReason::KeyCompromise),   CACompromise = static_cast<int>(::QOcspRevocationReason::CACompromise),   AffiliationChanged = static_cast<int>(::QOcspRevocationReason::AffiliationChanged),   Superseded = static_cast<int>(::QOcspRevocationReason::Superseded),   CessationOfOperation = static_cast<int>(::QOcspRevocationReason::CessationOfOperation),   CertificateHold = static_cast<int>(::QOcspRevocationReason::CertificateHold),   RemoveFromCRL = static_cast<int>(::QOcspRevocationReason::RemoveFromCRL)};
-public slots:
+public Q_SLOTS:
 };
 
 

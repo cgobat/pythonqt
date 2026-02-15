@@ -1,20 +1,20 @@
 #include <PythonQt.h>
 #include <QObject>
 #include <QVariant>
-#include <qaction.h>
-#include <qactiongroup.h>
+#include <QtUiTools/quiloader.h>
+#include <QtWidgets/qaction.h>
+#include <QtWidgets/qactiongroup.h>
+#include <QtWidgets/qlayout.h>
+#include <QtWidgets/qwidget.h>
 #include <qbytearray.h>
 #include <qcoreevent.h>
 #include <qdir.h>
 #include <qiodevice.h>
-#include <qlayout.h>
 #include <qlist.h>
 #include <qmetaobject.h>
 #include <qobject.h>
 #include <qstringlist.h>
 #include <qthread.h>
-#include <quiloader.h>
-#include <qwidget.h>
 
 
 
@@ -51,7 +51,7 @@ inline QWidget*  py_q_createWidget(const QString&  className, QWidget*  parent =
 class PythonQtWrapper_QUiLoader : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QUiLoader* new_QUiLoader(QObject*  parent = nullptr);
 void delete_QUiLoader(QUiLoader* obj) { delete obj; }
    void addPluginPath(QUiLoader* theWrappedObject, const QString&  path);

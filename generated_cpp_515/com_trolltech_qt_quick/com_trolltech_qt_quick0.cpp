@@ -3,7 +3,33 @@
 #include <PythonQtMethodInfo.h>
 #include <PythonQtSignalReceiver.h>
 #include <QVariant>
-#include <qaction.h>
+#include <QtQml/qjsvalue.h>
+#include <QtQml/qqmlcomponent.h>
+#include <QtQml/qqmlcontext.h>
+#include <QtQml/qqmlengine.h>
+#include <QtQml/qqmlerror.h>
+#include <QtQml/qqmlincubator.h>
+#include <QtQuick/qquickframebufferobject.h>
+#include <QtQuick/qquickitem.h>
+#include <QtQuick/qquickrendercontrol.h>
+#include <QtQuick/qquickwindow.h>
+#include <QtQuick/qsgabstractrenderer.h>
+#include <QtQuick/qsggeometry.h>
+#include <QtQuick/qsgimagenode.h>
+#include <QtQuick/qsgmaterialtype.h>
+#include <QtQuick/qsgninepatchnode.h>
+#include <QtQuick/qsgnode.h>
+#include <QtQuick/qsgrectanglenode.h>
+#include <QtQuick/qsgrendererinterface.h>
+#include <QtQuick/qsgtexture.h>
+#include <QtQuick/qsgtextureprovider.h>
+#include <QtWidgets/qaction.h>
+#include <QtWidgets/qgraphicseffect.h>
+#include <QtWidgets/qgraphicsproxywidget.h>
+#include <QtWidgets/qlayout.h>
+#include <QtWidgets/qsizepolicy.h>
+#include <QtWidgets/qstyle.h>
+#include <QtWidgets/qwidget.h>
 #include <qbackingstore.h>
 #include <qbitmap.h>
 #include <qbytearray.h>
@@ -14,13 +40,9 @@
 #include <qfont.h>
 #include <qfontinfo.h>
 #include <qfontmetrics.h>
-#include <qgraphicseffect.h>
-#include <qgraphicsproxywidget.h>
 #include <qicon.h>
 #include <qimage.h>
-#include <qjsvalue.h>
 #include <qkeysequence.h>
-#include <qlayout.h>
 #include <qlist.h>
 #include <qlocale.h>
 #include <qmargins.h>
@@ -35,31 +57,11 @@
 #include <qpalette.h>
 #include <qpixmap.h>
 #include <qpoint.h>
-#include <qqmlcomponent.h>
-#include <qqmlcontext.h>
-#include <qqmlengine.h>
-#include <qqmlerror.h>
-#include <qqmlincubator.h>
-#include <qquickframebufferobject.h>
-#include <qquickitem.h>
-#include <qquickrendercontrol.h>
-#include <qquickwindow.h>
 #include <qrect.h>
 #include <qregion.h>
 #include <qrunnable.h>
 #include <qscreen.h>
-#include <qsgabstractrenderer.h>
-#include <qsggeometry.h>
-#include <qsgimagenode.h>
-#include <qsgmaterialtype.h>
-#include <qsgninepatchnode.h>
-#include <qsgnode.h>
-#include <qsgrectanglenode.h>
-#include <qsgtexture.h>
-#include <qsgtextureprovider.h>
 #include <qsize.h>
-#include <qsizepolicy.h>
-#include <qstyle.h>
 #include <qsurfaceformat.h>
 #include <qtextdocument.h>
 #include <qthread.h>
@@ -67,7 +69,6 @@
 #include <qurl.h>
 #include <qvector.h>
 #include <qvector4d.h>
-#include <qwidget.h>
 #include <qwindow.h>
 
 PythonQtShell_QQuickFramebufferObject::~PythonQtShell_QQuickFramebufferObject() {
@@ -977,7 +978,7 @@ if (_wrapper) {
   QQuickFramebufferObject::windowDeactivateEvent();
 }
 QQuickFramebufferObject* PythonQtWrapper_QQuickFramebufferObject::new_QQuickFramebufferObject(QQuickItem*  parent)
-{
+{ 
 return new PythonQtShell_QQuickFramebufferObject(parent); }
 
 const QMetaObject* PythonQtShell_QQuickFramebufferObject::metaObject() const {
@@ -1077,7 +1078,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 void PythonQtShell_QQuickFramebufferObject__Renderer::synchronize(QQuickFramebufferObject*  arg__1)
 {
@@ -1102,7 +1103,7 @@ if (_wrapper) {
   QQuickFramebufferObject::Renderer::synchronize(arg__1);
 }
 QQuickFramebufferObject::Renderer* PythonQtWrapper_QQuickFramebufferObject__Renderer::new_QQuickFramebufferObject__Renderer()
-{
+{ 
 return new PythonQtShell_QQuickFramebufferObject__Renderer(); }
 
 QOpenGLFramebufferObject*  PythonQtWrapper_QQuickFramebufferObject__Renderer::createFramebufferObject(QQuickFramebufferObject::Renderer* theWrappedObject, const QSize&  size)
@@ -2023,7 +2024,7 @@ if (_wrapper) {
   QQuickItem::windowDeactivateEvent();
 }
 QQuickItem* PythonQtWrapper_QQuickItem::new_QQuickItem(QQuickItem*  parent)
-{
+{ 
 return new PythonQtShell_QQuickItem(parent); }
 
 const QMetaObject* PythonQtShell_QQuickItem::metaObject() const {
@@ -3472,7 +3473,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 void PythonQtShell_QQuickPaintedItem::releaseResources()
 {
@@ -3673,7 +3674,7 @@ if (_wrapper) {
   QQuickPaintedItem::windowDeactivateEvent();
 }
 QQuickPaintedItem* PythonQtWrapper_QQuickPaintedItem::new_QQuickPaintedItem(QQuickItem*  parent)
-{
+{ 
 return new PythonQtShell_QQuickPaintedItem(parent); }
 
 const QMetaObject* PythonQtShell_QQuickPaintedItem::metaObject() const {
@@ -3966,7 +3967,7 @@ if (_wrapper) {
   QQuickRenderControl::timerEvent(event0);
 }
 QQuickRenderControl* PythonQtWrapper_QQuickRenderControl::new_QQuickRenderControl(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QQuickRenderControl(parent); }
 
 const QMetaObject* PythonQtShell_QQuickRenderControl::metaObject() const {
@@ -4166,7 +4167,7 @@ if (_wrapper) {
   QQuickTextDocument::timerEvent(event0);
 }
 QQuickTextDocument* PythonQtWrapper_QQuickTextDocument::new_QQuickTextDocument(QQuickItem*  parent)
-{
+{ 
 return new PythonQtShell_QQuickTextDocument(parent); }
 
 const QMetaObject* PythonQtShell_QQuickTextDocument::metaObject() const {
@@ -4213,7 +4214,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 void PythonQtShell_QQuickTransform::childEvent(QChildEvent*  event0)
 {
@@ -4348,7 +4349,7 @@ if (_wrapper) {
   QQuickTransform::timerEvent(event0);
 }
 QQuickTransform* PythonQtWrapper_QQuickTransform::new_QQuickTransform(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QQuickTransform(parent); }
 
 const QMetaObject* PythonQtShell_QQuickTransform::metaObject() const {
@@ -5035,19 +5036,19 @@ if (_wrapper) {
   QQuickView::wheelEvent(arg__1);
 }
 QQuickView* PythonQtWrapper_QQuickView::new_QQuickView(QQmlEngine*  engine, QWindow*  parent)
-{
+{ 
 return new PythonQtShell_QQuickView(engine, parent); }
 
 QQuickView* PythonQtWrapper_QQuickView::new_QQuickView(QWindow*  parent)
-{
+{ 
 return new PythonQtShell_QQuickView(parent); }
 
 QQuickView* PythonQtWrapper_QQuickView::new_QQuickView(const QUrl&  source, QQuickRenderControl*  renderControl)
-{
+{ 
 return new PythonQtShell_QQuickView(source, renderControl); }
 
 QQuickView* PythonQtWrapper_QQuickView::new_QQuickView(const QUrl&  source, QWindow*  parent)
-{
+{ 
 return new PythonQtShell_QQuickView(source, parent); }
 
 const QMetaObject* PythonQtShell_QQuickView::metaObject() const {
@@ -5806,7 +5807,7 @@ QSize  PythonQtShell_QQuickWidget::minimumSizeHint() const
 if (_wrapper) {
   PYTHONQT_GIL_SCOPE
   if (Py_REFCNT((PyObject*)_wrapper) > 0) {
-    static PyObject* name = PyUnicode_FromString("getMinimumSizeHint");
+    static PyObject* name = PyUnicode_FromString("minimumSizeHint");
     PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
     if (obj) {
       static const char* argumentList[] ={"QSize"};
@@ -5818,7 +5819,7 @@ if (_wrapper) {
         args[0] = PythonQtConv::ConvertPythonToQt(methodInfo->parameters().at(0), result, false, nullptr, &returnValue);
         if (args[0]!=&returnValue) {
           if (args[0]==nullptr) {
-            PythonQt::priv()->handleVirtualOverloadReturnError("getMinimumSizeHint", methodInfo, result);
+            PythonQt::priv()->handleVirtualOverloadReturnError("minimumSizeHint", methodInfo, result);
           } else {
             returnValue = *((QSize*)args[0]);
           }
@@ -6264,15 +6265,15 @@ if (_wrapper) {
   QQuickWidget::wheelEvent(arg__1);
 }
 QQuickWidget* PythonQtWrapper_QQuickWidget::new_QQuickWidget(QQmlEngine*  engine, QWidget*  parent)
-{
+{ 
 return new PythonQtShell_QQuickWidget(engine, parent); }
 
 QQuickWidget* PythonQtWrapper_QQuickWidget::new_QQuickWidget(QWidget*  parent)
-{
+{ 
 return new PythonQtShell_QQuickWidget(parent); }
 
 QQuickWidget* PythonQtWrapper_QQuickWidget::new_QQuickWidget(const QUrl&  source, QWidget*  parent)
-{
+{ 
 return new PythonQtShell_QQuickWidget(source, parent); }
 
 const QMetaObject* PythonQtShell_QQuickWidget::metaObject() const {
@@ -6346,11 +6347,6 @@ void PythonQtWrapper_QQuickWidget::setFormat(QQuickWidget* theWrappedObject, con
 void PythonQtWrapper_QQuickWidget::setResizeMode(QQuickWidget* theWrappedObject, QQuickWidget::ResizeMode  arg__1)
 {
   ( theWrappedObject->setResizeMode(arg__1));
-}
-
-QSize  PythonQtWrapper_QQuickWidget::sizeHint(QQuickWidget* theWrappedObject) const
-{
-  return ( theWrappedObject->sizeHint());
 }
 
 QUrl  PythonQtWrapper_QQuickWidget::source(QQuickWidget* theWrappedObject) const
@@ -7019,11 +7015,11 @@ if (_wrapper) {
   QQuickWindow::wheelEvent(arg__1);
 }
 QQuickWindow* PythonQtWrapper_QQuickWindow::new_QQuickWindow(QQuickRenderControl*  renderControl)
-{
+{ 
 return new PythonQtShell_QQuickWindow(renderControl); }
 
 QQuickWindow* PythonQtWrapper_QQuickWindow::new_QQuickWindow(QWindow*  parent)
-{
+{ 
 return new PythonQtShell_QQuickWindow(parent); }
 
 const QMetaObject* PythonQtShell_QQuickWindow::metaObject() const {
@@ -7154,6 +7150,11 @@ QSize  PythonQtWrapper_QQuickWindow::renderTargetSize(QQuickWindow* theWrappedOb
   return ( theWrappedObject->renderTargetSize());
 }
 
+QSGRendererInterface*  PythonQtWrapper_QQuickWindow::rendererInterface(QQuickWindow* theWrappedObject) const
+{
+  return ( theWrappedObject->rendererInterface());
+}
+
 void PythonQtWrapper_QQuickWindow::resetOpenGLState(QQuickWindow* theWrappedObject)
 {
   ( theWrappedObject->resetOpenGLState());
@@ -7209,6 +7210,11 @@ void PythonQtWrapper_QQuickWindow::setRenderTarget(QQuickWindow* theWrappedObjec
   ( theWrappedObject->setRenderTarget(fboId, size));
 }
 
+void PythonQtWrapper_QQuickWindow::static_QQuickWindow_setSceneGraphBackend(QSGRendererInterface::GraphicsApi  api)
+{
+  (QQuickWindow::setSceneGraphBackend(api));
+}
+
 void PythonQtWrapper_QQuickWindow::static_QQuickWindow_setSceneGraphBackend(const QString&  backend)
 {
   (QQuickWindow::setSceneGraphBackend(backend));
@@ -7238,7 +7244,7 @@ PythonQtShell_QQuickWindow__GraphicsStateInfo::~PythonQtShell_QQuickWindow__Grap
   if (priv) { priv->shellClassDeleted(this); }
 }
 QQuickWindow::GraphicsStateInfo* PythonQtWrapper_QQuickWindow__GraphicsStateInfo::new_QQuickWindow__GraphicsStateInfo()
-{
+{ 
 return new PythonQtShell_QQuickWindow__GraphicsStateInfo(); }
 
 
@@ -7377,7 +7383,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 void PythonQtShell_QSGAbstractRenderer::renderScene(uint  fboId0)
 {
@@ -7399,7 +7405,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 void PythonQtShell_QSGAbstractRenderer::timerEvent(QTimerEvent*  event0)
 {
@@ -7424,7 +7430,7 @@ if (_wrapper) {
   QSGAbstractRenderer::timerEvent(event0);
 }
 QSGAbstractRenderer* PythonQtWrapper_QSGAbstractRenderer::new_QSGAbstractRenderer(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QSGAbstractRenderer(parent); }
 
 const QMetaObject* PythonQtShell_QSGAbstractRenderer::metaObject() const {
@@ -7587,7 +7593,7 @@ if (_wrapper) {
   QSGBasicGeometryNode::preprocess();
 }
 QSGBasicGeometryNode* PythonQtWrapper_QSGBasicGeometryNode::new_QSGBasicGeometryNode(QSGNode::NodeType  type)
-{
+{ 
 return new PythonQtShell_QSGBasicGeometryNode(type); }
 
 const QSGClipNode*  PythonQtWrapper_QSGBasicGeometryNode::clipList(QSGBasicGeometryNode* theWrappedObject) const
@@ -7687,7 +7693,7 @@ if (_wrapper) {
   QSGClipNode::preprocess();
 }
 QSGClipNode* PythonQtWrapper_QSGClipNode::new_QSGClipNode()
-{
+{ 
 return new PythonQtShell_QSGClipNode(); }
 
 QRectF  PythonQtWrapper_QSGClipNode::clipRect(QSGClipNode* theWrappedObject) const
@@ -7736,7 +7742,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 void PythonQtShell_QSGDynamicTexture::childEvent(QChildEvent*  event0)
 {
@@ -8135,7 +8141,7 @@ if (_wrapper) {
   return bool();
 }
 QSGDynamicTexture* PythonQtWrapper_QSGDynamicTexture::new_QSGDynamicTexture()
-{
+{ 
 return new PythonQtShell_QSGDynamicTexture(); }
 
 const QMetaObject* PythonQtShell_QSGDynamicTexture::metaObject() const {
@@ -8295,7 +8301,7 @@ if (_wrapper) {
   QSGEngine::timerEvent(event0);
 }
 QSGEngine* PythonQtWrapper_QSGEngine::new_QSGEngine(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QSGEngine(parent); }
 
 const QMetaObject* PythonQtShell_QSGEngine::metaObject() const {
@@ -8341,6 +8347,11 @@ void PythonQtWrapper_QSGEngine::invalidate(QSGEngine* theWrappedObject)
   ( theWrappedObject->invalidate());
 }
 
+QSGRendererInterface*  PythonQtWrapper_QSGEngine::rendererInterface(QSGEngine* theWrappedObject) const
+{
+  return ( theWrappedObject->rendererInterface());
+}
+
 
 
 PythonQtShell_QSGFlatColorMaterial::~PythonQtShell_QSGFlatColorMaterial() {
@@ -8381,7 +8392,7 @@ if (_wrapper) {
   return QSGFlatColorMaterial::type();
 }
 QSGFlatColorMaterial* PythonQtWrapper_QSGFlatColorMaterial::new_QSGFlatColorMaterial()
-{
+{ 
 return new PythonQtShell_QSGFlatColorMaterial(); }
 
 const QColor*  PythonQtWrapper_QSGFlatColorMaterial::color(QSGFlatColorMaterial* theWrappedObject) const
@@ -8406,7 +8417,7 @@ PythonQtShell_QSGGeometry::~PythonQtShell_QSGGeometry() {
   if (priv) { priv->shellClassDeleted(this); }
 }
 QSGGeometry* PythonQtWrapper_QSGGeometry::new_QSGGeometry(const QSGGeometry::AttributeSet&  attribs, int  vertexCount, int  indexCount, int  indexType)
-{
+{ 
 return new PythonQtShell_QSGGeometry(attribs, vertexCount, indexCount, indexType); }
 
 void PythonQtWrapper_QSGGeometry::allocate(QSGGeometry* theWrappedObject, int  vertexCount, int  indexCount)
@@ -8661,7 +8672,7 @@ if (_wrapper) {
   QSGGeometryNode::preprocess();
 }
 QSGGeometryNode* PythonQtWrapper_QSGGeometryNode::new_QSGGeometryNode()
-{
+{ 
 return new PythonQtShell_QSGGeometryNode(); }
 
 qreal  PythonQtWrapper_QSGGeometryNode::inheritedOpacity(QSGGeometryNode* theWrappedObject) const
@@ -8698,7 +8709,7 @@ PythonQtShell_QSGGeometry__Attribute::~PythonQtShell_QSGGeometry__Attribute() {
   if (priv) { priv->shellClassDeleted(this); }
 }
 QSGGeometry::Attribute* PythonQtWrapper_QSGGeometry__Attribute::new_QSGGeometry__Attribute()
-{
+{ 
 return new PythonQtShell_QSGGeometry__Attribute(); }
 
 QSGGeometry::Attribute  PythonQtWrapper_QSGGeometry__Attribute::static_QSGGeometry__Attribute_create(int  pos, int  tupleSize, int  primitiveType, bool  isPosition)
@@ -8718,7 +8729,7 @@ PythonQtShell_QSGGeometry__AttributeSet::~PythonQtShell_QSGGeometry__AttributeSe
   if (priv) { priv->shellClassDeleted(this); }
 }
 QSGGeometry::AttributeSet* PythonQtWrapper_QSGGeometry__AttributeSet::new_QSGGeometry__AttributeSet()
-{
+{ 
 return new PythonQtShell_QSGGeometry__AttributeSet(); }
 
 
@@ -8728,7 +8739,7 @@ PythonQtShell_QSGGeometry__ColoredPoint2D::~PythonQtShell_QSGGeometry__ColoredPo
   if (priv) { priv->shellClassDeleted(this); }
 }
 QSGGeometry::ColoredPoint2D* PythonQtWrapper_QSGGeometry__ColoredPoint2D::new_QSGGeometry__ColoredPoint2D()
-{
+{ 
 return new PythonQtShell_QSGGeometry__ColoredPoint2D(); }
 
 void PythonQtWrapper_QSGGeometry__ColoredPoint2D::set(QSGGeometry::ColoredPoint2D* theWrappedObject, float  nx, float  ny, uchar  nr, uchar  ng, uchar  nb, uchar  na)
@@ -8743,7 +8754,7 @@ PythonQtShell_QSGGeometry__Point2D::~PythonQtShell_QSGGeometry__Point2D() {
   if (priv) { priv->shellClassDeleted(this); }
 }
 QSGGeometry::Point2D* PythonQtWrapper_QSGGeometry__Point2D::new_QSGGeometry__Point2D()
-{
+{ 
 return new PythonQtShell_QSGGeometry__Point2D(); }
 
 void PythonQtWrapper_QSGGeometry__Point2D::set(QSGGeometry::Point2D* theWrappedObject, float  nx, float  ny)
@@ -8758,7 +8769,7 @@ PythonQtShell_QSGGeometry__TexturedPoint2D::~PythonQtShell_QSGGeometry__Textured
   if (priv) { priv->shellClassDeleted(this); }
 }
 QSGGeometry::TexturedPoint2D* PythonQtWrapper_QSGGeometry__TexturedPoint2D::new_QSGGeometry__TexturedPoint2D()
-{
+{ 
 return new PythonQtShell_QSGGeometry__TexturedPoint2D(); }
 
 void PythonQtWrapper_QSGGeometry__TexturedPoint2D::set(QSGGeometry::TexturedPoint2D* theWrappedObject, float  nx, float  ny, float  ntx, float  nty)
@@ -8845,7 +8856,7 @@ PythonQtShell_QSGMaterialType::~PythonQtShell_QSGMaterialType() {
   if (priv) { priv->shellClassDeleted(this); }
 }
 QSGMaterialType* PythonQtWrapper_QSGMaterialType::new_QSGMaterialType()
-{
+{ 
 return new PythonQtShell_QSGMaterialType(); }
 
 
@@ -8929,7 +8940,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 void PythonQtShell_QSGNinePatchNode::setDevicePixelRatio(qreal  ratio0)
 {
@@ -8951,7 +8962,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 void PythonQtShell_QSGNinePatchNode::setPadding(qreal  left0, qreal  top1, qreal  right2, qreal  bottom3)
 {
@@ -8973,7 +8984,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 void PythonQtShell_QSGNinePatchNode::setTexture(QSGTexture*  texture0)
 {
@@ -8995,7 +9006,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 void PythonQtShell_QSGNinePatchNode::update()
 {
@@ -9017,10 +9028,10 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 QSGNinePatchNode* PythonQtWrapper_QSGNinePatchNode::new_QSGNinePatchNode()
-{
+{ 
 return new PythonQtShell_QSGNinePatchNode(); }
 
 void PythonQtWrapper_QSGNinePatchNode::static_QSGNinePatchNode_rebuildGeometry(QSGTexture*  texture, QSGGeometry*  geometry, const QVector4D&  padding, const QRectF&  bounds, qreal  dpr)

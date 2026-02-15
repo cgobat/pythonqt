@@ -1,8 +1,20 @@
 #include <PythonQt.h>
 #include <QObject>
 #include <QVariant>
-#include <qabstractvideosurface.h>
-#include <qaction.h>
+#include <QtMultimedia/qabstractvideosurface.h>
+#include <QtMultimedia/qmediaobject.h>
+#include <QtMultimedia/qvideorenderercontrol.h>
+#include <QtMultimedia/qvideosurfaceformat.h>
+#include <QtMultimedia/qvideowindowcontrol.h>
+#include <QtMultimediaWidgets/qvideowidget.h>
+#include <QtMultimediaWidgets/qvideowidgetcontrol.h>
+#include <QtWidgets/qaction.h>
+#include <QtWidgets/qgraphicseffect.h>
+#include <QtWidgets/qgraphicsproxywidget.h>
+#include <QtWidgets/qlayout.h>
+#include <QtWidgets/qsizepolicy.h>
+#include <QtWidgets/qstyle.h>
+#include <QtWidgets/qwidget.h>
 #include <qbackingstore.h>
 #include <qbitmap.h>
 #include <qbytearray.h>
@@ -12,15 +24,11 @@
 #include <qfont.h>
 #include <qfontinfo.h>
 #include <qfontmetrics.h>
-#include <qgraphicseffect.h>
-#include <qgraphicsproxywidget.h>
 #include <qicon.h>
 #include <qkeysequence.h>
-#include <qlayout.h>
 #include <qlist.h>
 #include <qlocale.h>
 #include <qmargins.h>
-#include <qmediaobject.h>
 #include <qmetaobject.h>
 #include <qobject.h>
 #include <qpaintdevice.h>
@@ -33,15 +41,7 @@
 #include <qregion.h>
 #include <qscreen.h>
 #include <qsize.h>
-#include <qsizepolicy.h>
-#include <qstyle.h>
 #include <qthread.h>
-#include <qvideorenderercontrol.h>
-#include <qvideosurfaceformat.h>
-#include <qvideowidget.h>
-#include <qvideowidgetcontrol.h>
-#include <qvideowindowcontrol.h>
-#include <qwidget.h>
 #include <qwindow.h>
 
 
@@ -75,7 +75,7 @@ inline QAbstractVideoSurface*  py_q_surface() const { return this->surface(); }
 class PythonQtWrapper_QVideoRendererControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QVideoRendererControl* new_QVideoRendererControl(QObject*  parent = nullptr);
 void delete_QVideoRendererControl(QVideoRendererControl* obj) { delete obj; }
    void setSurface(QVideoRendererControl* theWrappedObject, QAbstractVideoSurface*  surface);
@@ -96,7 +96,7 @@ enum Direction{
   TopToBottom = QVideoSurfaceFormat::TopToBottom,   BottomToTop = QVideoSurfaceFormat::BottomToTop};
 enum YCbCrColorSpace{
   YCbCr_Undefined = QVideoSurfaceFormat::YCbCr_Undefined,   YCbCr_BT601 = QVideoSurfaceFormat::YCbCr_BT601,   YCbCr_BT709 = QVideoSurfaceFormat::YCbCr_BT709,   YCbCr_xvYCC601 = QVideoSurfaceFormat::YCbCr_xvYCC601,   YCbCr_xvYCC709 = QVideoSurfaceFormat::YCbCr_xvYCC709,   YCbCr_JPEG = QVideoSurfaceFormat::YCbCr_JPEG,   YCbCr_CustomMatrix = QVideoSurfaceFormat::YCbCr_CustomMatrix};
-public slots:
+public Q_SLOTS:
 QVideoSurfaceFormat* new_QVideoSurfaceFormat();
 QVideoSurfaceFormat* new_QVideoSurfaceFormat(const QSize&  size, QVideoFrame::PixelFormat  pixelFormat, QAbstractVideoBuffer::HandleType  handleType = QAbstractVideoBuffer::NoHandle);
 QVideoSurfaceFormat* new_QVideoSurfaceFormat(const QVideoSurfaceFormat&  format);
@@ -220,7 +220,7 @@ inline QSize  py_q_sizeHint() const { return QVideoWidget::sizeHint(); }
 class PythonQtWrapper_QVideoWidget : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QVideoWidget* new_QVideoWidget(QWidget*  parent = nullptr);
 void delete_QVideoWidget(QVideoWidget* obj) { delete obj; }
    Qt::AspectRatioMode  aspectRatioMode(QVideoWidget* theWrappedObject) const;
@@ -236,7 +236,6 @@ void delete_QVideoWidget(QVideoWidget* obj) { delete obj; }
    int  saturation(QVideoWidget* theWrappedObject) const;
    bool  py_q_setMediaObject(QVideoWidget* theWrappedObject, QMediaObject*  object){  return (((PythonQtPublicPromoter_QVideoWidget*)theWrappedObject)->py_q_setMediaObject(object));}
    void py_q_showEvent(QVideoWidget* theWrappedObject, QShowEvent*  event){  (((PythonQtPublicPromoter_QVideoWidget*)theWrappedObject)->py_q_showEvent(event));}
-   QSize  sizeHint(QVideoWidget* theWrappedObject) const;
    QSize  py_q_sizeHint(QVideoWidget* theWrappedObject) const{  return (((PythonQtPublicPromoter_QVideoWidget*)theWrappedObject)->py_q_sizeHint());}
    QAbstractVideoSurface*  videoSurface(QVideoWidget* theWrappedObject) const;
 };
@@ -296,7 +295,7 @@ inline QWidget*  py_q_videoWidget() { return this->videoWidget(); }
 class PythonQtWrapper_QVideoWidgetControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QVideoWidgetControl* new_QVideoWidgetControl(QObject*  parent = nullptr);
 void delete_QVideoWidgetControl(QVideoWidgetControl* obj) { delete obj; }
    Qt::AspectRatioMode  aspectRatioMode(QVideoWidgetControl* theWrappedObject) const;
@@ -392,7 +391,7 @@ inline WId  py_q_winId() const { return this->winId(); }
 class PythonQtWrapper_QVideoWindowControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QVideoWindowControl* new_QVideoWindowControl(QObject*  parent = nullptr);
 void delete_QVideoWindowControl(QVideoWindowControl* obj) { delete obj; }
    Qt::AspectRatioMode  aspectRatioMode(QVideoWindowControl* theWrappedObject) const;

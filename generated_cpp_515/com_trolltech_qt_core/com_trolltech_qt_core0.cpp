@@ -6,6 +6,7 @@
 #include <QStringList>
 #include <QVariant>
 #include <qabstractanimation.h>
+#include <qabstracteventdispatcher.h>
 #include <qabstractitemmodel.h>
 #include <qabstractstate.h>
 #include <qanimationgroup.h>
@@ -25,7 +26,6 @@
 #include <qcoreevent.h>
 #include <qdatastream.h>
 #include <qdatetime.h>
-#include <qdeadlinetimer.h>
 #include <qiodevice.h>
 #include <qjsonarray.h>
 #include <qjsonobject.h>
@@ -37,6 +37,7 @@
 #include <qobject.h>
 #include <qregularexpression.h>
 #include <qsize.h>
+#include <qsocketnotifier.h>
 #include <qstate.h>
 #include <qstatemachine.h>
 #include <qstringlist.h>
@@ -235,7 +236,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 void PythonQtShell_QAbstractAnimation::updateDirection(QAbstractAnimation::Direction  direction0)
 {
@@ -282,7 +283,7 @@ if (_wrapper) {
   QAbstractAnimation::updateState(newState0, oldState1);
 }
 QAbstractAnimation* PythonQtWrapper_QAbstractAnimation::new_QAbstractAnimation(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QAbstractAnimation(parent); }
 
 const QMetaObject* PythonQtShell_QAbstractAnimation::metaObject() const {
@@ -367,6 +368,103 @@ void PythonQtWrapper_QAbstractAnimation::updateState(QAbstractAnimation* theWrap
 {
   ( ((PythonQtPublicPromoter_QAbstractAnimation*)theWrappedObject)->promoted_updateState(newState, oldState));
 }
+
+
+
+void PythonQtWrapper_QAbstractEventDispatcher::closingDown(QAbstractEventDispatcher* theWrappedObject)
+{
+  ( theWrappedObject->closingDown());
+}
+
+bool  PythonQtWrapper_QAbstractEventDispatcher::filterNativeEvent(QAbstractEventDispatcher* theWrappedObject, const QByteArray&  eventType, void*  message, long*  result)
+{
+  return ( theWrappedObject->filterNativeEvent(eventType, message, result));
+}
+
+void PythonQtWrapper_QAbstractEventDispatcher::flush(QAbstractEventDispatcher* theWrappedObject)
+{
+  ( theWrappedObject->flush());
+}
+
+bool  PythonQtWrapper_QAbstractEventDispatcher::hasPendingEvents(QAbstractEventDispatcher* theWrappedObject)
+{
+  return ( theWrappedObject->hasPendingEvents());
+}
+
+QAbstractEventDispatcher*  PythonQtWrapper_QAbstractEventDispatcher::static_QAbstractEventDispatcher_instance(QThread*  thread)
+{
+  return (QAbstractEventDispatcher::instance(thread));
+}
+
+void PythonQtWrapper_QAbstractEventDispatcher::interrupt(QAbstractEventDispatcher* theWrappedObject)
+{
+  ( theWrappedObject->interrupt());
+}
+
+bool  PythonQtWrapper_QAbstractEventDispatcher::processEvents(QAbstractEventDispatcher* theWrappedObject, QEventLoop::ProcessEventsFlags  flags)
+{
+  return ( theWrappedObject->processEvents(flags));
+}
+
+void PythonQtWrapper_QAbstractEventDispatcher::registerSocketNotifier(QAbstractEventDispatcher* theWrappedObject, QSocketNotifier*  notifier)
+{
+  ( theWrappedObject->registerSocketNotifier(notifier));
+}
+
+int  PythonQtWrapper_QAbstractEventDispatcher::registerTimer(QAbstractEventDispatcher* theWrappedObject, int  interval, Qt::TimerType  timerType, QObject*  object)
+{
+  return ( theWrappedObject->registerTimer(interval, timerType, object));
+}
+
+void PythonQtWrapper_QAbstractEventDispatcher::registerTimer(QAbstractEventDispatcher* theWrappedObject, int  timerId, int  interval, Qt::TimerType  timerType, QObject*  object)
+{
+  ( theWrappedObject->registerTimer(timerId, interval, timerType, object));
+}
+
+QList<QAbstractEventDispatcher::TimerInfo >  PythonQtWrapper_QAbstractEventDispatcher::registeredTimers(QAbstractEventDispatcher* theWrappedObject, QObject*  object) const
+{
+  return ( theWrappedObject->registeredTimers(object));
+}
+
+int  PythonQtWrapper_QAbstractEventDispatcher::remainingTime(QAbstractEventDispatcher* theWrappedObject, int  timerId)
+{
+  return ( theWrappedObject->remainingTime(timerId));
+}
+
+void PythonQtWrapper_QAbstractEventDispatcher::startingUp(QAbstractEventDispatcher* theWrappedObject)
+{
+  ( theWrappedObject->startingUp());
+}
+
+void PythonQtWrapper_QAbstractEventDispatcher::unregisterSocketNotifier(QAbstractEventDispatcher* theWrappedObject, QSocketNotifier*  notifier)
+{
+  ( theWrappedObject->unregisterSocketNotifier(notifier));
+}
+
+bool  PythonQtWrapper_QAbstractEventDispatcher::unregisterTimer(QAbstractEventDispatcher* theWrappedObject, int  timerId)
+{
+  return ( theWrappedObject->unregisterTimer(timerId));
+}
+
+bool  PythonQtWrapper_QAbstractEventDispatcher::unregisterTimers(QAbstractEventDispatcher* theWrappedObject, QObject*  object)
+{
+  return ( theWrappedObject->unregisterTimers(object));
+}
+
+void PythonQtWrapper_QAbstractEventDispatcher::wakeUp(QAbstractEventDispatcher* theWrappedObject)
+{
+  ( theWrappedObject->wakeUp());
+}
+
+
+
+PythonQtShell_QAbstractEventDispatcher__TimerInfo::~PythonQtShell_QAbstractEventDispatcher__TimerInfo() {
+  PythonQtPrivate* priv = PythonQt::priv();
+  if (priv) { priv->shellClassDeleted(this); }
+}
+QAbstractEventDispatcher::TimerInfo* PythonQtWrapper_QAbstractEventDispatcher__TimerInfo::new_QAbstractEventDispatcher__TimerInfo(int  id, int  i, Qt::TimerType  t)
+{ 
+return new PythonQtShell_QAbstractEventDispatcher__TimerInfo(id, i, t); }
 
 
 
@@ -1596,7 +1694,7 @@ if (_wrapper) {
   QAbstractItemModel::timerEvent(event0);
 }
 QAbstractItemModel* PythonQtWrapper_QAbstractItemModel::new_QAbstractItemModel(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QAbstractItemModel(parent); }
 
 const QMetaObject* PythonQtShell_QAbstractItemModel::metaObject() const {
@@ -3041,7 +3139,7 @@ if (_wrapper) {
   QAbstractListModel::timerEvent(event0);
 }
 QAbstractListModel* PythonQtWrapper_QAbstractListModel::new_QAbstractListModel(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QAbstractListModel(parent); }
 
 const QMetaObject* PythonQtShell_QAbstractListModel::metaObject() const {
@@ -3193,7 +3291,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 void PythonQtShell_QAbstractState::onExit(QEvent*  event0)
 {
@@ -3215,7 +3313,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 void PythonQtShell_QAbstractState::timerEvent(QTimerEvent*  event0)
 {
@@ -3240,7 +3338,7 @@ if (_wrapper) {
   QAbstractState::timerEvent(event0);
 }
 QAbstractState* PythonQtWrapper_QAbstractState::new_QAbstractState(QState*  parent)
-{
+{ 
 return new PythonQtShell_QAbstractState(parent); }
 
 const QMetaObject* PythonQtShell_QAbstractState::metaObject() const {
@@ -3450,7 +3548,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 void PythonQtShell_QAbstractTransition::timerEvent(QTimerEvent*  event0)
 {
@@ -3475,7 +3573,7 @@ if (_wrapper) {
   QAbstractTransition::timerEvent(event0);
 }
 QAbstractTransition* PythonQtWrapper_QAbstractTransition::new_QAbstractTransition(QState*  sourceState)
-{
+{ 
 return new PythonQtShell_QAbstractTransition(sourceState); }
 
 const QMetaObject* PythonQtShell_QAbstractTransition::metaObject() const {
@@ -3747,7 +3845,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 void PythonQtShell_QAnimationGroup::updateDirection(QAbstractAnimation::Direction  direction0)
 {
@@ -3794,7 +3892,7 @@ if (_wrapper) {
   QAnimationGroup::updateState(newState0, oldState1);
 }
 QAnimationGroup* PythonQtWrapper_QAnimationGroup::new_QAnimationGroup(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QAnimationGroup(parent); }
 
 const QMetaObject* PythonQtShell_QAnimationGroup::metaObject() const {
@@ -3853,7 +3951,7 @@ PythonQtPassOwnershipToPython<QAbstractAnimation*  > PythonQtWrapper_QAnimationG
 
 
 QApplicationStateChangeEvent* PythonQtWrapper_QApplicationStateChangeEvent::new_QApplicationStateChangeEvent(Qt::ApplicationState  state)
-{
+{ 
 return new QApplicationStateChangeEvent(state); }
 
 Qt::ApplicationState  PythonQtWrapper_QApplicationStateChangeEvent::applicationState(QApplicationStateChangeEvent* theWrappedObject) const
@@ -3868,7 +3966,7 @@ PythonQtShell_QBasicMutex::~PythonQtShell_QBasicMutex() {
   if (priv) { priv->shellClassDeleted(this); }
 }
 QBasicMutex* PythonQtWrapper_QBasicMutex::new_QBasicMutex()
-{
+{ 
 return new PythonQtShell_QBasicMutex(); }
 
 bool  PythonQtWrapper_QBasicMutex::isRecursive(QBasicMutex* theWrappedObject)
@@ -3904,11 +4002,11 @@ void PythonQtWrapper_QBasicMutex::unlock(QBasicMutex* theWrappedObject)
 
 
 QBasicTimer* PythonQtWrapper_QBasicTimer::new_QBasicTimer()
-{
+{ 
 return new QBasicTimer(); }
 
 QBasicTimer* PythonQtWrapper_QBasicTimer::new_QBasicTimer(const QBasicTimer&  arg__1)
-{
+{ 
 return new QBasicTimer(arg__1); }
 
 bool  PythonQtWrapper_QBasicTimer::isActive(QBasicTimer* theWrappedObject) const
@@ -4646,11 +4744,11 @@ if (_wrapper) {
   return QBuffer::writeData(data0, len1);
 }
 QBuffer* PythonQtWrapper_QBuffer::new_QBuffer(QByteArray*  buf, QObject*  parent)
-{
+{ 
 return new PythonQtShell_QBuffer(buf, parent); }
 
 QBuffer* PythonQtWrapper_QBuffer::new_QBuffer(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QBuffer(parent); }
 
 const QMetaObject* PythonQtShell_QBuffer::metaObject() const {
@@ -4699,19 +4797,19 @@ void PythonQtWrapper_QBuffer::setData(QBuffer* theWrappedObject, const QByteArra
 
 
 QByteArrayMatcher* PythonQtWrapper_QByteArrayMatcher::new_QByteArrayMatcher()
-{
+{ 
 return new QByteArrayMatcher(); }
 
 QByteArrayMatcher* PythonQtWrapper_QByteArrayMatcher::new_QByteArrayMatcher(const QByteArray&  pattern)
-{
+{ 
 return new QByteArrayMatcher(pattern); }
 
 QByteArrayMatcher* PythonQtWrapper_QByteArrayMatcher::new_QByteArrayMatcher(const QByteArrayMatcher&  other)
-{
+{ 
 return new QByteArrayMatcher(other); }
 
 QByteArrayMatcher* PythonQtWrapper_QByteArrayMatcher::new_QByteArrayMatcher(const char*  pattern, int  length)
-{
+{ 
 return new QByteArrayMatcher(pattern, length); }
 
 int  PythonQtWrapper_QByteArrayMatcher::indexIn(QByteArrayMatcher* theWrappedObject, const QByteArray&  ba, int  from) const
@@ -4741,7 +4839,7 @@ PythonQtShell_QByteArray__FromBase64Result::~PythonQtShell_QByteArray__FromBase6
   if (priv) { priv->shellClassDeleted(this); }
 }
 QByteArray::FromBase64Result* PythonQtWrapper_QByteArray__FromBase64Result::new_QByteArray__FromBase64Result()
-{
+{ 
 return new PythonQtShell_QByteArray__FromBase64Result(); }
 
 bool  PythonQtWrapper_QByteArray__FromBase64Result::operator_cast_bool(QByteArray::FromBase64Result* theWrappedObject) const
@@ -4756,12 +4854,12 @@ bool  PythonQtWrapper_QByteArray__FromBase64Result::__ne__(QByteArray::FromBase6
 
 QByteArray*  PythonQtWrapper_QByteArray__FromBase64Result::__mul__(QByteArray::FromBase64Result* theWrappedObject)
 {
-  return &( theWrappedObject->operator*());
+  return &(*  (*theWrappedObject));
 }
 
 const QByteArray*  PythonQtWrapper_QByteArray__FromBase64Result::__mul__(QByteArray::FromBase64Result* theWrappedObject) const
 {
-  return &( theWrappedObject->operator*());
+  return &(*  (*theWrappedObject));
 }
 
 bool  PythonQtWrapper_QByteArray__FromBase64Result::__eq__(QByteArray::FromBase64Result* theWrappedObject, const QByteArray::FromBase64Result&  rhs)
@@ -4777,19 +4875,19 @@ void PythonQtWrapper_QByteArray__FromBase64Result::swap(QByteArray::FromBase64Re
 
 
 QCalendar* PythonQtWrapper_QCalendar::new_QCalendar()
-{
+{ 
 return new QCalendar(); }
 
 QCalendar* PythonQtWrapper_QCalendar::new_QCalendar(QCalendar::System  system)
-{
+{ 
 return new QCalendar(system); }
 
 QCalendar* PythonQtWrapper_QCalendar::new_QCalendar(QLatin1String  name)
-{
+{ 
 return new QCalendar(name); }
 
 QCalendar* PythonQtWrapper_QCalendar::new_QCalendar(QStringView  name)
-{
+{ 
 return new QCalendar(name); }
 
 QStringList  PythonQtWrapper_QCalendar::static_QCalendar_availableCalendars()
@@ -4929,11 +5027,11 @@ PythonQtShell_QCalendar__YearMonthDay::~PythonQtShell_QCalendar__YearMonthDay() 
   if (priv) { priv->shellClassDeleted(this); }
 }
 QCalendar::YearMonthDay* PythonQtWrapper_QCalendar__YearMonthDay::new_QCalendar__YearMonthDay()
-{
+{ 
 return new PythonQtShell_QCalendar__YearMonthDay(); }
 
 QCalendar::YearMonthDay* PythonQtWrapper_QCalendar__YearMonthDay::new_QCalendar__YearMonthDay(int  y, int  m, int  d)
-{
+{ 
 return new PythonQtShell_QCalendar__YearMonthDay(y, m, d); }
 
 bool  PythonQtWrapper_QCalendar__YearMonthDay::isValid(QCalendar::YearMonthDay* theWrappedObject) const
@@ -4944,11 +5042,11 @@ bool  PythonQtWrapper_QCalendar__YearMonthDay::isValid(QCalendar::YearMonthDay* 
 
 
 QCborArray* PythonQtWrapper_QCborArray::new_QCborArray()
-{
+{ 
 return new QCborArray(); }
 
 QCborArray* PythonQtWrapper_QCborArray::new_QCborArray(const QCborArray&  other)
-{
+{ 
 return new QCborArray(other); }
 
 void PythonQtWrapper_QCborArray::append(QCborArray* theWrappedObject, const QCborValue&  value)
@@ -5160,7 +5258,7 @@ PythonQtShell_QCborError::~PythonQtShell_QCborError() {
   if (priv) { priv->shellClassDeleted(this); }
 }
 QCborError* PythonQtWrapper_QCborError::new_QCborError()
-{
+{ 
 return new PythonQtShell_QCborError(); }
 
 QString  PythonQtWrapper_QCborError::toString(QCborError* theWrappedObject) const
@@ -5172,11 +5270,11 @@ QString PythonQtWrapper_QCborError::py_toString(QCborError* obj) { return obj->t
 
 
 QCborMap* PythonQtWrapper_QCborMap::new_QCborMap()
-{
+{ 
 return new QCborMap(); }
 
 QCborMap* PythonQtWrapper_QCborMap::new_QCborMap(const QCborMap&  other)
-{
+{ 
 return new QCborMap(other); }
 
 void PythonQtWrapper_QCborMap::clear(QCborMap* theWrappedObject)
@@ -5368,7 +5466,7 @@ PythonQtShell_QCborParserError::~PythonQtShell_QCborParserError() {
   if (priv) { priv->shellClassDeleted(this); }
 }
 QCborParserError* PythonQtWrapper_QCborParserError::new_QCborParserError()
-{
+{ 
 return new PythonQtShell_QCborParserError(); }
 
 QString  PythonQtWrapper_QCborParserError::errorString(QCborParserError* theWrappedObject) const
@@ -5379,23 +5477,23 @@ QString  PythonQtWrapper_QCborParserError::errorString(QCborParserError* theWrap
 
 
 QCborStreamReader* PythonQtWrapper_QCborStreamReader::new_QCborStreamReader()
-{
+{ 
 return new QCborStreamReader(); }
 
 QCborStreamReader* PythonQtWrapper_QCborStreamReader::new_QCborStreamReader(QIODevice*  device)
-{
+{ 
 return new QCborStreamReader(device); }
 
 QCborStreamReader* PythonQtWrapper_QCborStreamReader::new_QCborStreamReader(const QByteArray&  data)
-{
+{ 
 return new QCborStreamReader(data); }
 
 QCborStreamReader* PythonQtWrapper_QCborStreamReader::new_QCborStreamReader(const char*  data, qsizetype  len)
-{
+{ 
 return new QCborStreamReader(data, len); }
 
 QCborStreamReader* PythonQtWrapper_QCborStreamReader::new_QCborStreamReader(const unsigned char*  data, qsizetype  len)
-{
+{ 
 return new QCborStreamReader(data, len); }
 
 void PythonQtWrapper_QCborStreamReader::addData(QCborStreamReader* theWrappedObject, const QByteArray&  data)
@@ -5636,11 +5734,11 @@ QCborStreamReader::Type  PythonQtWrapper_QCborStreamReader::type(QCborStreamRead
 
 
 QCborStreamWriter* PythonQtWrapper_QCborStreamWriter::new_QCborStreamWriter(QByteArray*  data)
-{
+{ 
 return new QCborStreamWriter(data); }
 
 QCborStreamWriter* PythonQtWrapper_QCborStreamWriter::new_QCborStreamWriter(QIODevice*  device)
-{
+{ 
 return new QCborStreamWriter(device); }
 
 void PythonQtWrapper_QCborStreamWriter::append(QCborStreamWriter* theWrappedObject, QCborKnownTags  tag)
@@ -5766,75 +5864,75 @@ void PythonQtWrapper_QCborStreamWriter::startMap(QCborStreamWriter* theWrappedOb
 
 
 QCborValue* PythonQtWrapper_QCborValue::new_QCborValue()
-{
+{ 
 return new QCborValue(); }
 
 QCborValue* PythonQtWrapper_QCborValue::new_QCborValue(QCborKnownTags  t_, const QCborValue&  tv)
-{
+{ 
 return new QCborValue(t_, tv); }
 
 QCborValue* PythonQtWrapper_QCborValue::new_QCborValue(QCborSimpleType  st)
-{
+{ 
 return new QCborValue(st); }
 
 QCborValue* PythonQtWrapper_QCborValue::new_QCborValue(QCborValue::Type  t_)
-{
+{ 
 return new QCborValue(t_); }
 
 QCborValue* PythonQtWrapper_QCborValue::new_QCborValue(bool  b_)
-{
+{ 
 return new QCborValue(b_); }
 
 QCborValue* PythonQtWrapper_QCborValue::new_QCborValue(const QByteArray&  ba)
-{
+{ 
 return new QCborValue(ba); }
 
 QCborValue* PythonQtWrapper_QCborValue::new_QCborValue(const QCborArray&  a)
-{
+{ 
 return new QCborValue(a); }
 
 QCborValue* PythonQtWrapper_QCborValue::new_QCborValue(const QCborMap&  m)
-{
+{ 
 return new QCborValue(m); }
 
 QCborValue* PythonQtWrapper_QCborValue::new_QCborValue(const QCborValue&  other)
-{
+{ 
 return new QCborValue(other); }
 
 QCborValue* PythonQtWrapper_QCborValue::new_QCborValue(const QDateTime&  dt)
-{
+{ 
 return new QCborValue(dt); }
 
 QCborValue* PythonQtWrapper_QCborValue::new_QCborValue(const QRegularExpression&  rx)
-{
+{ 
 return new QCborValue(rx); }
 
 QCborValue* PythonQtWrapper_QCborValue::new_QCborValue(const QString&  s)
-{
+{ 
 return new QCborValue(s); }
 
 QCborValue* PythonQtWrapper_QCborValue::new_QCborValue(const QUrl&  url)
-{
+{ 
 return new QCborValue(url); }
 
 QCborValue* PythonQtWrapper_QCborValue::new_QCborValue(const QUuid&  uuid)
-{
+{ 
 return new QCborValue(uuid); }
 
 QCborValue* PythonQtWrapper_QCborValue::new_QCborValue(const char*  s)
-{
+{ 
 return new QCborValue(s); }
 
 QCborValue* PythonQtWrapper_QCborValue::new_QCborValue(double  v)
-{
+{ 
 return new QCborValue(v); }
 
 QCborValue* PythonQtWrapper_QCborValue::new_QCborValue(int  i)
-{
+{ 
 return new QCborValue(i); }
 
 QCborValue* PythonQtWrapper_QCborValue::new_QCborValue(qint64  i)
-{
+{ 
 return new QCborValue(i); }
 
 int  PythonQtWrapper_QCborValue::compare(QCborValue* theWrappedObject, const QCborValue&  other) const
@@ -6130,7 +6228,7 @@ PythonQtShell_QChildEvent::~PythonQtShell_QChildEvent() {
   if (priv) { priv->shellClassDeleted(this); }
 }
 QChildEvent* PythonQtWrapper_QChildEvent::new_QChildEvent(QEvent::Type  type, QObject*  child)
-{
+{ 
 return new PythonQtShell_QChildEvent(type, child); }
 
 bool  PythonQtWrapper_QChildEvent::added(QChildEvent* theWrappedObject) const
@@ -6156,15 +6254,15 @@ bool  PythonQtWrapper_QChildEvent::removed(QChildEvent* theWrappedObject) const
 
 
 QCollator* PythonQtWrapper_QCollator::new_QCollator()
-{
+{ 
 return new QCollator(); }
 
 QCollator* PythonQtWrapper_QCollator::new_QCollator(const QCollator&  arg__1)
-{
+{ 
 return new QCollator(arg__1); }
 
 QCollator* PythonQtWrapper_QCollator::new_QCollator(const QLocale&  locale)
-{
+{ 
 return new QCollator(locale); }
 
 Qt::CaseSensitivity  PythonQtWrapper_QCollator::caseSensitivity(QCollator* theWrappedObject) const
@@ -6240,7 +6338,7 @@ void PythonQtWrapper_QCollator::swap(QCollator* theWrappedObject, QCollator&  ot
 
 
 QCollatorSortKey* PythonQtWrapper_QCollatorSortKey::new_QCollatorSortKey(const QCollatorSortKey&  other)
-{
+{ 
 return new QCollatorSortKey(other); }
 
 int  PythonQtWrapper_QCollatorSortKey::compare(QCollatorSortKey* theWrappedObject, const QCollatorSortKey&  key) const
@@ -6266,23 +6364,23 @@ void PythonQtWrapper_QCollatorSortKey::swap(QCollatorSortKey* theWrappedObject, 
 
 
 QCommandLineOption* PythonQtWrapper_QCommandLineOption::new_QCommandLineOption(const QCommandLineOption&  other)
-{
+{ 
 return new QCommandLineOption(other); }
 
 QCommandLineOption* PythonQtWrapper_QCommandLineOption::new_QCommandLineOption(const QString&  name)
-{
+{ 
 return new QCommandLineOption(name); }
 
 QCommandLineOption* PythonQtWrapper_QCommandLineOption::new_QCommandLineOption(const QString&  name, const QString&  description, const QString&  valueName, const QString&  defaultValue)
-{
+{ 
 return new QCommandLineOption(name, description, valueName, defaultValue); }
 
 QCommandLineOption* PythonQtWrapper_QCommandLineOption::new_QCommandLineOption(const QStringList&  names)
-{
+{ 
 return new QCommandLineOption(names); }
 
 QCommandLineOption* PythonQtWrapper_QCommandLineOption::new_QCommandLineOption(const QStringList&  names, const QString&  description, const QString&  valueName, const QString&  defaultValue)
-{
+{ 
 return new QCommandLineOption(names, description, valueName, defaultValue); }
 
 QStringList  PythonQtWrapper_QCommandLineOption::defaultValues(QCommandLineOption* theWrappedObject) const
@@ -6348,7 +6446,7 @@ QString  PythonQtWrapper_QCommandLineOption::valueName(QCommandLineOption* theWr
 
 
 QCommandLineParser* PythonQtWrapper_QCommandLineParser::new_QCommandLineParser()
-{
+{ 
 return new QCommandLineParser(); }
 
 QCommandLineOption  PythonQtWrapper_QCommandLineParser::addHelpOption(QCommandLineParser* theWrappedObject)
@@ -6701,7 +6799,7 @@ QString  PythonQtWrapper_QCoreApplication::static_QCoreApplication_translate(con
 
 
 QCryptographicHash* PythonQtWrapper_QCryptographicHash::new_QCryptographicHash(QCryptographicHash::Algorithm  method)
-{
+{ 
 return new QCryptographicHash(method); }
 
 bool  PythonQtWrapper_QCryptographicHash::addData(QCryptographicHash* theWrappedObject, QIODevice*  device)
@@ -6732,253 +6830,6 @@ void PythonQtWrapper_QCryptographicHash::reset(QCryptographicHash* theWrappedObj
 QByteArray  PythonQtWrapper_QCryptographicHash::result(QCryptographicHash* theWrappedObject) const
 {
   return ( theWrappedObject->result());
-}
-
-
-
-QDataStream* PythonQtWrapper_QDataStream::new_QDataStream()
-{
-return new QDataStream(); }
-
-QDataStream* PythonQtWrapper_QDataStream::new_QDataStream(QByteArray*  arg__1, QIODevice::OpenMode  flags)
-{
-return new QDataStream(arg__1, flags); }
-
-QDataStream* PythonQtWrapper_QDataStream::new_QDataStream(QIODevice*  arg__1)
-{
-return new QDataStream(arg__1); }
-
-QDataStream* PythonQtWrapper_QDataStream::new_QDataStream(const QByteArray&  arg__1)
-{
-return new QDataStream(arg__1); }
-
-void PythonQtWrapper_QDataStream::abortTransaction(QDataStream* theWrappedObject)
-{
-  ( theWrappedObject->abortTransaction());
-}
-
-bool  PythonQtWrapper_QDataStream::atEnd(QDataStream* theWrappedObject) const
-{
-  return ( theWrappedObject->atEnd());
-}
-
-QDataStream::ByteOrder  PythonQtWrapper_QDataStream::byteOrder(QDataStream* theWrappedObject) const
-{
-  return ( theWrappedObject->byteOrder());
-}
-
-bool  PythonQtWrapper_QDataStream::commitTransaction(QDataStream* theWrappedObject)
-{
-  return ( theWrappedObject->commitTransaction());
-}
-
-QIODevice*  PythonQtWrapper_QDataStream::device(QDataStream* theWrappedObject) const
-{
-  return ( theWrappedObject->device());
-}
-
-QDataStream::FloatingPointPrecision  PythonQtWrapper_QDataStream::floatingPointPrecision(QDataStream* theWrappedObject) const
-{
-  return ( theWrappedObject->floatingPointPrecision());
-}
-
-void PythonQtWrapper_QDataStream::resetStatus(QDataStream* theWrappedObject)
-{
-  ( theWrappedObject->resetStatus());
-}
-
-void PythonQtWrapper_QDataStream::rollbackTransaction(QDataStream* theWrappedObject)
-{
-  ( theWrappedObject->rollbackTransaction());
-}
-
-void PythonQtWrapper_QDataStream::setByteOrder(QDataStream* theWrappedObject, QDataStream::ByteOrder  arg__1)
-{
-  ( theWrappedObject->setByteOrder(arg__1));
-}
-
-void PythonQtWrapper_QDataStream::setDevice(QDataStream* theWrappedObject, QIODevice*  arg__1)
-{
-  ( theWrappedObject->setDevice(arg__1));
-}
-
-void PythonQtWrapper_QDataStream::setFloatingPointPrecision(QDataStream* theWrappedObject, QDataStream::FloatingPointPrecision  precision)
-{
-  ( theWrappedObject->setFloatingPointPrecision(precision));
-}
-
-void PythonQtWrapper_QDataStream::setStatus(QDataStream* theWrappedObject, QDataStream::Status  status)
-{
-  ( theWrappedObject->setStatus(status));
-}
-
-void PythonQtWrapper_QDataStream::setVersion(QDataStream* theWrappedObject, int  arg__1)
-{
-  ( theWrappedObject->setVersion(arg__1));
-}
-
-int  PythonQtWrapper_QDataStream::skipRawData(QDataStream* theWrappedObject, int  len)
-{
-  return ( theWrappedObject->skipRawData(len));
-}
-
-void PythonQtWrapper_QDataStream::startTransaction(QDataStream* theWrappedObject)
-{
-  ( theWrappedObject->startTransaction());
-}
-
-QDataStream::Status  PythonQtWrapper_QDataStream::status(QDataStream* theWrappedObject) const
-{
-  return ( theWrappedObject->status());
-}
-
-void PythonQtWrapper_QDataStream::unsetDevice(QDataStream* theWrappedObject)
-{
-  ( theWrappedObject->unsetDevice());
-}
-
-int  PythonQtWrapper_QDataStream::version(QDataStream* theWrappedObject) const
-{
-  return ( theWrappedObject->version());
-}
-
-
-
-QDeadlineTimer* PythonQtWrapper_QDeadlineTimer::new_QDeadlineTimer(QDeadlineTimer::ForeverConstant  arg__1, Qt::TimerType  type_)
-{
-return new QDeadlineTimer(arg__1, type_); }
-
-QDeadlineTimer* PythonQtWrapper_QDeadlineTimer::new_QDeadlineTimer(Qt::TimerType  type_)
-{
-return new QDeadlineTimer(type_); }
-
-QDeadlineTimer* PythonQtWrapper_QDeadlineTimer::new_QDeadlineTimer(qint64  msecs, Qt::TimerType  type)
-{
-return new QDeadlineTimer(msecs, type); }
-
-QDeadlineTimer  PythonQtWrapper_QDeadlineTimer::static_QDeadlineTimer_addNSecs(QDeadlineTimer  dt, qint64  nsecs)
-{
-  return (QDeadlineTimer::addNSecs(dt, nsecs));
-}
-
-QDeadlineTimer  PythonQtWrapper_QDeadlineTimer::static_QDeadlineTimer_current(Qt::TimerType  timerType)
-{
-  return (QDeadlineTimer::current(timerType));
-}
-
-qint64  PythonQtWrapper_QDeadlineTimer::deadline(QDeadlineTimer* theWrappedObject) const
-{
-  return ( theWrappedObject->deadline());
-}
-
-qint64  PythonQtWrapper_QDeadlineTimer::deadlineNSecs(QDeadlineTimer* theWrappedObject) const
-{
-  return ( theWrappedObject->deadlineNSecs());
-}
-
-bool  PythonQtWrapper_QDeadlineTimer::hasExpired(QDeadlineTimer* theWrappedObject) const
-{
-  return ( theWrappedObject->hasExpired());
-}
-
-bool  PythonQtWrapper_QDeadlineTimer::isForever(QDeadlineTimer* theWrappedObject) const
-{
-  return ( theWrappedObject->isForever());
-}
-
-bool  PythonQtWrapper_QDeadlineTimer::__ne__(QDeadlineTimer* theWrappedObject, QDeadlineTimer  d2)
-{
-  return ( (*theWrappedObject)!= d2);
-}
-
-QDeadlineTimer*  PythonQtWrapper_QDeadlineTimer::__iadd__(QDeadlineTimer* theWrappedObject, qint64  msecs)
-{
-  return &( (*theWrappedObject)+= msecs);
-}
-
-qint64  PythonQtWrapper_QDeadlineTimer::__sub__(QDeadlineTimer* theWrappedObject, QDeadlineTimer  dt2)
-{
-  return ( (*theWrappedObject)- dt2);
-}
-
-QDeadlineTimer  PythonQtWrapper_QDeadlineTimer::__sub__(QDeadlineTimer* theWrappedObject, qint64  msecs)
-{
-  return ( (*theWrappedObject)- msecs);
-}
-
-QDeadlineTimer*  PythonQtWrapper_QDeadlineTimer::__isub__(QDeadlineTimer* theWrappedObject, qint64  msecs)
-{
-  return &( (*theWrappedObject)-= msecs);
-}
-
-bool  PythonQtWrapper_QDeadlineTimer::__lt__(QDeadlineTimer* theWrappedObject, QDeadlineTimer  d2)
-{
-  return ( (*theWrappedObject)< d2);
-}
-
-bool  PythonQtWrapper_QDeadlineTimer::__le__(QDeadlineTimer* theWrappedObject, QDeadlineTimer  d2)
-{
-  return ( (*theWrappedObject)<= d2);
-}
-
-bool  PythonQtWrapper_QDeadlineTimer::__eq__(QDeadlineTimer* theWrappedObject, QDeadlineTimer  d2)
-{
-  return ( (*theWrappedObject)== d2);
-}
-
-bool  PythonQtWrapper_QDeadlineTimer::__gt__(QDeadlineTimer* theWrappedObject, QDeadlineTimer  d2)
-{
-  return ( (*theWrappedObject)> d2);
-}
-
-bool  PythonQtWrapper_QDeadlineTimer::__ge__(QDeadlineTimer* theWrappedObject, QDeadlineTimer  d2)
-{
-  return ( (*theWrappedObject)>= d2);
-}
-
-qint64  PythonQtWrapper_QDeadlineTimer::remainingTime(QDeadlineTimer* theWrappedObject) const
-{
-  return ( theWrappedObject->remainingTime());
-}
-
-qint64  PythonQtWrapper_QDeadlineTimer::remainingTimeNSecs(QDeadlineTimer* theWrappedObject) const
-{
-  return ( theWrappedObject->remainingTimeNSecs());
-}
-
-void PythonQtWrapper_QDeadlineTimer::setDeadline(QDeadlineTimer* theWrappedObject, qint64  msecs, Qt::TimerType  timerType)
-{
-  ( theWrappedObject->setDeadline(msecs, timerType));
-}
-
-void PythonQtWrapper_QDeadlineTimer::setPreciseDeadline(QDeadlineTimer* theWrappedObject, qint64  secs, qint64  nsecs, Qt::TimerType  type)
-{
-  ( theWrappedObject->setPreciseDeadline(secs, nsecs, type));
-}
-
-void PythonQtWrapper_QDeadlineTimer::setPreciseRemainingTime(QDeadlineTimer* theWrappedObject, qint64  secs, qint64  nsecs, Qt::TimerType  type)
-{
-  ( theWrappedObject->setPreciseRemainingTime(secs, nsecs, type));
-}
-
-void PythonQtWrapper_QDeadlineTimer::setRemainingTime(QDeadlineTimer* theWrappedObject, qint64  msecs, Qt::TimerType  type)
-{
-  ( theWrappedObject->setRemainingTime(msecs, type));
-}
-
-void PythonQtWrapper_QDeadlineTimer::setTimerType(QDeadlineTimer* theWrappedObject, Qt::TimerType  type)
-{
-  ( theWrappedObject->setTimerType(type));
-}
-
-void PythonQtWrapper_QDeadlineTimer::swap(QDeadlineTimer* theWrappedObject, QDeadlineTimer&  other)
-{
-  ( theWrappedObject->swap(other));
-}
-
-Qt::TimerType  PythonQtWrapper_QDeadlineTimer::timerType(QDeadlineTimer* theWrappedObject) const
-{
-  return ( theWrappedObject->timerType());
 }
 
 

@@ -3,19 +3,19 @@
 #include <PythonQtMethodInfo.h>
 #include <PythonQtSignalReceiver.h>
 #include <QVariant>
-#include <qaction.h>
-#include <qactiongroup.h>
+#include <QtWidgets/qaction.h>
+#include <QtWidgets/qactiongroup.h>
+#include <QtWidgets/qlayout.h>
+#include <QtWidgets/qwidget.h>
 #include <qbytearray.h>
 #include <qcoreevent.h>
 #include <qdir.h>
 #include <qiodevice.h>
-#include <qlayout.h>
 #include <qlist.h>
 #include <qmetaobject.h>
 #include <qobject.h>
 #include <qstringlist.h>
 #include <qthread.h>
-#include <qwidget.h>
 
 PythonQtShell_QUiLoader::~PythonQtShell_QUiLoader() {
   PythonQtPrivate* priv = PythonQt::priv();
@@ -286,7 +286,7 @@ if (_wrapper) {
   QUiLoader::timerEvent(event0);
 }
 QUiLoader* PythonQtWrapper_QUiLoader::new_QUiLoader(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QUiLoader(parent); }
 
 const QMetaObject* PythonQtShell_QUiLoader::metaObject() const {

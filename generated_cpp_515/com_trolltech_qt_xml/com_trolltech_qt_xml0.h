@@ -13,7 +13,7 @@
 class PythonQtWrapper_QDomAttr : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDomAttr* new_QDomAttr();
 QDomAttr* new_QDomAttr(const QDomAttr&  x);
 void delete_QDomAttr(QDomAttr* obj) { delete obj; }
@@ -32,7 +32,7 @@ void delete_QDomAttr(QDomAttr* obj) { delete obj; }
 class PythonQtWrapper_QDomCDATASection : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDomCDATASection* new_QDomCDATASection();
 QDomCDATASection* new_QDomCDATASection(const QDomCDATASection&  x);
 void delete_QDomCDATASection(QDomCDATASection* obj) { delete obj; }
@@ -46,7 +46,7 @@ void delete_QDomCDATASection(QDomCDATASection* obj) { delete obj; }
 class PythonQtWrapper_QDomCharacterData : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDomCharacterData* new_QDomCharacterData();
 QDomCharacterData* new_QDomCharacterData(const QDomCharacterData&  x);
 void delete_QDomCharacterData(QDomCharacterData* obj) { delete obj; }
@@ -68,7 +68,7 @@ void delete_QDomCharacterData(QDomCharacterData* obj) { delete obj; }
 class PythonQtWrapper_QDomComment : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDomComment* new_QDomComment();
 QDomComment* new_QDomComment(const QDomComment&  x);
 void delete_QDomComment(QDomComment* obj) { delete obj; }
@@ -82,7 +82,7 @@ void delete_QDomComment(QDomComment* obj) { delete obj; }
 class PythonQtWrapper_QDomDocument : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDomDocument* new_QDomDocument();
 QDomDocument* new_QDomDocument(const QDomDocument&  x);
 QDomDocument* new_QDomDocument(const QDomDocumentType&  doctype);
@@ -127,7 +127,7 @@ void delete_QDomDocument(QDomDocument* obj) { delete obj; }
 class PythonQtWrapper_QDomDocumentFragment : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDomDocumentFragment* new_QDomDocumentFragment();
 QDomDocumentFragment* new_QDomDocumentFragment(const QDomDocumentFragment&  x);
 void delete_QDomDocumentFragment(QDomDocumentFragment* obj) { delete obj; }
@@ -141,7 +141,7 @@ void delete_QDomDocumentFragment(QDomDocumentFragment* obj) { delete obj; }
 class PythonQtWrapper_QDomDocumentType : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDomDocumentType* new_QDomDocumentType();
 QDomDocumentType* new_QDomDocumentType(const QDomDocumentType&  x);
 void delete_QDomDocumentType(QDomDocumentType* obj) { delete obj; }
@@ -161,7 +161,7 @@ void delete_QDomDocumentType(QDomDocumentType* obj) { delete obj; }
 class PythonQtWrapper_QDomElement : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDomElement* new_QDomElement();
 QDomElement* new_QDomElement(const QDomElement&  x);
 void delete_QDomElement(QDomElement* obj) { delete obj; }
@@ -201,7 +201,7 @@ void delete_QDomElement(QDomElement* obj) { delete obj; }
 class PythonQtWrapper_QDomEntity : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDomEntity* new_QDomEntity();
 QDomEntity* new_QDomEntity(const QDomEntity&  x);
 void delete_QDomEntity(QDomEntity* obj) { delete obj; }
@@ -218,7 +218,7 @@ void delete_QDomEntity(QDomEntity* obj) { delete obj; }
 class PythonQtWrapper_QDomEntityReference : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDomEntityReference* new_QDomEntityReference();
 QDomEntityReference* new_QDomEntityReference(const QDomEntityReference&  x);
 void delete_QDomEntityReference(QDomEntityReference* obj) { delete obj; }
@@ -235,7 +235,7 @@ public:
 Q_ENUMS(InvalidDataPolicy )
 enum InvalidDataPolicy{
   AcceptInvalidChars = QDomImplementation::AcceptInvalidChars,   DropInvalidChars = QDomImplementation::DropInvalidChars,   ReturnNullNode = QDomImplementation::ReturnNullNode};
-public slots:
+public Q_SLOTS:
 QDomImplementation* new_QDomImplementation();
 QDomImplementation* new_QDomImplementation(const QDomImplementation&  arg__1);
 void delete_QDomImplementation(QDomImplementation* obj) { delete obj; }
@@ -257,7 +257,7 @@ void delete_QDomImplementation(QDomImplementation* obj) { delete obj; }
 class PythonQtWrapper_QDomNamedNodeMap : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDomNamedNodeMap* new_QDomNamedNodeMap();
 QDomNamedNodeMap* new_QDomNamedNodeMap(const QDomNamedNodeMap&  arg__1);
 void delete_QDomNamedNodeMap(QDomNamedNodeMap* obj) { delete obj; }
@@ -290,7 +290,7 @@ enum EncodingPolicy{
   EncodingFromDocument = QDomNode::EncodingFromDocument,   EncodingFromTextStream = QDomNode::EncodingFromTextStream};
 enum NodeType{
   ElementNode = QDomNode::ElementNode,   AttributeNode = QDomNode::AttributeNode,   TextNode = QDomNode::TextNode,   CDATASectionNode = QDomNode::CDATASectionNode,   EntityReferenceNode = QDomNode::EntityReferenceNode,   EntityNode = QDomNode::EntityNode,   ProcessingInstructionNode = QDomNode::ProcessingInstructionNode,   CommentNode = QDomNode::CommentNode,   DocumentNode = QDomNode::DocumentNode,   DocumentTypeNode = QDomNode::DocumentTypeNode,   DocumentFragmentNode = QDomNode::DocumentFragmentNode,   NotationNode = QDomNode::NotationNode,   BaseNode = QDomNode::BaseNode,   CharacterDataNode = QDomNode::CharacterDataNode};
-public slots:
+public Q_SLOTS:
 QDomNode* new_QDomNode();
 QDomNode* new_QDomNode(const QDomNode&  arg__1);
 void delete_QDomNode(QDomNode* obj) { delete obj; }
@@ -368,7 +368,7 @@ void delete_QDomNode(QDomNode* obj) { delete obj; }
 class PythonQtWrapper_QDomNodeList : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDomNodeList* new_QDomNodeList();
 QDomNodeList* new_QDomNodeList(const QDomNodeList&  arg__1);
 void delete_QDomNodeList(QDomNodeList* obj) { delete obj; }
@@ -390,7 +390,7 @@ void delete_QDomNodeList(QDomNodeList* obj) { delete obj; }
 class PythonQtWrapper_QDomNotation : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDomNotation* new_QDomNotation();
 QDomNotation* new_QDomNotation(const QDomNotation&  x);
 void delete_QDomNotation(QDomNotation* obj) { delete obj; }
@@ -406,7 +406,7 @@ void delete_QDomNotation(QDomNotation* obj) { delete obj; }
 class PythonQtWrapper_QDomProcessingInstruction : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDomProcessingInstruction* new_QDomProcessingInstruction();
 QDomProcessingInstruction* new_QDomProcessingInstruction(const QDomProcessingInstruction&  x);
 void delete_QDomProcessingInstruction(QDomProcessingInstruction* obj) { delete obj; }
@@ -423,7 +423,7 @@ void delete_QDomProcessingInstruction(QDomProcessingInstruction* obj) { delete o
 class PythonQtWrapper_QDomText : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDomText* new_QDomText();
 QDomText* new_QDomText(const QDomText&  x);
 void delete_QDomText(QDomText* obj) { delete obj; }
@@ -450,7 +450,7 @@ public:
 class PythonQtWrapper_QXmlAttributes : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QXmlAttributes* new_QXmlAttributes();
 QXmlAttributes* new_QXmlAttributes(const QXmlAttributes&  arg__1);
 void delete_QXmlAttributes(QXmlAttributes* obj) { delete obj; }
@@ -519,7 +519,7 @@ inline bool  py_q_startPrefixMapping(const QString&  prefix, const QString&  uri
 class PythonQtWrapper_QXmlContentHandler : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QXmlContentHandler* new_QXmlContentHandler();
 void delete_QXmlContentHandler(QXmlContentHandler* obj) { delete obj; }
    bool  characters(QXmlContentHandler* theWrappedObject, const QString&  ch);
@@ -576,7 +576,7 @@ inline bool  py_q_unparsedEntityDecl(const QString&  name, const QString&  publi
 class PythonQtWrapper_QXmlDTDHandler : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QXmlDTDHandler* new_QXmlDTDHandler();
 void delete_QXmlDTDHandler(QXmlDTDHandler* obj) { delete obj; }
    QString  errorString(QXmlDTDHandler* theWrappedObject) const;
@@ -617,7 +617,7 @@ inline bool  py_q_internalEntityDecl(const QString&  name, const QString&  value
 class PythonQtWrapper_QXmlDeclHandler : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QXmlDeclHandler* new_QXmlDeclHandler();
 void delete_QXmlDeclHandler(QXmlDeclHandler* obj) { delete obj; }
    bool  attributeDecl(QXmlDeclHandler* theWrappedObject, const QString&  eName, const QString&  aName, const QString&  type, const QString&  valueDefault, const QString&  value);
@@ -708,7 +708,7 @@ inline bool  py_q_warning(const QXmlParseException&  exception) { return QXmlDef
 class PythonQtWrapper_QXmlDefaultHandler : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QXmlDefaultHandler* new_QXmlDefaultHandler();
 void delete_QXmlDefaultHandler(QXmlDefaultHandler* obj) { delete obj; }
    bool  py_q_attributeDecl(QXmlDefaultHandler* theWrappedObject, const QString&  eName, const QString&  aName, const QString&  type, const QString&  valueDefault, const QString&  value){  return (((PythonQtPublicPromoter_QXmlDefaultHandler*)theWrappedObject)->py_q_attributeDecl(eName, aName, type, valueDefault, value));}
@@ -767,7 +767,7 @@ inline bool  py_q_resolveEntity(const QString&  publicId, const QString&  system
 class PythonQtWrapper_QXmlEntityResolver : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QXmlEntityResolver* new_QXmlEntityResolver();
 void delete_QXmlEntityResolver(QXmlEntityResolver* obj) { delete obj; }
    QString  errorString(QXmlEntityResolver* theWrappedObject) const;
@@ -806,7 +806,7 @@ inline bool  py_q_warning(const QXmlParseException&  exception) { return this->w
 class PythonQtWrapper_QXmlErrorHandler : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QXmlErrorHandler* new_QXmlErrorHandler();
 void delete_QXmlErrorHandler(QXmlErrorHandler* obj) { delete obj; }
    bool  error(QXmlErrorHandler* theWrappedObject, const QXmlParseException&  exception);
@@ -857,7 +857,7 @@ inline void py_q_setData(const QString&  dat) { QXmlInputSource::setData(dat); }
 class PythonQtWrapper_QXmlInputSource : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QXmlInputSource* new_QXmlInputSource();
 QXmlInputSource* new_QXmlInputSource(QIODevice*  dev);
 void delete_QXmlInputSource(QXmlInputSource* obj) { delete obj; }
@@ -915,7 +915,7 @@ inline bool  py_q_startEntity(const QString&  name) { return this->startEntity(n
 class PythonQtWrapper_QXmlLexicalHandler : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QXmlLexicalHandler* new_QXmlLexicalHandler();
 void delete_QXmlLexicalHandler(QXmlLexicalHandler* obj) { delete obj; }
    bool  comment(QXmlLexicalHandler* theWrappedObject, const QString&  ch);
@@ -962,7 +962,7 @@ inline int  py_q_lineNumber() const { return this->lineNumber(); }
 class PythonQtWrapper_QXmlLocator : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QXmlLocator* new_QXmlLocator();
 void delete_QXmlLocator(QXmlLocator* obj) { delete obj; }
    int  columnNumber(QXmlLocator* theWrappedObject) const;
@@ -978,7 +978,7 @@ void delete_QXmlLocator(QXmlLocator* obj) { delete obj; }
 class PythonQtWrapper_QXmlParseException : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QXmlParseException* new_QXmlParseException(const QString&  name = QString(), int  c = -1, int  l = -1, const QString&  p = QString(), const QString&  s = QString());
 QXmlParseException* new_QXmlParseException(const QXmlParseException&  other);
 void delete_QXmlParseException(QXmlParseException* obj) { delete obj; }
@@ -1051,7 +1051,7 @@ inline void py_q_setProperty(const QString&  name, void*  value) { this->setProp
 class PythonQtWrapper_QXmlReader : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QXmlReader* new_QXmlReader();
 void delete_QXmlReader(QXmlReader* obj) { delete obj; }
    QXmlDTDHandler*  DTDHandler(QXmlReader* theWrappedObject) const;
@@ -1162,7 +1162,7 @@ inline void py_q_setProperty(const QString&  name, void*  value) { QXmlSimpleRea
 class PythonQtWrapper_QXmlSimpleReader : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QXmlSimpleReader* new_QXmlSimpleReader();
 void delete_QXmlSimpleReader(QXmlSimpleReader* obj) { delete obj; }
    QXmlDTDHandler*  py_q_DTDHandler(QXmlSimpleReader* theWrappedObject) const{  return (((PythonQtPublicPromoter_QXmlSimpleReader*)theWrappedObject)->py_q_DTDHandler());}

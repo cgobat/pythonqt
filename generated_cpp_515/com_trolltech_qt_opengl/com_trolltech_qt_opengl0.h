@@ -3,7 +3,13 @@
 #include <QObject>
 #include <QPixmap>
 #include <QVariant>
-#include <qaction.h>
+#include <QtWidgets/qaction.h>
+#include <QtWidgets/qgraphicseffect.h>
+#include <QtWidgets/qgraphicsproxywidget.h>
+#include <QtWidgets/qlayout.h>
+#include <QtWidgets/qsizepolicy.h>
+#include <QtWidgets/qstyle.h>
+#include <QtWidgets/qwidget.h>
 #include <qbackingstore.h>
 #include <qbitmap.h>
 #include <qbytearray.h>
@@ -21,12 +27,9 @@
 #include <qglfunctions.h>
 #include <qglpixelbuffer.h>
 #include <qglshaderprogram.h>
-#include <qgraphicseffect.h>
-#include <qgraphicsproxywidget.h>
 #include <qicon.h>
 #include <qimage.h>
 #include <qkeysequence.h>
-#include <qlayout.h>
 #include <qlist.h>
 #include <qlocale.h>
 #include <qmargins.h>
@@ -44,15 +47,12 @@
 #include <qregion.h>
 #include <qscreen.h>
 #include <qsize.h>
-#include <qsizepolicy.h>
-#include <qstyle.h>
 #include <qsurfaceformat.h>
 #include <qthread.h>
 #include <qtransform.h>
 #include <qvector2d.h>
 #include <qvector3d.h>
 #include <qvector4d.h>
-#include <qwidget.h>
 #include <qwindow.h>
 
 
@@ -67,7 +67,7 @@ enum Type{
   VertexBuffer = QGLBuffer::VertexBuffer,   IndexBuffer = QGLBuffer::IndexBuffer,   PixelPackBuffer = QGLBuffer::PixelPackBuffer,   PixelUnpackBuffer = QGLBuffer::PixelUnpackBuffer};
 enum UsagePattern{
   StreamDraw = QGLBuffer::StreamDraw,   StreamRead = QGLBuffer::StreamRead,   StreamCopy = QGLBuffer::StreamCopy,   StaticDraw = QGLBuffer::StaticDraw,   StaticRead = QGLBuffer::StaticRead,   StaticCopy = QGLBuffer::StaticCopy,   DynamicDraw = QGLBuffer::DynamicDraw,   DynamicRead = QGLBuffer::DynamicRead,   DynamicCopy = QGLBuffer::DynamicCopy};
-public slots:
+public Q_SLOTS:
 QGLBuffer* new_QGLBuffer();
 QGLBuffer* new_QGLBuffer(QGLBuffer::Type  type);
 QGLBuffer* new_QGLBuffer(const QGLBuffer&  other);
@@ -117,7 +117,7 @@ inline void promoted_setHandle(Qt::HANDLE  ahandle) { this->setHandle(ahandle); 
 class PythonQtWrapper_QGLColormap : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QGLColormap* new_QGLColormap();
 QGLColormap* new_QGLColormap(const QGLColormap&  arg__1);
 void delete_QGLColormap(QGLColormap* obj) { delete obj; }
@@ -180,7 +180,7 @@ Q_FLAGS(BindOptions )
 enum BindOption{
   NoBindOption = QGLContext::NoBindOption,   InvertedYBindOption = QGLContext::InvertedYBindOption,   MipmapBindOption = QGLContext::MipmapBindOption,   PremultipliedAlphaBindOption = QGLContext::PremultipliedAlphaBindOption,   LinearFilteringBindOption = QGLContext::LinearFilteringBindOption,   MemoryManagedBindOption = QGLContext::MemoryManagedBindOption,   CanFlipNativePixmapBindOption = QGLContext::CanFlipNativePixmapBindOption,   TemporarilyCachedBindOption = QGLContext::TemporarilyCachedBindOption,   DefaultBindOption = QGLContext::DefaultBindOption,   InternalBindOption = QGLContext::InternalBindOption};
 Q_DECLARE_FLAGS(BindOptions, BindOption)
-public slots:
+public Q_SLOTS:
 QGLContext* new_QGLContext(const QGLFormat&  format);
 QGLContext* new_QGLContext(const QGLFormat&  format, QPaintDevice*  device);
 void delete_QGLContext(QGLContext* obj) { delete obj; }
@@ -242,7 +242,7 @@ enum OpenGLContextProfile{
 enum OpenGLVersionFlag{
   OpenGL_Version_None = QGLFormat::OpenGL_Version_None,   OpenGL_Version_1_1 = QGLFormat::OpenGL_Version_1_1,   OpenGL_Version_1_2 = QGLFormat::OpenGL_Version_1_2,   OpenGL_Version_1_3 = QGLFormat::OpenGL_Version_1_3,   OpenGL_Version_1_4 = QGLFormat::OpenGL_Version_1_4,   OpenGL_Version_1_5 = QGLFormat::OpenGL_Version_1_5,   OpenGL_Version_2_0 = QGLFormat::OpenGL_Version_2_0,   OpenGL_Version_2_1 = QGLFormat::OpenGL_Version_2_1,   OpenGL_ES_Common_Version_1_0 = QGLFormat::OpenGL_ES_Common_Version_1_0,   OpenGL_ES_CommonLite_Version_1_0 = QGLFormat::OpenGL_ES_CommonLite_Version_1_0,   OpenGL_ES_Common_Version_1_1 = QGLFormat::OpenGL_ES_Common_Version_1_1,   OpenGL_ES_CommonLite_Version_1_1 = QGLFormat::OpenGL_ES_CommonLite_Version_1_1,   OpenGL_ES_Version_2_0 = QGLFormat::OpenGL_ES_Version_2_0,   OpenGL_Version_3_0 = QGLFormat::OpenGL_Version_3_0,   OpenGL_Version_3_1 = QGLFormat::OpenGL_Version_3_1,   OpenGL_Version_3_2 = QGLFormat::OpenGL_Version_3_2,   OpenGL_Version_3_3 = QGLFormat::OpenGL_Version_3_3,   OpenGL_Version_4_0 = QGLFormat::OpenGL_Version_4_0,   OpenGL_Version_4_1 = QGLFormat::OpenGL_Version_4_1,   OpenGL_Version_4_2 = QGLFormat::OpenGL_Version_4_2,   OpenGL_Version_4_3 = QGLFormat::OpenGL_Version_4_3};
 Q_DECLARE_FLAGS(OpenGLVersionFlags, OpenGLVersionFlag)
-public slots:
+public Q_SLOTS:
 QGLFormat* new_QGLFormat();
 QGLFormat* new_QGLFormat(QGL::FormatOptions  options, int  plane = 0);
 QGLFormat* new_QGLFormat(const QGLFormat&  other);
@@ -349,7 +349,7 @@ public:
 Q_ENUMS(Attachment )
 enum Attachment{
   NoAttachment = QGLFramebufferObject::NoAttachment,   CombinedDepthStencil = QGLFramebufferObject::CombinedDepthStencil,   Depth = QGLFramebufferObject::Depth};
-public slots:
+public Q_SLOTS:
 QGLFramebufferObject* new_QGLFramebufferObject(const QSize&  size, GLenum  target = 0x0DE1);
 QGLFramebufferObject* new_QGLFramebufferObject(const QSize&  size, QGLFramebufferObject::Attachment  attachment, GLenum  target = 0x0DE1, GLenum  internal_format = 0);
 QGLFramebufferObject* new_QGLFramebufferObject(const QSize&  size, const QGLFramebufferObjectFormat&  format);
@@ -386,7 +386,7 @@ void delete_QGLFramebufferObject(QGLFramebufferObject* obj) { delete obj; }
 class PythonQtWrapper_QGLFramebufferObjectFormat : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QGLFramebufferObjectFormat* new_QGLFramebufferObjectFormat();
 QGLFramebufferObjectFormat* new_QGLFramebufferObjectFormat(const QGLFramebufferObjectFormat&  other);
 void delete_QGLFramebufferObjectFormat(QGLFramebufferObjectFormat* obj) { delete obj; }
@@ -417,7 +417,7 @@ Q_FLAGS(OpenGLFeatures )
 enum OpenGLFeature{
   Multitexture = QGLFunctions::Multitexture,   Shaders = QGLFunctions::Shaders,   Buffers = QGLFunctions::Buffers,   Framebuffers = QGLFunctions::Framebuffers,   BlendColor = QGLFunctions::BlendColor,   BlendEquation = QGLFunctions::BlendEquation,   BlendEquationSeparate = QGLFunctions::BlendEquationSeparate,   BlendFuncSeparate = QGLFunctions::BlendFuncSeparate,   BlendSubtract = QGLFunctions::BlendSubtract,   CompressedTextures = QGLFunctions::CompressedTextures,   Multisample = QGLFunctions::Multisample,   StencilSeparate = QGLFunctions::StencilSeparate,   NPOTTextures = QGLFunctions::NPOTTextures};
 Q_DECLARE_FLAGS(OpenGLFeatures, OpenGLFeature)
-public slots:
+public Q_SLOTS:
 QGLFunctions* new_QGLFunctions();
 QGLFunctions* new_QGLFunctions(const QGLContext*  context);
 void delete_QGLFunctions(QGLFunctions* obj) { delete obj; }
@@ -555,7 +555,7 @@ inline QPaintEngine*  py_q_paintEngine() const { return QGLPixelBuffer::paintEng
 class PythonQtWrapper_QGLPixelBuffer : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QGLPixelBuffer* new_QGLPixelBuffer(const QSize&  size, const QGLFormat&  format = QGLFormat::defaultFormat(), QGLWidget*  shareWidget = nullptr);
 QGLPixelBuffer* new_QGLPixelBuffer(int  width, int  height, const QGLFormat&  format = QGLFormat::defaultFormat(), QGLWidget*  shareWidget = nullptr);
 void delete_QGLPixelBuffer(QGLPixelBuffer* obj) { delete obj; }
@@ -615,7 +615,7 @@ Q_FLAGS(ShaderType )
 enum ShaderTypeBit{
   Vertex = QGLShader::Vertex,   Fragment = QGLShader::Fragment,   Geometry = QGLShader::Geometry};
 Q_DECLARE_FLAGS(ShaderType, ShaderTypeBit)
-public slots:
+public Q_SLOTS:
 QGLShader* new_QGLShader(QGLShader::ShaderType  type, QObject*  parent = nullptr);
 QGLShader* new_QGLShader(QGLShader::ShaderType  type, const QGLContext*  context, QObject*  parent = nullptr);
 void delete_QGLShader(QGLShader* obj) { delete obj; }
@@ -663,7 +663,7 @@ inline bool  py_q_link() { return QGLShaderProgram::link(); }
 class PythonQtWrapper_QGLShaderProgram : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QGLShaderProgram* new_QGLShaderProgram(QObject*  parent = nullptr);
 QGLShaderProgram* new_QGLShaderProgram(const QGLContext*  context, QObject*  parent = nullptr);
 void delete_QGLShaderProgram(QGLShaderProgram* obj) { delete obj; }
@@ -698,14 +698,14 @@ void delete_QGLShaderProgram(QGLShaderProgram* obj) { delete obj; }
    void removeShader(QGLShaderProgram* theWrappedObject, QGLShader*  shader);
    void setAttributeArray(QGLShaderProgram* theWrappedObject, const char*  name, GLenum  type, const void*  values, int  tupleSize, int  stride = 0);
    void setAttributeArray(QGLShaderProgram* theWrappedObject, const char*  name, const GLfloat*  values, int  tupleSize, int  stride = 0);
-   void setAttributeArray(QGLShaderProgram* theWrappedObject, const char*  name, const QVector2D*  values, int  stride = 0);
-   void setAttributeArray(QGLShaderProgram* theWrappedObject, const char*  name, const QVector3D*  values, int  stride = 0);
-   void setAttributeArray(QGLShaderProgram* theWrappedObject, const char*  name, const QVector4D*  values, int  stride = 0);
+   void setAttributeArray_QVector2D(QGLShaderProgram* theWrappedObject, const char*  name, const QVector2D*  values, int  stride = 0);
+   void setAttributeArray_QVector3D(QGLShaderProgram* theWrappedObject, const char*  name, const QVector3D*  values, int  stride = 0);
+   void setAttributeArray_QVector4D(QGLShaderProgram* theWrappedObject, const char*  name, const QVector4D*  values, int  stride = 0);
    void setAttributeArray(QGLShaderProgram* theWrappedObject, int  location, GLenum  type, const void*  values, int  tupleSize, int  stride = 0);
    void setAttributeArray(QGLShaderProgram* theWrappedObject, int  location, const GLfloat*  values, int  tupleSize, int  stride = 0);
-   void setAttributeArray(QGLShaderProgram* theWrappedObject, int  location, const QVector2D*  values, int  stride = 0);
-   void setAttributeArray(QGLShaderProgram* theWrappedObject, int  location, const QVector3D*  values, int  stride = 0);
-   void setAttributeArray(QGLShaderProgram* theWrappedObject, int  location, const QVector4D*  values, int  stride = 0);
+   void setAttributeArray_QVector2D(QGLShaderProgram* theWrappedObject, int  location, const QVector2D*  values, int  stride = 0);
+   void setAttributeArray_QVector3D(QGLShaderProgram* theWrappedObject, int  location, const QVector3D*  values, int  stride = 0);
+   void setAttributeArray_QVector4D(QGLShaderProgram* theWrappedObject, int  location, const QVector4D*  values, int  stride = 0);
    void setAttributeBuffer(QGLShaderProgram* theWrappedObject, const char*  name, GLenum  type, int  offset, int  tupleSize, int  stride = 0);
    void setAttributeBuffer(QGLShaderProgram* theWrappedObject, int  location, GLenum  type, int  offset, int  tupleSize, int  stride = 0);
    void setAttributeValue(QGLShaderProgram* theWrappedObject, const char*  name, GLfloat  value);
@@ -762,18 +762,18 @@ void delete_QGLShaderProgram(QGLShaderProgram* obj) { delete obj; }
    void setUniformValue(QGLShaderProgram* theWrappedObject, int  location, const QVector4D&  value);
    void setUniformValue(QGLShaderProgram* theWrappedObject, int  location, uint  value);
    void setUniformValueArray(QGLShaderProgram* theWrappedObject, const char*  name, const GLfloat*  values, int  count, int  tupleSize);
-   void setUniformValueArray(QGLShaderProgram* theWrappedObject, const char*  name, const GLint*  values, int  count);
+   void setUniformValueArray_int(QGLShaderProgram* theWrappedObject, const char*  name, const GLint*  values, int  count);
    void setUniformValueArray(QGLShaderProgram* theWrappedObject, const char*  name, const QMatrix4x4*  values, int  count);
-   void setUniformValueArray(QGLShaderProgram* theWrappedObject, const char*  name, const QVector2D*  values, int  count);
-   void setUniformValueArray(QGLShaderProgram* theWrappedObject, const char*  name, const QVector3D*  values, int  count);
-   void setUniformValueArray(QGLShaderProgram* theWrappedObject, const char*  name, const QVector4D*  values, int  count);
+   void setUniformValueArray_QVector2D(QGLShaderProgram* theWrappedObject, const char*  name, const QVector2D*  values, int  count);
+   void setUniformValueArray_QVector3D(QGLShaderProgram* theWrappedObject, const char*  name, const QVector3D*  values, int  count);
+   void setUniformValueArray_QVector4D(QGLShaderProgram* theWrappedObject, const char*  name, const QVector4D*  values, int  count);
    void setUniformValueArray(QGLShaderProgram* theWrappedObject, const char*  name, const uint*  values, int  count);
    void setUniformValueArray(QGLShaderProgram* theWrappedObject, int  location, const GLfloat*  values, int  count, int  tupleSize);
-   void setUniformValueArray(QGLShaderProgram* theWrappedObject, int  location, const GLint*  values, int  count);
+   void setUniformValueArray_int(QGLShaderProgram* theWrappedObject, int  location, const GLint*  values, int  count);
    void setUniformValueArray(QGLShaderProgram* theWrappedObject, int  location, const QMatrix4x4*  values, int  count);
-   void setUniformValueArray(QGLShaderProgram* theWrappedObject, int  location, const QVector2D*  values, int  count);
-   void setUniformValueArray(QGLShaderProgram* theWrappedObject, int  location, const QVector3D*  values, int  count);
-   void setUniformValueArray(QGLShaderProgram* theWrappedObject, int  location, const QVector4D*  values, int  count);
+   void setUniformValueArray_QVector2D(QGLShaderProgram* theWrappedObject, int  location, const QVector2D*  values, int  count);
+   void setUniformValueArray_QVector3D(QGLShaderProgram* theWrappedObject, int  location, const QVector3D*  values, int  count);
+   void setUniformValueArray_QVector4D(QGLShaderProgram* theWrappedObject, int  location, const QVector4D*  values, int  count);
    void setUniformValueArray(QGLShaderProgram* theWrappedObject, int  location, const uint*  values, int  count);
    QList<QGLShader* >  shaders(QGLShaderProgram* theWrappedObject) const;
    int  uniformLocation(QGLShaderProgram* theWrappedObject, const QByteArray&  name) const;
@@ -889,7 +889,7 @@ inline void py_q_updateOverlayGL() { QGLWidget::updateOverlayGL(); }
 class PythonQtWrapper_QGLWidget : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QGLWidget* new_QGLWidget(QGLContext*  context, QWidget*  parent = nullptr, const QGLWidget*  shareWidget = nullptr, Qt::WindowFlags  f = Qt::WindowFlags());
 QGLWidget* new_QGLWidget(QWidget*  parent = nullptr, const QGLWidget*  shareWidget = nullptr, Qt::WindowFlags  f = Qt::WindowFlags());
 QGLWidget* new_QGLWidget(const QGLFormat&  format, QWidget*  parent = nullptr, const QGLWidget*  shareWidget = nullptr, Qt::WindowFlags  f = Qt::WindowFlags());

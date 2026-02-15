@@ -4,12 +4,34 @@
 #include <QTextCursor>
 #include <QVarLengthArray>
 #include <QVariant>
-#include <qabstractitemdelegate.h>
+#include <QtWidgets/qabstractitemdelegate.h>
+#include <QtWidgets/qaction.h>
+#include <QtWidgets/qboxlayout.h>
+#include <QtWidgets/qgraphicseffect.h>
+#include <QtWidgets/qgraphicsitem.h>
+#include <QtWidgets/qgraphicslayout.h>
+#include <QtWidgets/qgraphicslayoutitem.h>
+#include <QtWidgets/qgraphicslinearlayout.h>
+#include <QtWidgets/qgraphicsproxywidget.h>
+#include <QtWidgets/qgraphicsscene.h>
+#include <QtWidgets/qgraphicssceneevent.h>
+#include <QtWidgets/qgraphicstransform.h>
+#include <QtWidgets/qgraphicsview.h>
+#include <QtWidgets/qgraphicswidget.h>
+#include <QtWidgets/qgridlayout.h>
+#include <QtWidgets/qgroupbox.h>
+#include <QtWidgets/qheaderview.h>
+#include <QtWidgets/qlayout.h>
+#include <QtWidgets/qlayoutitem.h>
+#include <QtWidgets/qscrollbar.h>
+#include <QtWidgets/qsizepolicy.h>
+#include <QtWidgets/qstyle.h>
+#include <QtWidgets/qstyleoption.h>
+#include <QtWidgets/qwidget.h>
+#include <qabstracteventdispatcher.h>
 #include <qabstractitemmodel.h>
-#include <qaction.h>
 #include <qbackingstore.h>
 #include <qbitmap.h>
-#include <qboxlayout.h>
 #include <qbrush.h>
 #include <qbytearray.h>
 #include <qclipboard.h>
@@ -21,27 +43,11 @@
 #include <qfont.h>
 #include <qfontinfo.h>
 #include <qfontmetrics.h>
-#include <qgraphicseffect.h>
-#include <qgraphicsitem.h>
-#include <qgraphicslayout.h>
-#include <qgraphicslayoutitem.h>
-#include <qgraphicslinearlayout.h>
-#include <qgraphicsproxywidget.h>
-#include <qgraphicsscene.h>
-#include <qgraphicssceneevent.h>
-#include <qgraphicstransform.h>
-#include <qgraphicsview.h>
-#include <qgraphicswidget.h>
-#include <qgridlayout.h>
-#include <qgroupbox.h>
 #include <qguiapplication.h>
-#include <qheaderview.h>
 #include <qicon.h>
 #include <qinputmethod.h>
 #include <qitemselectionmodel.h>
 #include <qkeysequence.h>
-#include <qlayout.h>
-#include <qlayoutitem.h>
 #include <qline.h>
 #include <qlist.h>
 #include <qlocale.h>
@@ -63,14 +69,10 @@
 #include <qrect.h>
 #include <qregion.h>
 #include <qscreen.h>
-#include <qscrollbar.h>
 #include <qsessionmanager.h>
 #include <qsize.h>
-#include <qsizepolicy.h>
 #include <qstringlist.h>
-#include <qstyle.h>
 #include <qstylehints.h>
-#include <qstyleoption.h>
 #include <qtextcursor.h>
 #include <qtextdocument.h>
 #include <qthread.h>
@@ -78,7 +80,6 @@
 #include <qtranslator.h>
 #include <qvector.h>
 #include <qvector3d.h>
-#include <qwidget.h>
 #include <qwindow.h>
 
 
@@ -117,7 +118,7 @@ inline QSizeF  py_q_sizeHint(Qt::SizeHint  which, const QSizeF&  constraint = QS
 class PythonQtWrapper_QGraphicsLinearLayout : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QGraphicsLinearLayout* new_QGraphicsLinearLayout(QGraphicsLayoutItem*  parent = nullptr);
 QGraphicsLinearLayout* new_QGraphicsLinearLayout(Qt::Orientation  orientation, QGraphicsLayoutItem*  parent = nullptr);
 void delete_QGraphicsLinearLayout(QGraphicsLinearLayout* obj) { delete obj; }
@@ -212,7 +213,7 @@ inline bool  py_q_event(QEvent*  ev) { return QGraphicsObject::event(ev); }
 class PythonQtWrapper_QGraphicsObject : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QGraphicsObject* new_QGraphicsObject(QGraphicsItem*  parent = nullptr);
 void delete_QGraphicsObject(QGraphicsObject* obj) { delete obj; }
    bool  py_q_event(QGraphicsObject* theWrappedObject, QEvent*  ev){  return (((PythonQtPublicPromoter_QGraphicsObject*)theWrappedObject)->py_q_event(ev));}
@@ -255,7 +256,7 @@ inline void py_q_draw(QPainter*  painter) { QGraphicsOpacityEffect::draw(painter
 class PythonQtWrapper_QGraphicsOpacityEffect : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QGraphicsOpacityEffect* new_QGraphicsOpacityEffect(QObject*  parent = nullptr);
 void delete_QGraphicsOpacityEffect(QGraphicsOpacityEffect* obj) { delete obj; }
    void py_q_draw(QGraphicsOpacityEffect* theWrappedObject, QPainter*  painter){  (((PythonQtPublicPromoter_QGraphicsOpacityEffect*)theWrappedObject)->py_q_draw(painter));}
@@ -337,7 +338,7 @@ public:
 Q_ENUMS(enum_1 )
 enum enum_1{
   Type = QGraphicsPathItem::Type};
-public slots:
+public Q_SLOTS:
 QGraphicsPathItem* new_QGraphicsPathItem(QGraphicsItem*  parent = nullptr);
 QGraphicsPathItem* new_QGraphicsPathItem(const QPainterPath&  path, QGraphicsItem*  parent = nullptr);
 void delete_QGraphicsPathItem(QGraphicsPathItem* obj) { delete obj; }
@@ -431,7 +432,7 @@ enum ShapeMode{
   MaskShape = QGraphicsPixmapItem::MaskShape,   BoundingRectShape = QGraphicsPixmapItem::BoundingRectShape,   HeuristicMaskShape = QGraphicsPixmapItem::HeuristicMaskShape};
 enum enum_1{
   Type = QGraphicsPixmapItem::Type};
-public slots:
+public Q_SLOTS:
 QGraphicsPixmapItem* new_QGraphicsPixmapItem(QGraphicsItem*  parent = nullptr);
 QGraphicsPixmapItem* new_QGraphicsPixmapItem(const QPixmap&  pixmap, QGraphicsItem*  parent = nullptr);
 void delete_QGraphicsPixmapItem(QGraphicsPixmapItem* obj) { delete obj; }
@@ -530,7 +531,7 @@ public:
 Q_ENUMS(enum_1 )
 enum enum_1{
   Type = QGraphicsPolygonItem::Type};
-public slots:
+public Q_SLOTS:
 QGraphicsPolygonItem* new_QGraphicsPolygonItem(QGraphicsItem*  parent = nullptr);
 QGraphicsPolygonItem* new_QGraphicsPolygonItem(const QPolygonF&  polygon, QGraphicsItem*  parent = nullptr);
 void delete_QGraphicsPolygonItem(QGraphicsPolygonItem* obj) { delete obj; }
@@ -700,7 +701,7 @@ public:
 Q_ENUMS(enum_1 )
 enum enum_1{
   Type = QGraphicsProxyWidget::Type};
-public slots:
+public Q_SLOTS:
 QGraphicsProxyWidget* new_QGraphicsProxyWidget(PythonQtNewOwnerOfThis<QGraphicsItem* >  parent = nullptr, Qt::WindowFlags  wFlags = Qt::WindowFlags());
 void delete_QGraphicsProxyWidget(QGraphicsProxyWidget* obj) { delete obj; }
    void py_q_contextMenuEvent(QGraphicsProxyWidget* theWrappedObject, QGraphicsSceneContextMenuEvent*  event){  (((PythonQtPublicPromoter_QGraphicsProxyWidget*)theWrappedObject)->py_q_contextMenuEvent(event));}
@@ -816,7 +817,7 @@ public:
 Q_ENUMS(enum_1 )
 enum enum_1{
   Type = QGraphicsRectItem::Type};
-public slots:
+public Q_SLOTS:
 QGraphicsRectItem* new_QGraphicsRectItem(QGraphicsItem*  parent = nullptr);
 QGraphicsRectItem* new_QGraphicsRectItem(const QRectF&  rect, QGraphicsItem*  parent = nullptr);
 QGraphicsRectItem* new_QGraphicsRectItem(qreal  x, qreal  y, qreal  w, qreal  h, QGraphicsItem*  parent = nullptr);
@@ -867,7 +868,7 @@ inline void py_q_applyTo(QMatrix4x4*  matrix) const { QGraphicsRotation::applyTo
 class PythonQtWrapper_QGraphicsRotation : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QGraphicsRotation* new_QGraphicsRotation(QObject*  parent = nullptr);
 void delete_QGraphicsRotation(QGraphicsRotation* obj) { delete obj; }
    qreal  angle(QGraphicsRotation* theWrappedObject) const;
@@ -911,7 +912,7 @@ inline void py_q_applyTo(QMatrix4x4*  matrix) const { QGraphicsScale::applyTo(ma
 class PythonQtWrapper_QGraphicsScale : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QGraphicsScale* new_QGraphicsScale(QObject*  parent = nullptr);
 void delete_QGraphicsScale(QGraphicsScale* obj) { delete obj; }
    void py_q_applyTo(QGraphicsScale* theWrappedObject, QMatrix4x4*  matrix) const{  (((PythonQtPublicPromoter_QGraphicsScale*)theWrappedObject)->py_q_applyTo(matrix));}
@@ -1025,7 +1026,7 @@ Q_FLAGS(SceneLayers )
 enum SceneLayer{
   ItemLayer = QGraphicsScene::ItemLayer,   BackgroundLayer = QGraphicsScene::BackgroundLayer,   ForegroundLayer = QGraphicsScene::ForegroundLayer,   AllLayers = QGraphicsScene::AllLayers};
 Q_DECLARE_FLAGS(SceneLayers, SceneLayer)
-public slots:
+public Q_SLOTS:
 QGraphicsScene* new_QGraphicsScene(QObject*  parent = nullptr);
 QGraphicsScene* new_QGraphicsScene(const QRectF&  sceneRect, QObject*  parent = nullptr);
 QGraphicsScene* new_QGraphicsScene(qreal  x, qreal  y, qreal  width, qreal  height, QObject*  parent = nullptr);
@@ -1158,7 +1159,7 @@ public:
 Q_ENUMS(Reason )
 enum Reason{
   Mouse = QGraphicsSceneContextMenuEvent::Mouse,   Keyboard = QGraphicsSceneContextMenuEvent::Keyboard,   Other = QGraphicsSceneContextMenuEvent::Other};
-public slots:
+public Q_SLOTS:
 QGraphicsSceneContextMenuEvent* new_QGraphicsSceneContextMenuEvent(QEvent::Type  type = QEvent::None);
 void delete_QGraphicsSceneContextMenuEvent(QGraphicsSceneContextMenuEvent* obj) { delete obj; }
    Qt::KeyboardModifiers  modifiers(QGraphicsSceneContextMenuEvent* theWrappedObject) const;
@@ -1180,7 +1181,7 @@ void delete_QGraphicsSceneContextMenuEvent(QGraphicsSceneContextMenuEvent* obj) 
 class PythonQtWrapper_QGraphicsSceneDragDropEvent : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QGraphicsSceneDragDropEvent* new_QGraphicsSceneDragDropEvent(QEvent::Type  type = QEvent::None);
 void delete_QGraphicsSceneDragDropEvent(QGraphicsSceneDragDropEvent* obj) { delete obj; }
    void acceptProposedAction(QGraphicsSceneDragDropEvent* theWrappedObject);
@@ -1211,7 +1212,7 @@ void delete_QGraphicsSceneDragDropEvent(QGraphicsSceneDragDropEvent* obj) { dele
 class PythonQtWrapper_QGraphicsSceneEvent : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QGraphicsSceneEvent* new_QGraphicsSceneEvent(QEvent::Type  type);
 void delete_QGraphicsSceneEvent(QGraphicsSceneEvent* obj) { delete obj; }
    QWidget*  widget(QGraphicsSceneEvent* theWrappedObject) const;
@@ -1225,7 +1226,7 @@ void delete_QGraphicsSceneEvent(QGraphicsSceneEvent* obj) { delete obj; }
 class PythonQtWrapper_QGraphicsSceneHelpEvent : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QGraphicsSceneHelpEvent* new_QGraphicsSceneHelpEvent(QEvent::Type  type = QEvent::None);
 void delete_QGraphicsSceneHelpEvent(QGraphicsSceneHelpEvent* obj) { delete obj; }
    QPointF  scenePos(QGraphicsSceneHelpEvent* theWrappedObject) const;
@@ -1241,7 +1242,7 @@ void delete_QGraphicsSceneHelpEvent(QGraphicsSceneHelpEvent* obj) { delete obj; 
 class PythonQtWrapper_QGraphicsSceneHoverEvent : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QGraphicsSceneHoverEvent* new_QGraphicsSceneHoverEvent(QEvent::Type  type = QEvent::None);
 void delete_QGraphicsSceneHoverEvent(QGraphicsSceneHoverEvent* obj) { delete obj; }
    QPointF  lastPos(QGraphicsSceneHoverEvent* theWrappedObject) const;
@@ -1267,7 +1268,7 @@ void delete_QGraphicsSceneHoverEvent(QGraphicsSceneHoverEvent* obj) { delete obj
 class PythonQtWrapper_QGraphicsSceneMouseEvent : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QGraphicsSceneMouseEvent* new_QGraphicsSceneMouseEvent(QEvent::Type  type = QEvent::None);
 void delete_QGraphicsSceneMouseEvent(QGraphicsSceneMouseEvent* obj) { delete obj; }
    Qt::MouseButton  button(QGraphicsSceneMouseEvent* theWrappedObject) const;
@@ -1307,7 +1308,7 @@ void delete_QGraphicsSceneMouseEvent(QGraphicsSceneMouseEvent* obj) { delete obj
 class PythonQtWrapper_QGraphicsSceneMoveEvent : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QGraphicsSceneMoveEvent* new_QGraphicsSceneMoveEvent();
 void delete_QGraphicsSceneMoveEvent(QGraphicsSceneMoveEvent* obj) { delete obj; }
    QPointF  newPos(QGraphicsSceneMoveEvent* theWrappedObject) const;
@@ -1323,7 +1324,7 @@ void delete_QGraphicsSceneMoveEvent(QGraphicsSceneMoveEvent* obj) { delete obj; 
 class PythonQtWrapper_QGraphicsSceneResizeEvent : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QGraphicsSceneResizeEvent* new_QGraphicsSceneResizeEvent();
 void delete_QGraphicsSceneResizeEvent(QGraphicsSceneResizeEvent* obj) { delete obj; }
    QSizeF  newSize(QGraphicsSceneResizeEvent* theWrappedObject) const;
@@ -1339,7 +1340,7 @@ void delete_QGraphicsSceneResizeEvent(QGraphicsSceneResizeEvent* obj) { delete o
 class PythonQtWrapper_QGraphicsSceneWheelEvent : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QGraphicsSceneWheelEvent* new_QGraphicsSceneWheelEvent(QEvent::Type  type = QEvent::None);
 void delete_QGraphicsSceneWheelEvent(QGraphicsSceneWheelEvent* obj) { delete obj; }
    Qt::MouseButtons  buttons(QGraphicsSceneWheelEvent* theWrappedObject) const;
@@ -1432,7 +1433,7 @@ public:
 Q_ENUMS(enum_1 )
 enum enum_1{
   Type = QGraphicsSimpleTextItem::Type};
-public slots:
+public Q_SLOTS:
 QGraphicsSimpleTextItem* new_QGraphicsSimpleTextItem(QGraphicsItem*  parent = nullptr);
 QGraphicsSimpleTextItem* new_QGraphicsSimpleTextItem(const QString&  text, QGraphicsItem*  parent = nullptr);
 void delete_QGraphicsSimpleTextItem(QGraphicsSimpleTextItem* obj) { delete obj; }
@@ -1571,7 +1572,7 @@ public:
 Q_ENUMS(enum_1 )
 enum enum_1{
   Type = QGraphicsTextItem::Type};
-public slots:
+public Q_SLOTS:
 QGraphicsTextItem* new_QGraphicsTextItem(QGraphicsItem*  parent = nullptr);
 QGraphicsTextItem* new_QGraphicsTextItem(const QString&  text, QGraphicsItem*  parent = nullptr);
 void delete_QGraphicsTextItem(QGraphicsTextItem* obj) { delete obj; }
@@ -1659,7 +1660,7 @@ inline void py_q_applyTo(QMatrix4x4*  matrix) const { this->applyTo(matrix); }
 class PythonQtWrapper_QGraphicsTransform : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QGraphicsTransform* new_QGraphicsTransform(QObject*  parent = nullptr);
 void delete_QGraphicsTransform(QGraphicsTransform* obj) { delete obj; }
    void applyTo(QGraphicsTransform* theWrappedObject, QMatrix4x4*  matrix) const;
@@ -1805,7 +1806,7 @@ enum OptimizationFlag{
   DontClipPainter = QGraphicsView::DontClipPainter,   DontSavePainterState = QGraphicsView::DontSavePainterState,   DontAdjustForAntialiasing = QGraphicsView::DontAdjustForAntialiasing,   IndirectPainting = QGraphicsView::IndirectPainting};
 Q_DECLARE_FLAGS(CacheMode, CacheModeFlag)
 Q_DECLARE_FLAGS(OptimizationFlags, OptimizationFlag)
-public slots:
+public Q_SLOTS:
 QGraphicsView* new_QGraphicsView(QGraphicsScene*  scene, QWidget*  parent = nullptr);
 QGraphicsView* new_QGraphicsView(QWidget*  parent = nullptr);
 void delete_QGraphicsView(QGraphicsView* obj) { delete obj; }
@@ -2063,7 +2064,7 @@ public:
 Q_ENUMS(enum_1 )
 enum enum_1{
   Type = QGraphicsWidget::Type};
-public slots:
+public Q_SLOTS:
 QGraphicsWidget* new_QGraphicsWidget(QGraphicsItem*  parent = nullptr, Qt::WindowFlags  wFlags = Qt::WindowFlags());
 void delete_QGraphicsWidget(QGraphicsWidget* obj) { delete obj; }
    QList<QAction* >  actions(QGraphicsWidget* theWrappedObject) const;
@@ -2230,7 +2231,7 @@ inline QLayoutItem*  py_q_takeAt(int  index) { return QGridLayout::takeAt(index)
 class PythonQtWrapper_QGridLayout : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QGridLayout* new_QGridLayout();
 QGridLayout* new_QGridLayout(QWidget*  parent);
 void delete_QGridLayout(QGridLayout* obj) { delete obj; }
@@ -2366,7 +2367,7 @@ inline void py_q_resizeEvent(QResizeEvent*  event) { QGroupBox::resizeEvent(even
 class PythonQtWrapper_QGroupBox : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QGroupBox* new_QGroupBox(QWidget*  parent = nullptr);
 QGroupBox* new_QGroupBox(const QString&  title, QWidget*  parent = nullptr);
 void delete_QGroupBox(QGroupBox* obj) { delete obj; }
@@ -2379,7 +2380,6 @@ void delete_QGroupBox(QGroupBox* obj) { delete obj; }
    bool  isCheckable(QGroupBox* theWrappedObject) const;
    bool  isChecked(QGroupBox* theWrappedObject) const;
    bool  isFlat(QGroupBox* theWrappedObject) const;
-   QSize  minimumSizeHint(QGroupBox* theWrappedObject) const;
    QSize  py_q_minimumSizeHint(QGroupBox* theWrappedObject) const{  return (((PythonQtPublicPromoter_QGroupBox*)theWrappedObject)->py_q_minimumSizeHint());}
    void py_q_mouseMoveEvent(QGroupBox* theWrappedObject, QMouseEvent*  event){  (((PythonQtPublicPromoter_QGroupBox*)theWrappedObject)->py_q_mouseMoveEvent(event));}
    void py_q_mousePressEvent(QGroupBox* theWrappedObject, QMouseEvent*  event){  (((PythonQtPublicPromoter_QGroupBox*)theWrappedObject)->py_q_mousePressEvent(event));}
@@ -2407,7 +2407,7 @@ inline bool  py_q_notify(QObject*  arg__1, QEvent*  arg__2) { return QGuiApplica
 class PythonQtWrapper_QGuiApplication : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 void delete_QGuiApplication(QGuiApplication* obj) { delete obj; }
    QList<QWindow* >  static_QGuiApplication_allWindows();
    QString  static_QGuiApplication_applicationDisplayName();
@@ -2509,7 +2509,7 @@ QWidget*  widget() override;
 class PythonQtWrapper_QHBoxLayout : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QHBoxLayout* new_QHBoxLayout();
 QHBoxLayout* new_QHBoxLayout(QWidget*  parent);
 void delete_QHBoxLayout(QHBoxLayout* obj) { delete obj; }
@@ -2688,7 +2688,7 @@ inline QRegion  py_q_visualRegionForSelection(const QItemSelection&  selection) 
 class PythonQtWrapper_QHeaderView : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QHeaderView* new_QHeaderView(Qt::Orientation  orientation, QWidget*  parent = nullptr);
 void delete_QHeaderView(QHeaderView* obj) { delete obj; }
    bool  cascadingSectionResizes(QHeaderView* theWrappedObject) const;

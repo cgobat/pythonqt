@@ -6,9 +6,27 @@
 #include <QTextCursor>
 #include <QVarLengthArray>
 #include <QVariant>
-#include <qabstractitemdelegate.h>
+#include <QtWidgets/qabstractitemdelegate.h>
+#include <QtWidgets/qaction.h>
+#include <QtWidgets/qgraphicseffect.h>
+#include <QtWidgets/qgraphicsitem.h>
+#include <QtWidgets/qgraphicslayout.h>
+#include <QtWidgets/qgraphicslayoutitem.h>
+#include <QtWidgets/qgraphicsproxywidget.h>
+#include <QtWidgets/qgraphicsscene.h>
+#include <QtWidgets/qgraphicssceneevent.h>
+#include <QtWidgets/qgraphicstransform.h>
+#include <QtWidgets/qgraphicsview.h>
+#include <QtWidgets/qgraphicswidget.h>
+#include <QtWidgets/qlayout.h>
+#include <QtWidgets/qlayoutitem.h>
+#include <QtWidgets/qscrollbar.h>
+#include <QtWidgets/qsizepolicy.h>
+#include <QtWidgets/qstyle.h>
+#include <QtWidgets/qstyleoption.h>
+#include <QtWidgets/qwidget.h>
+#include <qabstracteventdispatcher.h>
 #include <qabstractitemmodel.h>
-#include <qaction.h>
 #include <qbackingstore.h>
 #include <qbitmap.h>
 #include <qbrush.h>
@@ -22,22 +40,10 @@
 #include <qfont.h>
 #include <qfontinfo.h>
 #include <qfontmetrics.h>
-#include <qgraphicseffect.h>
-#include <qgraphicsitem.h>
-#include <qgraphicslayout.h>
-#include <qgraphicslayoutitem.h>
-#include <qgraphicsproxywidget.h>
-#include <qgraphicsscene.h>
-#include <qgraphicssceneevent.h>
-#include <qgraphicstransform.h>
-#include <qgraphicsview.h>
-#include <qgraphicswidget.h>
 #include <qicon.h>
 #include <qinputmethod.h>
 #include <qitemselectionmodel.h>
 #include <qkeysequence.h>
-#include <qlayout.h>
-#include <qlayoutitem.h>
 #include <qline.h>
 #include <qlist.h>
 #include <qlocale.h>
@@ -59,14 +65,10 @@
 #include <qrect.h>
 #include <qregion.h>
 #include <qscreen.h>
-#include <qscrollbar.h>
 #include <qsessionmanager.h>
 #include <qsize.h>
-#include <qsizepolicy.h>
 #include <qstringlist.h>
-#include <qstyle.h>
 #include <qstylehints.h>
-#include <qstyleoption.h>
 #include <qtextcursor.h>
 #include <qtextdocument.h>
 #include <qthread.h>
@@ -74,7 +76,6 @@
 #include <qtranslator.h>
 #include <qvector.h>
 #include <qvector3d.h>
-#include <qwidget.h>
 #include <qwindow.h>
 
 PythonQtShell_QGraphicsLinearLayout::~PythonQtShell_QGraphicsLinearLayout() {
@@ -313,11 +314,11 @@ if (_wrapper) {
   QGraphicsLinearLayout::widgetEvent(e0);
 }
 QGraphicsLinearLayout* PythonQtWrapper_QGraphicsLinearLayout::new_QGraphicsLinearLayout(QGraphicsLayoutItem*  parent)
-{
+{ 
 return new PythonQtShell_QGraphicsLinearLayout(parent); }
 
 QGraphicsLinearLayout* PythonQtWrapper_QGraphicsLinearLayout::new_QGraphicsLinearLayout(Qt::Orientation  orientation, QGraphicsLayoutItem*  parent)
-{
+{ 
 return new PythonQtShell_QGraphicsLinearLayout(orientation, parent); }
 
 void PythonQtWrapper_QGraphicsLinearLayout::addItem(QGraphicsLinearLayout* theWrappedObject, PythonQtPassOwnershipToCPP<QGraphicsLayoutItem* >  item)
@@ -1038,7 +1039,7 @@ if (_wrapper) {
       Py_DECREF(obj);
       if (change0 == QGraphicsItem::ItemParentChange || change0 == QGraphicsItem::ItemSceneChange) {
         returnValue = value1;
-      }
+      } 
       return returnValue;
     } else {
       PyErr_Clear();
@@ -1232,7 +1233,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 bool  PythonQtShell_QGraphicsObject::sceneEvent(QEvent*  event0)
 {
@@ -1466,7 +1467,7 @@ if (_wrapper) {
   QGraphicsObject::wheelEvent(event0);
 }
 QGraphicsObject* PythonQtWrapper_QGraphicsObject::new_QGraphicsObject(QGraphicsItem*  parent)
-{
+{ 
 return new PythonQtShell_QGraphicsObject(parent); }
 
 const QMetaObject* PythonQtShell_QGraphicsObject::metaObject() const {
@@ -1715,7 +1716,7 @@ if (_wrapper) {
   QGraphicsOpacityEffect::timerEvent(event0);
 }
 QGraphicsOpacityEffect* PythonQtWrapper_QGraphicsOpacityEffect::new_QGraphicsOpacityEffect(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QGraphicsOpacityEffect(parent); }
 
 const QMetaObject* PythonQtShell_QGraphicsOpacityEffect::metaObject() const {
@@ -2269,7 +2270,7 @@ if (_wrapper) {
       Py_DECREF(obj);
       if (change0 == QGraphicsItem::ItemParentChange || change0 == QGraphicsItem::ItemSceneChange) {
         returnValue = value1;
-      }
+      } 
       return returnValue;
     } else {
       PyErr_Clear();
@@ -2675,11 +2676,11 @@ if (_wrapper) {
   QGraphicsPathItem::wheelEvent(event0);
 }
 QGraphicsPathItem* PythonQtWrapper_QGraphicsPathItem::new_QGraphicsPathItem(QGraphicsItem*  parent)
-{
+{ 
 return new PythonQtShell_QGraphicsPathItem(parent); }
 
 QGraphicsPathItem* PythonQtWrapper_QGraphicsPathItem::new_QGraphicsPathItem(const QPainterPath&  path, QGraphicsItem*  parent)
-{
+{ 
 return new PythonQtShell_QGraphicsPathItem(path, parent); }
 
 QPainterPath  PythonQtWrapper_QGraphicsPathItem::path(QGraphicsPathItem* theWrappedObject) const
@@ -3220,7 +3221,7 @@ if (_wrapper) {
       Py_DECREF(obj);
       if (change0 == QGraphicsItem::ItemParentChange || change0 == QGraphicsItem::ItemSceneChange) {
         returnValue = value1;
-      }
+      } 
       return returnValue;
     } else {
       PyErr_Clear();
@@ -3626,11 +3627,11 @@ if (_wrapper) {
   QGraphicsPixmapItem::wheelEvent(event0);
 }
 QGraphicsPixmapItem* PythonQtWrapper_QGraphicsPixmapItem::new_QGraphicsPixmapItem(QGraphicsItem*  parent)
-{
+{ 
 return new PythonQtShell_QGraphicsPixmapItem(parent); }
 
 QGraphicsPixmapItem* PythonQtWrapper_QGraphicsPixmapItem::new_QGraphicsPixmapItem(const QPixmap&  pixmap, QGraphicsItem*  parent)
-{
+{ 
 return new PythonQtShell_QGraphicsPixmapItem(pixmap, parent); }
 
 QPointF  PythonQtWrapper_QGraphicsPixmapItem::offset(QGraphicsPixmapItem* theWrappedObject) const
@@ -4206,7 +4207,7 @@ if (_wrapper) {
       Py_DECREF(obj);
       if (change0 == QGraphicsItem::ItemParentChange || change0 == QGraphicsItem::ItemSceneChange) {
         returnValue = value1;
-      }
+      } 
       return returnValue;
     } else {
       PyErr_Clear();
@@ -4612,11 +4613,11 @@ if (_wrapper) {
   QGraphicsPolygonItem::wheelEvent(event0);
 }
 QGraphicsPolygonItem* PythonQtWrapper_QGraphicsPolygonItem::new_QGraphicsPolygonItem(QGraphicsItem*  parent)
-{
+{ 
 return new PythonQtShell_QGraphicsPolygonItem(parent); }
 
 QGraphicsPolygonItem* PythonQtWrapper_QGraphicsPolygonItem::new_QGraphicsPolygonItem(const QPolygonF&  polygon, QGraphicsItem*  parent)
-{
+{ 
 return new PythonQtShell_QGraphicsPolygonItem(polygon, parent); }
 
 Qt::FillRule  PythonQtWrapper_QGraphicsPolygonItem::fillRule(QGraphicsPolygonItem* theWrappedObject) const
@@ -5464,7 +5465,7 @@ if (_wrapper) {
       Py_DECREF(obj);
       if (change0 == QGraphicsItem::ItemParentChange || change0 == QGraphicsItem::ItemSceneChange) {
         returnValue = value1;
-      }
+      } 
       return returnValue;
     } else {
       PyErr_Clear();
@@ -6222,7 +6223,7 @@ if (_wrapper) {
   return QGraphicsProxyWidget::windowFrameSectionAt(pos0);
 }
 QGraphicsProxyWidget* PythonQtWrapper_QGraphicsProxyWidget::new_QGraphicsProxyWidget(PythonQtNewOwnerOfThis<QGraphicsItem* >  parent, Qt::WindowFlags  wFlags)
-{
+{ 
 return new PythonQtShell_QGraphicsProxyWidget(parent, wFlags); }
 
 const QMetaObject* PythonQtShell_QGraphicsProxyWidget::metaObject() const {
@@ -6786,7 +6787,7 @@ if (_wrapper) {
       Py_DECREF(obj);
       if (change0 == QGraphicsItem::ItemParentChange || change0 == QGraphicsItem::ItemSceneChange) {
         returnValue = value1;
-      }
+      } 
       return returnValue;
     } else {
       PyErr_Clear();
@@ -7192,15 +7193,15 @@ if (_wrapper) {
   QGraphicsRectItem::wheelEvent(event0);
 }
 QGraphicsRectItem* PythonQtWrapper_QGraphicsRectItem::new_QGraphicsRectItem(QGraphicsItem*  parent)
-{
+{ 
 return new PythonQtShell_QGraphicsRectItem(parent); }
 
 QGraphicsRectItem* PythonQtWrapper_QGraphicsRectItem::new_QGraphicsRectItem(const QRectF&  rect, QGraphicsItem*  parent)
-{
+{ 
 return new PythonQtShell_QGraphicsRectItem(rect, parent); }
 
 QGraphicsRectItem* PythonQtWrapper_QGraphicsRectItem::new_QGraphicsRectItem(qreal  x, qreal  y, qreal  w, qreal  h, QGraphicsItem*  parent)
-{
+{ 
 return new PythonQtShell_QGraphicsRectItem(x, y, w, h, parent); }
 
 QRectF  PythonQtWrapper_QGraphicsRectItem::rect(QGraphicsRectItem* theWrappedObject) const
@@ -7379,7 +7380,7 @@ if (_wrapper) {
   QGraphicsRotation::timerEvent(event0);
 }
 QGraphicsRotation* PythonQtWrapper_QGraphicsRotation::new_QGraphicsRotation(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QGraphicsRotation(parent); }
 
 const QMetaObject* PythonQtShell_QGraphicsRotation::metaObject() const {
@@ -7591,7 +7592,7 @@ if (_wrapper) {
   QGraphicsScale::timerEvent(event0);
 }
 QGraphicsScale* PythonQtWrapper_QGraphicsScale::new_QGraphicsScale(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QGraphicsScale(parent); }
 
 const QMetaObject* PythonQtShell_QGraphicsScale::metaObject() const {
@@ -8237,15 +8238,15 @@ if (_wrapper) {
   QGraphicsScene::wheelEvent(event0);
 }
 QGraphicsScene* PythonQtWrapper_QGraphicsScene::new_QGraphicsScene(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QGraphicsScene(parent); }
 
 QGraphicsScene* PythonQtWrapper_QGraphicsScene::new_QGraphicsScene(const QRectF&  sceneRect, QObject*  parent)
-{
+{ 
 return new PythonQtShell_QGraphicsScene(sceneRect, parent); }
 
 QGraphicsScene* PythonQtWrapper_QGraphicsScene::new_QGraphicsScene(qreal  x, qreal  y, qreal  width, qreal  height, QObject*  parent)
-{
+{ 
 return new PythonQtShell_QGraphicsScene(x, y, width, height, parent); }
 
 const QMetaObject* PythonQtShell_QGraphicsScene::metaObject() const {
@@ -8734,7 +8735,7 @@ qreal  PythonQtWrapper_QGraphicsScene::width(QGraphicsScene* theWrappedObject) c
 
 
 QGraphicsSceneContextMenuEvent* PythonQtWrapper_QGraphicsSceneContextMenuEvent::new_QGraphicsSceneContextMenuEvent(QEvent::Type  type)
-{
+{ 
 return new QGraphicsSceneContextMenuEvent(type); }
 
 Qt::KeyboardModifiers  PythonQtWrapper_QGraphicsSceneContextMenuEvent::modifiers(QGraphicsSceneContextMenuEvent* theWrappedObject) const
@@ -8790,7 +8791,7 @@ void PythonQtWrapper_QGraphicsSceneContextMenuEvent::setScreenPos(QGraphicsScene
 
 
 QGraphicsSceneDragDropEvent* PythonQtWrapper_QGraphicsSceneDragDropEvent::new_QGraphicsSceneDragDropEvent(QEvent::Type  type)
-{
+{ 
 return new QGraphicsSceneDragDropEvent(type); }
 
 void PythonQtWrapper_QGraphicsSceneDragDropEvent::acceptProposedAction(QGraphicsSceneDragDropEvent* theWrappedObject)
@@ -8891,7 +8892,7 @@ QWidget*  PythonQtWrapper_QGraphicsSceneDragDropEvent::source(QGraphicsSceneDrag
 
 
 QGraphicsSceneEvent* PythonQtWrapper_QGraphicsSceneEvent::new_QGraphicsSceneEvent(QEvent::Type  type)
-{
+{ 
 return new QGraphicsSceneEvent(type); }
 
 QWidget*  PythonQtWrapper_QGraphicsSceneEvent::widget(QGraphicsSceneEvent* theWrappedObject) const
@@ -8909,7 +8910,7 @@ QString PythonQtWrapper_QGraphicsSceneEvent::py_toString(QGraphicsSceneEvent* ob
 
 
 QGraphicsSceneHelpEvent* PythonQtWrapper_QGraphicsSceneHelpEvent::new_QGraphicsSceneHelpEvent(QEvent::Type  type)
-{
+{ 
 return new QGraphicsSceneHelpEvent(type); }
 
 QPointF  PythonQtWrapper_QGraphicsSceneHelpEvent::scenePos(QGraphicsSceneHelpEvent* theWrappedObject) const
@@ -8935,7 +8936,7 @@ void PythonQtWrapper_QGraphicsSceneHelpEvent::setScreenPos(QGraphicsSceneHelpEve
 
 
 QGraphicsSceneHoverEvent* PythonQtWrapper_QGraphicsSceneHoverEvent::new_QGraphicsSceneHoverEvent(QEvent::Type  type)
-{
+{ 
 return new QGraphicsSceneHoverEvent(type); }
 
 QPointF  PythonQtWrapper_QGraphicsSceneHoverEvent::lastPos(QGraphicsSceneHoverEvent* theWrappedObject) const
@@ -9011,7 +9012,7 @@ void PythonQtWrapper_QGraphicsSceneHoverEvent::setScreenPos(QGraphicsSceneHoverE
 
 
 QGraphicsSceneMouseEvent* PythonQtWrapper_QGraphicsSceneMouseEvent::new_QGraphicsSceneMouseEvent(QEvent::Type  type)
-{
+{ 
 return new QGraphicsSceneMouseEvent(type); }
 
 Qt::MouseButton  PythonQtWrapper_QGraphicsSceneMouseEvent::button(QGraphicsSceneMouseEvent* theWrappedObject) const
@@ -9157,7 +9158,7 @@ Qt::MouseEventSource  PythonQtWrapper_QGraphicsSceneMouseEvent::source(QGraphics
 
 
 QGraphicsSceneMoveEvent* PythonQtWrapper_QGraphicsSceneMoveEvent::new_QGraphicsSceneMoveEvent()
-{
+{ 
 return new QGraphicsSceneMoveEvent(); }
 
 QPointF  PythonQtWrapper_QGraphicsSceneMoveEvent::newPos(QGraphicsSceneMoveEvent* theWrappedObject) const
@@ -9183,7 +9184,7 @@ void PythonQtWrapper_QGraphicsSceneMoveEvent::setOldPos(QGraphicsSceneMoveEvent*
 
 
 QGraphicsSceneResizeEvent* PythonQtWrapper_QGraphicsSceneResizeEvent::new_QGraphicsSceneResizeEvent()
-{
+{ 
 return new QGraphicsSceneResizeEvent(); }
 
 QSizeF  PythonQtWrapper_QGraphicsSceneResizeEvent::newSize(QGraphicsSceneResizeEvent* theWrappedObject) const
@@ -9209,7 +9210,7 @@ void PythonQtWrapper_QGraphicsSceneResizeEvent::setOldSize(QGraphicsSceneResizeE
 
 
 QGraphicsSceneWheelEvent* PythonQtWrapper_QGraphicsSceneWheelEvent::new_QGraphicsSceneWheelEvent(QEvent::Type  type)
-{
+{ 
 return new QGraphicsSceneWheelEvent(type); }
 
 Qt::MouseButtons  PythonQtWrapper_QGraphicsSceneWheelEvent::buttons(QGraphicsSceneWheelEvent* theWrappedObject) const
@@ -9810,7 +9811,7 @@ if (_wrapper) {
       Py_DECREF(obj);
       if (change0 == QGraphicsItem::ItemParentChange || change0 == QGraphicsItem::ItemSceneChange) {
         returnValue = value1;
-      }
+      } 
       return returnValue;
     } else {
       PyErr_Clear();
@@ -10216,11 +10217,11 @@ if (_wrapper) {
   QGraphicsSimpleTextItem::wheelEvent(event0);
 }
 QGraphicsSimpleTextItem* PythonQtWrapper_QGraphicsSimpleTextItem::new_QGraphicsSimpleTextItem(QGraphicsItem*  parent)
-{
+{ 
 return new PythonQtShell_QGraphicsSimpleTextItem(parent); }
 
 QGraphicsSimpleTextItem* PythonQtWrapper_QGraphicsSimpleTextItem::new_QGraphicsSimpleTextItem(const QString&  text, QGraphicsItem*  parent)
-{
+{ 
 return new PythonQtShell_QGraphicsSimpleTextItem(text, parent); }
 
 QFont  PythonQtWrapper_QGraphicsSimpleTextItem::font(QGraphicsSimpleTextItem* theWrappedObject) const
@@ -10881,7 +10882,7 @@ if (_wrapper) {
       Py_DECREF(obj);
       if (change0 == QGraphicsItem::ItemParentChange || change0 == QGraphicsItem::ItemSceneChange) {
         returnValue = value1;
-      }
+      } 
       return returnValue;
     } else {
       PyErr_Clear();
@@ -11309,11 +11310,11 @@ if (_wrapper) {
   QGraphicsTextItem::wheelEvent(event0);
 }
 QGraphicsTextItem* PythonQtWrapper_QGraphicsTextItem::new_QGraphicsTextItem(QGraphicsItem*  parent)
-{
+{ 
 return new PythonQtShell_QGraphicsTextItem(parent); }
 
 QGraphicsTextItem* PythonQtWrapper_QGraphicsTextItem::new_QGraphicsTextItem(const QString&  text, QGraphicsItem*  parent)
-{
+{ 
 return new PythonQtShell_QGraphicsTextItem(text, parent); }
 
 const QMetaObject* PythonQtShell_QGraphicsTextItem::metaObject() const {
@@ -11460,7 +11461,7 @@ if (_wrapper) {
     }
   }
 }
-
+  
 }
 void PythonQtShell_QGraphicsTransform::childEvent(QChildEvent*  event0)
 {
@@ -11595,7 +11596,7 @@ if (_wrapper) {
   QGraphicsTransform::timerEvent(event0);
 }
 QGraphicsTransform* PythonQtWrapper_QGraphicsTransform::new_QGraphicsTransform(QObject*  parent)
-{
+{ 
 return new PythonQtShell_QGraphicsTransform(parent); }
 
 const QMetaObject* PythonQtShell_QGraphicsTransform::metaObject() const {
@@ -12943,11 +12944,11 @@ if (_wrapper) {
   QGraphicsView::wheelEvent(event0);
 }
 QGraphicsView* PythonQtWrapper_QGraphicsView::new_QGraphicsView(QGraphicsScene*  scene, QWidget*  parent)
-{
+{ 
 return new PythonQtShell_QGraphicsView(scene, parent); }
 
 QGraphicsView* PythonQtWrapper_QGraphicsView::new_QGraphicsView(QWidget*  parent)
-{
+{ 
 return new PythonQtShell_QGraphicsView(parent); }
 
 const QMetaObject* PythonQtShell_QGraphicsView::metaObject() const {
@@ -14183,7 +14184,7 @@ if (_wrapper) {
       Py_DECREF(obj);
       if (change0 == QGraphicsItem::ItemParentChange || change0 == QGraphicsItem::ItemSceneChange) {
         returnValue = value1;
-      }
+      } 
       return returnValue;
     } else {
       PyErr_Clear();
@@ -14941,7 +14942,7 @@ if (_wrapper) {
   return QGraphicsWidget::windowFrameSectionAt(pos0);
 }
 QGraphicsWidget* PythonQtWrapper_QGraphicsWidget::new_QGraphicsWidget(QGraphicsItem*  parent, Qt::WindowFlags  wFlags)
-{
+{ 
 return new PythonQtShell_QGraphicsWidget(parent, wFlags); }
 
 const QMetaObject* PythonQtShell_QGraphicsWidget::metaObject() const {
@@ -16053,11 +16054,11 @@ if (_wrapper) {
   return QGridLayout::widget();
 }
 QGridLayout* PythonQtWrapper_QGridLayout::new_QGridLayout()
-{
+{ 
 return new PythonQtShell_QGridLayout(); }
 
 QGridLayout* PythonQtWrapper_QGridLayout::new_QGridLayout(QWidget*  parent)
-{
+{ 
 return new PythonQtShell_QGridLayout(parent); }
 
 const QMetaObject* PythonQtShell_QGridLayout::metaObject() const {
@@ -17259,7 +17260,7 @@ QSize  PythonQtShell_QGroupBox::sizeHint() const
 if (_wrapper) {
   PYTHONQT_GIL_SCOPE
   if (Py_REFCNT((PyObject*)_wrapper) > 0) {
-    static PyObject* name = PyUnicode_FromString("getSizeHint");
+    static PyObject* name = PyUnicode_FromString("sizeHint");
     PyObject* obj = PyBaseObject_Type.tp_getattro((PyObject*)_wrapper, name);
     if (obj) {
       static const char* argumentList[] ={"QSize"};
@@ -17271,7 +17272,7 @@ if (_wrapper) {
         args[0] = PythonQtConv::ConvertPythonToQt(methodInfo->parameters().at(0), result, false, nullptr, &returnValue);
         if (args[0]!=&returnValue) {
           if (args[0]==nullptr) {
-            PythonQt::priv()->handleVirtualOverloadReturnError("getSizeHint", methodInfo, result);
+            PythonQt::priv()->handleVirtualOverloadReturnError("sizeHint", methodInfo, result);
           } else {
             returnValue = *((QSize*)args[0]);
           }
@@ -17354,11 +17355,11 @@ if (_wrapper) {
   QGroupBox::wheelEvent(event0);
 }
 QGroupBox* PythonQtWrapper_QGroupBox::new_QGroupBox(QWidget*  parent)
-{
+{ 
 return new PythonQtShell_QGroupBox(parent); }
 
 QGroupBox* PythonQtWrapper_QGroupBox::new_QGroupBox(const QString&  title, QWidget*  parent)
-{
+{ 
 return new PythonQtShell_QGroupBox(title, parent); }
 
 const QMetaObject* PythonQtShell_QGroupBox::metaObject() const {
@@ -17397,11 +17398,6 @@ bool  PythonQtWrapper_QGroupBox::isChecked(QGroupBox* theWrappedObject) const
 bool  PythonQtWrapper_QGroupBox::isFlat(QGroupBox* theWrappedObject) const
 {
   return ( theWrappedObject->isFlat());
-}
-
-QSize  PythonQtWrapper_QGroupBox::minimumSizeHint(QGroupBox* theWrappedObject) const
-{
-  return ( theWrappedObject->minimumSizeHint());
 }
 
 void PythonQtWrapper_QGroupBox::setAlignment(QGroupBox* theWrappedObject, int  alignment)
@@ -18447,11 +18443,11 @@ if (_wrapper) {
   return QHBoxLayout::widget();
 }
 QHBoxLayout* PythonQtWrapper_QHBoxLayout::new_QHBoxLayout()
-{
+{ 
 return new PythonQtShell_QHBoxLayout(); }
 
 QHBoxLayout* PythonQtWrapper_QHBoxLayout::new_QHBoxLayout(QWidget*  parent)
-{
+{ 
 return new PythonQtShell_QHBoxLayout(parent); }
 
 const QMetaObject* PythonQtShell_QHBoxLayout::metaObject() const {
@@ -20762,7 +20758,7 @@ if (_wrapper) {
   QHeaderView::wheelEvent(arg__1);
 }
 QHeaderView* PythonQtWrapper_QHeaderView::new_QHeaderView(Qt::Orientation  orientation, QWidget*  parent)
-{
+{ 
 return new PythonQtShell_QHeaderView(orientation, parent); }
 
 const QMetaObject* PythonQtShell_QHeaderView::metaObject() const {

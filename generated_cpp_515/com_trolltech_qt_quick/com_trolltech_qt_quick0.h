@@ -1,7 +1,41 @@
 #include <PythonQt.h>
 #include <QObject>
 #include <QVariant>
-#include <qaction.h>
+#include <QtQml/qjsvalue.h>
+#include <QtQml/qqmlcomponent.h>
+#include <QtQml/qqmlcontext.h>
+#include <QtQml/qqmlengine.h>
+#include <QtQml/qqmlerror.h>
+#include <QtQml/qqmlincubator.h>
+#include <QtQuick/qquickframebufferobject.h>
+#include <QtQuick/qquickimageprovider.h>
+#include <QtQuick/qquickitem.h>
+#include <QtQuick/qquickitemgrabresult.h>
+#include <QtQuick/qquickpainteditem.h>
+#include <QtQuick/qquickrendercontrol.h>
+#include <QtQuick/qquicktextdocument.h>
+#include <QtQuick/qquickview.h>
+#include <QtQuick/qquickwindow.h>
+#include <QtQuick/qsgabstractrenderer.h>
+#include <QtQuick/qsgengine.h>
+#include <QtQuick/qsgflatcolormaterial.h>
+#include <QtQuick/qsggeometry.h>
+#include <QtQuick/qsgimagenode.h>
+#include <QtQuick/qsgmaterialtype.h>
+#include <QtQuick/qsgninepatchnode.h>
+#include <QtQuick/qsgnode.h>
+#include <QtQuick/qsgrectanglenode.h>
+#include <QtQuick/qsgrendererinterface.h>
+#include <QtQuick/qsgtexture.h>
+#include <QtQuick/qsgtextureprovider.h>
+#include <QtQuickWidgets/qquickwidget.h>
+#include <QtWidgets/qaction.h>
+#include <QtWidgets/qgraphicseffect.h>
+#include <QtWidgets/qgraphicsproxywidget.h>
+#include <QtWidgets/qlayout.h>
+#include <QtWidgets/qsizepolicy.h>
+#include <QtWidgets/qstyle.h>
+#include <QtWidgets/qwidget.h>
 #include <qbackingstore.h>
 #include <qbitmap.h>
 #include <qbytearray.h>
@@ -12,13 +46,9 @@
 #include <qfont.h>
 #include <qfontinfo.h>
 #include <qfontmetrics.h>
-#include <qgraphicseffect.h>
-#include <qgraphicsproxywidget.h>
 #include <qicon.h>
 #include <qimage.h>
-#include <qjsvalue.h>
 #include <qkeysequence.h>
-#include <qlayout.h>
 #include <qlist.h>
 #include <qlocale.h>
 #include <qmargins.h>
@@ -33,39 +63,11 @@
 #include <qpalette.h>
 #include <qpixmap.h>
 #include <qpoint.h>
-#include <qqmlcomponent.h>
-#include <qqmlcontext.h>
-#include <qqmlengine.h>
-#include <qqmlerror.h>
-#include <qqmlincubator.h>
-#include <qquickframebufferobject.h>
-#include <qquickimageprovider.h>
-#include <qquickitem.h>
-#include <qquickitemgrabresult.h>
-#include <qquickpainteditem.h>
-#include <qquickrendercontrol.h>
-#include <qquicktextdocument.h>
-#include <qquickview.h>
-#include <qquickwidget.h>
-#include <qquickwindow.h>
 #include <qrect.h>
 #include <qregion.h>
 #include <qrunnable.h>
 #include <qscreen.h>
-#include <qsgabstractrenderer.h>
-#include <qsgengine.h>
-#include <qsgflatcolormaterial.h>
-#include <qsggeometry.h>
-#include <qsgimagenode.h>
-#include <qsgmaterialtype.h>
-#include <qsgninepatchnode.h>
-#include <qsgnode.h>
-#include <qsgrectanglenode.h>
-#include <qsgtexture.h>
-#include <qsgtextureprovider.h>
 #include <qsize.h>
-#include <qsizepolicy.h>
-#include <qstyle.h>
 #include <qsurfaceformat.h>
 #include <qtextdocument.h>
 #include <qthread.h>
@@ -73,7 +75,6 @@
 #include <qurl.h>
 #include <qvector.h>
 #include <qvector4d.h>
-#include <qwidget.h>
 #include <qwindow.h>
 
 
@@ -142,7 +143,7 @@ inline QSGNode*  py_q_updatePaintNode(QSGNode*  arg__1, QQuickItem::UpdatePaintN
 class PythonQtWrapper_QQuickFramebufferObject : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QQuickFramebufferObject* new_QQuickFramebufferObject(QQuickItem*  parent = nullptr);
 void delete_QQuickFramebufferObject(QQuickFramebufferObject* obj) { delete obj; }
    QQuickFramebufferObject::Renderer*  createRenderer(QQuickFramebufferObject* theWrappedObject) const;
@@ -192,7 +193,7 @@ inline void py_q_synchronize(QQuickFramebufferObject*  arg__1) { QQuickFramebuff
 class PythonQtWrapper_QQuickFramebufferObject__Renderer : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QQuickFramebufferObject::Renderer* new_QQuickFramebufferObject__Renderer();
    QOpenGLFramebufferObject*  createFramebufferObject(QQuickFramebufferObject::Renderer* theWrappedObject, const QSize&  size);
    QOpenGLFramebufferObject*  py_q_createFramebufferObject(QQuickFramebufferObject::Renderer* theWrappedObject, const QSize&  size){  return (((PythonQtPublicPromoter_QQuickFramebufferObject__Renderer*)theWrappedObject)->py_q_createFramebufferObject(size));}
@@ -218,7 +219,7 @@ inline QPixmap  py_q_requestPixmap(const QString&  id, QSize*  size, const QSize
 class PythonQtWrapper_QQuickImageProvider : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 void delete_QQuickImageProvider(QQuickImageProvider* obj) { delete obj; }
    QImage  requestImage(QQuickImageProvider* theWrappedObject, const QString&  id, QSize*  size, const QSize&  requestedSize);
    QImage  py_q_requestImage(QQuickImageProvider* theWrappedObject, const QString&  id, QSize*  size, const QSize&  requestedSize){  return (((PythonQtPublicPromoter_QQuickImageProvider*)theWrappedObject)->py_q_requestImage(id, size, requestedSize));}
@@ -359,7 +360,7 @@ enum Flag{
   ItemClipsChildrenToShape = QQuickItem::ItemClipsChildrenToShape,   ItemAcceptsInputMethod = QQuickItem::ItemAcceptsInputMethod,   ItemIsFocusScope = QQuickItem::ItemIsFocusScope,   ItemHasContents = QQuickItem::ItemHasContents,   ItemAcceptsDrops = QQuickItem::ItemAcceptsDrops};
 enum ItemChange{
   ItemChildAddedChange = QQuickItem::ItemChildAddedChange,   ItemChildRemovedChange = QQuickItem::ItemChildRemovedChange,   ItemSceneChange = QQuickItem::ItemSceneChange,   ItemVisibleHasChanged = QQuickItem::ItemVisibleHasChanged,   ItemParentHasChanged = QQuickItem::ItemParentHasChanged,   ItemOpacityHasChanged = QQuickItem::ItemOpacityHasChanged,   ItemActiveFocusHasChanged = QQuickItem::ItemActiveFocusHasChanged,   ItemRotationHasChanged = QQuickItem::ItemRotationHasChanged,   ItemAntialiasingHasChanged = QQuickItem::ItemAntialiasingHasChanged,   ItemDevicePixelRatioHasChanged = QQuickItem::ItemDevicePixelRatioHasChanged,   ItemEnabledHasChanged = QQuickItem::ItemEnabledHasChanged};
-public slots:
+public Q_SLOTS:
 QQuickItem* new_QQuickItem(QQuickItem*  parent = nullptr);
 void delete_QQuickItem(QQuickItem* obj) { delete obj; }
    bool  acceptHoverEvents(QQuickItem* theWrappedObject) const;
@@ -554,7 +555,7 @@ inline bool  py_q_event(QEvent*  arg__1) { return QQuickItemGrabResult::event(ar
 class PythonQtWrapper_QQuickItemGrabResult : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 void delete_QQuickItemGrabResult(QQuickItemGrabResult* obj) { delete obj; }
    bool  py_q_event(QQuickItemGrabResult* theWrappedObject, QEvent*  arg__1){  return (((PythonQtPublicPromoter_QQuickItemGrabResult*)theWrappedObject)->py_q_event(arg__1));}
    QImage  image(QQuickItemGrabResult* theWrappedObject) const;
@@ -570,7 +571,7 @@ void delete_QQuickItemGrabResult(QQuickItemGrabResult* obj) { delete obj; }
 class PythonQtWrapper_QQuickItem__UpdatePaintNodeData : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 void delete_QQuickItem__UpdatePaintNodeData(QQuickItem::UpdatePaintNodeData* obj) { delete obj; }
 void py_set_transformNode(QQuickItem::UpdatePaintNodeData* theWrappedObject, QSGTransformNode*  transformNode){ theWrappedObject->transformNode = transformNode; }
 QSGTransformNode*  py_get_transformNode(QQuickItem::UpdatePaintNodeData* theWrappedObject){ return theWrappedObject->transformNode; }
@@ -646,7 +647,7 @@ public:
 Q_ENUMS(PerformanceHint )
 enum PerformanceHint{
   FastFBOResizing = QQuickPaintedItem::FastFBOResizing};
-public slots:
+public Q_SLOTS:
 QQuickPaintedItem* new_QQuickPaintedItem(QQuickItem*  parent = nullptr);
 void delete_QQuickPaintedItem(QQuickPaintedItem* obj) { delete obj; }
    bool  antialiasing(QQuickPaintedItem* theWrappedObject) const;
@@ -708,7 +709,7 @@ inline QWindow*  py_q_renderWindow(QPoint*  offset) { return QQuickRenderControl
 class PythonQtWrapper_QQuickRenderControl : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QQuickRenderControl* new_QQuickRenderControl(QObject*  parent = nullptr);
 void delete_QQuickRenderControl(QQuickRenderControl* obj) { delete obj; }
    QImage  grab(QQuickRenderControl* theWrappedObject);
@@ -748,7 +749,7 @@ void timerEvent(QTimerEvent*  event) override;
 class PythonQtWrapper_QQuickTextDocument : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QQuickTextDocument* new_QQuickTextDocument(QQuickItem*  parent);
 void delete_QQuickTextDocument(QQuickTextDocument* obj) { delete obj; }
    QTextDocument*  textDocument(QQuickTextDocument* theWrappedObject) const;
@@ -786,7 +787,7 @@ inline void py_q_applyTo(QMatrix4x4*  matrix) const { this->applyTo(matrix); }
 class PythonQtWrapper_QQuickTransform : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QQuickTransform* new_QQuickTransform(QObject*  parent = nullptr);
 void delete_QQuickTransform(QQuickTransform* obj) { delete obj; }
    void appendToItem(QQuickTransform* theWrappedObject, QQuickItem*  arg__1);
@@ -862,7 +863,7 @@ inline void py_q_timerEvent(QTimerEvent*  arg__1) { QQuickView::timerEvent(arg__
 class PythonQtWrapper_QQuickView : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QQuickView* new_QQuickView(QQmlEngine*  engine, QWindow*  parent);
 QQuickView* new_QQuickView(QWindow*  parent = nullptr);
 QQuickView* new_QQuickView(const QUrl&  source, QQuickRenderControl*  renderControl);
@@ -999,7 +1000,7 @@ inline void py_q_wheelEvent(QWheelEvent*  arg__1) { QQuickWidget::wheelEvent(arg
 class PythonQtWrapper_QQuickWidget : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QQuickWidget* new_QQuickWidget(QQmlEngine*  engine, QWidget*  parent);
 QQuickWidget* new_QQuickWidget(QWidget*  parent = nullptr);
 QQuickWidget* new_QQuickWidget(const QUrl&  source, QWidget*  parent = nullptr);
@@ -1034,7 +1035,6 @@ void delete_QQuickWidget(QQuickWidget* obj) { delete obj; }
    void setFormat(QQuickWidget* theWrappedObject, const QSurfaceFormat&  format);
    void setResizeMode(QQuickWidget* theWrappedObject, QQuickWidget::ResizeMode  arg__1);
    void py_q_showEvent(QQuickWidget* theWrappedObject, QShowEvent*  arg__1){  (((PythonQtPublicPromoter_QQuickWidget*)theWrappedObject)->py_q_showEvent(arg__1));}
-   QSize  sizeHint(QQuickWidget* theWrappedObject) const;
    QSize  py_q_sizeHint(QQuickWidget* theWrappedObject) const{  return (((PythonQtPublicPromoter_QQuickWidget*)theWrappedObject)->py_q_sizeHint());}
    QUrl  source(QQuickWidget* theWrappedObject) const;
    QQuickWidget::Status  status(QQuickWidget* theWrappedObject) const;
@@ -1129,7 +1129,7 @@ enum CreateTextureOption{
   TextureHasAlphaChannel = QQuickWindow::TextureHasAlphaChannel,   TextureHasMipmaps = QQuickWindow::TextureHasMipmaps,   TextureOwnsGLTexture = QQuickWindow::TextureOwnsGLTexture,   TextureCanUseAtlas = QQuickWindow::TextureCanUseAtlas,   TextureIsOpaque = QQuickWindow::TextureIsOpaque};
 enum RenderStage{
   BeforeSynchronizingStage = QQuickWindow::BeforeSynchronizingStage,   AfterSynchronizingStage = QQuickWindow::AfterSynchronizingStage,   BeforeRenderingStage = QQuickWindow::BeforeRenderingStage,   AfterRenderingStage = QQuickWindow::AfterRenderingStage,   AfterSwapStage = QQuickWindow::AfterSwapStage,   NoStage = QQuickWindow::NoStage};
-public slots:
+public Q_SLOTS:
 QQuickWindow* new_QQuickWindow(QQuickRenderControl*  renderControl);
 QQuickWindow* new_QQuickWindow(QWindow*  parent = nullptr);
 void delete_QQuickWindow(QQuickWindow* obj) { delete obj; }
@@ -1168,6 +1168,7 @@ void delete_QQuickWindow(QQuickWindow* obj) { delete obj; }
    QOpenGLFramebufferObject*  renderTarget(QQuickWindow* theWrappedObject) const;
    uint  renderTargetId(QQuickWindow* theWrappedObject) const;
    QSize  renderTargetSize(QQuickWindow* theWrappedObject) const;
+   QSGRendererInterface*  rendererInterface(QQuickWindow* theWrappedObject) const;
    void resetOpenGLState(QQuickWindow* theWrappedObject);
    void py_q_resizeEvent(QQuickWindow* theWrappedObject, QResizeEvent*  arg__1){  (((PythonQtPublicPromoter_QQuickWindow*)theWrappedObject)->py_q_resizeEvent(arg__1));}
    QString  static_QQuickWindow_sceneGraphBackend();
@@ -1180,6 +1181,7 @@ void delete_QQuickWindow(QQuickWindow* obj) { delete obj; }
    void setPersistentSceneGraph(QQuickWindow* theWrappedObject, bool  persistent);
    void setRenderTarget(QQuickWindow* theWrappedObject, QOpenGLFramebufferObject*  fbo);
    void setRenderTarget(QQuickWindow* theWrappedObject, uint  fboId, const QSize&  size);
+   void static_QQuickWindow_setSceneGraphBackend(QSGRendererInterface::GraphicsApi  api);
    void static_QQuickWindow_setSceneGraphBackend(const QString&  backend);
    void static_QQuickWindow_setTextRenderType(QQuickWindow::TextRenderType  renderType);
    void py_q_showEvent(QQuickWindow* theWrappedObject, QShowEvent*  arg__1){  (((PythonQtPublicPromoter_QQuickWindow*)theWrappedObject)->py_q_showEvent(arg__1));}
@@ -1207,7 +1209,7 @@ public:
 class PythonQtWrapper_QQuickWindow__GraphicsStateInfo : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QQuickWindow::GraphicsStateInfo* new_QQuickWindow__GraphicsStateInfo();
 void delete_QQuickWindow__GraphicsStateInfo(QQuickWindow::GraphicsStateInfo* obj) { delete obj; }
 void py_set_currentFrameSlot(QQuickWindow::GraphicsStateInfo* theWrappedObject, int  currentFrameSlot){ theWrappedObject->currentFrameSlot = currentFrameSlot; }
@@ -1253,7 +1255,7 @@ public:
 Q_ENUMS(ClearModeBit )
 enum ClearModeBit{
   ClearColorBuffer = QSGAbstractRenderer::ClearColorBuffer,   ClearDepthBuffer = QSGAbstractRenderer::ClearDepthBuffer,   ClearStencilBuffer = QSGAbstractRenderer::ClearStencilBuffer};
-public slots:
+public Q_SLOTS:
 QSGAbstractRenderer* new_QSGAbstractRenderer(QObject*  parent = nullptr);
 void delete_QSGAbstractRenderer(QSGAbstractRenderer* obj) { delete obj; }
    QColor  clearColor(QSGAbstractRenderer* theWrappedObject) const;
@@ -1297,7 +1299,7 @@ void preprocess() override;
 class PythonQtWrapper_QSGBasicGeometryNode : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSGBasicGeometryNode* new_QSGBasicGeometryNode(QSGNode::NodeType  type);
 void delete_QSGBasicGeometryNode(QSGBasicGeometryNode* obj) { delete obj; }
    const QSGClipNode*  clipList(QSGBasicGeometryNode* theWrappedObject) const;
@@ -1329,7 +1331,7 @@ void preprocess() override;
 class PythonQtWrapper_QSGClipNode : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSGClipNode* new_QSGClipNode();
 void delete_QSGClipNode(QSGClipNode* obj) { delete obj; }
    QRectF  clipRect(QSGClipNode* theWrappedObject) const;
@@ -1377,7 +1379,7 @@ inline bool  py_q_updateTexture() { return this->updateTexture(); }
 class PythonQtWrapper_QSGDynamicTexture : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSGDynamicTexture* new_QSGDynamicTexture();
 void delete_QSGDynamicTexture(QSGDynamicTexture* obj) { delete obj; }
    bool  updateTexture(QSGDynamicTexture* theWrappedObject);
@@ -1412,7 +1414,7 @@ public:
 Q_ENUMS(CreateTextureOption )
 enum CreateTextureOption{
   TextureHasAlphaChannel = QSGEngine::TextureHasAlphaChannel,   TextureOwnsGLTexture = QSGEngine::TextureOwnsGLTexture,   TextureCanUseAtlas = QSGEngine::TextureCanUseAtlas,   TextureIsOpaque = QSGEngine::TextureIsOpaque};
-public slots:
+public Q_SLOTS:
 QSGEngine* new_QSGEngine(QObject*  parent = nullptr);
 void delete_QSGEngine(QSGEngine* obj) { delete obj; }
    QSGImageNode*  createImageNode(QSGEngine* theWrappedObject) const;
@@ -1421,6 +1423,7 @@ void delete_QSGEngine(QSGEngine* obj) { delete obj; }
    QSGAbstractRenderer*  createRenderer(QSGEngine* theWrappedObject) const;
    void initialize(QSGEngine* theWrappedObject, QOpenGLContext*  context);
    void invalidate(QSGEngine* theWrappedObject);
+   QSGRendererInterface*  rendererInterface(QSGEngine* theWrappedObject) const;
 };
 
 
@@ -1447,7 +1450,7 @@ inline QSGMaterialType*  py_q_type() const { return QSGFlatColorMaterial::type()
 class PythonQtWrapper_QSGFlatColorMaterial : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSGFlatColorMaterial* new_QSGFlatColorMaterial();
 void delete_QSGFlatColorMaterial(QSGFlatColorMaterial* obj) { delete obj; }
    const QColor*  color(QSGFlatColorMaterial* theWrappedObject) const;
@@ -1483,7 +1486,7 @@ enum DrawingMode{
   DrawPoints = QSGGeometry::DrawPoints,   DrawLines = QSGGeometry::DrawLines,   DrawLineLoop = QSGGeometry::DrawLineLoop,   DrawLineStrip = QSGGeometry::DrawLineStrip,   DrawTriangles = QSGGeometry::DrawTriangles,   DrawTriangleStrip = QSGGeometry::DrawTriangleStrip,   DrawTriangleFan = QSGGeometry::DrawTriangleFan};
 enum Type{
   ByteType = QSGGeometry::ByteType,   UnsignedByteType = QSGGeometry::UnsignedByteType,   ShortType = QSGGeometry::ShortType,   UnsignedShortType = QSGGeometry::UnsignedShortType,   IntType = QSGGeometry::IntType,   UnsignedIntType = QSGGeometry::UnsignedIntType,   FloatType = QSGGeometry::FloatType,   Bytes2Type = QSGGeometry::Bytes2Type,   Bytes3Type = QSGGeometry::Bytes3Type,   Bytes4Type = QSGGeometry::Bytes4Type,   DoubleType = QSGGeometry::DoubleType};
-public slots:
+public Q_SLOTS:
 QSGGeometry* new_QSGGeometry(const QSGGeometry::AttributeSet&  attribs, int  vertexCount, int  indexCount = 0, int  indexType = UnsignedShortType);
 void delete_QSGGeometry(QSGGeometry* obj) { delete obj; }
    void allocate(QSGGeometry* theWrappedObject, int  vertexCount, int  indexCount = 0);
@@ -1546,7 +1549,7 @@ void preprocess() override;
 class PythonQtWrapper_QSGGeometryNode : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSGGeometryNode* new_QSGGeometryNode();
 void delete_QSGGeometryNode(QSGGeometryNode* obj) { delete obj; }
    qreal  inheritedOpacity(QSGGeometryNode* theWrappedObject) const;
@@ -1574,7 +1577,7 @@ public:
 class PythonQtWrapper_QSGGeometry__Attribute : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSGGeometry::Attribute* new_QSGGeometry__Attribute();
 void delete_QSGGeometry__Attribute(QSGGeometry::Attribute* obj) { delete obj; }
    QSGGeometry::Attribute  static_QSGGeometry__Attribute_create(int  pos, int  tupleSize, int  primitiveType, bool  isPosition = false);
@@ -1611,7 +1614,7 @@ public:
 class PythonQtWrapper_QSGGeometry__AttributeSet : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSGGeometry::AttributeSet* new_QSGGeometry__AttributeSet();
 void delete_QSGGeometry__AttributeSet(QSGGeometry::AttributeSet* obj) { delete obj; }
 const QSGGeometry::Attribute*  py_get_attributes(QSGGeometry::AttributeSet* theWrappedObject){ return theWrappedObject->attributes; }
@@ -1639,7 +1642,7 @@ public:
 class PythonQtWrapper_QSGGeometry__ColoredPoint2D : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSGGeometry::ColoredPoint2D* new_QSGGeometry__ColoredPoint2D();
 void delete_QSGGeometry__ColoredPoint2D(QSGGeometry::ColoredPoint2D* obj) { delete obj; }
    void set(QSGGeometry::ColoredPoint2D* theWrappedObject, float  nx, float  ny, uchar  nr, uchar  ng, uchar  nb, uchar  na);
@@ -1675,7 +1678,7 @@ public:
 class PythonQtWrapper_QSGGeometry__Point2D : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSGGeometry::Point2D* new_QSGGeometry__Point2D();
 void delete_QSGGeometry__Point2D(QSGGeometry::Point2D* obj) { delete obj; }
    void set(QSGGeometry::Point2D* theWrappedObject, float  nx, float  ny);
@@ -1703,7 +1706,7 @@ public:
 class PythonQtWrapper_QSGGeometry__TexturedPoint2D : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSGGeometry::TexturedPoint2D* new_QSGGeometry__TexturedPoint2D();
 void delete_QSGGeometry__TexturedPoint2D(QSGGeometry::TexturedPoint2D* obj) { delete obj; }
    void set(QSGGeometry::TexturedPoint2D* theWrappedObject, float  nx, float  ny, float  ntx, float  nty);
@@ -1743,7 +1746,7 @@ public:
 Q_ENUMS(TextureCoordinatesTransformFlag )
 enum TextureCoordinatesTransformFlag{
   NoTransform = QSGImageNode::NoTransform,   MirrorHorizontally = QSGImageNode::MirrorHorizontally,   MirrorVertically = QSGImageNode::MirrorVertically};
-public slots:
+public Q_SLOTS:
 void delete_QSGImageNode(QSGImageNode* obj) { delete obj; }
    QSGTexture::Filtering  filtering(QSGImageNode* theWrappedObject) const;
    QSGTexture::Filtering  py_q_filtering(QSGImageNode* theWrappedObject) const{  return (((PythonQtPublicPromoter_QSGImageNode*)theWrappedObject)->py_q_filtering());}
@@ -1791,7 +1794,7 @@ public:
 class PythonQtWrapper_QSGMaterialType : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSGMaterialType* new_QSGMaterialType();
 void delete_QSGMaterialType(QSGMaterialType* obj) { delete obj; }
 };
@@ -1830,7 +1833,7 @@ inline void py_q_update() { this->update(); }
 class PythonQtWrapper_QSGNinePatchNode : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSGNinePatchNode* new_QSGNinePatchNode();
 void delete_QSGNinePatchNode(QSGNinePatchNode* obj) { delete obj; }
    void static_QSGNinePatchNode_rebuildGeometry(QSGTexture*  texture, QSGGeometry*  geometry, const QVector4D&  padding, const QRectF&  bounds, qreal  dpr);

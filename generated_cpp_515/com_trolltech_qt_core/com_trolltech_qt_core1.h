@@ -1,4 +1,5 @@
 #include <PythonQt.h>
+#include <PythonQtConversion.h>
 #include <QDateTime>
 #include <QDir>
 #include <QObject>
@@ -12,6 +13,7 @@
 #include <qcoreevent.h>
 #include <qdatastream.h>
 #include <qdatetime.h>
+#include <qdeadlinetimer.h>
 #include <qdir.h>
 #include <qdiriterator.h>
 #include <qeasingcurve.h>
@@ -38,13 +40,10 @@
 #include <qlist.h>
 #include <qlockfile.h>
 #include <qloggingcategory.h>
-#include <qmargins.h>
-#include <qmessageauthenticationcode.h>
 #include <qmetaobject.h>
 #include <qmimedata.h>
 #include <qobject.h>
 #include <qpoint.h>
-#include <qrect.h>
 #include <qsize.h>
 #include <qstate.h>
 #include <qstatemachine.h>
@@ -52,13 +51,152 @@
 #include <qthread.h>
 #include <qurl.h>
 #include <qvector.h>
+#include <qversionnumber.h>
+
+
+
+class PythonQtWrapper_QDataStream : public QObject
+{ Q_OBJECT
+public:
+Q_ENUMS(ByteOrder FloatingPointPrecision Status Version )
+enum ByteOrder{
+  BigEndian = QDataStream::BigEndian,   LittleEndian = QDataStream::LittleEndian};
+enum FloatingPointPrecision{
+  SinglePrecision = QDataStream::SinglePrecision,   DoublePrecision = QDataStream::DoublePrecision};
+enum Status{
+  Ok = QDataStream::Ok,   ReadPastEnd = QDataStream::ReadPastEnd,   ReadCorruptData = QDataStream::ReadCorruptData,   WriteFailed = QDataStream::WriteFailed};
+enum Version{
+  Qt_1_0 = QDataStream::Qt_1_0,   Qt_2_0 = QDataStream::Qt_2_0,   Qt_2_1 = QDataStream::Qt_2_1,   Qt_3_0 = QDataStream::Qt_3_0,   Qt_3_1 = QDataStream::Qt_3_1,   Qt_3_3 = QDataStream::Qt_3_3,   Qt_4_0 = QDataStream::Qt_4_0,   Qt_4_1 = QDataStream::Qt_4_1,   Qt_4_2 = QDataStream::Qt_4_2,   Qt_4_3 = QDataStream::Qt_4_3,   Qt_4_4 = QDataStream::Qt_4_4,   Qt_4_5 = QDataStream::Qt_4_5,   Qt_4_6 = QDataStream::Qt_4_6,   Qt_4_7 = QDataStream::Qt_4_7,   Qt_4_8 = QDataStream::Qt_4_8,   Qt_4_9 = QDataStream::Qt_4_9,   Qt_5_0 = QDataStream::Qt_5_0,   Qt_5_1 = QDataStream::Qt_5_1,   Qt_5_2 = QDataStream::Qt_5_2,   Qt_5_3 = QDataStream::Qt_5_3,   Qt_5_4 = QDataStream::Qt_5_4,   Qt_5_5 = QDataStream::Qt_5_5,   Qt_5_6 = QDataStream::Qt_5_6,   Qt_5_7 = QDataStream::Qt_5_7,   Qt_5_8 = QDataStream::Qt_5_8,   Qt_5_9 = QDataStream::Qt_5_9,   Qt_5_10 = QDataStream::Qt_5_10,   Qt_5_11 = QDataStream::Qt_5_11,   Qt_5_12 = QDataStream::Qt_5_12,   Qt_5_13 = QDataStream::Qt_5_13,   Qt_5_14 = QDataStream::Qt_5_14,   Qt_5_15 = QDataStream::Qt_5_15,   Qt_DefaultCompiledVersion = QDataStream::Qt_DefaultCompiledVersion};
+public Q_SLOTS:
+QDataStream* new_QDataStream();
+QDataStream* new_QDataStream(QByteArray*  arg__1, QIODevice::OpenMode  flags);
+QDataStream* new_QDataStream(QIODevice*  arg__1);
+QDataStream* new_QDataStream(const QByteArray&  arg__1);
+void delete_QDataStream(QDataStream* obj) { delete obj; }
+   void abortTransaction(QDataStream* theWrappedObject);
+   bool  atEnd(QDataStream* theWrappedObject) const;
+   QDataStream::ByteOrder  byteOrder(QDataStream* theWrappedObject) const;
+   bool  commitTransaction(QDataStream* theWrappedObject);
+   QIODevice*  device(QDataStream* theWrappedObject) const;
+   QDataStream::FloatingPointPrecision  floatingPointPrecision(QDataStream* theWrappedObject) const;
+   void resetStatus(QDataStream* theWrappedObject);
+   void rollbackTransaction(QDataStream* theWrappedObject);
+   void setByteOrder(QDataStream* theWrappedObject, QDataStream::ByteOrder  arg__1);
+   void setDevice(QDataStream* theWrappedObject, QIODevice*  arg__1);
+   void setFloatingPointPrecision(QDataStream* theWrappedObject, QDataStream::FloatingPointPrecision  precision);
+   void setStatus(QDataStream* theWrappedObject, QDataStream::Status  status);
+   void setVersion(QDataStream* theWrappedObject, int  arg__1);
+   int  skipRawData(QDataStream* theWrappedObject, int  len);
+   void startTransaction(QDataStream* theWrappedObject);
+   QDataStream::Status  status(QDataStream* theWrappedObject) const;
+   void unsetDevice(QDataStream* theWrappedObject);
+   int  version(QDataStream* theWrappedObject) const;
+
+   QString readQString(QDataStream* d) { QString r; (*d) >> r; return r; }
+   QString readString(QDataStream* d) { QString r; (*d) >> r; return r; }
+   QChar readQChar(QDataStream* d) { QChar r; (*d) >> r; return r; }
+   QStringList readQStringList(QDataStream* d) { QStringList r; (*d) >> r; return r; }
+   QVariant readQVariant(QDataStream* d) { QVariant r; (*d) >> r; return r; }
+   bool readBool(QDataStream* d) { bool r; (*d) >> r; return r; }
+   qint8 readInt8(QDataStream* d) { qint8 r; (*d) >> r; return r; }
+   quint8 readUInt8(QDataStream* d) { quint8 r; (*d) >> r; return r; }
+   qint16 readInt16(QDataStream* d) { qint16 r; (*d) >> r; return r; }
+   quint16 readUInt16(QDataStream* d) { quint16 r; (*d) >> r; return r; }
+   qint32 readInt32(QDataStream* d) { qint32 r; (*d) >> r; return r; }
+   quint32 readUInt32(QDataStream* d) { quint32 r; (*d) >> r; return r; }
+   qint64 readInt64(QDataStream* d) { qint64 r; (*d) >> r; return r; }
+   quint64 readUInt64(QDataStream* d) { quint64 r; (*d) >> r; return r; }
+   float readFloat(QDataStream* d) { float r; (*d) >> r; return r; }
+   double readDouble(QDataStream* d) { double r; (*d) >> r; return r; }
+
+   void writeQString(QDataStream* d, const QString& v) { (*d) << v; }
+   void writeString(QDataStream* d, const QString& v) { (*d) << v; }
+   void writeQChar(QDataStream* d, const QChar& v) { (*d) << v; }
+   void writeQStringList(QDataStream* d, const QStringList& v) { (*d) << v; }
+   void writeQVariant(QDataStream* d, const QVariant& v) { (*d) << v; }
+   void writeBool(QDataStream* d, bool v) { (*d) << v; }
+   void writeInt8(QDataStream* d, qint8 v) { (*d) << v; }
+   void writeUInt8(QDataStream* d, quint8 v) { (*d) << v; }
+   void writeInt16(QDataStream* d, qint16 v) { (*d) << v; }
+   void writeUInt16(QDataStream* d, quint16 v) { (*d) << v; }
+   void writeInt32(QDataStream* d, qint32 v) { (*d) << v; }
+   void writeUInt32(QDataStream* d, quint32 v) { (*d) << v; }
+   void writeInt64(QDataStream* d, qint64 v) { (*d) << v; }
+   void writeUInt64(QDataStream* d, quint64 v) { (*d) << v; }
+   void writeFloat(QDataStream* d, float v) { (*d) << v; }
+   void writeDouble(QDataStream* d, double v) { (*d) << v; }
+
+   int writeRawData(QDataStream* d, PyObject* o) {
+     bool ok;
+     QByteArray r = PythonQtConv::PyObjGetBytes(o, false, ok);
+     return (*d).writeRawData(r.constData(), r.size());
+   }
+
+   PyObject* readRawData(QDataStream* d, int len) {
+     QByteArray r;
+     r.resize(len);
+     int result = d->readRawData(r.data(), r.size());
+     if (result>=0) {
+       return PyBytes_FromStringAndSize(r.data(), result);
+     } else {
+       Py_INCREF(Py_None);
+       return Py_None;
+     }
+   }
+    
+};
+
+
+
+
+
+class PythonQtWrapper_QDeadlineTimer : public QObject
+{ Q_OBJECT
+public:
+Q_ENUMS(ForeverConstant )
+enum ForeverConstant{
+  Forever = QDeadlineTimer::Forever};
+public Q_SLOTS:
+QDeadlineTimer* new_QDeadlineTimer(QDeadlineTimer::ForeverConstant  arg__1, Qt::TimerType  type_ = Qt::CoarseTimer);
+QDeadlineTimer* new_QDeadlineTimer(Qt::TimerType  type_ = Qt::CoarseTimer);
+QDeadlineTimer* new_QDeadlineTimer(qint64  msecs, Qt::TimerType  type = Qt::CoarseTimer);
+void delete_QDeadlineTimer(QDeadlineTimer* obj) { delete obj; }
+   QDeadlineTimer  static_QDeadlineTimer_addNSecs(QDeadlineTimer  dt, qint64  nsecs);
+   QDeadlineTimer  static_QDeadlineTimer_current(Qt::TimerType  timerType = Qt::CoarseTimer);
+   qint64  deadline(QDeadlineTimer* theWrappedObject) const;
+   qint64  deadlineNSecs(QDeadlineTimer* theWrappedObject) const;
+   bool  hasExpired(QDeadlineTimer* theWrappedObject) const;
+   bool  isForever(QDeadlineTimer* theWrappedObject) const;
+   bool  __ne__(QDeadlineTimer* theWrappedObject, QDeadlineTimer  d2);
+   QDeadlineTimer  __add__(QDeadlineTimer* theWrappedObject, qint64  msecs);
+   QDeadlineTimer*  __iadd__(QDeadlineTimer* theWrappedObject, qint64  msecs);
+   qint64  __sub__(QDeadlineTimer* theWrappedObject, QDeadlineTimer  dt2);
+   QDeadlineTimer  __sub__(QDeadlineTimer* theWrappedObject, qint64  msecs);
+   QDeadlineTimer*  __isub__(QDeadlineTimer* theWrappedObject, qint64  msecs);
+   bool  __lt__(QDeadlineTimer* theWrappedObject, QDeadlineTimer  d2);
+   bool  __le__(QDeadlineTimer* theWrappedObject, QDeadlineTimer  d2);
+   bool  __eq__(QDeadlineTimer* theWrappedObject, QDeadlineTimer  d2);
+   bool  __gt__(QDeadlineTimer* theWrappedObject, QDeadlineTimer  d2);
+   bool  __ge__(QDeadlineTimer* theWrappedObject, QDeadlineTimer  d2);
+   qint64  remainingTime(QDeadlineTimer* theWrappedObject) const;
+   qint64  remainingTimeNSecs(QDeadlineTimer* theWrappedObject) const;
+   void setDeadline(QDeadlineTimer* theWrappedObject, qint64  msecs, Qt::TimerType  timerType = Qt::CoarseTimer);
+   void setPreciseDeadline(QDeadlineTimer* theWrappedObject, qint64  secs, qint64  nsecs = 0, Qt::TimerType  type = Qt::CoarseTimer);
+   void setPreciseRemainingTime(QDeadlineTimer* theWrappedObject, qint64  secs, qint64  nsecs = 0, Qt::TimerType  type = Qt::CoarseTimer);
+   void setRemainingTime(QDeadlineTimer* theWrappedObject, qint64  msecs, Qt::TimerType  type = Qt::CoarseTimer);
+   void setTimerType(QDeadlineTimer* theWrappedObject, Qt::TimerType  type);
+   void swap(QDeadlineTimer* theWrappedObject, QDeadlineTimer&  other);
+   Qt::TimerType  timerType(QDeadlineTimer* theWrappedObject) const;
+};
+
+
 
 
 
 class PythonQtWrapper_QDeferredDeleteEvent : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDeferredDeleteEvent* new_QDeferredDeleteEvent();
 void delete_QDeferredDeleteEvent(QDeferredDeleteEvent* obj) { delete obj; }
    int  loopLevel(QDeferredDeleteEvent* theWrappedObject) const;
@@ -79,10 +217,10 @@ enum SortFlag{
   Name = QDir::Name,   Time = QDir::Time,   Size = QDir::Size,   Unsorted = QDir::Unsorted,   SortByMask = QDir::SortByMask,   DirsFirst = QDir::DirsFirst,   Reversed = QDir::Reversed,   IgnoreCase = QDir::IgnoreCase,   DirsLast = QDir::DirsLast,   LocaleAware = QDir::LocaleAware,   Type = QDir::Type,   NoSort = QDir::NoSort};
 Q_DECLARE_FLAGS(Filters, Filter)
 Q_DECLARE_FLAGS(SortFlags, SortFlag)
-public slots:
+public Q_SLOTS:
 QDir* new_QDir(const QDir&  arg__1);
 QDir* new_QDir(const QString&  path = QString());
-QDir* new_QDir(const QString&  path, const QString&  nameFilter, QDir::SortFlags  sort = QDir::SortFlags(Name | IgnoreCase), QDir::Filters  filter = QDir::AllEntries);
+QDir* new_QDir(const QString&  path, const QString&  nameFilter, QDir::SortFlags  sort = QDir::SortFlags(Name|IgnoreCase), QDir::Filters  filter = QDir::AllEntries);
 void delete_QDir(QDir* obj) { delete obj; }
    QString  absoluteFilePath(QDir* theWrappedObject, const QString&  fileName) const;
    QString  absolutePath(QDir* theWrappedObject) const;
@@ -109,7 +247,7 @@ void delete_QDir(QDir* obj) { delete obj; }
    QString  static_QDir_homePath();
    bool  isAbsolute(QDir* theWrappedObject) const;
    bool  static_QDir_isAbsolutePath(const QString&  path);
-   bool  isEmpty(QDir* theWrappedObject, QDir::Filters  filters = QDir::Filters(AllEntries | NoDotAndDotDot)) const;
+   bool  isEmpty(QDir* theWrappedObject, QDir::Filters  filters = QDir::Filters(AllEntries|NoDotAndDotDot)) const;
    bool  isReadable(QDir* theWrappedObject) const;
    bool  isRelative(QDir* theWrappedObject) const;
    bool  static_QDir_isRelativePath(const QString&  path);
@@ -164,7 +302,7 @@ Q_FLAGS(IteratorFlags )
 enum IteratorFlag{
   NoIteratorFlags = QDirIterator::NoIteratorFlags,   FollowSymlinks = QDirIterator::FollowSymlinks,   Subdirectories = QDirIterator::Subdirectories};
 Q_DECLARE_FLAGS(IteratorFlags, IteratorFlag)
-public slots:
+public Q_SLOTS:
 QDirIterator* new_QDirIterator(const QDir&  dir, QDirIterator::IteratorFlags  flags = QDirIterator::NoIteratorFlags);
 QDirIterator* new_QDirIterator(const QString&  path, QDir::Filters  filter, QDirIterator::IteratorFlags  flags = QDirIterator::NoIteratorFlags);
 QDirIterator* new_QDirIterator(const QString&  path, QDirIterator::IteratorFlags  flags = QDirIterator::NoIteratorFlags);
@@ -185,7 +323,7 @@ void delete_QDirIterator(QDirIterator* obj) { delete obj; }
 class PythonQtWrapper_QDynamicPropertyChangeEvent : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QDynamicPropertyChangeEvent* new_QDynamicPropertyChangeEvent(const QByteArray&  name);
 void delete_QDynamicPropertyChangeEvent(QDynamicPropertyChangeEvent* obj) { delete obj; }
    QByteArray  propertyName(QDynamicPropertyChangeEvent* theWrappedObject) const;
@@ -201,7 +339,7 @@ public:
 Q_ENUMS(Type )
 enum Type{
   Linear = QEasingCurve::Linear,   InQuad = QEasingCurve::InQuad,   OutQuad = QEasingCurve::OutQuad,   InOutQuad = QEasingCurve::InOutQuad,   OutInQuad = QEasingCurve::OutInQuad,   InCubic = QEasingCurve::InCubic,   OutCubic = QEasingCurve::OutCubic,   InOutCubic = QEasingCurve::InOutCubic,   OutInCubic = QEasingCurve::OutInCubic,   InQuart = QEasingCurve::InQuart,   OutQuart = QEasingCurve::OutQuart,   InOutQuart = QEasingCurve::InOutQuart,   OutInQuart = QEasingCurve::OutInQuart,   InQuint = QEasingCurve::InQuint,   OutQuint = QEasingCurve::OutQuint,   InOutQuint = QEasingCurve::InOutQuint,   OutInQuint = QEasingCurve::OutInQuint,   InSine = QEasingCurve::InSine,   OutSine = QEasingCurve::OutSine,   InOutSine = QEasingCurve::InOutSine,   OutInSine = QEasingCurve::OutInSine,   InExpo = QEasingCurve::InExpo,   OutExpo = QEasingCurve::OutExpo,   InOutExpo = QEasingCurve::InOutExpo,   OutInExpo = QEasingCurve::OutInExpo,   InCirc = QEasingCurve::InCirc,   OutCirc = QEasingCurve::OutCirc,   InOutCirc = QEasingCurve::InOutCirc,   OutInCirc = QEasingCurve::OutInCirc,   InElastic = QEasingCurve::InElastic,   OutElastic = QEasingCurve::OutElastic,   InOutElastic = QEasingCurve::InOutElastic,   OutInElastic = QEasingCurve::OutInElastic,   InBack = QEasingCurve::InBack,   OutBack = QEasingCurve::OutBack,   InOutBack = QEasingCurve::InOutBack,   OutInBack = QEasingCurve::OutInBack,   InBounce = QEasingCurve::InBounce,   OutBounce = QEasingCurve::OutBounce,   InOutBounce = QEasingCurve::InOutBounce,   OutInBounce = QEasingCurve::OutInBounce,   InCurve = QEasingCurve::InCurve,   OutCurve = QEasingCurve::OutCurve,   SineCurve = QEasingCurve::SineCurve,   CosineCurve = QEasingCurve::CosineCurve,   BezierSpline = QEasingCurve::BezierSpline,   TCBSpline = QEasingCurve::TCBSpline,   Custom = QEasingCurve::Custom,   NCurveTypes = QEasingCurve::NCurveTypes};
-public slots:
+public Q_SLOTS:
 QEasingCurve* new_QEasingCurve(QEasingCurve::Type  type = QEasingCurve::Linear);
 QEasingCurve* new_QEasingCurve(const QEasingCurve&  other);
 void delete_QEasingCurve(QEasingCurve* obj) { delete obj; }
@@ -236,7 +374,7 @@ public:
 Q_ENUMS(ClockType )
 enum ClockType{
   SystemTime = QElapsedTimer::SystemTime,   MonotonicClock = QElapsedTimer::MonotonicClock,   TickCounter = QElapsedTimer::TickCounter,   MachAbsoluteTime = QElapsedTimer::MachAbsoluteTime,   PerformanceCounter = QElapsedTimer::PerformanceCounter};
-public slots:
+public Q_SLOTS:
 QElapsedTimer* new_QElapsedTimer();
 void delete_QElapsedTimer(QElapsedTimer* obj) { delete obj; }
    QElapsedTimer::ClockType  static_QElapsedTimer_clockType();
@@ -249,6 +387,7 @@ void delete_QElapsedTimer(QElapsedTimer* obj) { delete obj; }
    qint64  msecsTo(QElapsedTimer* theWrappedObject, const QElapsedTimer&  other) const;
    qint64  nsecsElapsed(QElapsedTimer* theWrappedObject) const;
    bool  __ne__(QElapsedTimer* theWrappedObject, const QElapsedTimer&  other) const;
+   bool  __lt__(QElapsedTimer* theWrappedObject, const QElapsedTimer&  v2);
    bool  __eq__(QElapsedTimer* theWrappedObject, const QElapsedTimer&  other) const;
    qint64  restart(QElapsedTimer* theWrappedObject);
    qint64  secsTo(QElapsedTimer* theWrappedObject, const QElapsedTimer&  other) const;
@@ -278,7 +417,7 @@ public:
 Q_ENUMS(Type )
 enum Type{
   None = QEvent::None,   Timer = QEvent::Timer,   MouseButtonPress = QEvent::MouseButtonPress,   MouseButtonRelease = QEvent::MouseButtonRelease,   MouseButtonDblClick = QEvent::MouseButtonDblClick,   MouseMove = QEvent::MouseMove,   KeyPress = QEvent::KeyPress,   KeyRelease = QEvent::KeyRelease,   FocusIn = QEvent::FocusIn,   FocusOut = QEvent::FocusOut,   FocusAboutToChange = QEvent::FocusAboutToChange,   Enter = QEvent::Enter,   Leave = QEvent::Leave,   Paint = QEvent::Paint,   Move = QEvent::Move,   Resize = QEvent::Resize,   Create = QEvent::Create,   Destroy = QEvent::Destroy,   Show = QEvent::Show,   Hide = QEvent::Hide,   Close = QEvent::Close,   Quit = QEvent::Quit,   ParentChange = QEvent::ParentChange,   ParentAboutToChange = QEvent::ParentAboutToChange,   ThreadChange = QEvent::ThreadChange,   WindowActivate = QEvent::WindowActivate,   WindowDeactivate = QEvent::WindowDeactivate,   ShowToParent = QEvent::ShowToParent,   HideToParent = QEvent::HideToParent,   Wheel = QEvent::Wheel,   WindowTitleChange = QEvent::WindowTitleChange,   WindowIconChange = QEvent::WindowIconChange,   ApplicationWindowIconChange = QEvent::ApplicationWindowIconChange,   ApplicationFontChange = QEvent::ApplicationFontChange,   ApplicationLayoutDirectionChange = QEvent::ApplicationLayoutDirectionChange,   ApplicationPaletteChange = QEvent::ApplicationPaletteChange,   PaletteChange = QEvent::PaletteChange,   Clipboard = QEvent::Clipboard,   Speech = QEvent::Speech,   MetaCall = QEvent::MetaCall,   SockAct = QEvent::SockAct,   WinEventAct = QEvent::WinEventAct,   DeferredDelete = QEvent::DeferredDelete,   DragEnter = QEvent::DragEnter,   DragMove = QEvent::DragMove,   DragLeave = QEvent::DragLeave,   Drop = QEvent::Drop,   DragResponse = QEvent::DragResponse,   ChildAdded = QEvent::ChildAdded,   ChildPolished = QEvent::ChildPolished,   ChildRemoved = QEvent::ChildRemoved,   ShowWindowRequest = QEvent::ShowWindowRequest,   PolishRequest = QEvent::PolishRequest,   Polish = QEvent::Polish,   LayoutRequest = QEvent::LayoutRequest,   UpdateRequest = QEvent::UpdateRequest,   UpdateLater = QEvent::UpdateLater,   EmbeddingControl = QEvent::EmbeddingControl,   ActivateControl = QEvent::ActivateControl,   DeactivateControl = QEvent::DeactivateControl,   ContextMenu = QEvent::ContextMenu,   InputMethod = QEvent::InputMethod,   TabletMove = QEvent::TabletMove,   LocaleChange = QEvent::LocaleChange,   LanguageChange = QEvent::LanguageChange,   LayoutDirectionChange = QEvent::LayoutDirectionChange,   Style = QEvent::Style,   TabletPress = QEvent::TabletPress,   TabletRelease = QEvent::TabletRelease,   OkRequest = QEvent::OkRequest,   HelpRequest = QEvent::HelpRequest,   IconDrag = QEvent::IconDrag,   FontChange = QEvent::FontChange,   EnabledChange = QEvent::EnabledChange,   ActivationChange = QEvent::ActivationChange,   StyleChange = QEvent::StyleChange,   IconTextChange = QEvent::IconTextChange,   ModifiedChange = QEvent::ModifiedChange,   MouseTrackingChange = QEvent::MouseTrackingChange,   WindowBlocked = QEvent::WindowBlocked,   WindowUnblocked = QEvent::WindowUnblocked,   WindowStateChange = QEvent::WindowStateChange,   ReadOnlyChange = QEvent::ReadOnlyChange,   ToolTip = QEvent::ToolTip,   WhatsThis = QEvent::WhatsThis,   StatusTip = QEvent::StatusTip,   ActionChanged = QEvent::ActionChanged,   ActionAdded = QEvent::ActionAdded,   ActionRemoved = QEvent::ActionRemoved,   FileOpen = QEvent::FileOpen,   Shortcut = QEvent::Shortcut,   ShortcutOverride = QEvent::ShortcutOverride,   WhatsThisClicked = QEvent::WhatsThisClicked,   ToolBarChange = QEvent::ToolBarChange,   ApplicationActivate = QEvent::ApplicationActivate,   ApplicationActivated = QEvent::ApplicationActivated,   ApplicationDeactivate = QEvent::ApplicationDeactivate,   ApplicationDeactivated = QEvent::ApplicationDeactivated,   QueryWhatsThis = QEvent::QueryWhatsThis,   EnterWhatsThisMode = QEvent::EnterWhatsThisMode,   LeaveWhatsThisMode = QEvent::LeaveWhatsThisMode,   ZOrderChange = QEvent::ZOrderChange,   HoverEnter = QEvent::HoverEnter,   HoverLeave = QEvent::HoverLeave,   HoverMove = QEvent::HoverMove,   AcceptDropsChange = QEvent::AcceptDropsChange,   ZeroTimerEvent = QEvent::ZeroTimerEvent,   GraphicsSceneMouseMove = QEvent::GraphicsSceneMouseMove,   GraphicsSceneMousePress = QEvent::GraphicsSceneMousePress,   GraphicsSceneMouseRelease = QEvent::GraphicsSceneMouseRelease,   GraphicsSceneMouseDoubleClick = QEvent::GraphicsSceneMouseDoubleClick,   GraphicsSceneContextMenu = QEvent::GraphicsSceneContextMenu,   GraphicsSceneHoverEnter = QEvent::GraphicsSceneHoverEnter,   GraphicsSceneHoverMove = QEvent::GraphicsSceneHoverMove,   GraphicsSceneHoverLeave = QEvent::GraphicsSceneHoverLeave,   GraphicsSceneHelp = QEvent::GraphicsSceneHelp,   GraphicsSceneDragEnter = QEvent::GraphicsSceneDragEnter,   GraphicsSceneDragMove = QEvent::GraphicsSceneDragMove,   GraphicsSceneDragLeave = QEvent::GraphicsSceneDragLeave,   GraphicsSceneDrop = QEvent::GraphicsSceneDrop,   GraphicsSceneWheel = QEvent::GraphicsSceneWheel,   KeyboardLayoutChange = QEvent::KeyboardLayoutChange,   DynamicPropertyChange = QEvent::DynamicPropertyChange,   TabletEnterProximity = QEvent::TabletEnterProximity,   TabletLeaveProximity = QEvent::TabletLeaveProximity,   NonClientAreaMouseMove = QEvent::NonClientAreaMouseMove,   NonClientAreaMouseButtonPress = QEvent::NonClientAreaMouseButtonPress,   NonClientAreaMouseButtonRelease = QEvent::NonClientAreaMouseButtonRelease,   NonClientAreaMouseButtonDblClick = QEvent::NonClientAreaMouseButtonDblClick,   MacSizeChange = QEvent::MacSizeChange,   ContentsRectChange = QEvent::ContentsRectChange,   MacGLWindowChange = QEvent::MacGLWindowChange,   FutureCallOut = QEvent::FutureCallOut,   GraphicsSceneResize = QEvent::GraphicsSceneResize,   GraphicsSceneMove = QEvent::GraphicsSceneMove,   CursorChange = QEvent::CursorChange,   ToolTipChange = QEvent::ToolTipChange,   NetworkReplyUpdated = QEvent::NetworkReplyUpdated,   GrabMouse = QEvent::GrabMouse,   UngrabMouse = QEvent::UngrabMouse,   GrabKeyboard = QEvent::GrabKeyboard,   UngrabKeyboard = QEvent::UngrabKeyboard,   MacGLClearDrawable = QEvent::MacGLClearDrawable,   StateMachineSignal = QEvent::StateMachineSignal,   StateMachineWrapped = QEvent::StateMachineWrapped,   TouchBegin = QEvent::TouchBegin,   TouchUpdate = QEvent::TouchUpdate,   TouchEnd = QEvent::TouchEnd,   NativeGesture = QEvent::NativeGesture,   RequestSoftwareInputPanel = QEvent::RequestSoftwareInputPanel,   CloseSoftwareInputPanel = QEvent::CloseSoftwareInputPanel,   WinIdChange = QEvent::WinIdChange,   Gesture = QEvent::Gesture,   GestureOverride = QEvent::GestureOverride,   ScrollPrepare = QEvent::ScrollPrepare,   Scroll = QEvent::Scroll,   Expose = QEvent::Expose,   InputMethodQuery = QEvent::InputMethodQuery,   OrientationChange = QEvent::OrientationChange,   TouchCancel = QEvent::TouchCancel,   ThemeChange = QEvent::ThemeChange,   SockClose = QEvent::SockClose,   PlatformPanel = QEvent::PlatformPanel,   StyleAnimationUpdate = QEvent::StyleAnimationUpdate,   ApplicationStateChange = QEvent::ApplicationStateChange,   WindowChangeInternal = QEvent::WindowChangeInternal,   ScreenChangeInternal = QEvent::ScreenChangeInternal,   PlatformSurface = QEvent::PlatformSurface,   Pointer = QEvent::Pointer,   TabletTrackingChange = QEvent::TabletTrackingChange,   User = QEvent::User,   MaxUser = QEvent::MaxUser};
-public slots:
+public Q_SLOTS:
 QEvent* new_QEvent(QEvent::Type  type);
 QEvent* new_QEvent(const QEvent&  other);
 void delete_QEvent(QEvent* obj) { delete obj; }
@@ -328,7 +467,7 @@ Q_FLAGS(ProcessEventsFlags )
 enum ProcessEventsFlag{
   AllEvents = QEventLoop::AllEvents,   ExcludeUserInputEvents = QEventLoop::ExcludeUserInputEvents,   ExcludeSocketNotifiers = QEventLoop::ExcludeSocketNotifiers,   WaitForMoreEvents = QEventLoop::WaitForMoreEvents,   X11ExcludeTimers = QEventLoop::X11ExcludeTimers,   EventLoopExec = QEventLoop::EventLoopExec,   DialogExec = QEventLoop::DialogExec};
 Q_DECLARE_FLAGS(ProcessEventsFlags, ProcessEventsFlag)
-public slots:
+public Q_SLOTS:
 QEventLoop* new_QEventLoop(QObject*  parent = nullptr);
 void delete_QEventLoop(QEventLoop* obj) { delete obj; }
    bool  py_q_event(QEventLoop* theWrappedObject, QEvent*  event){  return (((PythonQtPublicPromoter_QEventLoop*)theWrappedObject)->py_q_event(event));}
@@ -378,7 +517,7 @@ inline void py_q_onTransition(QEvent*  event) { QEventTransition::onTransition(e
 class PythonQtWrapper_QEventTransition : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QEventTransition* new_QEventTransition(QObject*  object, QEvent::Type  type, QState*  sourceState = nullptr);
 QEventTransition* new_QEventTransition(QState*  sourceState = nullptr);
 void delete_QEventTransition(QEventTransition* obj) { delete obj; }
@@ -415,7 +554,7 @@ inline QStringList  py_q_keys() const { return this->keys(); }
 class PythonQtWrapper_QFactoryInterface : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QFactoryInterface* new_QFactoryInterface();
 void delete_QFactoryInterface(QFactoryInterface* obj) { delete obj; }
    QStringList  keys(QFactoryInterface* theWrappedObject) const;
@@ -480,7 +619,7 @@ inline qint64  py_q_size() const { return QFile::size(); }
 class PythonQtWrapper_QFile : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QFile* new_QFile();
 QFile* new_QFile(QObject*  parent);
 QFile* new_QFile(const QString&  name);
@@ -595,7 +734,7 @@ enum Permission{
   ReadOwner = QFileDevice::ReadOwner,   WriteOwner = QFileDevice::WriteOwner,   ExeOwner = QFileDevice::ExeOwner,   ReadUser = QFileDevice::ReadUser,   WriteUser = QFileDevice::WriteUser,   ExeUser = QFileDevice::ExeUser,   ReadGroup = QFileDevice::ReadGroup,   WriteGroup = QFileDevice::WriteGroup,   ExeGroup = QFileDevice::ExeGroup,   ReadOther = QFileDevice::ReadOther,   WriteOther = QFileDevice::WriteOther,   ExeOther = QFileDevice::ExeOther};
 Q_DECLARE_FLAGS(FileHandleFlags, FileHandleFlag)
 Q_DECLARE_FLAGS(Permissions, Permission)
-public slots:
+public Q_SLOTS:
 QFileDevice* new_QFileDevice();
 QFileDevice* new_QFileDevice(QObject*  parent);
 void delete_QFileDevice(QFileDevice* obj) { delete obj; }
@@ -633,7 +772,7 @@ void delete_QFileDevice(QFileDevice* obj) { delete obj; }
 class PythonQtWrapper_QFileInfo : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QFileInfo* new_QFileInfo();
 QFileInfo* new_QFileInfo(const QDir&  dir, const QString&  file);
 QFileInfo* new_QFileInfo(const QFile&  file);
@@ -720,7 +859,7 @@ void timerEvent(QTimerEvent*  event) override;
 class PythonQtWrapper_QFileSelector : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QFileSelector* new_QFileSelector(QObject*  parent = nullptr);
 void delete_QFileSelector(QFileSelector* obj) { delete obj; }
    QStringList  allSelectors(QFileSelector* theWrappedObject) const;
@@ -756,7 +895,7 @@ void timerEvent(QTimerEvent*  event) override;
 class PythonQtWrapper_QFileSystemWatcher : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QFileSystemWatcher* new_QFileSystemWatcher(QObject*  parent = nullptr);
 QFileSystemWatcher* new_QFileSystemWatcher(const QStringList&  paths, QObject*  parent = nullptr);
 void delete_QFileSystemWatcher(QFileSystemWatcher* obj) { delete obj; }
@@ -805,7 +944,7 @@ inline void py_q_onExit(QEvent*  event) { QFinalState::onExit(event); }
 class PythonQtWrapper_QFinalState : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QFinalState* new_QFinalState(QState*  parent = nullptr);
 void delete_QFinalState(QFinalState* obj) { delete obj; }
    bool  py_q_event(QFinalState* theWrappedObject, QEvent*  e){  return (((PythonQtPublicPromoter_QFinalState*)theWrappedObject)->py_q_event(e));}
@@ -851,7 +990,7 @@ inline void py_q_onExit(QEvent*  event) { QHistoryState::onExit(event); }
 class PythonQtWrapper_QHistoryState : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QHistoryState* new_QHistoryState(QHistoryState::HistoryType  type, QState*  parent = nullptr);
 QHistoryState* new_QHistoryState(QState*  parent = nullptr);
 void delete_QHistoryState(QHistoryState* obj) { delete obj; }
@@ -938,7 +1077,7 @@ Q_FLAGS(OpenMode )
 enum OpenModeFlag{
   NotOpen = QIODevice::NotOpen,   ReadOnly = QIODevice::ReadOnly,   WriteOnly = QIODevice::WriteOnly,   ReadWrite = QIODevice::ReadWrite,   Append = QIODevice::Append,   Truncate = QIODevice::Truncate,   Text = QIODevice::Text,   Unbuffered = QIODevice::Unbuffered,   NewOnly = QIODevice::NewOnly,   ExistingOnly = QIODevice::ExistingOnly};
 Q_DECLARE_FLAGS(OpenMode, OpenModeFlag)
-public slots:
+public Q_SLOTS:
 QIODevice* new_QIODevice();
 QIODevice* new_QIODevice(QObject*  parent);
 void delete_QIODevice(QIODevice* obj) { delete obj; }
@@ -1092,7 +1231,7 @@ inline QModelIndex  py_q_sibling(int  row, int  column, const QModelIndex&  idx)
 class PythonQtWrapper_QIdentityProxyModel : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QIdentityProxyModel* new_QIdentityProxyModel(QObject*  parent = nullptr);
 void delete_QIdentityProxyModel(QIdentityProxyModel* obj) { delete obj; }
    int  py_q_columnCount(QIdentityProxyModel* theWrappedObject, const QModelIndex&  parent = QModelIndex()) const{  return (((PythonQtPublicPromoter_QIdentityProxyModel*)theWrappedObject)->py_q_columnCount(parent));}
@@ -1123,7 +1262,7 @@ void delete_QIdentityProxyModel(QIdentityProxyModel* obj) { delete obj; }
 class PythonQtWrapper_QJsonArray : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QJsonArray* new_QJsonArray();
 QJsonArray* new_QJsonArray(const QJsonArray&  other);
 void delete_QJsonArray(QJsonArray* obj) { delete obj; }
@@ -1189,7 +1328,7 @@ enum DataValidation{
   Validate = QJsonDocument::Validate,   BypassValidation = QJsonDocument::BypassValidation};
 enum JsonFormat{
   Indented = QJsonDocument::Indented,   Compact = QJsonDocument::Compact};
-public slots:
+public Q_SLOTS:
 QJsonDocument* new_QJsonDocument();
 QJsonDocument* new_QJsonDocument(const QJsonArray&  array);
 QJsonDocument* new_QJsonDocument(const QJsonDocument&  other);
@@ -1231,7 +1370,7 @@ void delete_QJsonDocument(QJsonDocument* obj) { delete obj; }
 class PythonQtWrapper_QJsonObject : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QJsonObject* new_QJsonObject();
 QJsonObject* new_QJsonObject(const QJsonObject&  other);
 void delete_QJsonObject(QJsonObject* obj) { delete obj; }
@@ -1281,7 +1420,7 @@ public:
 Q_ENUMS(ParseError )
 enum ParseError{
   NoError = QJsonParseError::NoError,   UnterminatedObject = QJsonParseError::UnterminatedObject,   MissingNameSeparator = QJsonParseError::MissingNameSeparator,   UnterminatedArray = QJsonParseError::UnterminatedArray,   MissingValueSeparator = QJsonParseError::MissingValueSeparator,   IllegalValue = QJsonParseError::IllegalValue,   TerminationByNumber = QJsonParseError::TerminationByNumber,   IllegalNumber = QJsonParseError::IllegalNumber,   IllegalEscapeSequence = QJsonParseError::IllegalEscapeSequence,   IllegalUTF8String = QJsonParseError::IllegalUTF8String,   UnterminatedString = QJsonParseError::UnterminatedString,   MissingObject = QJsonParseError::MissingObject,   DeepNesting = QJsonParseError::DeepNesting,   DocumentTooLarge = QJsonParseError::DocumentTooLarge,   GarbageAtEnd = QJsonParseError::GarbageAtEnd};
-public slots:
+public Q_SLOTS:
 QJsonParseError* new_QJsonParseError();
 void delete_QJsonParseError(QJsonParseError* obj) { delete obj; }
    QString  errorString(QJsonParseError* theWrappedObject) const;
@@ -1301,7 +1440,7 @@ public:
 Q_ENUMS(Type )
 enum Type{
   Null = QJsonValue::Null,   Bool = QJsonValue::Bool,   Double = QJsonValue::Double,   String = QJsonValue::String,   Array = QJsonValue::Array,   Object = QJsonValue::Object,   Undefined = QJsonValue::Undefined};
-public slots:
+public Q_SLOTS:
 QJsonValue* new_QJsonValue(QJsonValue::Type  arg__1 = QJsonValue::Null);
 QJsonValue* new_QJsonValue(bool  b);
 QJsonValue* new_QJsonValue(const QJsonArray&  a);
@@ -1377,7 +1516,7 @@ Q_FLAGS(LoadHints )
 enum LoadHint{
   ResolveAllSymbolsHint = QLibrary::ResolveAllSymbolsHint,   ExportExternalSymbolsHint = QLibrary::ExportExternalSymbolsHint,   LoadArchiveMemberHint = QLibrary::LoadArchiveMemberHint,   PreventUnloadHint = QLibrary::PreventUnloadHint,   DeepBindHint = QLibrary::DeepBindHint};
 Q_DECLARE_FLAGS(LoadHints, LoadHint)
-public slots:
+public Q_SLOTS:
 QLibrary* new_QLibrary(QObject*  parent = nullptr);
 QLibrary* new_QLibrary(const QString&  fileName, QObject*  parent = nullptr);
 QLibrary* new_QLibrary(const QString&  fileName, const QString&  version, QObject*  parent = nullptr);
@@ -1406,7 +1545,7 @@ public:
 Q_ENUMS(LibraryLocation )
 enum LibraryLocation{
   PrefixPath = QLibraryInfo::PrefixPath,   DocumentationPath = QLibraryInfo::DocumentationPath,   HeadersPath = QLibraryInfo::HeadersPath,   LibrariesPath = QLibraryInfo::LibrariesPath,   LibraryExecutablesPath = QLibraryInfo::LibraryExecutablesPath,   BinariesPath = QLibraryInfo::BinariesPath,   PluginsPath = QLibraryInfo::PluginsPath,   ImportsPath = QLibraryInfo::ImportsPath,   Qml2ImportsPath = QLibraryInfo::Qml2ImportsPath,   ArchDataPath = QLibraryInfo::ArchDataPath,   DataPath = QLibraryInfo::DataPath,   TranslationsPath = QLibraryInfo::TranslationsPath,   ExamplesPath = QLibraryInfo::ExamplesPath,   TestsPath = QLibraryInfo::TestsPath,   SettingsPath = QLibraryInfo::SettingsPath};
-public slots:
+public Q_SLOTS:
 void delete_QLibraryInfo(QLibraryInfo* obj) { delete obj; }
    const char*  static_QLibraryInfo_build();
    QDate  static_QLibraryInfo_buildDate();
@@ -1415,6 +1554,7 @@ void delete_QLibraryInfo(QLibraryInfo* obj) { delete obj; }
    QString  static_QLibraryInfo_licensee();
    QString  static_QLibraryInfo_location(QLibraryInfo::LibraryLocation  arg__1);
    QStringList  static_QLibraryInfo_platformPluginArguments(const QString&  platformName);
+   QVersionNumber  static_QLibraryInfo_version();
 };
 
 
@@ -1427,7 +1567,7 @@ public:
 Q_ENUMS(LockError )
 enum LockError{
   NoError = QLockFile::NoError,   LockFailedError = QLockFile::LockFailedError,   PermissionError = QLockFile::PermissionError,   UnknownError = QLockFile::UnknownError};
-public slots:
+public Q_SLOTS:
 QLockFile* new_QLockFile(const QString&  fileName);
 void delete_QLockFile(QLockFile* obj) { delete obj; }
    QLockFile::LockError  error(QLockFile* theWrappedObject) const;
@@ -1448,7 +1588,7 @@ void delete_QLockFile(QLockFile* obj) { delete obj; }
 class PythonQtWrapper_QLoggingCategory : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 void delete_QLoggingCategory(QLoggingCategory* obj) { delete obj; }
    const char*  categoryName(QLoggingCategory* theWrappedObject) const;
    QLoggingCategory*  static_QLoggingCategory_defaultCategory();
@@ -1459,68 +1599,6 @@ void delete_QLoggingCategory(QLoggingCategory* obj) { delete obj; }
    bool  isWarningEnabled(QLoggingCategory* theWrappedObject) const;
    void setEnabled(QLoggingCategory* theWrappedObject, QtMsgType  type, bool  enable);
    void static_QLoggingCategory_setFilterRules(const QString&  rules);
-};
-
-
-
-
-
-class PythonQtWrapper_QMarginsF : public QObject
-{ Q_OBJECT
-public:
-public slots:
-QMarginsF* new_QMarginsF();
-QMarginsF* new_QMarginsF(const QMargins&  margins);
-QMarginsF* new_QMarginsF(qreal  left, qreal  top, qreal  right, qreal  bottom);
-void delete_QMarginsF(QMarginsF* obj) { delete obj; }
-   qreal  bottom(QMarginsF* theWrappedObject) const;
-   bool  isNull(QMarginsF* theWrappedObject) const;
-   qreal  left(QMarginsF* theWrappedObject) const;
-   bool  __ne__(QMarginsF* theWrappedObject, const QMarginsF&  rhs);
-   QMarginsF  __mul__(QMarginsF* theWrappedObject, qreal  rhs);
-   QMarginsF*  __imul__(QMarginsF* theWrappedObject, qreal  factor);
-   QMarginsF  __add__(QMarginsF* theWrappedObject, const QMarginsF&  rhs);
-   QRectF  __add__(QMarginsF* theWrappedObject, const QRectF&  rhs);
-   QMarginsF  __add__(QMarginsF* theWrappedObject, qreal  rhs);
-   QMarginsF*  __iadd__(QMarginsF* theWrappedObject, const QMarginsF&  margins);
-   QMarginsF*  __iadd__(QMarginsF* theWrappedObject, qreal  addend);
-   QMarginsF  __sub__(QMarginsF* theWrappedObject, const QMarginsF&  rhs);
-   QMarginsF  __sub__(QMarginsF* theWrappedObject, qreal  rhs);
-   QMarginsF*  __isub__(QMarginsF* theWrappedObject, const QMarginsF&  margins);
-   QMarginsF*  __isub__(QMarginsF* theWrappedObject, qreal  subtrahend);
-   QMarginsF  __div__(QMarginsF* theWrappedObject, qreal  divisor);
-   QMarginsF*  __idiv__(QMarginsF* theWrappedObject, qreal  divisor);
-   void writeTo(QMarginsF* theWrappedObject, QDataStream&  arg__1);
-   bool  __eq__(QMarginsF* theWrappedObject, const QMarginsF&  rhs);
-   void readFrom(QMarginsF* theWrappedObject, QDataStream&  arg__1);
-   qreal  right(QMarginsF* theWrappedObject) const;
-   void setBottom(QMarginsF* theWrappedObject, qreal  bottom);
-   void setLeft(QMarginsF* theWrappedObject, qreal  left);
-   void setRight(QMarginsF* theWrappedObject, qreal  right);
-   void setTop(QMarginsF* theWrappedObject, qreal  top);
-   QMargins  toMargins(QMarginsF* theWrappedObject) const;
-   qreal  top(QMarginsF* theWrappedObject) const;
-    QString py_toString(QMarginsF*);
-    bool __nonzero__(QMarginsF* obj) { return !obj->isNull(); }
-};
-
-
-
-
-
-class PythonQtWrapper_QMessageAuthenticationCode : public QObject
-{ Q_OBJECT
-public:
-public slots:
-QMessageAuthenticationCode* new_QMessageAuthenticationCode(QCryptographicHash::Algorithm  method, const QByteArray&  key = QByteArray());
-void delete_QMessageAuthenticationCode(QMessageAuthenticationCode* obj) { delete obj; }
-   bool  addData(QMessageAuthenticationCode* theWrappedObject, QIODevice*  device);
-   void addData(QMessageAuthenticationCode* theWrappedObject, const QByteArray&  data);
-   void addData(QMessageAuthenticationCode* theWrappedObject, const char*  data, int  length);
-   QByteArray  static_QMessageAuthenticationCode_hash(const QByteArray&  message, const QByteArray&  key, QCryptographicHash::Algorithm  method);
-   void reset(QMessageAuthenticationCode* theWrappedObject);
-   QByteArray  result(QMessageAuthenticationCode* theWrappedObject) const;
-   void setKey(QMessageAuthenticationCode* theWrappedObject, const QByteArray&  key);
 };
 
 

@@ -28,7 +28,7 @@ message(STATUS "Python_LIBRARIES= ${Python_LIBRARIES}")
 message(STATUS "Python_NumPy_FOUND= ${Python_NumPy_FOUND}")
 
 set(PYTHONQT_SOURCES
-  ${GENERATED_CPP_56_BUILTIN_SOURCES}
+  ${GENERATED_CPP_515_BUILTIN_SOURCES}
   PythonQtStdDecorators.cpp 
   PythonQt.cpp              
   PythonQtClassInfo.cpp      
@@ -58,7 +58,7 @@ add_library(PythonQt SHARED ${PYTHONQT_SOURCES} )
 target_include_directories(PythonQt PRIVATE
     ${Qt5Core_PRIVATE_INCLUDE_DIRS}
     ${Python_INCLUDE_DIRS}
-    ${GENERATED_CPP_56_BUILTIN_INCLUDE_DIR}
+    ${GENERATED_CPP_515_BUILTIN_INCLUDE_DIR}
 )
 
 target_compile_definitions(PythonQt PRIVATE

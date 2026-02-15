@@ -7,7 +7,23 @@
 #include <QSize>
 #include <QSvgRenderer>
 #include <QVariant>
-#include <qaction.h>
+#include <QtSvg/qgraphicssvgitem.h>
+#include <QtSvg/qsvggenerator.h>
+#include <QtSvg/qsvgrenderer.h>
+#include <QtSvg/qsvgwidget.h>
+#include <QtWidgets/qaction.h>
+#include <QtWidgets/qgraphicseffect.h>
+#include <QtWidgets/qgraphicsitem.h>
+#include <QtWidgets/qgraphicsproxywidget.h>
+#include <QtWidgets/qgraphicsscene.h>
+#include <QtWidgets/qgraphicssceneevent.h>
+#include <QtWidgets/qgraphicstransform.h>
+#include <QtWidgets/qgraphicswidget.h>
+#include <QtWidgets/qlayout.h>
+#include <QtWidgets/qsizepolicy.h>
+#include <QtWidgets/qstyle.h>
+#include <QtWidgets/qstyleoption.h>
+#include <QtWidgets/qwidget.h>
 #include <qbackingstore.h>
 #include <qbitmap.h>
 #include <qbytearray.h>
@@ -17,18 +33,9 @@
 #include <qfont.h>
 #include <qfontinfo.h>
 #include <qfontmetrics.h>
-#include <qgraphicseffect.h>
-#include <qgraphicsitem.h>
-#include <qgraphicsproxywidget.h>
-#include <qgraphicsscene.h>
-#include <qgraphicssceneevent.h>
-#include <qgraphicssvgitem.h>
-#include <qgraphicstransform.h>
-#include <qgraphicswidget.h>
 #include <qicon.h>
 #include <qiodevice.h>
 #include <qkeysequence.h>
-#include <qlayout.h>
 #include <qlist.h>
 #include <qlocale.h>
 #include <qmargins.h>
@@ -47,15 +54,8 @@
 #include <qregion.h>
 #include <qscreen.h>
 #include <qsize.h>
-#include <qsizepolicy.h>
-#include <qstyle.h>
-#include <qstyleoption.h>
-#include <qsvggenerator.h>
-#include <qsvgrenderer.h>
-#include <qsvgwidget.h>
 #include <qthread.h>
 #include <qtransform.h>
-#include <qwidget.h>
 #include <qwindow.h>
 #include <qxmlstream.h>
 
@@ -128,7 +128,7 @@ public:
 Q_ENUMS(enum_1 )
 enum enum_1{
   Type = QGraphicsSvgItem::Type};
-public slots:
+public Q_SLOTS:
 QGraphicsSvgItem* new_QGraphicsSvgItem(QGraphicsItem*  parentItem = nullptr);
 QGraphicsSvgItem* new_QGraphicsSvgItem(const QString&  fileName, QGraphicsItem*  parentItem = nullptr);
 void delete_QGraphicsSvgItem(QGraphicsSvgItem* obj) { delete obj; }
@@ -177,7 +177,7 @@ inline QPaintEngine*  py_q_paintEngine() const { return QSvgGenerator::paintEngi
 class PythonQtWrapper_QSvgGenerator : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSvgGenerator* new_QSvgGenerator();
 void delete_QSvgGenerator(QSvgGenerator* obj) { delete obj; }
    QString  description(QSvgGenerator* theWrappedObject) const;
@@ -228,7 +228,7 @@ void timerEvent(QTimerEvent*  event) override;
 class PythonQtWrapper_QSvgRenderer : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSvgRenderer* new_QSvgRenderer(QObject*  parent = nullptr);
 QSvgRenderer* new_QSvgRenderer(QXmlStreamReader*  contents, QObject*  parent = nullptr);
 QSvgRenderer* new_QSvgRenderer(const QByteArray&  contents, QObject*  parent = nullptr);
@@ -328,13 +328,12 @@ inline QSize  py_q_sizeHint() const { return QSvgWidget::sizeHint(); }
 class PythonQtWrapper_QSvgWidget : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSvgWidget* new_QSvgWidget(QWidget*  parent = nullptr);
 QSvgWidget* new_QSvgWidget(const QString&  file, QWidget*  parent = nullptr);
 void delete_QSvgWidget(QSvgWidget* obj) { delete obj; }
    void py_q_paintEvent(QSvgWidget* theWrappedObject, QPaintEvent*  event){  (((PythonQtPublicPromoter_QSvgWidget*)theWrappedObject)->py_q_paintEvent(event));}
    QSvgRenderer*  renderer(QSvgWidget* theWrappedObject) const;
-   QSize  sizeHint(QSvgWidget* theWrappedObject) const;
    QSize  py_q_sizeHint(QSvgWidget* theWrappedObject) const{  return (((PythonQtPublicPromoter_QSvgWidget*)theWrappedObject)->py_q_sizeHint());}
 };
 

@@ -1,10 +1,10 @@
 #include <PythonQt.h>
-#include <PythonQtConversion.h>
 #include <QObject>
 #include <QSize>
 #include <QStringList>
 #include <QVariant>
 #include <qabstractanimation.h>
+#include <qabstracteventdispatcher.h>
 #include <qabstractitemmodel.h>
 #include <qabstractstate.h>
 #include <qabstracttransition.h>
@@ -28,7 +28,6 @@
 #include <qcryptographichash.h>
 #include <qdatastream.h>
 #include <qdatetime.h>
-#include <qdeadlinetimer.h>
 #include <qevent.h>
 #include <qiodevice.h>
 #include <qjsonarray.h>
@@ -42,6 +41,7 @@
 #include <qobject.h>
 #include <qregularexpression.h>
 #include <qsize.h>
+#include <qsocketnotifier.h>
 #include <qstate.h>
 #include <qstatemachine.h>
 #include <qstringlist.h>
@@ -94,7 +94,7 @@ public:
 Q_ENUMS(DeletionPolicy )
 enum DeletionPolicy{
   KeepWhenStopped = QAbstractAnimation::KeepWhenStopped,   DeleteWhenStopped = QAbstractAnimation::DeleteWhenStopped};
-public slots:
+public Q_SLOTS:
 QAbstractAnimation* new_QAbstractAnimation(QObject*  parent = nullptr);
 void delete_QAbstractAnimation(QAbstractAnimation* obj) { delete obj; }
    int  currentLoop(QAbstractAnimation* theWrappedObject) const;
@@ -116,6 +116,63 @@ void delete_QAbstractAnimation(QAbstractAnimation* obj) { delete obj; }
    void py_q_updateDirection(QAbstractAnimation* theWrappedObject, QAbstractAnimation::Direction  direction){  (((PythonQtPublicPromoter_QAbstractAnimation*)theWrappedObject)->py_q_updateDirection(direction));}
    void updateState(QAbstractAnimation* theWrappedObject, QAbstractAnimation::State  newState, QAbstractAnimation::State  oldState);
    void py_q_updateState(QAbstractAnimation* theWrappedObject, QAbstractAnimation::State  newState, QAbstractAnimation::State  oldState){  (((PythonQtPublicPromoter_QAbstractAnimation*)theWrappedObject)->py_q_updateState(newState, oldState));}
+};
+
+
+
+
+
+class PythonQtWrapper_QAbstractEventDispatcher : public QObject
+{ Q_OBJECT
+public:
+public Q_SLOTS:
+void delete_QAbstractEventDispatcher(QAbstractEventDispatcher* obj) { delete obj; }
+   void closingDown(QAbstractEventDispatcher* theWrappedObject);
+   bool  filterNativeEvent(QAbstractEventDispatcher* theWrappedObject, const QByteArray&  eventType, void*  message, long*  result);
+   void flush(QAbstractEventDispatcher* theWrappedObject);
+   bool  hasPendingEvents(QAbstractEventDispatcher* theWrappedObject);
+   QAbstractEventDispatcher*  static_QAbstractEventDispatcher_instance(QThread*  thread = nullptr);
+   void interrupt(QAbstractEventDispatcher* theWrappedObject);
+   bool  processEvents(QAbstractEventDispatcher* theWrappedObject, QEventLoop::ProcessEventsFlags  flags);
+   void registerSocketNotifier(QAbstractEventDispatcher* theWrappedObject, QSocketNotifier*  notifier);
+   int  registerTimer(QAbstractEventDispatcher* theWrappedObject, int  interval, Qt::TimerType  timerType, QObject*  object);
+   void registerTimer(QAbstractEventDispatcher* theWrappedObject, int  timerId, int  interval, Qt::TimerType  timerType, QObject*  object);
+   QList<QAbstractEventDispatcher::TimerInfo >  registeredTimers(QAbstractEventDispatcher* theWrappedObject, QObject*  object) const;
+   int  remainingTime(QAbstractEventDispatcher* theWrappedObject, int  timerId);
+   void startingUp(QAbstractEventDispatcher* theWrappedObject);
+   void unregisterSocketNotifier(QAbstractEventDispatcher* theWrappedObject, QSocketNotifier*  notifier);
+   bool  unregisterTimer(QAbstractEventDispatcher* theWrappedObject, int  timerId);
+   bool  unregisterTimers(QAbstractEventDispatcher* theWrappedObject, QObject*  object);
+   void wakeUp(QAbstractEventDispatcher* theWrappedObject);
+};
+
+
+
+
+
+class PythonQtShell_QAbstractEventDispatcher__TimerInfo : public QAbstractEventDispatcher::TimerInfo
+{
+public:
+    PythonQtShell_QAbstractEventDispatcher__TimerInfo(int  id, int  i, Qt::TimerType  t):QAbstractEventDispatcher::TimerInfo(id, i, t),_wrapper(nullptr) {};
+
+   ~PythonQtShell_QAbstractEventDispatcher__TimerInfo();
+
+
+  PythonQtInstanceWrapper* _wrapper;
+};
+
+class PythonQtWrapper_QAbstractEventDispatcher__TimerInfo : public QObject
+{ Q_OBJECT
+public:
+public Q_SLOTS:
+QAbstractEventDispatcher::TimerInfo* new_QAbstractEventDispatcher__TimerInfo(int  id, int  i, Qt::TimerType  t);
+void delete_QAbstractEventDispatcher__TimerInfo(QAbstractEventDispatcher::TimerInfo* obj) { delete obj; }
+void py_set_interval(QAbstractEventDispatcher::TimerInfo* theWrappedObject, int  interval){ theWrappedObject->interval = interval; }
+int  py_get_interval(QAbstractEventDispatcher::TimerInfo* theWrappedObject){ return theWrappedObject->interval; }
+void py_set_timerId(QAbstractEventDispatcher::TimerInfo* theWrappedObject, int  timerId){ theWrappedObject->timerId = timerId; }
+int  py_get_timerId(QAbstractEventDispatcher::TimerInfo* theWrappedObject){ return theWrappedObject->timerId; }
+void py_set_timerType(QAbstractEventDispatcher::TimerInfo* theWrappedObject, Qt::TimerType  timerType){ theWrappedObject->timerType = timerType; }
+Qt::TimerType  py_get_timerType(QAbstractEventDispatcher::TimerInfo* theWrappedObject){ return theWrappedObject->timerType; }
 };
 
 
@@ -237,7 +294,7 @@ inline Qt::DropActions  py_q_supportedDropActions() const { return QAbstractItem
 class PythonQtWrapper_QAbstractItemModel : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAbstractItemModel* new_QAbstractItemModel(QObject*  parent = nullptr);
 void delete_QAbstractItemModel(QAbstractItemModel* obj) { delete obj; }
    void beginInsertColumns(QAbstractItemModel* theWrappedObject, const QModelIndex&  parent, int  first, int  last);
@@ -400,7 +457,7 @@ inline QModelIndex  py_q_sibling(int  row, int  column, const QModelIndex&  idx)
 class PythonQtWrapper_QAbstractListModel : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAbstractListModel* new_QAbstractListModel(QObject*  parent = nullptr);
 void delete_QAbstractListModel(QAbstractListModel* obj) { delete obj; }
    bool  py_q_dropMimeData(QAbstractListModel* theWrappedObject, const QMimeData*  data, Qt::DropAction  action, int  row, int  column, const QModelIndex&  parent){  return (((PythonQtPublicPromoter_QAbstractListModel*)theWrappedObject)->py_q_dropMimeData(data, action, row, column, parent));}
@@ -446,7 +503,7 @@ inline void py_q_onExit(QEvent*  event) { this->onExit(event); }
 class PythonQtWrapper_QAbstractState : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAbstractState* new_QAbstractState(QState*  parent = nullptr);
 void delete_QAbstractState(QAbstractState* obj) { delete obj; }
    bool  active(QAbstractState* theWrappedObject) const;
@@ -496,7 +553,7 @@ inline void py_q_onTransition(QEvent*  event) { this->onTransition(event); }
 class PythonQtWrapper_QAbstractTransition : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAbstractTransition* new_QAbstractTransition(QState*  sourceState = nullptr);
 void delete_QAbstractTransition(QAbstractTransition* obj) { delete obj; }
    void addAnimation(QAbstractTransition* theWrappedObject, QAbstractAnimation*  animation);
@@ -552,7 +609,7 @@ inline bool  py_q_event(QEvent*  event) { return QAnimationGroup::event(event); 
 class PythonQtWrapper_QAnimationGroup : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAnimationGroup* new_QAnimationGroup(QObject*  parent = nullptr);
 void delete_QAnimationGroup(QAnimationGroup* obj) { delete obj; }
    void addAnimation(QAnimationGroup* theWrappedObject, PythonQtPassOwnershipToCPP<QAbstractAnimation* >  animation);
@@ -573,7 +630,7 @@ void delete_QAnimationGroup(QAnimationGroup* obj) { delete obj; }
 class PythonQtWrapper_QApplicationStateChangeEvent : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QApplicationStateChangeEvent* new_QApplicationStateChangeEvent(Qt::ApplicationState  state);
 void delete_QApplicationStateChangeEvent(QApplicationStateChangeEvent* obj) { delete obj; }
    Qt::ApplicationState  applicationState(QApplicationStateChangeEvent* theWrappedObject) const;
@@ -597,7 +654,7 @@ public:
 class PythonQtWrapper_QBasicMutex : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QBasicMutex* new_QBasicMutex();
 void delete_QBasicMutex(QBasicMutex* obj) { delete obj; }
    bool  isRecursive(QBasicMutex* theWrappedObject);
@@ -615,7 +672,7 @@ void delete_QBasicMutex(QBasicMutex* obj) { delete obj; }
 class PythonQtWrapper_QBasicTimer : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QBasicTimer* new_QBasicTimer();
 QBasicTimer* new_QBasicTimer(const QBasicTimer&  arg__1);
 void delete_QBasicTimer(QBasicTimer* obj) { delete obj; }
@@ -691,7 +748,7 @@ inline qint64  py_q_writeData(const char*  data, qint64  len) { return QBuffer::
 class PythonQtWrapper_QBuffer : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QBuffer* new_QBuffer(QByteArray*  buf, QObject*  parent = nullptr);
 QBuffer* new_QBuffer(QObject*  parent = nullptr);
 void delete_QBuffer(QBuffer* obj) { delete obj; }
@@ -721,7 +778,7 @@ void delete_QBuffer(QBuffer* obj) { delete obj; }
 class PythonQtWrapper_QByteArrayMatcher : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QByteArrayMatcher* new_QByteArrayMatcher();
 QByteArrayMatcher* new_QByteArrayMatcher(const QByteArray&  pattern);
 QByteArrayMatcher* new_QByteArrayMatcher(const QByteArrayMatcher&  other);
@@ -751,7 +808,7 @@ public:
 class PythonQtWrapper_QByteArray__FromBase64Result : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QByteArray::FromBase64Result* new_QByteArray__FromBase64Result();
 QByteArray::FromBase64Result* new_QByteArray__FromBase64Result(const QByteArray::FromBase64Result& other) {
 PythonQtShell_QByteArray__FromBase64Result* a = new PythonQtShell_QByteArray__FromBase64Result();
@@ -780,7 +837,7 @@ public:
 Q_ENUMS(System )
 enum class System{
   Gregorian = static_cast<int>(QCalendar::System::Gregorian),   Julian = static_cast<int>(QCalendar::System::Julian),   Milankovic = static_cast<int>(QCalendar::System::Milankovic),   Jalali = static_cast<int>(QCalendar::System::Jalali),   IslamicCivil = static_cast<int>(QCalendar::System::IslamicCivil),   Last = static_cast<int>(QCalendar::System::Last),   User = static_cast<int>(QCalendar::System::User)};
-public slots:
+public Q_SLOTS:
 QCalendar* new_QCalendar();
 QCalendar* new_QCalendar(QCalendar::System  system);
 QCalendar* new_QCalendar(QLatin1String  name);
@@ -820,7 +877,7 @@ void delete_QCalendar(QCalendar* obj) { delete obj; }
 
 public:
     const static int Unspecified = QCalendar::Unspecified;
-
+    
 };
 
 
@@ -842,7 +899,7 @@ public:
 class PythonQtWrapper_QCalendar__YearMonthDay : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QCalendar::YearMonthDay* new_QCalendar__YearMonthDay();
 QCalendar::YearMonthDay* new_QCalendar__YearMonthDay(int  y, int  m = 1, int  d = 1);
 QCalendar::YearMonthDay* new_QCalendar__YearMonthDay(const QCalendar::YearMonthDay& other) {
@@ -867,7 +924,7 @@ int  py_get_year(QCalendar::YearMonthDay* theWrappedObject){ return theWrappedOb
 class PythonQtWrapper_QCborArray : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QCborArray* new_QCborArray();
 QCborArray* new_QCborArray(const QCborArray&  other);
 void delete_QCborArray(QCborArray* obj) { delete obj; }
@@ -935,7 +992,7 @@ public:
 Q_ENUMS(Code )
 enum Code{
   UnknownError = QCborError::UnknownError,   AdvancePastEnd = QCborError::AdvancePastEnd,   InputOutputError = QCborError::InputOutputError,   GarbageAtEnd = QCborError::GarbageAtEnd,   EndOfFile = QCborError::EndOfFile,   UnexpectedBreak = QCborError::UnexpectedBreak,   UnknownType = QCborError::UnknownType,   IllegalType = QCborError::IllegalType,   IllegalNumber = QCborError::IllegalNumber,   IllegalSimpleType = QCborError::IllegalSimpleType,   InvalidUtf8String = QCborError::InvalidUtf8String,   DataTooLarge = QCborError::DataTooLarge,   NestingTooDeep = QCborError::NestingTooDeep,   UnsupportedType = QCborError::UnsupportedType,   NoError = QCborError::NoError};
-public slots:
+public Q_SLOTS:
 QCborError* new_QCborError();
 void delete_QCborError(QCborError* obj) { delete obj; }
    QString  toString(QCborError* theWrappedObject) const;
@@ -951,7 +1008,7 @@ QCborError::Code  py_get_c(QCborError* theWrappedObject){ return theWrappedObjec
 class PythonQtWrapper_QCborMap : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QCborMap* new_QCborMap();
 QCborMap* new_QCborMap(const QCborMap&  other);
 void delete_QCborMap(QCborMap* obj) { delete obj; }
@@ -1002,7 +1059,7 @@ void delete_QCborMap(QCborMap* obj) { delete obj; }
   {
     theWrappedObject->insert(key, value_);
   }
-
+    
 };
 
 
@@ -1023,7 +1080,7 @@ public:
 class PythonQtWrapper_QCborParserError : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QCborParserError* new_QCborParserError();
 void delete_QCborParserError(QCborParserError* obj) { delete obj; }
    QString  errorString(QCborParserError* theWrappedObject) const;
@@ -1045,7 +1102,7 @@ enum StringResultCode{
   EndOfString = QCborStreamReader::EndOfString,   Ok = QCborStreamReader::Ok,   Error = QCborStreamReader::Error};
 enum Type{
   UnsignedInteger = QCborStreamReader::UnsignedInteger,   NegativeInteger = QCborStreamReader::NegativeInteger,   ByteString = QCborStreamReader::ByteString,   ByteArray = QCborStreamReader::ByteArray,   TextString = QCborStreamReader::TextString,   String = QCborStreamReader::String,   Array = QCborStreamReader::Array,   Map = QCborStreamReader::Map,   Tag = QCborStreamReader::Tag,   SimpleType = QCborStreamReader::SimpleType,   HalfFloat = QCborStreamReader::HalfFloat,   Float16 = QCborStreamReader::Float16,   Float = QCborStreamReader::Float,   Double = QCborStreamReader::Double,   Invalid = QCborStreamReader::Invalid};
-public slots:
+public Q_SLOTS:
 QCborStreamReader* new_QCborStreamReader();
 QCborStreamReader* new_QCborStreamReader(QIODevice*  device);
 QCborStreamReader* new_QCborStreamReader(const QByteArray&  data);
@@ -1114,7 +1171,7 @@ void delete_QCborStreamReader(QCborStreamReader* obj) { delete obj; }
   qint64 toTag(QCborStreamReader* theWrappedObject) const {
     return static_cast<qint64>(theWrappedObject->toTag());
   }
-
+    
 };
 
 
@@ -1124,7 +1181,7 @@ void delete_QCborStreamReader(QCborStreamReader* obj) { delete obj; }
 class PythonQtWrapper_QCborStreamWriter : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QCborStreamWriter* new_QCborStreamWriter(QByteArray*  data);
 QCborStreamWriter* new_QCborStreamWriter(QIODevice*  device);
 void delete_QCborStreamWriter(QCborStreamWriter* obj) { delete obj; }
@@ -1171,7 +1228,7 @@ enum Type{
   Integer = QCborValue::Integer,   ByteArray = QCborValue::ByteArray,   String = QCborValue::String,   Array = QCborValue::Array,   Map = QCborValue::Map,   Tag = QCborValue::Tag,   SimpleType = QCborValue::SimpleType,   False = QCborValue::False,   True = QCborValue::True,   Null = QCborValue::Null,   Undefined = QCborValue::Undefined,   Double = QCborValue::Double,   DateTime = QCborValue::DateTime,   Url = QCborValue::Url,   RegularExpression = QCborValue::RegularExpression,   Uuid = QCborValue::Uuid,   Invalid = QCborValue::Invalid};
 Q_DECLARE_FLAGS(DiagnosticNotationOptions, DiagnosticNotationOption)
 Q_DECLARE_FLAGS(EncodingOptions, EncodingOption)
-public slots:
+public Q_SLOTS:
 QCborValue* new_QCborValue();
 QCborValue* new_QCborValue(QCborKnownTags  t_, const QCborValue&  tv = QCborValue());
 QCborValue* new_QCborValue(QCborSimpleType  st);
@@ -1259,7 +1316,7 @@ void delete_QCborValue(QCborValue* obj) { delete obj; }
   qint64 tag(QCborValue* theWrappedObject, qint64 defaultValue) const {
     return static_cast<qint64>(theWrappedObject->tag(QCborTag(defaultValue)));
   }
-
+    
 };
 
 
@@ -1280,7 +1337,7 @@ public:
 class PythonQtWrapper_QChildEvent : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QChildEvent* new_QChildEvent(QEvent::Type  type, QObject*  child);
 void delete_QChildEvent(QChildEvent* obj) { delete obj; }
    bool  added(QChildEvent* theWrappedObject) const;
@@ -1296,7 +1353,7 @@ void delete_QChildEvent(QChildEvent* obj) { delete obj; }
 class PythonQtWrapper_QCollator : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QCollator* new_QCollator();
 QCollator* new_QCollator(const QCollator&  arg__1);
 QCollator* new_QCollator(const QLocale&  locale);
@@ -1324,7 +1381,7 @@ void delete_QCollator(QCollator* obj) { delete obj; }
 class PythonQtWrapper_QCollatorSortKey : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QCollatorSortKey* new_QCollatorSortKey(const QCollatorSortKey&  other);
 void delete_QCollatorSortKey(QCollatorSortKey* obj) { delete obj; }
    int  compare(QCollatorSortKey* theWrappedObject, const QCollatorSortKey&  key) const;
@@ -1343,7 +1400,7 @@ public:
 Q_ENUMS(Flag )
 enum Flag{
   HiddenFromHelp = QCommandLineOption::HiddenFromHelp,   ShortOptionStyle = QCommandLineOption::ShortOptionStyle};
-public slots:
+public Q_SLOTS:
 QCommandLineOption* new_QCommandLineOption(const QCommandLineOption&  other);
 QCommandLineOption* new_QCommandLineOption(const QString&  name);
 QCommandLineOption* new_QCommandLineOption(const QString&  name, const QString&  description, const QString&  valueName = QString(), const QString&  defaultValue = QString());
@@ -1376,7 +1433,7 @@ enum OptionsAfterPositionalArgumentsMode{
   ParseAsOptions = QCommandLineParser::ParseAsOptions,   ParseAsPositionalArguments = QCommandLineParser::ParseAsPositionalArguments};
 enum SingleDashWordOptionMode{
   ParseAsCompactedShortOptions = QCommandLineParser::ParseAsCompactedShortOptions,   ParseAsLongOptions = QCommandLineParser::ParseAsLongOptions};
-public slots:
+public Q_SLOTS:
 QCommandLineParser* new_QCommandLineParser();
 void delete_QCommandLineParser(QCommandLineParser* obj) { delete obj; }
    QCommandLineOption  addHelpOption(QCommandLineParser* theWrappedObject);
@@ -1426,7 +1483,7 @@ public:
 Q_ENUMS(enum_1 )
 enum enum_1{
   ApplicationFlags = QCoreApplication::ApplicationFlags};
-public slots:
+public Q_SLOTS:
 void delete_QCoreApplication(QCoreApplication* obj) { delete obj; }
    void static_QCoreApplication_addLibraryPath(const QString&  arg__1);
    QString  static_QCoreApplication_applicationDirPath();
@@ -1483,7 +1540,7 @@ public:
 Q_ENUMS(Algorithm )
 enum Algorithm{
   Md4 = QCryptographicHash::Md4,   Md5 = QCryptographicHash::Md5,   Sha1 = QCryptographicHash::Sha1,   Sha224 = QCryptographicHash::Sha224,   Sha256 = QCryptographicHash::Sha256,   Sha384 = QCryptographicHash::Sha384,   Sha512 = QCryptographicHash::Sha512,   Keccak_224 = QCryptographicHash::Keccak_224,   Keccak_256 = QCryptographicHash::Keccak_256,   Keccak_384 = QCryptographicHash::Keccak_384,   Keccak_512 = QCryptographicHash::Keccak_512,   RealSha3_224 = QCryptographicHash::RealSha3_224,   RealSha3_256 = QCryptographicHash::RealSha3_256,   RealSha3_384 = QCryptographicHash::RealSha3_384,   RealSha3_512 = QCryptographicHash::RealSha3_512,   Sha3_224 = QCryptographicHash::Sha3_224,   Sha3_256 = QCryptographicHash::Sha3_256,   Sha3_384 = QCryptographicHash::Sha3_384,   Sha3_512 = QCryptographicHash::Sha3_512};
-public slots:
+public Q_SLOTS:
 QCryptographicHash* new_QCryptographicHash(QCryptographicHash::Algorithm  method);
 void delete_QCryptographicHash(QCryptographicHash* obj) { delete obj; }
    bool  addData(QCryptographicHash* theWrappedObject, QIODevice*  device);
@@ -1492,143 +1549,6 @@ void delete_QCryptographicHash(QCryptographicHash* obj) { delete obj; }
    int  static_QCryptographicHash_hashLength(QCryptographicHash::Algorithm  method);
    void reset(QCryptographicHash* theWrappedObject);
    QByteArray  result(QCryptographicHash* theWrappedObject) const;
-};
-
-
-
-
-
-class PythonQtWrapper_QDataStream : public QObject
-{ Q_OBJECT
-public:
-Q_ENUMS(ByteOrder FloatingPointPrecision Status Version )
-enum ByteOrder{
-  BigEndian = QDataStream::BigEndian,   LittleEndian = QDataStream::LittleEndian};
-enum FloatingPointPrecision{
-  SinglePrecision = QDataStream::SinglePrecision,   DoublePrecision = QDataStream::DoublePrecision};
-enum Status{
-  Ok = QDataStream::Ok,   ReadPastEnd = QDataStream::ReadPastEnd,   ReadCorruptData = QDataStream::ReadCorruptData,   WriteFailed = QDataStream::WriteFailed};
-enum Version{
-  Qt_1_0 = QDataStream::Qt_1_0,   Qt_2_0 = QDataStream::Qt_2_0,   Qt_2_1 = QDataStream::Qt_2_1,   Qt_3_0 = QDataStream::Qt_3_0,   Qt_3_1 = QDataStream::Qt_3_1,   Qt_3_3 = QDataStream::Qt_3_3,   Qt_4_0 = QDataStream::Qt_4_0,   Qt_4_1 = QDataStream::Qt_4_1,   Qt_4_2 = QDataStream::Qt_4_2,   Qt_4_3 = QDataStream::Qt_4_3,   Qt_4_4 = QDataStream::Qt_4_4,   Qt_4_5 = QDataStream::Qt_4_5,   Qt_4_6 = QDataStream::Qt_4_6,   Qt_4_7 = QDataStream::Qt_4_7,   Qt_4_8 = QDataStream::Qt_4_8,   Qt_4_9 = QDataStream::Qt_4_9,   Qt_5_0 = QDataStream::Qt_5_0,   Qt_5_1 = QDataStream::Qt_5_1,   Qt_5_2 = QDataStream::Qt_5_2,   Qt_5_3 = QDataStream::Qt_5_3,   Qt_5_4 = QDataStream::Qt_5_4,   Qt_5_5 = QDataStream::Qt_5_5,   Qt_5_6 = QDataStream::Qt_5_6,   Qt_5_7 = QDataStream::Qt_5_7,   Qt_5_8 = QDataStream::Qt_5_8,   Qt_5_9 = QDataStream::Qt_5_9,   Qt_5_10 = QDataStream::Qt_5_10,   Qt_5_11 = QDataStream::Qt_5_11,   Qt_5_12 = QDataStream::Qt_5_12,   Qt_5_13 = QDataStream::Qt_5_13,   Qt_5_14 = QDataStream::Qt_5_14,   Qt_5_15 = QDataStream::Qt_5_15,   Qt_DefaultCompiledVersion = QDataStream::Qt_DefaultCompiledVersion};
-public slots:
-QDataStream* new_QDataStream();
-QDataStream* new_QDataStream(QByteArray*  arg__1, QIODevice::OpenMode  flags);
-QDataStream* new_QDataStream(QIODevice*  arg__1);
-QDataStream* new_QDataStream(const QByteArray&  arg__1);
-void delete_QDataStream(QDataStream* obj) { delete obj; }
-   void abortTransaction(QDataStream* theWrappedObject);
-   bool  atEnd(QDataStream* theWrappedObject) const;
-   QDataStream::ByteOrder  byteOrder(QDataStream* theWrappedObject) const;
-   bool  commitTransaction(QDataStream* theWrappedObject);
-   QIODevice*  device(QDataStream* theWrappedObject) const;
-   QDataStream::FloatingPointPrecision  floatingPointPrecision(QDataStream* theWrappedObject) const;
-   void resetStatus(QDataStream* theWrappedObject);
-   void rollbackTransaction(QDataStream* theWrappedObject);
-   void setByteOrder(QDataStream* theWrappedObject, QDataStream::ByteOrder  arg__1);
-   void setDevice(QDataStream* theWrappedObject, QIODevice*  arg__1);
-   void setFloatingPointPrecision(QDataStream* theWrappedObject, QDataStream::FloatingPointPrecision  precision);
-   void setStatus(QDataStream* theWrappedObject, QDataStream::Status  status);
-   void setVersion(QDataStream* theWrappedObject, int  arg__1);
-   int  skipRawData(QDataStream* theWrappedObject, int  len);
-   void startTransaction(QDataStream* theWrappedObject);
-   QDataStream::Status  status(QDataStream* theWrappedObject) const;
-   void unsetDevice(QDataStream* theWrappedObject);
-   int  version(QDataStream* theWrappedObject) const;
-
-   QString readQString(QDataStream* d) { QString r; (*d) >> r; return r; }
-   QString readString(QDataStream* d) { QString r; (*d) >> r; return r; }
-   QChar readQChar(QDataStream* d) { QChar r; (*d) >> r; return r; }
-   QStringList readQStringList(QDataStream* d) { QStringList r; (*d) >> r; return r; }
-   QVariant readQVariant(QDataStream* d) { QVariant r; (*d) >> r; return r; }
-   bool readBool(QDataStream* d) { bool r; (*d) >> r; return r; }
-   qint8 readInt8(QDataStream* d) { qint8 r; (*d) >> r; return r; }
-   quint8 readUInt8(QDataStream* d) { quint8 r; (*d) >> r; return r; }
-   qint16 readInt16(QDataStream* d) { qint16 r; (*d) >> r; return r; }
-   quint16 readUInt16(QDataStream* d) { quint16 r; (*d) >> r; return r; }
-   qint32 readInt32(QDataStream* d) { qint32 r; (*d) >> r; return r; }
-   quint32 readUInt32(QDataStream* d) { quint32 r; (*d) >> r; return r; }
-   qint64 readInt64(QDataStream* d) { qint64 r; (*d) >> r; return r; }
-   quint64 readUInt64(QDataStream* d) { quint64 r; (*d) >> r; return r; }
-   float readFloat(QDataStream* d) { float r; (*d) >> r; return r; }
-   double readDouble(QDataStream* d) { double r; (*d) >> r; return r; }
-
-   void writeQString(QDataStream* d, const QString& v) { (*d) << v; }
-   void writeString(QDataStream* d, const QString& v) { (*d) << v; }
-   void writeQChar(QDataStream* d, const QChar& v) { (*d) << v; }
-   void writeQStringList(QDataStream* d, const QStringList& v) { (*d) << v; }
-   void writeQVariant(QDataStream* d, const QVariant& v) { (*d) << v; }
-   void writeBool(QDataStream* d, bool v) { (*d) << v; }
-   void writeInt8(QDataStream* d, qint8 v) { (*d) << v; }
-   void writeUInt8(QDataStream* d, quint8 v) { (*d) << v; }
-   void writeInt16(QDataStream* d, qint16 v) { (*d) << v; }
-   void writeUInt16(QDataStream* d, quint16 v) { (*d) << v; }
-   void writeInt32(QDataStream* d, qint32 v) { (*d) << v; }
-   void writeUInt32(QDataStream* d, quint32 v) { (*d) << v; }
-   void writeInt64(QDataStream* d, qint64 v) { (*d) << v; }
-   void writeUInt64(QDataStream* d, quint64 v) { (*d) << v; }
-   void writeFloat(QDataStream* d, float v) { (*d) << v; }
-   void writeDouble(QDataStream* d, double v) { (*d) << v; }
-
-   int writeRawData(QDataStream* d, PyObject* o) {
-     bool ok;
-     QByteArray r = PythonQtConv::PyObjGetBytes(o, false, ok);
-     return (*d).writeRawData(r.constData(), r.size());
-   }
-
-   PyObject* readRawData(QDataStream* d, int len) {
-     QByteArray r;
-     r.resize(len);
-     int result = d->readRawData(r.data(), r.size());
-     if (result>=0) {
-       return PyBytes_FromStringAndSize(r.data(), result);
-     } else {
-       Py_INCREF(Py_None);
-       return Py_None;
-     }
-   }
-
-};
-
-
-
-
-
-class PythonQtWrapper_QDeadlineTimer : public QObject
-{ Q_OBJECT
-public:
-Q_ENUMS(ForeverConstant )
-enum ForeverConstant{
-  Forever = QDeadlineTimer::Forever};
-public slots:
-QDeadlineTimer* new_QDeadlineTimer(QDeadlineTimer::ForeverConstant  arg__1, Qt::TimerType  type_ = Qt::CoarseTimer);
-QDeadlineTimer* new_QDeadlineTimer(Qt::TimerType  type_ = Qt::CoarseTimer);
-QDeadlineTimer* new_QDeadlineTimer(qint64  msecs, Qt::TimerType  type = Qt::CoarseTimer);
-void delete_QDeadlineTimer(QDeadlineTimer* obj) { delete obj; }
-   QDeadlineTimer  static_QDeadlineTimer_addNSecs(QDeadlineTimer  dt, qint64  nsecs);
-   QDeadlineTimer  static_QDeadlineTimer_current(Qt::TimerType  timerType = Qt::CoarseTimer);
-   qint64  deadline(QDeadlineTimer* theWrappedObject) const;
-   qint64  deadlineNSecs(QDeadlineTimer* theWrappedObject) const;
-   bool  hasExpired(QDeadlineTimer* theWrappedObject) const;
-   bool  isForever(QDeadlineTimer* theWrappedObject) const;
-   bool  __ne__(QDeadlineTimer* theWrappedObject, QDeadlineTimer  d2);
-   QDeadlineTimer*  __iadd__(QDeadlineTimer* theWrappedObject, qint64  msecs);
-   qint64  __sub__(QDeadlineTimer* theWrappedObject, QDeadlineTimer  dt2);
-   QDeadlineTimer  __sub__(QDeadlineTimer* theWrappedObject, qint64  msecs);
-   QDeadlineTimer*  __isub__(QDeadlineTimer* theWrappedObject, qint64  msecs);
-   bool  __lt__(QDeadlineTimer* theWrappedObject, QDeadlineTimer  d2);
-   bool  __le__(QDeadlineTimer* theWrappedObject, QDeadlineTimer  d2);
-   bool  __eq__(QDeadlineTimer* theWrappedObject, QDeadlineTimer  d2);
-   bool  __gt__(QDeadlineTimer* theWrappedObject, QDeadlineTimer  d2);
-   bool  __ge__(QDeadlineTimer* theWrappedObject, QDeadlineTimer  d2);
-   qint64  remainingTime(QDeadlineTimer* theWrappedObject) const;
-   qint64  remainingTimeNSecs(QDeadlineTimer* theWrappedObject) const;
-   void setDeadline(QDeadlineTimer* theWrappedObject, qint64  msecs, Qt::TimerType  timerType = Qt::CoarseTimer);
-   void setPreciseDeadline(QDeadlineTimer* theWrappedObject, qint64  secs, qint64  nsecs = 0, Qt::TimerType  type = Qt::CoarseTimer);
-   void setPreciseRemainingTime(QDeadlineTimer* theWrappedObject, qint64  secs, qint64  nsecs = 0, Qt::TimerType  type = Qt::CoarseTimer);
-   void setRemainingTime(QDeadlineTimer* theWrappedObject, qint64  msecs, Qt::TimerType  type = Qt::CoarseTimer);
-   void setTimerType(QDeadlineTimer* theWrappedObject, Qt::TimerType  type);
-   void swap(QDeadlineTimer* theWrappedObject, QDeadlineTimer&  other);
-   Qt::TimerType  timerType(QDeadlineTimer* theWrappedObject) const;
 };
 
 

@@ -4,9 +4,11 @@
 #include <PythonQtSignalReceiver.h>
 #include <QBrush>
 #include <QMatrix>
+#include <QPainterPath>
 #include <QPixmap>
 #include <QStringList>
 #include <QVariant>
+#include <QtWidgets/qsizepolicy.h>
 #include <qbitmap.h>
 #include <qbrush.h>
 #include <qbytearray.h>
@@ -44,7 +46,6 @@
 #include <qrgba64.h>
 #include <qscreen.h>
 #include <qsize.h>
-#include <qsizepolicy.h>
 #include <qstringlist.h>
 #include <qtextformat.h>
 #include <qtransform.h>
@@ -245,27 +246,27 @@ if (_wrapper) {
   return QBitmap::sharedPainter();
 }
 QBitmap* PythonQtWrapper_QBitmap::new_QBitmap()
-{
+{ 
 return new PythonQtShell_QBitmap(); }
 
 QBitmap* PythonQtWrapper_QBitmap::new_QBitmap(const QBitmap&  other)
-{
+{ 
 return new PythonQtShell_QBitmap(other); }
 
 QBitmap* PythonQtWrapper_QBitmap::new_QBitmap(const QPixmap&  arg__1)
-{
+{ 
 return new PythonQtShell_QBitmap(arg__1); }
 
 QBitmap* PythonQtWrapper_QBitmap::new_QBitmap(const QSize&  arg__1)
-{
+{ 
 return new PythonQtShell_QBitmap(arg__1); }
 
 QBitmap* PythonQtWrapper_QBitmap::new_QBitmap(const QString&  fileName, const char*  format)
-{
+{ 
 return new PythonQtShell_QBitmap(fileName, format); }
 
 QBitmap* PythonQtWrapper_QBitmap::new_QBitmap(int  w, int  h)
-{
+{ 
 return new PythonQtShell_QBitmap(w, h); }
 
 void PythonQtWrapper_QBitmap::clear(QBitmap* theWrappedObject)
@@ -301,39 +302,39 @@ QBitmap  PythonQtWrapper_QBitmap::transformed(QBitmap* theWrappedObject, const Q
 
 
 QBrush* PythonQtWrapper_QBrush::new_QBrush()
-{
+{ 
 return new QBrush(); }
 
 QBrush* PythonQtWrapper_QBrush::new_QBrush(Qt::BrushStyle  bs)
-{
+{ 
 return new QBrush(bs); }
 
 QBrush* PythonQtWrapper_QBrush::new_QBrush(Qt::GlobalColor  color, const QPixmap&  pixmap)
-{
+{ 
 return new QBrush(color, pixmap); }
 
 QBrush* PythonQtWrapper_QBrush::new_QBrush(const QBrush&  brush)
-{
+{ 
 return new QBrush(brush); }
 
 QBrush* PythonQtWrapper_QBrush::new_QBrush(const QColor&  color, Qt::BrushStyle  bs)
-{
+{ 
 return new QBrush(color, bs); }
 
 QBrush* PythonQtWrapper_QBrush::new_QBrush(const QColor&  color, const QPixmap&  pixmap)
-{
+{ 
 return new QBrush(color, pixmap); }
 
 QBrush* PythonQtWrapper_QBrush::new_QBrush(const QGradient&  gradient)
-{
+{ 
 return new QBrush(gradient); }
 
 QBrush* PythonQtWrapper_QBrush::new_QBrush(const QImage&  image)
-{
+{ 
 return new QBrush(image); }
 
 QBrush* PythonQtWrapper_QBrush::new_QBrush(const QPixmap&  pixmap)
-{
+{ 
 return new QBrush(pixmap); }
 
 const QColor*  PythonQtWrapper_QBrush::color(QBrush* theWrappedObject) const
@@ -446,31 +447,31 @@ QString PythonQtWrapper_QBrush::py_toString(QBrush* obj) {
 
 
 QColor* PythonQtWrapper_QColor::new_QColor()
-{
+{ 
 return new QColor(); }
 
 QColor* PythonQtWrapper_QColor::new_QColor(QRgba64  rgba64)
-{
+{ 
 return new QColor(rgba64); }
 
 QColor* PythonQtWrapper_QColor::new_QColor(Qt::GlobalColor  color)
-{
+{ 
 return new QColor(color); }
 
 QColor* PythonQtWrapper_QColor::new_QColor(const QColor&  color)
-{
+{ 
 return new QColor(color); }
 
 QColor* PythonQtWrapper_QColor::new_QColor(const QString&  name)
-{
+{ 
 return new QColor(name); }
 
 QColor* PythonQtWrapper_QColor::new_QColor(int  r, int  g, int  b, int  a)
-{
+{ 
 return new QColor(r, g, b, a); }
 
 QColor* PythonQtWrapper_QColor::new_QColor(unsigned int  rgb)
-{
+{ 
 return new QColor(rgb); }
 
 int  PythonQtWrapper_QColor::alpha(QColor* theWrappedObject) const
@@ -928,23 +929,23 @@ QString PythonQtWrapper_QColor::py_toString(QColor* obj) {
 
 
 QCursor* PythonQtWrapper_QCursor::new_QCursor()
-{
+{ 
 return new QCursor(); }
 
 QCursor* PythonQtWrapper_QCursor::new_QCursor(Qt::CursorShape  shape)
-{
+{ 
 return new QCursor(shape); }
 
 QCursor* PythonQtWrapper_QCursor::new_QCursor(const QBitmap&  bitmap, const QBitmap&  mask, int  hotX, int  hotY)
-{
+{ 
 return new QCursor(bitmap, mask, hotX, hotY); }
 
 QCursor* PythonQtWrapper_QCursor::new_QCursor(const QCursor&  cursor)
-{
+{ 
 return new QCursor(cursor); }
 
 QCursor* PythonQtWrapper_QCursor::new_QCursor(const QPixmap&  pixmap, int  hotX, int  hotY)
-{
+{ 
 return new QCursor(pixmap, hotX, hotY); }
 
 const QBitmap*  PythonQtWrapper_QCursor::bitmap(QCursor* theWrappedObject) const
@@ -1042,23 +1043,23 @@ QString PythonQtWrapper_QCursor::py_toString(QCursor* obj) {
 
 
 QFont* PythonQtWrapper_QFont::new_QFont()
-{
+{ 
 return new QFont(); }
 
 QFont* PythonQtWrapper_QFont::new_QFont(const QFont&  font)
-{
+{ 
 return new QFont(font); }
 
 QFont* PythonQtWrapper_QFont::new_QFont(const QFont&  font, QPaintDevice*  pd)
-{
+{ 
 return new QFont(font, pd); }
 
 QFont* PythonQtWrapper_QFont::new_QFont(const QFont&  font, const QPaintDevice*  pd)
-{
+{ 
 return new QFont(font, pd); }
 
 QFont* PythonQtWrapper_QFont::new_QFont(const QString&  family, int  pointSize, int  weight, bool  italic)
-{
+{ 
 return new QFont(family, pointSize, weight, italic); }
 
 bool  PythonQtWrapper_QFont::bold(QFont* theWrappedObject) const
@@ -1440,23 +1441,23 @@ QString PythonQtWrapper_QFont::py_toString(QFont* obj) { return obj->toString();
 
 
 QIcon* PythonQtWrapper_QIcon::new_QIcon()
-{
+{ 
 return new QIcon(); }
 
 QIcon* PythonQtWrapper_QIcon::new_QIcon(PythonQtPassOwnershipToCPP<QIconEngine* >  engine)
-{
+{ 
 return new QIcon(engine); }
 
 QIcon* PythonQtWrapper_QIcon::new_QIcon(const QIcon&  other)
-{
+{ 
 return new QIcon(other); }
 
 QIcon* PythonQtWrapper_QIcon::new_QIcon(const QPixmap&  pixmap)
-{
+{ 
 return new QIcon(pixmap); }
 
 QIcon* PythonQtWrapper_QIcon::new_QIcon(const QString&  fileName)
-{
+{ 
 return new QIcon(fileName); }
 
 QSize  PythonQtWrapper_QIcon::actualSize(QIcon* theWrappedObject, QWindow*  window, const QSize&  size, QIcon::Mode  mode, QIcon::State  state) const
@@ -1810,23 +1811,23 @@ if (_wrapper) {
   return QImage::sharedPainter();
 }
 QImage* PythonQtWrapper_QImage::new_QImage()
-{
+{ 
 return new PythonQtShell_QImage(); }
 
 QImage* PythonQtWrapper_QImage::new_QImage(const QImage&  arg__1)
-{
+{ 
 return new PythonQtShell_QImage(arg__1); }
 
 QImage* PythonQtWrapper_QImage::new_QImage(const QSize&  size, QImage::Format  format)
-{
+{ 
 return new PythonQtShell_QImage(size, format); }
 
 QImage* PythonQtWrapper_QImage::new_QImage(const QString&  fileName, const char*  format)
-{
+{ 
 return new PythonQtShell_QImage(fileName, format); }
 
 QImage* PythonQtWrapper_QImage::new_QImage(int  width, int  height, QImage::Format  format)
-{
+{ 
 return new PythonQtShell_QImage(width, height, format); }
 
 bool  PythonQtWrapper_QImage::allGray(QImage* theWrappedObject) const
@@ -2309,23 +2310,23 @@ QString PythonQtWrapper_QImage::py_toString(QImage* obj) {
 
 
 QKeySequence* PythonQtWrapper_QKeySequence::new_QKeySequence()
-{
+{ 
 return new QKeySequence(); }
 
 QKeySequence* PythonQtWrapper_QKeySequence::new_QKeySequence(QKeySequence::StandardKey  key)
-{
+{ 
 return new QKeySequence(key); }
 
 QKeySequence* PythonQtWrapper_QKeySequence::new_QKeySequence(const QKeySequence&  ks)
-{
+{ 
 return new QKeySequence(ks); }
 
 QKeySequence* PythonQtWrapper_QKeySequence::new_QKeySequence(const QString&  key, QKeySequence::SequenceFormat  format)
-{
+{ 
 return new QKeySequence(key, format); }
 
 QKeySequence* PythonQtWrapper_QKeySequence::new_QKeySequence(int  k1, int  k2, int  k3, int  k4)
-{
+{ 
 return new QKeySequence(k1, k2, k3, k4); }
 
 int  PythonQtWrapper_QKeySequence::count(QKeySequence* theWrappedObject) const
@@ -2403,9 +2404,9 @@ bool  PythonQtWrapper_QKeySequence::__ge__(QKeySequence* theWrappedObject, const
   return ( (*theWrappedObject)>= other);
 }
 
-void PythonQtWrapper_QKeySequence::readFrom(QKeySequence* theWrappedObject, QDataStream&  out)
+void PythonQtWrapper_QKeySequence::readFrom(QKeySequence* theWrappedObject, QDataStream&  in)
 {
-  out >>  (*theWrappedObject);
+  in >>  (*theWrappedObject);
 }
 
 int  PythonQtWrapper_QKeySequence::operator_subscript(QKeySequence* theWrappedObject, uint  i) const
@@ -2426,28 +2427,214 @@ QString  PythonQtWrapper_QKeySequence::toString(QKeySequence* theWrappedObject, 
 QString PythonQtWrapper_QKeySequence::py_toString(QKeySequence* obj) { return obj->toString(); }
 
 
-QMatrix4x4* PythonQtWrapper_QMatrix4x4::new_QMatrix4x4()
+QMatrix* PythonQtWrapper_QMatrix::new_QMatrix()
+{ 
+return new QMatrix(); }
+
+QMatrix* PythonQtWrapper_QMatrix::new_QMatrix(const QMatrix&  other)
+{ 
+return new QMatrix(other); }
+
+QMatrix* PythonQtWrapper_QMatrix::new_QMatrix(qreal  m11, qreal  m12, qreal  m21, qreal  m22, qreal  dx, qreal  dy)
+{ 
+return new QMatrix(m11, m12, m21, m22, dx, dy); }
+
+qreal  PythonQtWrapper_QMatrix::determinant(QMatrix* theWrappedObject) const
 {
+  return ( theWrappedObject->determinant());
+}
+
+qreal  PythonQtWrapper_QMatrix::dx(QMatrix* theWrappedObject) const
+{
+  return ( theWrappedObject->dx());
+}
+
+qreal  PythonQtWrapper_QMatrix::dy(QMatrix* theWrappedObject) const
+{
+  return ( theWrappedObject->dy());
+}
+
+QMatrix  PythonQtWrapper_QMatrix::inverted(QMatrix* theWrappedObject, bool*  invertible) const
+{
+  return ( theWrappedObject->inverted(invertible));
+}
+
+bool  PythonQtWrapper_QMatrix::isIdentity(QMatrix* theWrappedObject) const
+{
+  return ( theWrappedObject->isIdentity());
+}
+
+bool  PythonQtWrapper_QMatrix::isInvertible(QMatrix* theWrappedObject) const
+{
+  return ( theWrappedObject->isInvertible());
+}
+
+qreal  PythonQtWrapper_QMatrix::m11(QMatrix* theWrappedObject) const
+{
+  return ( theWrappedObject->m11());
+}
+
+qreal  PythonQtWrapper_QMatrix::m12(QMatrix* theWrappedObject) const
+{
+  return ( theWrappedObject->m12());
+}
+
+qreal  PythonQtWrapper_QMatrix::m21(QMatrix* theWrappedObject) const
+{
+  return ( theWrappedObject->m21());
+}
+
+qreal  PythonQtWrapper_QMatrix::m22(QMatrix* theWrappedObject) const
+{
+  return ( theWrappedObject->m22());
+}
+
+QLine  PythonQtWrapper_QMatrix::map(QMatrix* theWrappedObject, const QLine&  l) const
+{
+  return ( theWrappedObject->map(l));
+}
+
+QLineF  PythonQtWrapper_QMatrix::map(QMatrix* theWrappedObject, const QLineF&  l) const
+{
+  return ( theWrappedObject->map(l));
+}
+
+QPainterPath  PythonQtWrapper_QMatrix::map(QMatrix* theWrappedObject, const QPainterPath&  p) const
+{
+  return ( theWrappedObject->map(p));
+}
+
+QPoint  PythonQtWrapper_QMatrix::map(QMatrix* theWrappedObject, const QPoint&  p) const
+{
+  return ( theWrappedObject->map(p));
+}
+
+QPointF  PythonQtWrapper_QMatrix::map(QMatrix* theWrappedObject, const QPointF&  p) const
+{
+  return ( theWrappedObject->map(p));
+}
+
+QPolygon  PythonQtWrapper_QMatrix::map(QMatrix* theWrappedObject, const QPolygon&  a) const
+{
+  return ( theWrappedObject->map(a));
+}
+
+QPolygonF  PythonQtWrapper_QMatrix::map(QMatrix* theWrappedObject, const QPolygonF&  a) const
+{
+  return ( theWrappedObject->map(a));
+}
+
+QRegion  PythonQtWrapper_QMatrix::map(QMatrix* theWrappedObject, const QRegion&  r) const
+{
+  return ( theWrappedObject->map(r));
+}
+
+QRect  PythonQtWrapper_QMatrix::mapRect(QMatrix* theWrappedObject, const QRect&  arg__1) const
+{
+  return ( theWrappedObject->mapRect(arg__1));
+}
+
+QRectF  PythonQtWrapper_QMatrix::mapRect(QMatrix* theWrappedObject, const QRectF&  arg__1) const
+{
+  return ( theWrappedObject->mapRect(arg__1));
+}
+
+QPolygon  PythonQtWrapper_QMatrix::mapToPolygon(QMatrix* theWrappedObject, const QRect&  r) const
+{
+  return ( theWrappedObject->mapToPolygon(r));
+}
+
+bool  PythonQtWrapper_QMatrix::__ne__(QMatrix* theWrappedObject, const QMatrix&  arg__1) const
+{
+  return ( (*theWrappedObject)!= arg__1);
+}
+
+QMatrix  PythonQtWrapper_QMatrix::__mul__(QMatrix* theWrappedObject, const QMatrix&  o) const
+{
+  return ( (*theWrappedObject)* o);
+}
+
+QMatrix*  PythonQtWrapper_QMatrix::__imul__(QMatrix* theWrappedObject, const QMatrix&  arg__1)
+{
+  return &( (*theWrappedObject)*= arg__1);
+}
+
+void PythonQtWrapper_QMatrix::writeTo(QMatrix* theWrappedObject, QDataStream&  arg__1)
+{
+  arg__1 <<  (*theWrappedObject);
+}
+
+bool  PythonQtWrapper_QMatrix::__eq__(QMatrix* theWrappedObject, const QMatrix&  arg__1) const
+{
+  return ( (*theWrappedObject)== arg__1);
+}
+
+void PythonQtWrapper_QMatrix::readFrom(QMatrix* theWrappedObject, QDataStream&  arg__1)
+{
+  arg__1 >>  (*theWrappedObject);
+}
+
+void PythonQtWrapper_QMatrix::reset(QMatrix* theWrappedObject)
+{
+  ( theWrappedObject->reset());
+}
+
+QMatrix*  PythonQtWrapper_QMatrix::rotate(QMatrix* theWrappedObject, qreal  a)
+{
+  return &( theWrappedObject->rotate(a));
+}
+
+QMatrix*  PythonQtWrapper_QMatrix::scale(QMatrix* theWrappedObject, qreal  sx, qreal  sy)
+{
+  return &( theWrappedObject->scale(sx, sy));
+}
+
+void PythonQtWrapper_QMatrix::setMatrix(QMatrix* theWrappedObject, qreal  m11, qreal  m12, qreal  m21, qreal  m22, qreal  dx, qreal  dy)
+{
+  ( theWrappedObject->setMatrix(m11, m12, m21, m22, dx, dy));
+}
+
+QMatrix*  PythonQtWrapper_QMatrix::shear(QMatrix* theWrappedObject, qreal  sh, qreal  sv)
+{
+  return &( theWrappedObject->shear(sh, sv));
+}
+
+QMatrix*  PythonQtWrapper_QMatrix::translate(QMatrix* theWrappedObject, qreal  dx, qreal  dy)
+{
+  return &( theWrappedObject->translate(dx, dy));
+}
+
+QString PythonQtWrapper_QMatrix::py_toString(QMatrix* obj) {
+  QString result;
+  QDebug d(&result);
+  d << *obj;
+  return result;
+}
+
+
+
+QMatrix4x4* PythonQtWrapper_QMatrix4x4::new_QMatrix4x4()
+{ 
 return new QMatrix4x4(); }
 
 QMatrix4x4* PythonQtWrapper_QMatrix4x4::new_QMatrix4x4(const QMatrix&  matrix)
-{
+{ 
 return new QMatrix4x4(matrix); }
 
 QMatrix4x4* PythonQtWrapper_QMatrix4x4::new_QMatrix4x4(const QTransform&  transform)
-{
+{ 
 return new QMatrix4x4(transform); }
 
 QMatrix4x4* PythonQtWrapper_QMatrix4x4::new_QMatrix4x4(const float*  values)
-{
+{ 
 return new QMatrix4x4(values); }
 
 QMatrix4x4* PythonQtWrapper_QMatrix4x4::new_QMatrix4x4(const float*  values, int  cols, int  rows)
-{
+{ 
 return new QMatrix4x4(values, cols, rows); }
 
 QMatrix4x4* PythonQtWrapper_QMatrix4x4::new_QMatrix4x4(float  m11, float  m12, float  m13, float  m14, float  m21, float  m22, float  m23, float  m24, float  m31, float  m32, float  m33, float  m34, float  m41, float  m42, float  m43, float  m44)
-{
+{ 
 return new QMatrix4x4(m11, m12, m13, m14, m21, m22, m23, m24, m31, m32, m33, m34, m41, m42, m43, m44); }
 
 QVector4D  PythonQtWrapper_QMatrix4x4::column(QMatrix4x4* theWrappedObject, int  index) const
@@ -2603,6 +2790,11 @@ QMatrix4x4  PythonQtWrapper_QMatrix4x4::__add__(QMatrix4x4* theWrappedObject, co
 QMatrix4x4*  PythonQtWrapper_QMatrix4x4::__iadd__(QMatrix4x4* theWrappedObject, const QMatrix4x4&  other)
 {
   return &( (*theWrappedObject)+= other);
+}
+
+QMatrix4x4  PythonQtWrapper_QMatrix4x4::__sub__(QMatrix4x4* theWrappedObject)
+{
+  return (-  (*theWrappedObject));
 }
 
 QMatrix4x4  PythonQtWrapper_QMatrix4x4::__sub__(QMatrix4x4* theWrappedObject, const QMatrix4x4&  m2)
@@ -2775,27 +2967,27 @@ QString PythonQtWrapper_QMatrix4x4::py_toString(QMatrix4x4* obj) {
 
 
 QPalette* PythonQtWrapper_QPalette::new_QPalette()
-{
+{ 
 return new QPalette(); }
 
 QPalette* PythonQtWrapper_QPalette::new_QPalette(Qt::GlobalColor  button)
-{
+{ 
 return new QPalette(button); }
 
 QPalette* PythonQtWrapper_QPalette::new_QPalette(const QBrush&  windowText, const QBrush&  button, const QBrush&  light, const QBrush&  dark, const QBrush&  mid, const QBrush&  text, const QBrush&  bright_text, const QBrush&  base, const QBrush&  window)
-{
+{ 
 return new QPalette(windowText, button, light, dark, mid, text, bright_text, base, window); }
 
 QPalette* PythonQtWrapper_QPalette::new_QPalette(const QColor&  button)
-{
+{ 
 return new QPalette(button); }
 
 QPalette* PythonQtWrapper_QPalette::new_QPalette(const QColor&  button, const QColor&  window)
-{
+{ 
 return new QPalette(button, window); }
 
 QPalette* PythonQtWrapper_QPalette::new_QPalette(const QPalette&  palette)
-{
+{ 
 return new QPalette(palette); }
 
 const QBrush*  PythonQtWrapper_QPalette::alternateBase(QPalette* theWrappedObject) const
@@ -3023,23 +3215,23 @@ QString PythonQtWrapper_QPalette::py_toString(QPalette* obj) {
 
 
 QPen* PythonQtWrapper_QPen::new_QPen()
-{
+{ 
 return new QPen(); }
 
 QPen* PythonQtWrapper_QPen::new_QPen(Qt::PenStyle  arg__1)
-{
+{ 
 return new QPen(arg__1); }
 
 QPen* PythonQtWrapper_QPen::new_QPen(const QBrush&  brush, qreal  width, Qt::PenStyle  s, Qt::PenCapStyle  c, Qt::PenJoinStyle  j)
-{
+{ 
 return new QPen(brush, width, s, c, j); }
 
 QPen* PythonQtWrapper_QPen::new_QPen(const QColor&  color)
-{
+{ 
 return new QPen(color); }
 
 QPen* PythonQtWrapper_QPen::new_QPen(const QPen&  pen)
-{
+{ 
 return new QPen(pen); }
 
 QBrush  PythonQtWrapper_QPen::brush(QPen* theWrappedObject) const
@@ -3383,23 +3575,23 @@ if (_wrapper) {
   return QPixmap::sharedPainter();
 }
 QPixmap* PythonQtWrapper_QPixmap::new_QPixmap()
-{
+{ 
 return new PythonQtShell_QPixmap(); }
 
 QPixmap* PythonQtWrapper_QPixmap::new_QPixmap(const QPixmap&  arg__1)
-{
+{ 
 return new PythonQtShell_QPixmap(arg__1); }
 
 QPixmap* PythonQtWrapper_QPixmap::new_QPixmap(const QSize&  arg__1)
-{
+{ 
 return new PythonQtShell_QPixmap(arg__1); }
 
 QPixmap* PythonQtWrapper_QPixmap::new_QPixmap(const QString&  fileName, const char*  format, Qt::ImageConversionFlags  flags)
-{
+{ 
 return new PythonQtShell_QPixmap(fileName, format, flags); }
 
 QPixmap* PythonQtWrapper_QPixmap::new_QPixmap(int  w, int  h)
-{
+{ 
 return new PythonQtShell_QPixmap(w, h); }
 
 qint64  PythonQtWrapper_QPixmap::cacheKey(QPixmap* theWrappedObject) const
@@ -3642,23 +3834,23 @@ QString PythonQtWrapper_QPixmap::py_toString(QPixmap* obj) {
 
 
 QPolygon* PythonQtWrapper_QPolygon::new_QPolygon()
-{
+{ 
 return new QPolygon(); }
 
 QPolygon* PythonQtWrapper_QPolygon::new_QPolygon(const QPolygon&  other)
-{
+{ 
 return new QPolygon(other); }
 
 QPolygon* PythonQtWrapper_QPolygon::new_QPolygon(const QRect&  r, bool  closed)
-{
+{ 
 return new QPolygon(r, closed); }
 
 QPolygon* PythonQtWrapper_QPolygon::new_QPolygon(const QVector<QPoint >&  v)
-{
+{ 
 return new QPolygon(v); }
 
 QPolygon* PythonQtWrapper_QPolygon::new_QPolygon(int  size)
-{
+{ 
 return new QPolygon(size); }
 
 void PythonQtWrapper_QPolygon::append(QPolygon* theWrappedObject, const QPoint&  t)
@@ -4011,27 +4203,27 @@ QString PythonQtWrapper_QPolygon::py_toString(QPolygon* obj) {
 
 
 QRegion* PythonQtWrapper_QRegion::new_QRegion()
-{
+{ 
 return new QRegion(); }
 
 QRegion* PythonQtWrapper_QRegion::new_QRegion(const QBitmap&  bitmap)
-{
+{ 
 return new QRegion(bitmap); }
 
 QRegion* PythonQtWrapper_QRegion::new_QRegion(const QPolygon&  pa, Qt::FillRule  fillRule)
-{
+{ 
 return new QRegion(pa, fillRule); }
 
 QRegion* PythonQtWrapper_QRegion::new_QRegion(const QRect&  r, QRegion::RegionType  t)
-{
+{ 
 return new QRegion(r, t); }
 
 QRegion* PythonQtWrapper_QRegion::new_QRegion(const QRegion&  region)
-{
+{ 
 return new QRegion(region); }
 
 QRegion* PythonQtWrapper_QRegion::new_QRegion(int  x, int  y, int  w, int  h, QRegion::RegionType  t)
-{
+{ 
 return new QRegion(x, y, w, h, t); }
 
 const QRect*  PythonQtWrapper_QRegion::begin(QRegion* theWrappedObject) const
@@ -4209,11 +4401,11 @@ QString PythonQtWrapper_QRegion::py_toString(QRegion* obj) {
 
 
 QSizePolicy* PythonQtWrapper_QSizePolicy::new_QSizePolicy()
-{
+{ 
 return new QSizePolicy(); }
 
 QSizePolicy* PythonQtWrapper_QSizePolicy::new_QSizePolicy(QSizePolicy::Policy  horizontal, QSizePolicy::Policy  vertical, QSizePolicy::ControlType  type)
-{
+{ 
 return new QSizePolicy(horizontal, vertical, type); }
 
 QSizePolicy::ControlType  PythonQtWrapper_QSizePolicy::controlType(QSizePolicy* theWrappedObject) const
@@ -4341,15 +4533,15 @@ QString PythonQtWrapper_QSizePolicy::py_toString(QSizePolicy* obj) {
 
 
 QTextFormat* PythonQtWrapper_QTextFormat::new_QTextFormat()
-{
+{ 
 return new QTextFormat(); }
 
 QTextFormat* PythonQtWrapper_QTextFormat::new_QTextFormat(const QTextFormat&  rhs)
-{
+{ 
 return new QTextFormat(rhs); }
 
 QTextFormat* PythonQtWrapper_QTextFormat::new_QTextFormat(int  type)
-{
+{ 
 return new QTextFormat(type); }
 
 QBrush  PythonQtWrapper_QTextFormat::background(QTextFormat* theWrappedObject) const
@@ -4617,11 +4809,11 @@ QString PythonQtWrapper_QTextFormat::py_toString(QTextFormat* obj) {
 
 
 QTextLength* PythonQtWrapper_QTextLength::new_QTextLength()
-{
+{ 
 return new QTextLength(); }
 
 QTextLength* PythonQtWrapper_QTextLength::new_QTextLength(QTextLength::Type  type, qreal  value)
-{
+{ 
 return new QTextLength(type, value); }
 
 bool  PythonQtWrapper_QTextLength::__ne__(QTextLength* theWrappedObject, const QTextLength&  other) const
@@ -4669,23 +4861,23 @@ QString PythonQtWrapper_QTextLength::py_toString(QTextLength* obj) {
 
 
 QTransform* PythonQtWrapper_QTransform::new_QTransform()
-{
+{ 
 return new QTransform(); }
 
 QTransform* PythonQtWrapper_QTransform::new_QTransform(const QMatrix&  mtx)
-{
+{ 
 return new QTransform(mtx); }
 
 QTransform* PythonQtWrapper_QTransform::new_QTransform(const QTransform&  other)
-{
+{ 
 return new QTransform(other); }
 
 QTransform* PythonQtWrapper_QTransform::new_QTransform(qreal  h11, qreal  h12, qreal  h13, qreal  h21, qreal  h22, qreal  h23, qreal  h31, qreal  h32, qreal  h33)
-{
+{ 
 return new QTransform(h11, h12, h13, h21, h22, h23, h31, h32, h33); }
 
 QTransform* PythonQtWrapper_QTransform::new_QTransform(qreal  h11, qreal  h12, qreal  h21, qreal  h22, qreal  dx, qreal  dy)
-{
+{ 
 return new QTransform(h11, h12, h21, h22, dx, dy); }
 
 QTransform  PythonQtWrapper_QTransform::adjoint(QTransform* theWrappedObject) const

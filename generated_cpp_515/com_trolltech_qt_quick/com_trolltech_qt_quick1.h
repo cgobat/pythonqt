@@ -1,6 +1,15 @@
 #include <PythonQt.h>
 #include <QObject>
 #include <QVariant>
+#include <QtQuick/qsggeometry.h>
+#include <QtQuick/qsgmaterialtype.h>
+#include <QtQuick/qsgnode.h>
+#include <QtQuick/qsgrectanglenode.h>
+#include <QtQuick/qsgrendererinterface.h>
+#include <QtQuick/qsgrendernode.h>
+#include <QtQuick/qsgtexture.h>
+#include <QtQuick/qsgtexturematerial.h>
+#include <QtQuick/qsgtextureprovider.h>
 #include <qbytearray.h>
 #include <qcolor.h>
 #include <qcoreevent.h>
@@ -10,14 +19,6 @@
 #include <qobject.h>
 #include <qrect.h>
 #include <qregion.h>
-#include <qsggeometry.h>
-#include <qsgmaterialtype.h>
-#include <qsgnode.h>
-#include <qsgrectanglenode.h>
-#include <qsgrendernode.h>
-#include <qsgtexture.h>
-#include <qsgtexturematerial.h>
-#include <qsgtextureprovider.h>
 #include <qsize.h>
 #include <qthread.h>
 
@@ -53,7 +54,7 @@ enum Flag{
   OwnedByParent = QSGNode::OwnedByParent,   UsePreprocess = QSGNode::UsePreprocess,   OwnsGeometry = QSGNode::OwnsGeometry,   OwnsMaterial = QSGNode::OwnsMaterial,   OwnsOpaqueMaterial = QSGNode::OwnsOpaqueMaterial,   IsVisitableNode = QSGNode::IsVisitableNode};
 enum NodeType{
   BasicNodeType = QSGNode::BasicNodeType,   GeometryNodeType = QSGNode::GeometryNodeType,   TransformNodeType = QSGNode::TransformNodeType,   ClipNodeType = QSGNode::ClipNodeType,   OpacityNodeType = QSGNode::OpacityNodeType,   RootNodeType = QSGNode::RootNodeType,   RenderNodeType = QSGNode::RenderNodeType};
-public slots:
+public Q_SLOTS:
 QSGNode* new_QSGNode();
 QSGNode* new_QSGNode(QSGNode::NodeType  type);
 void delete_QSGNode(QSGNode* obj) { delete obj; }
@@ -135,7 +136,7 @@ inline void py_q_visitNode(QSGNode*  n) { QSGNodeVisitor::visitNode(n); }
 class PythonQtWrapper_QSGNodeVisitor : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSGNodeVisitor* new_QSGNodeVisitor();
 void delete_QSGNodeVisitor(QSGNodeVisitor* obj) { delete obj; }
    void enterClipNode(QSGNodeVisitor* theWrappedObject, QSGClipNode*  arg__1);
@@ -185,7 +186,7 @@ inline bool  py_q_isSubtreeBlocked() const { return QSGOpacityNode::isSubtreeBlo
 class PythonQtWrapper_QSGOpacityNode : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSGOpacityNode* new_QSGOpacityNode();
 void delete_QSGOpacityNode(QSGOpacityNode* obj) { delete obj; }
    qreal  combinedOpacity(QSGOpacityNode* theWrappedObject) const;
@@ -228,7 +229,7 @@ inline void py_q_setRect(const QRectF&  rect) { this->setRect(rect); }
 class PythonQtWrapper_QSGRectangleNode : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSGRectangleNode* new_QSGRectangleNode();
 void delete_QSGRectangleNode(QSGRectangleNode* obj) { delete obj; }
    QColor  color(QSGRectangleNode* theWrappedObject) const;
@@ -277,7 +278,7 @@ enum RenderingFlag{
   BoundedRectRendering = QSGRenderNode::BoundedRectRendering,   DepthAwareRendering = QSGRenderNode::DepthAwareRendering,   OpaqueRendering = QSGRenderNode::OpaqueRendering};
 enum StateFlag{
   DepthState = QSGRenderNode::DepthState,   StencilState = QSGRenderNode::StencilState,   ScissorState = QSGRenderNode::ScissorState,   ColorState = QSGRenderNode::ColorState,   BlendState = QSGRenderNode::BlendState,   CullState = QSGRenderNode::CullState,   ViewportState = QSGRenderNode::ViewportState,   RenderTargetState = QSGRenderNode::RenderTargetState};
-public slots:
+public Q_SLOTS:
 QSGRenderNode* new_QSGRenderNode();
 void delete_QSGRenderNode(QSGRenderNode* obj) { delete obj; }
    const QSGClipNode*  clipList(QSGRenderNode* theWrappedObject) const;
@@ -327,7 +328,7 @@ inline int  py_q_stencilValue() const { return this->stencilValue(); }
 class PythonQtWrapper_QSGRenderNode__RenderState : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSGRenderNode::RenderState* new_QSGRenderNode__RenderState();
 void delete_QSGRenderNode__RenderState(QSGRenderNode::RenderState* obj) { delete obj; }
    const QRegion*  clipRegion(QSGRenderNode::RenderState* theWrappedObject) const;
@@ -350,6 +351,62 @@ void delete_QSGRenderNode__RenderState(QSGRenderNode::RenderState* obj) { delete
 
 
 
+class PythonQtShell_QSGRendererInterface : public QSGRendererInterface
+{
+public:
+    PythonQtShell_QSGRendererInterface():QSGRendererInterface(),_wrapper(nullptr) {};
+
+   ~PythonQtShell_QSGRendererInterface() override;
+
+QSGRendererInterface::GraphicsApi  graphicsApi() const override;
+QSGRendererInterface::ShaderCompilationTypes  shaderCompilationType() const override;
+QSGRendererInterface::ShaderSourceTypes  shaderSourceType() const override;
+QSGRendererInterface::ShaderType  shaderType() const override;
+
+  PythonQtInstanceWrapper* _wrapper;
+};
+
+class PythonQtPublicPromoter_QSGRendererInterface : public QSGRendererInterface
+{ public:
+inline QSGRendererInterface::GraphicsApi  py_q_graphicsApi() const { return this->graphicsApi(); }
+inline QSGRendererInterface::ShaderCompilationTypes  py_q_shaderCompilationType() const { return this->shaderCompilationType(); }
+inline QSGRendererInterface::ShaderSourceTypes  py_q_shaderSourceType() const { return this->shaderSourceType(); }
+inline QSGRendererInterface::ShaderType  py_q_shaderType() const { return this->shaderType(); }
+};
+
+class PythonQtWrapper_QSGRendererInterface : public QObject
+{ Q_OBJECT
+public:
+Q_ENUMS(GraphicsApi ShaderCompilationType ShaderSourceType ShaderType )
+Q_FLAGS(ShaderCompilationTypes ShaderSourceTypes )
+enum GraphicsApi{
+  Unknown = QSGRendererInterface::Unknown,   Software = QSGRendererInterface::Software,   OpenGL = QSGRendererInterface::OpenGL,   Direct3D12 = QSGRendererInterface::Direct3D12,   OpenVG = QSGRendererInterface::OpenVG,   OpenGLRhi = QSGRendererInterface::OpenGLRhi,   Direct3D11Rhi = QSGRendererInterface::Direct3D11Rhi,   VulkanRhi = QSGRendererInterface::VulkanRhi,   MetalRhi = QSGRendererInterface::MetalRhi,   NullRhi = QSGRendererInterface::NullRhi};
+enum ShaderCompilationType{
+  RuntimeCompilation = QSGRendererInterface::RuntimeCompilation,   OfflineCompilation = QSGRendererInterface::OfflineCompilation};
+enum ShaderSourceType{
+  ShaderSourceString = QSGRendererInterface::ShaderSourceString,   ShaderSourceFile = QSGRendererInterface::ShaderSourceFile,   ShaderByteCode = QSGRendererInterface::ShaderByteCode};
+enum ShaderType{
+  UnknownShadingLanguage = QSGRendererInterface::UnknownShadingLanguage,   GLSL = QSGRendererInterface::GLSL,   HLSL = QSGRendererInterface::HLSL,   RhiShader = QSGRendererInterface::RhiShader};
+Q_DECLARE_FLAGS(ShaderCompilationTypes, ShaderCompilationType)
+Q_DECLARE_FLAGS(ShaderSourceTypes, ShaderSourceType)
+public Q_SLOTS:
+QSGRendererInterface* new_QSGRendererInterface();
+void delete_QSGRendererInterface(QSGRendererInterface* obj) { delete obj; }
+   QSGRendererInterface::GraphicsApi  graphicsApi(QSGRendererInterface* theWrappedObject) const;
+   QSGRendererInterface::GraphicsApi  py_q_graphicsApi(QSGRendererInterface* theWrappedObject) const{  return (((PythonQtPublicPromoter_QSGRendererInterface*)theWrappedObject)->py_q_graphicsApi());}
+   bool  static_QSGRendererInterface_isApiRhiBased(QSGRendererInterface::GraphicsApi  api);
+   QSGRendererInterface::ShaderCompilationTypes  shaderCompilationType(QSGRendererInterface* theWrappedObject) const;
+   QSGRendererInterface::ShaderCompilationTypes  py_q_shaderCompilationType(QSGRendererInterface* theWrappedObject) const{  return (((PythonQtPublicPromoter_QSGRendererInterface*)theWrappedObject)->py_q_shaderCompilationType());}
+   QSGRendererInterface::ShaderSourceTypes  shaderSourceType(QSGRendererInterface* theWrappedObject) const;
+   QSGRendererInterface::ShaderSourceTypes  py_q_shaderSourceType(QSGRendererInterface* theWrappedObject) const{  return (((PythonQtPublicPromoter_QSGRendererInterface*)theWrappedObject)->py_q_shaderSourceType());}
+   QSGRendererInterface::ShaderType  shaderType(QSGRendererInterface* theWrappedObject) const;
+   QSGRendererInterface::ShaderType  py_q_shaderType(QSGRendererInterface* theWrappedObject) const{  return (((PythonQtPublicPromoter_QSGRendererInterface*)theWrappedObject)->py_q_shaderType());}
+};
+
+
+
+
+
 class PythonQtShell_QSGRootNode : public QSGRootNode
 {
 public:
@@ -366,7 +423,7 @@ void preprocess() override;
 class PythonQtWrapper_QSGRootNode : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSGRootNode* new_QSGRootNode();
 void delete_QSGRootNode(QSGRootNode* obj) { delete obj; }
     QString py_toString(QSGRootNode*);
@@ -424,7 +481,7 @@ enum Filtering{
   None = QSGTexture::None,   Nearest = QSGTexture::Nearest,   Linear = QSGTexture::Linear};
 enum WrapMode{
   Repeat = QSGTexture::Repeat,   ClampToEdge = QSGTexture::ClampToEdge,   MirroredRepeat = QSGTexture::MirroredRepeat};
-public slots:
+public Q_SLOTS:
 QSGTexture* new_QSGTexture();
 void delete_QSGTexture(QSGTexture* obj) { delete obj; }
    QSGTexture::AnisotropyLevel  anisotropyLevel(QSGTexture* theWrappedObject) const;
@@ -482,7 +539,7 @@ inline QSGMaterialType*  py_q_type() const { return QSGTextureMaterial::type(); 
 class PythonQtWrapper_QSGTextureMaterial : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSGTextureMaterial* new_QSGTextureMaterial();
 void delete_QSGTextureMaterial(QSGTextureMaterial* obj) { delete obj; }
    QSGMaterialType*  type(QSGTextureMaterial* theWrappedObject) const;
@@ -520,7 +577,7 @@ inline QSGTexture*  py_q_texture() const { return this->texture(); }
 class PythonQtWrapper_QSGTextureProvider : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSGTextureProvider* new_QSGTextureProvider();
 void delete_QSGTextureProvider(QSGTextureProvider* obj) { delete obj; }
    QSGTexture*  texture(QSGTextureProvider* theWrappedObject) const;
@@ -547,7 +604,7 @@ void preprocess() override;
 class PythonQtWrapper_QSGTransformNode : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QSGTransformNode* new_QSGTransformNode();
 void delete_QSGTransformNode(QSGTransformNode* obj) { delete obj; }
    const QMatrix4x4*  combinedMatrix(QSGTransformNode* theWrappedObject) const;

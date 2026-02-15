@@ -13,67 +13,74 @@
 #include <QStringList>
 #include <QTextCharFormat>
 #include <QVariant>
-#include <qabstractbutton.h>
-#include <qabstractitemdelegate.h>
+#include <QtPrintSupport/qabstractprintdialog.h>
+#include <QtPrintSupport/qprinter.h>
+#include <QtWidgets/qabstractbutton.h>
+#include <QtWidgets/qabstractitemdelegate.h>
+#include <QtWidgets/qabstractitemview.h>
+#include <QtWidgets/qabstractscrollarea.h>
+#include <QtWidgets/qabstractslider.h>
+#include <QtWidgets/qabstractspinbox.h>
+#include <QtWidgets/qaction.h>
+#include <QtWidgets/qactiongroup.h>
+#include <QtWidgets/qapplication.h>
+#include <QtWidgets/qboxlayout.h>
+#include <QtWidgets/qbuttongroup.h>
+#include <QtWidgets/qcalendarwidget.h>
+#include <QtWidgets/qcheckbox.h>
+#include <QtWidgets/qcolordialog.h>
+#include <QtWidgets/qcolumnview.h>
+#include <QtWidgets/qcombobox.h>
+#include <QtWidgets/qcompleter.h>
+#include <QtWidgets/qdesktopwidget.h>
+#include <QtWidgets/qgraphicseffect.h>
+#include <QtWidgets/qgraphicsitem.h>
+#include <QtWidgets/qgraphicsproxywidget.h>
+#include <QtWidgets/qgraphicsscene.h>
+#include <QtWidgets/qgraphicssceneevent.h>
+#include <QtWidgets/qgraphicstransform.h>
+#include <QtWidgets/qgraphicswidget.h>
+#include <QtWidgets/qlayout.h>
+#include <QtWidgets/qlayoutitem.h>
+#include <QtWidgets/qlineedit.h>
+#include <QtWidgets/qmenu.h>
+#include <QtWidgets/qscrollbar.h>
+#include <QtWidgets/qsizepolicy.h>
+#include <QtWidgets/qstyle.h>
+#include <QtWidgets/qstyleoption.h>
+#include <QtWidgets/qwidget.h>
+#include <qabstracteventdispatcher.h>
 #include <qabstractitemmodel.h>
-#include <qabstractitemview.h>
-#include <qabstractprintdialog.h>
 #include <qabstractproxymodel.h>
-#include <qabstractscrollarea.h>
-#include <qabstractslider.h>
-#include <qabstractspinbox.h>
 #include <qabstracttextdocumentlayout.h>
 #include <qaccessible.h>
-#include <qaction.h>
-#include <qactiongroup.h>
-#include <qapplication.h>
 #include <qbackingstore.h>
 #include <qbitmap.h>
-#include <qboxlayout.h>
 #include <qbrush.h>
-#include <qbuttongroup.h>
 #include <qbytearray.h>
 #include <qcalendar.h>
-#include <qcalendarwidget.h>
-#include <qcheckbox.h>
 #include <qclipboard.h>
 #include <qcolor.h>
-#include <qcolordialog.h>
 #include <qcolorspace.h>
 #include <qcolortransform.h>
-#include <qcolumnview.h>
-#include <qcombobox.h>
-#include <qcompleter.h>
 #include <qcoreapplication.h>
 #include <qcoreevent.h>
 #include <qcursor.h>
 #include <qdatastream.h>
 #include <qdatetime.h>
-#include <qdesktopwidget.h>
 #include <qevent.h>
 #include <qfont.h>
 #include <qfontinfo.h>
 #include <qfontmetrics.h>
-#include <qgraphicseffect.h>
-#include <qgraphicsitem.h>
-#include <qgraphicsproxywidget.h>
-#include <qgraphicsscene.h>
-#include <qgraphicssceneevent.h>
-#include <qgraphicstransform.h>
-#include <qgraphicswidget.h>
 #include <qicon.h>
 #include <qimage.h>
 #include <qinputmethod.h>
 #include <qitemselectionmodel.h>
 #include <qkeysequence.h>
-#include <qlayout.h>
-#include <qlayoutitem.h>
-#include <qlineedit.h>
 #include <qlist.h>
 #include <qlocale.h>
 #include <qmargins.h>
 #include <qmatrix.h>
-#include <qmenu.h>
 #include <qmetaobject.h>
 #include <qmimedata.h>
 #include <qobject.h>
@@ -86,19 +93,14 @@
 #include <qpixmap.h>
 #include <qpoint.h>
 #include <qpolygon.h>
-#include <qprinter.h>
 #include <qrect.h>
 #include <qregion.h>
 #include <qrgba64.h>
 #include <qscreen.h>
-#include <qscrollbar.h>
 #include <qsessionmanager.h>
 #include <qsize.h>
-#include <qsizepolicy.h>
 #include <qstringlist.h>
-#include <qstyle.h>
 #include <qstylehints.h>
-#include <qstyleoption.h>
 #include <qtextdocument.h>
 #include <qtextformat.h>
 #include <qtextlayout.h>
@@ -108,7 +110,6 @@
 #include <qtranslator.h>
 #include <qvalidator.h>
 #include <qvector.h>
-#include <qwidget.h>
 #include <qwindow.h>
 
 
@@ -209,7 +210,7 @@ inline void py_q_timerEvent(QTimerEvent*  e) { QAbstractButton::timerEvent(e); }
 class PythonQtWrapper_QAbstractButton : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAbstractButton* new_QAbstractButton(QWidget*  parent = nullptr);
 void delete_QAbstractButton(QAbstractButton* obj) { delete obj; }
    bool  autoExclusive(QAbstractButton* theWrappedObject) const;
@@ -311,7 +312,7 @@ inline QPainterPath  py_q_opaqueArea() const { return QAbstractGraphicsShapeItem
 class PythonQtWrapper_QAbstractGraphicsShapeItem : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAbstractGraphicsShapeItem* new_QAbstractGraphicsShapeItem(QGraphicsItem*  parent = nullptr);
 void delete_QAbstractGraphicsShapeItem(QAbstractGraphicsShapeItem* obj) { delete obj; }
    QBrush  brush(QAbstractGraphicsShapeItem* theWrappedObject) const;
@@ -374,7 +375,7 @@ public:
 Q_ENUMS(EndEditHint )
 enum EndEditHint{
   NoHint = QAbstractItemDelegate::NoHint,   EditNextItem = QAbstractItemDelegate::EditNextItem,   EditPreviousItem = QAbstractItemDelegate::EditPreviousItem,   SubmitModelCache = QAbstractItemDelegate::SubmitModelCache,   RevertModelCache = QAbstractItemDelegate::RevertModelCache};
-public slots:
+public Q_SLOTS:
 QAbstractItemDelegate* new_QAbstractItemDelegate(QObject*  parent = nullptr);
 void delete_QAbstractItemDelegate(QAbstractItemDelegate* obj) { delete obj; }
    QWidget*  createEditor(QAbstractItemDelegate* theWrappedObject, QWidget*  parent, const QStyleOptionViewItem&  option, const QModelIndex&  index) const;
@@ -641,7 +642,7 @@ enum EditTrigger{
 enum State{
   NoState = PythonQtPublicPromoter_QAbstractItemView::NoState,   DraggingState = PythonQtPublicPromoter_QAbstractItemView::DraggingState,   DragSelectingState = PythonQtPublicPromoter_QAbstractItemView::DragSelectingState,   EditingState = PythonQtPublicPromoter_QAbstractItemView::EditingState,   ExpandingState = PythonQtPublicPromoter_QAbstractItemView::ExpandingState,   CollapsingState = PythonQtPublicPromoter_QAbstractItemView::CollapsingState,   AnimatingState = PythonQtPublicPromoter_QAbstractItemView::AnimatingState};
 Q_DECLARE_FLAGS(EditTriggers, EditTrigger)
-public slots:
+public Q_SLOTS:
 QAbstractItemView* new_QAbstractItemView(QWidget*  parent = nullptr);
 void delete_QAbstractItemView(QAbstractItemView* obj) { delete obj; }
    bool  alternatingRowColors(QAbstractItemView* theWrappedObject) const;
@@ -862,7 +863,7 @@ enum PrintDialogOption{
 enum PrintRange{
   AllPages = QAbstractPrintDialog::AllPages,   Selection = QAbstractPrintDialog::Selection,   PageRange = QAbstractPrintDialog::PageRange,   CurrentPage = QAbstractPrintDialog::CurrentPage};
 Q_DECLARE_FLAGS(PrintDialogOptions, PrintDialogOption)
-public slots:
+public Q_SLOTS:
 QAbstractPrintDialog* new_QAbstractPrintDialog(QPrinter*  printer, QWidget*  parent = nullptr);
 void delete_QAbstractPrintDialog(QAbstractPrintDialog* obj) { delete obj; }
    void addEnabledOption(QAbstractPrintDialog* theWrappedObject, QAbstractPrintDialog::PrintDialogOption  option);
@@ -977,7 +978,7 @@ inline Qt::DropActions  py_q_supportedDropActions() const { return QAbstractProx
 class PythonQtWrapper_QAbstractProxyModel : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAbstractProxyModel* new_QAbstractProxyModel(QObject*  parent = nullptr);
 void delete_QAbstractProxyModel(QAbstractProxyModel* obj) { delete obj; }
    QModelIndex  py_q_buddy(QAbstractProxyModel* theWrappedObject, const QModelIndex&  index) const{  return (((PythonQtPublicPromoter_QAbstractProxyModel*)theWrappedObject)->py_q_buddy(index));}
@@ -1130,7 +1131,7 @@ inline void py_q_wheelEvent(QWheelEvent*  arg__1) { QAbstractScrollArea::wheelEv
 class PythonQtWrapper_QAbstractScrollArea : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAbstractScrollArea* new_QAbstractScrollArea(QWidget*  parent = nullptr);
 void delete_QAbstractScrollArea(QAbstractScrollArea* obj) { delete obj; }
    void addScrollBarWidget(QAbstractScrollArea* theWrappedObject, PythonQtPassOwnershipToCPP<QWidget* >  widget, Qt::Alignment  alignment);
@@ -1146,7 +1147,6 @@ void delete_QAbstractScrollArea(QAbstractScrollArea* obj) { delete obj; }
    Qt::ScrollBarPolicy  horizontalScrollBarPolicy(QAbstractScrollArea* theWrappedObject) const;
    void py_q_keyPressEvent(QAbstractScrollArea* theWrappedObject, QKeyEvent*  arg__1){  (((PythonQtPublicPromoter_QAbstractScrollArea*)theWrappedObject)->py_q_keyPressEvent(arg__1));}
    QSize  maximumViewportSize(QAbstractScrollArea* theWrappedObject) const;
-   QSize  minimumSizeHint(QAbstractScrollArea* theWrappedObject) const;
    QSize  py_q_minimumSizeHint(QAbstractScrollArea* theWrappedObject) const{  return (((PythonQtPublicPromoter_QAbstractScrollArea*)theWrappedObject)->py_q_minimumSizeHint());}
    void py_q_mouseDoubleClickEvent(QAbstractScrollArea* theWrappedObject, QMouseEvent*  arg__1){  (((PythonQtPublicPromoter_QAbstractScrollArea*)theWrappedObject)->py_q_mouseDoubleClickEvent(arg__1));}
    void py_q_mouseMoveEvent(QAbstractScrollArea* theWrappedObject, QMouseEvent*  arg__1){  (((PythonQtPublicPromoter_QAbstractScrollArea*)theWrappedObject)->py_q_mouseMoveEvent(arg__1));}
@@ -1272,7 +1272,7 @@ enum SliderAction{
   SliderNoAction = QAbstractSlider::SliderNoAction,   SliderSingleStepAdd = QAbstractSlider::SliderSingleStepAdd,   SliderSingleStepSub = QAbstractSlider::SliderSingleStepSub,   SliderPageStepAdd = QAbstractSlider::SliderPageStepAdd,   SliderPageStepSub = QAbstractSlider::SliderPageStepSub,   SliderToMinimum = QAbstractSlider::SliderToMinimum,   SliderToMaximum = QAbstractSlider::SliderToMaximum,   SliderMove = QAbstractSlider::SliderMove};
 enum SliderChange{
   SliderRangeChange = PythonQtPublicPromoter_QAbstractSlider::SliderRangeChange,   SliderOrientationChange = PythonQtPublicPromoter_QAbstractSlider::SliderOrientationChange,   SliderStepsChange = PythonQtPublicPromoter_QAbstractSlider::SliderStepsChange,   SliderValueChange = PythonQtPublicPromoter_QAbstractSlider::SliderValueChange};
-public slots:
+public Q_SLOTS:
 QAbstractSlider* new_QAbstractSlider(QWidget*  parent = nullptr);
 void delete_QAbstractSlider(QAbstractSlider* obj) { delete obj; }
    void py_q_changeEvent(QAbstractSlider* theWrappedObject, QEvent*  e){  (((PythonQtPublicPromoter_QAbstractSlider*)theWrappedObject)->py_q_changeEvent(e));}
@@ -1431,7 +1431,7 @@ Q_FLAGS(StepEnabled )
 enum StepEnabledFlag{
   StepNone = QAbstractSpinBox::StepNone,   StepUpEnabled = QAbstractSpinBox::StepUpEnabled,   StepDownEnabled = QAbstractSpinBox::StepDownEnabled};
 Q_DECLARE_FLAGS(StepEnabled, StepEnabledFlag)
-public slots:
+public Q_SLOTS:
 QAbstractSpinBox* new_QAbstractSpinBox(QWidget*  parent = nullptr);
 void delete_QAbstractSpinBox(QAbstractSpinBox* obj) { delete obj; }
    Qt::Alignment  alignment(QAbstractSpinBox* theWrappedObject) const;
@@ -1459,7 +1459,6 @@ void delete_QAbstractSpinBox(QAbstractSpinBox* obj) { delete obj; }
    void py_q_keyReleaseEvent(QAbstractSpinBox* theWrappedObject, QKeyEvent*  event){  (((PythonQtPublicPromoter_QAbstractSpinBox*)theWrappedObject)->py_q_keyReleaseEvent(event));}
    bool  keyboardTracking(QAbstractSpinBox* theWrappedObject) const;
    QLineEdit*  lineEdit(QAbstractSpinBox* theWrappedObject) const;
-   QSize  minimumSizeHint(QAbstractSpinBox* theWrappedObject) const;
    QSize  py_q_minimumSizeHint(QAbstractSpinBox* theWrappedObject) const{  return (((PythonQtPublicPromoter_QAbstractSpinBox*)theWrappedObject)->py_q_minimumSizeHint());}
    void py_q_mouseMoveEvent(QAbstractSpinBox* theWrappedObject, QMouseEvent*  event){  (((PythonQtPublicPromoter_QAbstractSpinBox*)theWrappedObject)->py_q_mouseMoveEvent(event));}
    void py_q_mousePressEvent(QAbstractSpinBox* theWrappedObject, QMouseEvent*  event){  (((PythonQtPublicPromoter_QAbstractSpinBox*)theWrappedObject)->py_q_mousePressEvent(event));}
@@ -1478,7 +1477,6 @@ void delete_QAbstractSpinBox(QAbstractSpinBox* obj) { delete obj; }
    void setSpecialValueText(QAbstractSpinBox* theWrappedObject, const QString&  txt);
    void setWrapping(QAbstractSpinBox* theWrappedObject, bool  w);
    void py_q_showEvent(QAbstractSpinBox* theWrappedObject, QShowEvent*  event){  (((PythonQtPublicPromoter_QAbstractSpinBox*)theWrappedObject)->py_q_showEvent(event));}
-   QSize  sizeHint(QAbstractSpinBox* theWrappedObject) const;
    QSize  py_q_sizeHint(QAbstractSpinBox* theWrappedObject) const{  return (((PythonQtPublicPromoter_QAbstractSpinBox*)theWrappedObject)->py_q_sizeHint());}
    QString  specialValueText(QAbstractSpinBox* theWrappedObject) const;
    void stepBy(QAbstractSpinBox* theWrappedObject, int  steps);
@@ -1558,7 +1556,7 @@ inline QModelIndex  py_q_sibling(int  row, int  column, const QModelIndex&  idx)
 class PythonQtWrapper_QAbstractTableModel : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAbstractTableModel* new_QAbstractTableModel(QObject*  parent = nullptr);
 void delete_QAbstractTableModel(QAbstractTableModel* obj) { delete obj; }
    bool  py_q_dropMimeData(QAbstractTableModel* theWrappedObject, const QMimeData*  data, Qt::DropAction  action, int  row, int  column, const QModelIndex&  parent){  return (((PythonQtPublicPromoter_QAbstractTableModel*)theWrappedObject)->py_q_dropMimeData(data, action, row, column, parent));}
@@ -1622,7 +1620,7 @@ inline void py_q_resizeInlineObject(QTextInlineObject  item, int  posInDocument,
 class PythonQtWrapper_QAbstractTextDocumentLayout : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAbstractTextDocumentLayout* new_QAbstractTextDocumentLayout(QTextDocument*  doc);
 void delete_QAbstractTextDocumentLayout(QAbstractTextDocumentLayout* obj) { delete obj; }
    QString  anchorAt(QAbstractTextDocumentLayout* theWrappedObject, const QPointF&  pos) const;
@@ -1676,7 +1674,7 @@ public:
 class PythonQtWrapper_QAbstractTextDocumentLayout__PaintContext : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAbstractTextDocumentLayout::PaintContext* new_QAbstractTextDocumentLayout__PaintContext();
 QAbstractTextDocumentLayout::PaintContext* new_QAbstractTextDocumentLayout__PaintContext(const QAbstractTextDocumentLayout::PaintContext& other) {
 PythonQtShell_QAbstractTextDocumentLayout__PaintContext* a = new PythonQtShell_QAbstractTextDocumentLayout__PaintContext();
@@ -1709,7 +1707,7 @@ public:
 class PythonQtWrapper_QAbstractTextDocumentLayout__Selection : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAbstractTextDocumentLayout::Selection* new_QAbstractTextDocumentLayout__Selection();
 QAbstractTextDocumentLayout::Selection* new_QAbstractTextDocumentLayout__Selection(const QAbstractTextDocumentLayout::Selection& other) {
 PythonQtShell_QAbstractTextDocumentLayout__Selection* a = new PythonQtShell_QAbstractTextDocumentLayout__Selection();
@@ -1740,7 +1738,7 @@ public:
 class PythonQtWrapper_QAccessibleEvent : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QAccessibleEvent* new_QAccessibleEvent(QObject*  obj, QAccessible::Event  typ);
 void delete_QAccessibleEvent(QAccessibleEvent* obj) { delete obj; }
    int  child(QAccessibleEvent* theWrappedObject) const;
@@ -1786,7 +1784,7 @@ public:
 Q_ENUMS(ActionEvent )
 enum ActionEvent{
   Trigger = QAction::Trigger,   Hover = QAction::Hover};
-public slots:
+public Q_SLOTS:
 QAction* new_QAction(QObject*  parent = nullptr);
 QAction* new_QAction(const QIcon&  icon, const QString&  text, QObject*  parent = nullptr);
 QAction* new_QAction(const QString&  text, QObject*  parent = nullptr);
@@ -1851,7 +1849,7 @@ void delete_QAction(QAction* obj) { delete obj; }
 class PythonQtWrapper_QActionEvent : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QActionEvent* new_QActionEvent(int  type, QAction*  action, QAction*  before = nullptr);
 void delete_QActionEvent(QActionEvent* obj) { delete obj; }
    QAction*  action(QActionEvent* theWrappedObject) const;
@@ -1883,7 +1881,7 @@ void timerEvent(QTimerEvent*  event) override;
 class PythonQtWrapper_QActionGroup : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QActionGroup* new_QActionGroup(QObject*  parent);
 void delete_QActionGroup(QActionGroup* obj) { delete obj; }
    QList<QAction* >  actions(QActionGroup* theWrappedObject) const;
@@ -1915,7 +1913,7 @@ public:
 Q_ENUMS(ColorSpec )
 enum ColorSpec{
   NormalColor = QApplication::NormalColor,   CustomColor = QApplication::CustomColor,   ManyColor = QApplication::ManyColor};
-public slots:
+public Q_SLOTS:
 void delete_QApplication(QApplication* obj) { delete obj; }
    QWidget*  static_QApplication_activeModalWidget();
    QWidget*  static_QApplication_activePopupWidget();
@@ -1973,7 +1971,7 @@ void delete_QApplication(QApplication* obj) { delete obj; }
 class PythonQtWrapper_QBackingStore : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QBackingStore* new_QBackingStore(QWindow*  window);
 void delete_QBackingStore(QBackingStore* obj) { delete obj; }
    void beginPaint(QBackingStore* theWrappedObject, const QRegion&  arg__1);
@@ -2054,7 +2052,7 @@ public:
 Q_ENUMS(Direction )
 enum Direction{
   LeftToRight = QBoxLayout::LeftToRight,   RightToLeft = QBoxLayout::RightToLeft,   TopToBottom = QBoxLayout::TopToBottom,   BottomToTop = QBoxLayout::BottomToTop,   Down = QBoxLayout::Down,   Up = QBoxLayout::Up};
-public slots:
+public Q_SLOTS:
 QBoxLayout* new_QBoxLayout(QBoxLayout::Direction  arg__1, QWidget*  parent = nullptr);
 void delete_QBoxLayout(QBoxLayout* obj) { delete obj; }
    void py_q_addItem(QBoxLayout* theWrappedObject, QLayoutItem*  arg__1){  (((PythonQtPublicPromoter_QBoxLayout*)theWrappedObject)->py_q_addItem(arg__1));}
@@ -2118,7 +2116,7 @@ void timerEvent(QTimerEvent*  event) override;
 class PythonQtWrapper_QButtonGroup : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QButtonGroup* new_QButtonGroup(QObject*  parent = nullptr);
 void delete_QButtonGroup(QButtonGroup* obj) { delete obj; }
    void addButton(QButtonGroup* theWrappedObject, QAbstractButton*  arg__1, int  id = -1);
@@ -2219,7 +2217,7 @@ inline QSize  py_q_sizeHint() const { return QCalendarWidget::sizeHint(); }
 class PythonQtWrapper_QCalendarWidget : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QCalendarWidget* new_QCalendarWidget(QWidget*  parent = nullptr);
 void delete_QCalendarWidget(QCalendarWidget* obj) { delete obj; }
    QCalendar  calendar(QCalendarWidget* theWrappedObject) const;
@@ -2353,7 +2351,7 @@ inline QSize  py_q_sizeHint() const { return QCheckBox::sizeHint(); }
 class PythonQtWrapper_QCheckBox : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QCheckBox* new_QCheckBox(QWidget*  parent = nullptr);
 QCheckBox* new_QCheckBox(const QString&  text, QWidget*  parent = nullptr);
 void delete_QCheckBox(QCheckBox* obj) { delete obj; }
@@ -2363,14 +2361,12 @@ void delete_QCheckBox(QCheckBox* obj) { delete obj; }
    bool  py_q_hitButton(QCheckBox* theWrappedObject, const QPoint&  pos) const{  return (((PythonQtPublicPromoter_QCheckBox*)theWrappedObject)->py_q_hitButton(pos));}
    void initStyleOption(QCheckBox* theWrappedObject, QStyleOptionButton*  option) const;
    bool  isTristate(QCheckBox* theWrappedObject) const;
-   QSize  minimumSizeHint(QCheckBox* theWrappedObject) const;
    QSize  py_q_minimumSizeHint(QCheckBox* theWrappedObject) const{  return (((PythonQtPublicPromoter_QCheckBox*)theWrappedObject)->py_q_minimumSizeHint());}
    void py_q_mouseMoveEvent(QCheckBox* theWrappedObject, QMouseEvent*  arg__1){  (((PythonQtPublicPromoter_QCheckBox*)theWrappedObject)->py_q_mouseMoveEvent(arg__1));}
    void py_q_nextCheckState(QCheckBox* theWrappedObject){  (((PythonQtPublicPromoter_QCheckBox*)theWrappedObject)->py_q_nextCheckState());}
    void py_q_paintEvent(QCheckBox* theWrappedObject, QPaintEvent*  arg__1){  (((PythonQtPublicPromoter_QCheckBox*)theWrappedObject)->py_q_paintEvent(arg__1));}
    void setCheckState(QCheckBox* theWrappedObject, Qt::CheckState  state);
    void setTristate(QCheckBox* theWrappedObject, bool  y = true);
-   QSize  sizeHint(QCheckBox* theWrappedObject) const;
    QSize  py_q_sizeHint(QCheckBox* theWrappedObject) const{  return (((PythonQtPublicPromoter_QCheckBox*)theWrappedObject)->py_q_sizeHint());}
 };
 
@@ -2384,7 +2380,7 @@ public:
 Q_ENUMS(Mode )
 enum Mode{
   Clipboard = QClipboard::Clipboard,   Selection = QClipboard::Selection,   FindBuffer = QClipboard::FindBuffer,   LastMode = QClipboard::LastMode};
-public slots:
+public Q_SLOTS:
    void clear(QClipboard* theWrappedObject, QClipboard::Mode  mode = QClipboard::Clipboard);
    QImage  image(QClipboard* theWrappedObject, QClipboard::Mode  mode = QClipboard::Clipboard) const;
    const QMimeData*  mimeData(QClipboard* theWrappedObject, QClipboard::Mode  mode = QClipboard::Clipboard) const;
@@ -2409,7 +2405,7 @@ public slots:
 class PythonQtWrapper_QCloseEvent : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QCloseEvent* new_QCloseEvent();
 void delete_QCloseEvent(QCloseEvent* obj) { delete obj; }
 };
@@ -2498,7 +2494,7 @@ Q_FLAGS(ColorDialogOptions )
 enum ColorDialogOption{
   ShowAlphaChannel = QColorDialog::ShowAlphaChannel,   NoButtons = QColorDialog::NoButtons,   DontUseNativeDialog = QColorDialog::DontUseNativeDialog};
 Q_DECLARE_FLAGS(ColorDialogOptions, ColorDialogOption)
-public slots:
+public Q_SLOTS:
 QColorDialog* new_QColorDialog(QWidget*  parent = nullptr);
 QColorDialog* new_QColorDialog(const QColor&  initial, QWidget*  parent = nullptr);
 void delete_QColorDialog(QColorDialog* obj) { delete obj; }
@@ -2536,13 +2532,13 @@ enum class Primaries{
   Custom = static_cast<int>(QColorSpace::Primaries::Custom),   SRgb = static_cast<int>(QColorSpace::Primaries::SRgb),   AdobeRgb = static_cast<int>(QColorSpace::Primaries::AdobeRgb),   DciP3D65 = static_cast<int>(QColorSpace::Primaries::DciP3D65),   ProPhotoRgb = static_cast<int>(QColorSpace::Primaries::ProPhotoRgb)};
 enum class TransferFunction{
   Custom = static_cast<int>(QColorSpace::TransferFunction::Custom),   Linear = static_cast<int>(QColorSpace::TransferFunction::Linear),   Gamma = static_cast<int>(QColorSpace::TransferFunction::Gamma),   SRgb = static_cast<int>(QColorSpace::TransferFunction::SRgb),   ProPhotoRgb = static_cast<int>(QColorSpace::TransferFunction::ProPhotoRgb)};
-public slots:
+public Q_SLOTS:
 QColorSpace* new_QColorSpace();
 QColorSpace* new_QColorSpace(QColorSpace::NamedColorSpace  namedColorSpace);
-QColorSpace* new_QColorSpace(QColorSpace::Primaries  primaries, QColorSpace::TransferFunction  transferFunction, float  gamma = 0.0f);
+QColorSpace* new_QColorSpace(QColorSpace::Primaries  primaries, QColorSpace::TransferFunction  fun, float  gamma = 0.0f);
 QColorSpace* new_QColorSpace(QColorSpace::Primaries  primaries, float  gamma);
 QColorSpace* new_QColorSpace(const QColorSpace&  colorSpace);
-QColorSpace* new_QColorSpace(const QPointF&  whitePoint, const QPointF&  redPoint, const QPointF&  greenPoint, const QPointF&  bluePoint, QColorSpace::TransferFunction  transferFunction, float  gamma = 0.0f);
+QColorSpace* new_QColorSpace(const QPointF&  whitePoint, const QPointF&  redPoint, const QPointF&  greenPoint, const QPointF&  bluePoint, QColorSpace::TransferFunction  fun, float  gamma = 0.0f);
 void delete_QColorSpace(QColorSpace* obj) { delete obj; }
    QColorSpace  static_QColorSpace_fromIccProfile(const QByteArray&  iccProfile);
    float  gamma(QColorSpace* theWrappedObject) const;
@@ -2572,7 +2568,7 @@ void delete_QColorSpace(QColorSpace* obj) { delete obj; }
 class PythonQtWrapper_QColorTransform : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QColorTransform* new_QColorTransform();
 QColorTransform* new_QColorTransform(const QColorTransform&  colorTransform);
 void delete_QColorTransform(QColorTransform* obj) { delete obj; }
@@ -2726,7 +2722,7 @@ inline QRegion  py_q_visualRegionForSelection(const QItemSelection&  selection) 
 class PythonQtWrapper_QColumnView : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QColumnView* new_QColumnView(QWidget*  parent = nullptr);
 void delete_QColumnView(QColumnView* obj) { delete obj; }
    QList<int >  columnWidths(QColumnView* theWrappedObject) const;
@@ -2864,7 +2860,7 @@ inline void py_q_wheelEvent(QWheelEvent*  e) { QComboBox::wheelEvent(e); }
 class PythonQtWrapper_QComboBox : public QObject
 { Q_OBJECT
 public:
-public slots:
+public Q_SLOTS:
 QComboBox* new_QComboBox(QWidget*  parent = nullptr);
 void delete_QComboBox(QComboBox* obj) { delete obj; }
    void addItem(QComboBox* theWrappedObject, const QIcon&  icon, const QString&  text, const QVariant&  userData = QVariant());
@@ -2908,7 +2904,6 @@ void delete_QComboBox(QComboBox* obj) { delete obj; }
    int  maxCount(QComboBox* theWrappedObject) const;
    int  maxVisibleItems(QComboBox* theWrappedObject) const;
    int  minimumContentsLength(QComboBox* theWrappedObject) const;
-   QSize  minimumSizeHint(QComboBox* theWrappedObject) const;
    QSize  py_q_minimumSizeHint(QComboBox* theWrappedObject) const{  return (((PythonQtPublicPromoter_QComboBox*)theWrappedObject)->py_q_minimumSizeHint());}
    QAbstractItemModel*  model(QComboBox* theWrappedObject) const;
    int  modelColumn(QComboBox* theWrappedObject) const;
@@ -2944,7 +2939,6 @@ void delete_QComboBox(QComboBox* obj) { delete obj; }
    void showPopup(QComboBox* theWrappedObject);
    void py_q_showPopup(QComboBox* theWrappedObject){  (((PythonQtPublicPromoter_QComboBox*)theWrappedObject)->py_q_showPopup());}
    QComboBox::SizeAdjustPolicy  sizeAdjustPolicy(QComboBox* theWrappedObject) const;
-   QSize  sizeHint(QComboBox* theWrappedObject) const;
    QSize  py_q_sizeHint(QComboBox* theWrappedObject) const{  return (((PythonQtPublicPromoter_QComboBox*)theWrappedObject)->py_q_sizeHint());}
    const QValidator*  validator(QComboBox* theWrappedObject) const;
    QAbstractItemView*  view(QComboBox* theWrappedObject) const;
